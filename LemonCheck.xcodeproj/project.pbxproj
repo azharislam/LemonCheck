@@ -27,6 +27,7 @@
 		63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */; };
 		63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C2A2465D15A0031F6DB /* SlideTransition.swift */; };
 		63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C2C2465D1AA0031F6DB /* Validation.swift */; };
+		63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63356C302465FF620031F6DB /* GoogleService-Info.plist */; };
 		E61ACE5E4F49C88A575773E0 /* Pods_LemonCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Instantiate.swift"; sourceTree = "<group>"; };
 		63356C2A2465D15A0031F6DB /* SlideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransition.swift; sourceTree = "<group>"; };
 		63356C2C2465D1AA0031F6DB /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		63356C302465FF620031F6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
 				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
 				63356BFC2465AB500031F6DB /* Info.plist */,
+				63356C302465FF620031F6DB /* GoogleService-Info.plist */,
 			);
 			path = LemonCheck;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
+				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
 				63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */,
 			);
