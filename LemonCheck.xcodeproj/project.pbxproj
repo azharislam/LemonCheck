@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF02465AB4C0031F6DB /* SceneDelegate.swift */; };
-		63356BF32465AB4C0031F6DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF22465AB4C0031F6DB /* ViewController.swift */; };
 		63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF42465AB4C0031F6DB /* Main.storyboard */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
 		63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF92465AB500031F6DB /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 		63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1A2465C0010031F6DB /* MenuViewController.swift */; };
 		63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1C2465C03A0031F6DB /* NetworkRequester.swift */; };
 		63356C1F2465C05E0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
-		63356C212465C06E0031F6DB /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C202465C06E0031F6DB /* NetworkDecoder.swift */; };
 		63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */; };
 		63356C252465C1FE0031F6DB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C242465C1FE0031F6DB /* Utilities.swift */; };
 		63356C272465C21F0031F6DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C262465C21F0031F6DB /* Constants.swift */; };
@@ -37,7 +35,6 @@
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF02465AB4C0031F6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63356BF22465AB4C0031F6DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63356BF52465AB4C0031F6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63356BFA2465AB500031F6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,7 +48,6 @@
 		63356C1A2465C0010031F6DB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		63356C1C2465C03A0031F6DB /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataModel.swift; sourceTree = "<group>"; };
-		63356C202465C06E0031F6DB /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
 		63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataViewModel.swift; sourceTree = "<group>"; };
 		63356C242465C1FE0031F6DB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		63356C262465C21F0031F6DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,7 +106,6 @@
 				63356C052465ABD50031F6DB /* Extensions */,
 				63356BEE2465AB4C0031F6DB /* AppDelegate.swift */,
 				63356BF02465AB4C0031F6DB /* SceneDelegate.swift */,
-				63356BF22465AB4C0031F6DB /* ViewController.swift */,
 				63356BF42465AB4C0031F6DB /* Main.storyboard */,
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
 				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
@@ -143,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				63356C1C2465C03A0031F6DB /* NetworkRequester.swift */,
-				63356C202465C06E0031F6DB /* NetworkDecoder.swift */,
 				63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */,
 			);
 			path = Network;
@@ -372,11 +366,9 @@
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
 				63356C1F2465C05E0031F6DB /* VehicleDataModel.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
-				63356BF32465AB4C0031F6DB /* ViewController.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
 				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
-				63356C212465C06E0031F6DB /* NetworkDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
