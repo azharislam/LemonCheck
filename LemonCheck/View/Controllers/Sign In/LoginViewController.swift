@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(loginEmail)
         Utilities.styleTextField(loginPassword)
         Utilities.styleFilledButton(loginButton)
-        Utilities.styleHollowButton(signupButton)
+        Utilities.styleSmallFilledButton(signupButton)
     }
 
     private func signIn() {

@@ -33,7 +33,7 @@ class RegistrationViewController: UIViewController {
         Utilities.styleTextField(emailField)
         Utilities.styleTextField(passwordField)
         Utilities.styleFilledButton(signupButton)
-        Utilities.styleSmallFilledButton(loginButton)
+        Utilities.styleHollowButton(loginButton)
     }
 
     private func validateFields() -> String? {
