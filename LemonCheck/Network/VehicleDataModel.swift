@@ -8,6 +8,16 @@
 
 import Foundation
 
+var isMot: Bool = false
+
+struct MOT: Codable {
+    let response : Response?
+
+    enum CodingKeys: String, CodingKey {
+        case response = "Response"
+    }
+}
+
 struct Vehicle: Codable {
     let response : Response?
 
@@ -23,6 +33,23 @@ struct Response : Codable {
         case dataItems = "DataItems"
     }
 }
+
+struct VehicleDetails : Codable {
+    let colour : String?
+    let fuelType: String?
+    let make: String?
+    let model: String?
+    let dateRegistered: String?
+
+    enum CodingKeys: String, CodingKey {
+        case make = "Make"
+        case model = "Model"
+        case dateRegistered = "DateFirstRegistered"
+        case fuelType = "FuelType"
+        case colour = "Colour"
+    }
+}
+
 
 struct DataItems : Codable {
     let vrm: String?

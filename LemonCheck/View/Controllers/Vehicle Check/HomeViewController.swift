@@ -9,7 +9,8 @@
 import UIKit
 
 protocol RegSearchDelegate: NSObjectProtocol {
-    func searchUserReg(vrm: String?)
+    func verifyCheckFor(vrm: String?)
+    func getFullCheck(vrm: String?)
 }
 
 class HomeViewController: UIViewController {
@@ -31,18 +32,20 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func searchPressed(_ sender: Any) {
-        guard let userInput = searchField.text else { return }
+        guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         searchFor(input: userInput)
     }
 
     private func searchFor(input: String) {
         if input != "" {
-            delegate?.searchUserReg(vrm: input)
-            if let rgVC = ResultsViewController.instantiate() {
+            delegate?.verifyCheckFor(vrm: input)
+            if let rgVC = VerifyVehicleViewController.instantiate() {
                 self.delegate = rgVC
-                rgVC.searchUserReg(vrm: input)
+                rgVC.verifyCheckFor(vrm: input)
                 self.navigationController?.pushViewController(rgVC, animated: true)
             }
+        } else {
+            print("Please enter a valid vehicle registration number")
         }
     }
 

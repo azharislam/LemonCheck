@@ -12,8 +12,6 @@ import FirebaseDatabase
 
 class ResultsViewController: UIViewController {
 
-    
-
     private let transition = SlideTransition()
     private let service = RCNetworkRequest()
 
@@ -72,12 +70,16 @@ class ResultsViewController: UIViewController {
 }
 
 extension ResultsViewController: RegSearchDelegate {
-    func searchUserReg(vrm: String?) {
+    func verifyCheckFor(vrm: String?) {
+        //
+    }
+
+    func getFullCheck(vrm: String?) {
         guard let authUser = Auth.auth().currentUser, let userVrm = vrm else { return }
 
         let currentDate = Date().description
 
-        service.getVehicleDataFrom(regNumber: userVrm) {[weak self] (response, error) in
+        service.getFullVehicleDataFrom(regNumber: userVrm) {[weak self] (response, error) in
             guard let self = self else {return}
             if let response = response {
                 let viewModel = VehicleDataViewModel(dataModel: response)

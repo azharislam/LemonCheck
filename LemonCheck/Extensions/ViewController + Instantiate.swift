@@ -9,23 +9,34 @@
 import Foundation
 import UIKit
 
-extension ResultsViewController {
-
-    static func instantiate() -> ResultsViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let resultVC = storyboard.instantiateViewController(identifier: "ResultVC") as? ResultsViewController {
-            return resultVC
-        }
-        return nil
-    }
-}
-
 extension HomeViewController {
 
     static func instantiate() -> HomeViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeVC = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeViewController {
             return homeVC
+        }
+        return nil
+    }
+}
+
+extension VerifyVehicleViewController {
+
+    static func instantiate() -> VerifyVehicleViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let verifyVC = storyboard.instantiateViewController(identifier: "VerifyVC") as? VerifyVehicleViewController {
+            return verifyVC
+        }
+        return nil
+    }
+}
+
+extension ResultsViewController {
+
+    static func instantiate() -> ResultsViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let resultVC = storyboard.instantiateViewController(identifier: "ResultVC") as? ResultsViewController {
+            return resultVC
         }
         return nil
     }

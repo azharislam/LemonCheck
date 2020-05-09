@@ -10,21 +10,42 @@ import UIKit
 
 class VerifyVehicleViewController: UIViewController {
 
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var makeLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var colourLabel: UILabel!
+    @IBOutlet weak var goToResultsButton: UIButton!
+    
+    private let service = RCNetworkRequest()
+    private var vehicle: Vehicle?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func displayVehicleInfo(using viewModel: VehicleDataViewModel) {
+        makeLabel?.text = viewModel.make
+        modelLabel?.text = viewModel.model
     }
-    */
 
+}
+
+extension VerifyVehicleViewController: RegSearchDelegate {
+    func verifyCheckFor(vrm: String?) {
+        guard let userVrm = vrm else { return }
+
+        service.getFullVehicleDataFrom(regNumber: userVrm) {[weak self] (response, error) in
+            guard let self = self else {return}
+            if let response = response {
+                let viewModel = VehicleDataViewModel(dataModel: response)
+                self.displayVehicleInfo(using: viewModel)
+            }
+        }
+    }
+
+    func getFullCheck(vrm: String?) {
+        //
+    }
 }
