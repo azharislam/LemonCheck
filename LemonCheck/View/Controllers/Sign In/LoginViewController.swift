@@ -7,24 +7,59 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+
+    @IBOutlet weak var loginEmail: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var signupButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpElements()
+        navigationController?.navigationBar.isHidden = true
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginTapped(_ sender: Any) {
+         signIn()
     }
-    */
+
+    private func setUpElements() {
+        errorLabel.alpha = 0
+        Utilities.styleTextField(loginEmail)
+        Utilities.styleTextField(loginPassword)
+        Utilities.styleFilledButton(loginButton)
+        Utilities.styleHollowButton(signupButton)
+    }
+
+    private func signIn() {
+        let userEmail = textFrom(loginEmail)
+        let userPassword = textFrom(loginPassword)
+        Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
+            if let error = error {
+                self.errorLabel.text = error.localizedDescription
+                self.errorLabel.alpha = 1
+            } else {
+                self.transitionToHome()
+            }
+        }
+    }
+
+    private func transitionToHome() {
+        if let homeVC = HomeViewController.instantiate() {
+            let rootViewController = UINavigationController(rootViewController: homeVC)
+            view.window?.rootViewController = rootViewController
+            view.window?.makeKeyAndVisible()
+        }
+    }
+
+    private func textFrom(_ text: UITextField) -> String {
+        guard let fieldText = text.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return ""}
+        return fieldText
+    }
 
 }
