@@ -8,23 +8,43 @@
 
 import UIKit
 
+protocol RegSearchDelegate: NSObjectProtocol {
+    func searchUserReg(vrm: String?)
+}
+
 class HomeViewController: UIViewController {
+
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    weak var delegate: RegSearchDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setNavigationItems()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setNavigationItems() {
+        let navigationBar = navigationController?.navigationBar
+        navigationBar?.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        self.view.backgroundColor = UIColor.white
     }
-    */
+
+    @IBAction func searchPressed(_ sender: Any) {
+        guard let userInput = searchField.text else { return }
+        searchFor(input: userInput)
+    }
+
+    private func searchFor(input: String) {
+        if input != "" {
+            delegate?.searchUserReg(vrm: input)
+            if let rgVC = ResultsViewController.instantiate() {
+                self.delegate = rgVC
+                rgVC.searchUserReg(vrm: input)
+                self.navigationController?.pushViewController(rgVC, animated: true)
+            }
+        }
+    }
 
 }
+

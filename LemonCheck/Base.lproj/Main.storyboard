@@ -157,6 +157,92 @@
             </objects>
             <point key="canvasLocation" x="1813" y="-216"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Qh5-6x-DFA">
+            <objects>
+                <viewController id="6IF-qs-tiE" customClass="HomeViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SFT-62-ANf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LemonCheck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itK-mK-onG">
+                                <rect key="frame" x="40" y="100" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Registration" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xb4-lT-ozT">
+                                <rect key="frame" x="40" y="176" width="235" height="60"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VO4-bE-8Sq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-uE-pjs">
+                                <rect key="frame" x="275" y="176" width="54" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="6IF-qs-tiE" eventType="touchUpInside" id="Lfi-Ha-kOk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xb4-lT-ozT" firstAttribute="leading" secondItem="rO0-kV-qQT" secondAttribute="leading" constant="40" id="0eq-hl-awJ"/>
+                            <constraint firstItem="rO0-kV-qQT" firstAttribute="trailing" secondItem="XAT-uE-pjs" secondAttribute="trailing" constant="46" id="31u-yP-zqM"/>
+                            <constraint firstItem="rO0-kV-qQT" firstAttribute="trailing" secondItem="itK-mK-onG" secondAttribute="trailing" constant="40" id="4Wv-eW-59l"/>
+                            <constraint firstItem="Xb4-lT-ozT" firstAttribute="top" secondItem="itK-mK-onG" secondAttribute="bottom" constant="40" id="D4x-Ys-6Ss"/>
+                            <constraint firstItem="XAT-uE-pjs" firstAttribute="height" secondItem="Xb4-lT-ozT" secondAttribute="height" id="UHQ-pt-13j"/>
+                            <constraint firstItem="XAT-uE-pjs" firstAttribute="top" secondItem="Xb4-lT-ozT" secondAttribute="top" id="Y9l-wj-1EW"/>
+                            <constraint firstItem="rO0-kV-qQT" firstAttribute="trailing" secondItem="Xb4-lT-ozT" secondAttribute="trailing" constant="100" id="cHY-gj-ivE"/>
+                            <constraint firstItem="itK-mK-onG" firstAttribute="leading" secondItem="rO0-kV-qQT" secondAttribute="leading" constant="40" id="eP6-iy-HrH"/>
+                            <constraint firstItem="itK-mK-onG" firstAttribute="top" secondItem="rO0-kV-qQT" secondAttribute="top" constant="100" id="iJk-v1-nFE"/>
+                            <constraint firstItem="XAT-uE-pjs" firstAttribute="leading" secondItem="Xb4-lT-ozT" secondAttribute="trailing" id="ri4-Cb-CUG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rO0-kV-qQT"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchButton" destination="XAT-uE-pjs" id="Jx6-IW-7Ph"/>
+                        <outlet property="searchField" destination="Xb4-lT-ozT" id="q71-IO-DTp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ip-MV-lV7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701.5999999999999" y="113.79310344827587"/>
+        </scene>
+        <!--Verify Vehicle View Controller-->
+        <scene sceneID="XKr-CI-6OZ">
+            <objects>
+                <viewController id="rzv-1n-lgP" customClass="VerifyVehicleViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h3d-Zv-EQD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Oln-Fc-aBP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcb-JC-GGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3426" y="117"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="but-Tf-lEe">
+            <objects>
+                <viewController id="quH-rw-brr" customClass="ResultsViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHz-BC-yUu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bbe-Wp-6dc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOK-hs-3h9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4102" y="116"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="xjm-c7-CWP">
             <objects>
@@ -260,11 +346,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1Y-GP-Ur1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+            <point key="canvasLocation" x="278" y="111"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PvM-Lc-LGP"/>
         <segue reference="i7J-va-Kp6"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>
