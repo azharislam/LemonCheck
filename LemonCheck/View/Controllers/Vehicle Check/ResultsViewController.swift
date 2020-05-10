@@ -30,7 +30,7 @@ class ResultsViewController: UIViewController {
             self.view.backgroundColor = UIColor.white
         }
 
-    func displayVehicleInfo(using viewModel: VehicleDataViewModel) {
+    func displayVehicleInfo(using viewModel: VdiViewModel) {
 //        userRegLabel?.text = viewModel.vrm
 //        makeLabel?.text = viewModel.make
 //        modelLabel?.text = viewModel.model
@@ -42,7 +42,7 @@ class ResultsViewController: UIViewController {
     }
 
 
-    func vehicleSearchResults(_ viewModel: VehicleDataViewModel) -> [String: Any] {
+    func vehicleSearchResults(_ viewModel: VdiViewModel) -> [String: Any] {
         let results: [String: Any] = [
             "Reference" : searchReferenceId(),
             "Date" : Date().string(format: "yyyy-MM-dd"),
@@ -82,7 +82,7 @@ extension ResultsViewController: RegSearchDelegate {
         service.getFullVehicleDataFrom(regNumber: userVrm) {[weak self] (response, error) in
             guard let self = self else {return}
             if let response = response {
-                let viewModel = VehicleDataViewModel(dataModel: response)
+                let viewModel = VdiViewModel(dataModel: response)
                 self.displayVehicleInfo(using: viewModel)
                 self.database.child("customer").child("id").child(authUser.uid).child("vrmSearch").child(currentDate).setValue(self.vehicleSearchResults(viewModel))
             }
