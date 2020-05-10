@@ -18,6 +18,7 @@ final class RCNetworkRequest {
     let queryStringOptionals = "&api_nullitems=1"
     let apiVersion = 2
     var vehicleInformation: Vehicle?
+    var motInformation: MOTCheck?
 
     lazy var vdiUrl: String = {
         return "https://uk1.ukvehicledata.co.uk/api/datapackage/\(dataPackage1)?v=\(apiVersion)\(queryStringOptionals)&auth_apikey=\(apiKey)&key_VRM="
@@ -28,8 +29,9 @@ final class RCNetworkRequest {
     }()
 
     typealias VehicleDataCompletionHandler = (Vehicle?, Error?) -> Void
+    typealias MOTDataCompletionHandler = (MOTCheck?, Error?) -> Void
 
-    func getInitialVehicleData(regNumber: String, completion: @escaping VehicleDataCompletionHandler) {
+    func getInitialVehicleData(regNumber: String, completion: @escaping MOTDataCompletionHandler) {
         AF.request(self.motUrl + regNumber,
                    method: .get,
                    parameters: nil,
@@ -38,7 +40,7 @@ final class RCNetworkRequest {
                    interceptor: nil).response { (responseData) in
                     guard let data = responseData.data else {return}
                     do {
-                        let vehicleInfo = try JSONDecoder().decode(Vehicle.self, from: data)
+                        let vehicleInfo = try JSONDecoder().decode(MOTCheck.self, from: data)
                         print("Vehicle information succesfully decoded")
                         completion(vehicleInfo, nil)
                     } catch {

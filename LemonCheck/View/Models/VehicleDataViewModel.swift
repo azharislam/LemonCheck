@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VehicleDataViewModel {
+struct VdiViewModel {
     let searchDate: String?
     let vrm: String?
     let make : String?
@@ -47,3 +47,18 @@ struct VehicleDataViewModel {
         self.importedDate = dataModel.response?.dataItems?.importDate
     }
 }
+
+struct MotViewModel {
+    let make : String?
+    let model : String?
+    let year: String?
+    let colour: String?
+
+    init(dataModel: MOTCheck) {
+        self.make = dataModel.responseMOT?.dataItemsMOT?.vehicleDetails?.make
+        self.model = dataModel.responseMOT?.dataItemsMOT?.vehicleDetails?.model
+        self.year = dataModel.responseMOT?.dataItemsMOT?.vehicleDetails?.year
+        self.colour = dataModel.responseMOT?.dataItemsMOT?.vehicleDetails?.colour
+    }
+}
+
