@@ -19,11 +19,21 @@ class VerifyVehicleViewController: UIViewController {
     
     private let service = RCNetworkRequest()
     private var vehicle: MOTCheck?
+    private let transition = SlideTransition()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        if let menuVc = MenuViewController.instantiate() {
+            menuVc.modalPresentationStyle = .overCurrentContext
+            menuVc.transitioningDelegate = self
+            present(menuVc, animated: true)
+        }
+    }
+    
 
     func displayVehicleInfo(using viewModel: MotViewModel) {
         makeLabel?.text = viewModel.make
@@ -51,4 +61,18 @@ extension VerifyVehicleViewController: RegSearchDelegate {
     func getFullCheck(vrm: String?) {
         //
     }
+}
+
+extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+
 }

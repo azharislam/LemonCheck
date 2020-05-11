@@ -17,10 +17,19 @@ class ResultsViewController: UIViewController {
 
     private var database = Database.database().reference()
     private var vehicle: Vehicle?
+    private let transition = SlideTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismiss(animated: true)
+    }
+
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        if let menuVc = MenuViewController.instantiate() {
+            menuVc.modalPresentationStyle = .overCurrentContext
+            menuVc.transitioningDelegate = self
+            present(menuVc, animated: true)
+        }
     }
 
     func setNavigationItems() {
@@ -88,4 +97,18 @@ extension ResultsViewController: RegSearchDelegate {
             }
         }
     }
+}
+
+extension ResultsViewController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+
 }
