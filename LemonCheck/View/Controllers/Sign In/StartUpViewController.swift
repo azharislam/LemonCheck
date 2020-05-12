@@ -29,7 +29,6 @@ class StartUpViewController: UIViewController {
 
     private func setUpElements() {
         Utilities.styleFilledButton(signupButton)
-        Utilities.styleHollowButton(loginButton)
     }
 
     func setUpVideo() {

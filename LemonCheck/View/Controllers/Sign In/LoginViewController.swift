@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var forgottenPassword: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
          signIn()
     }
+
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        
+    }
+
 
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

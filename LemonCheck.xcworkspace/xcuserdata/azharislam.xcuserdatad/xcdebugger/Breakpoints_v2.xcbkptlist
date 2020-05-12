@@ -14,8 +14,8 @@
             filePath = "LemonCheck/View/Controllers/Sign In/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "sendConfirmationEmail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,42 +30,10 @@
             filePath = "LemonCheck/View/Controllers/Sign In/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "createUser(auth:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2C0FA23A-8B2B-4849-8583-490946242970 - 4dea76ed484dc8fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LemonCheck.RegistrationViewController.createUser(auth: __C.FIRAuth) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/RegistrationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "550">
-               </Location>
-               <Location
-                  uuid = "2C0FA23A-8B2B-4849-8583-490946242970 - e8705da93bcc09f9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LemonCheck.RegistrationViewController.createUser(auth: __C.FIRAuth) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/RegistrationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "106">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

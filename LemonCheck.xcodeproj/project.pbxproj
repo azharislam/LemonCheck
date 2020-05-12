@@ -30,6 +30,7 @@
 		63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C32246640680031F6DB /* VerifyVehicleViewController.swift */; };
 		63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C3624676F1D0031F6DB /* MOTDataModel.swift */; };
 		63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
+		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 		E61ACE5E4F49C88A575773E0 /* Pods_LemonCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		63356C302465FF620031F6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63356C32246640680031F6DB /* VerifyVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleViewController.swift; sourceTree = "<group>"; };
 		63356C3624676F1D0031F6DB /* MOTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTDataModel.swift; sourceTree = "<group>"; };
+		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 				63356C102465B4200031F6DB /* StartUpViewController.swift */,
 				63356C122465B4380031F6DB /* RegistrationViewController.swift */,
 				63356C142465B4440031F6DB /* LoginViewController.swift */,
+				63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
+				63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */,
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
