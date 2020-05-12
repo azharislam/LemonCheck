@@ -16,16 +16,26 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-        navigationController?.navigationBar.isHidden = true
+        setUpNavigation()
     }
 
     @IBAction func loginTapped(_ sender: Any) {
          signIn()
+    }
+
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    private func setUpNavigation() {
+        navigationController?.navigationBar.isHidden = true
+        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.tintColor = .darkGray
     }
 
     private func setUpElements() {
@@ -33,7 +43,20 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(loginEmail)
         Utilities.styleTextField(loginPassword)
         Utilities.styleFilledButton(loginButton)
-        Utilities.styleSmallFilledButton(signupButton)
+        assignbackground()
+    }
+
+    private func assignbackground() {
+        let background = UIImage(named: "background")
+
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
     }
 
     private func signIn() {

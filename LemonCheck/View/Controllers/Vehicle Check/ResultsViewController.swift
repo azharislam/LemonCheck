@@ -17,7 +17,6 @@ class ResultsViewController: UIViewController {
 
     private var database = Database.database().reference()
     private var vehicle: Vehicle?
-    private let transition = SlideTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()

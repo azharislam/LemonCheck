@@ -12,35 +12,42 @@ import Firebase
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var firstNameField: UITextField!
-    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var loginButton: UIButton!
-
+    @IBOutlet weak var backButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-        navigationController?.navigationBar.isHidden = true
+        setUpNavigation()
     }
+
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    private func setUpNavigation() {
+        navigationController?.navigationBar.isHidden = true
+        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.tintColor = .darkGray
+    }
+
 
     private func setUpElements() {
         errorLabel.alpha = 0
-        Utilities.styleTextField(firstNameField)
-        Utilities.styleTextField(lastNameField)
-        Utilities.styleTextField(emailField)
-        Utilities.styleTextField(passwordField)
+        Utilities.newUserTextField(firstNameField)
+        Utilities.newUserTextField(emailField)
+        Utilities.newUserTextField(passwordField)
         Utilities.styleFilledButton(signupButton)
-        Utilities.styleHollowButton(loginButton)
+        assignbackground()
     }
 
     private func validateFields() -> String? {
 
         // Check that all fields are filled in
         if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            lastNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields"
@@ -61,8 +68,8 @@ class RegistrationViewController: UIViewController {
         if error != nil {
             showError(error!)
         } else {
-            self.sendConfirmationEmail()
             self.createUser(auth: Auth.auth())
+            self.sendConfirmationEmail()
         }
     }
 
@@ -72,18 +79,18 @@ class RegistrationViewController: UIViewController {
     }
 
     // Add background image
-//    func assignbackground(){
-//        let background = UIImage(named: "background")
-//
-//        var imageView : UIImageView!
-//        imageView = UIImageView(frame: view.bounds)
-//        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-//        imageView.clipsToBounds = true
-//        imageView.image = background
-//        imageView.center = view.center
-//        view.addSubview(imageView)
-//        self.view.sendSubviewToBack(imageView)
-//    }
+    func assignbackground(){
+        let background = UIImage(named: "background")
+
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
 
     private func transitionToHome() {
         if let homeVC = HomeViewController.instantiate() {
@@ -95,7 +102,6 @@ class RegistrationViewController: UIViewController {
 
     func createUser(auth: Auth) {
         let firstName = textFrom(firstNameField)
-        let lastName = textFrom(lastNameField)
         let email = textFrom(emailField)
         let password = textFrom(passwordField)
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {return}
@@ -109,8 +115,9 @@ class RegistrationViewController: UIViewController {
                 // Add user to database
                 guard let createUser = result else { return }
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "userId": createUser.user.uid, "deviceId": deviceId]) { (error) in
-                    self.showError("Error saving user data")
+                db.collection("users").addDocument(data: ["firstName": firstName, "userId": createUser.user.uid, "deviceId": deviceId]) { (error) in
+                    guard let error = error else {return}
+                    self.showError(error.localizedDescription)
                 }
             }
         }
@@ -124,7 +131,6 @@ class RegistrationViewController: UIViewController {
         if authUser.isEmailVerified == false {
             authUser.sendEmailVerification(completion: { (error) in
                 print("Email verification sent")
-                self.transitionToHome()
             })
         }
         else {
