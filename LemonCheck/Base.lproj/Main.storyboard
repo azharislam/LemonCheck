@@ -781,7 +781,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-vn-bbG">
-                                <rect key="frame" x="104" y="489" width="157" height="32.5"/>
+                                <rect key="frame" x="40" y="489" width="295" height="32.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">
@@ -814,8 +814,8 @@
                             <constraint firstItem="VOd-qX-zQu" firstAttribute="trailing" secondItem="dna-Ur-T9i" secondAttribute="trailing" constant="40" id="G7f-Cr-kUB"/>
                             <constraint firstItem="dna-Ur-T9i" firstAttribute="leading" secondItem="VOd-qX-zQu" secondAttribute="leading" constant="40" id="HCZ-xC-RMp"/>
                             <constraint firstItem="zsE-VG-Mz9" firstAttribute="top" secondItem="VOd-qX-zQu" secondAttribute="top" constant="16" id="HOz-9l-amR"/>
-                            <constraint firstItem="ozJ-vn-bbG" firstAttribute="leading" secondItem="VOd-qX-zQu" secondAttribute="leading" constant="104" id="IDc-eu-I6c"/>
-                            <constraint firstItem="VOd-qX-zQu" firstAttribute="trailing" secondItem="ozJ-vn-bbG" secondAttribute="trailing" constant="114" id="Kla-Uz-W1T"/>
+                            <constraint firstItem="ozJ-vn-bbG" firstAttribute="leading" secondItem="VOd-qX-zQu" secondAttribute="leading" constant="40" id="IDc-eu-I6c"/>
+                            <constraint firstItem="VOd-qX-zQu" firstAttribute="trailing" secondItem="ozJ-vn-bbG" secondAttribute="trailing" constant="40" id="Kla-Uz-W1T"/>
                             <constraint firstItem="VOd-qX-zQu" firstAttribute="trailing" secondItem="8E3-z4-g1u" secondAttribute="trailing" constant="40" id="LuM-aD-ZRp"/>
                             <constraint firstItem="dna-Ur-T9i" firstAttribute="top" secondItem="8E3-z4-g1u" secondAttribute="bottom" constant="5" id="Sz4-oU-wCV"/>
                             <constraint firstItem="zsE-VG-Mz9" firstAttribute="leading" secondItem="VOd-qX-zQu" secondAttribute="leading" constant="16" id="Xom-n8-uii"/>
