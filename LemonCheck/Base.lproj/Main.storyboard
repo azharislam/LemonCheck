@@ -701,9 +701,84 @@
                     <view key="view" contentMode="scaleToFill" id="lqu-ho-UvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-Ru-H9a">
+                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="tnY-pE-bIF" eventType="touchUpInside" id="tme-OW-hiF"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="lOT-5d-osM">
+                                <rect key="frame" x="40" y="194" width="295" height="125"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter registered email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-5S-s5j">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="VLa-VF-5nQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-f3-afx">
+                                        <rect key="frame" x="0.0" y="75" width="295" height="50"/>
+                                        <state key="normal" title="Reset My Password"/>
+                                        <connections>
+                                            <action selector="resetPasswordTapped:" destination="tnY-pE-bIF" eventType="touchUpInside" id="NVp-f5-vjO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Gl-f3-afx" firstAttribute="height" secondItem="qbd-5S-s5j" secondAttribute="height" id="3FH-dg-555"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-57-DaQ">
+                                <rect key="frame" x="40" y="114" width="295" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Forgot Your Password?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpw-Yr-eZs">
+                                <rect key="frame" x="40" y="151.5" width="295" height="16.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="We will send you a password reset link to your email">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="AvenirNext-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xpw-Yr-eZs" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="1ct-f9-hkB"/>
+                            <constraint firstItem="TJq-i3-1Xp" firstAttribute="trailing" secondItem="fOr-57-DaQ" secondAttribute="trailing" constant="40" id="21Q-jC-zSo"/>
+                            <constraint firstItem="lOT-5d-osM" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="6CF-Nu-oNy"/>
+                            <constraint firstItem="fOr-57-DaQ" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="70" id="Pez-sw-Zff"/>
+                            <constraint firstItem="8Jw-Ru-H9a" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="16" id="Phb-cf-jUC"/>
+                            <constraint firstItem="TJq-i3-1Xp" firstAttribute="trailing" secondItem="xpw-Yr-eZs" secondAttribute="trailing" constant="40" id="QKE-qz-14f"/>
+                            <constraint firstItem="TJq-i3-1Xp" firstAttribute="trailing" secondItem="lOT-5d-osM" secondAttribute="trailing" constant="40" id="Ub0-AT-tyk"/>
+                            <constraint firstItem="8Jw-Ru-H9a" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="16" id="akJ-CZ-ceu"/>
+                            <constraint firstItem="xpw-Yr-eZs" firstAttribute="top" secondItem="fOr-57-DaQ" secondAttribute="bottom" constant="10" id="c3j-9c-j0S"/>
+                            <constraint firstItem="fOr-57-DaQ" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="vlD-bc-Qgn"/>
+                            <constraint firstItem="lOT-5d-osM" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="150" id="z06-mI-uPH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TJq-i3-1Xp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8Tr-bM-nCO"/>
+                    <connections>
+                        <outlet property="backButton" destination="8Jw-Ru-H9a" id="Gyb-EA-lG3"/>
+                        <outlet property="resetEmailField" destination="qbd-5S-s5j" id="375-xG-BxD"/>
+                        <outlet property="resetPasswordButton" destination="5Gl-f3-afx" id="03b-Ej-DLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y2-gQ-PeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -793,7 +868,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="forgotPasswordTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="lEq-tu-xJO"/>
+                                    <segue destination="tnY-pE-bIF" kind="show" id="iKY-UI-Y61"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-Rm-gQ1">

@@ -29,10 +29,6 @@ class LoginViewController: UIViewController {
          signIn()
     }
 
-    @IBAction func forgotPasswordTapped(_ sender: Any) {
-        
-    }
-
 
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
