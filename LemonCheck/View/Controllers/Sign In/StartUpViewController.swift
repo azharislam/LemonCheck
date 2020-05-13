@@ -23,6 +23,19 @@ class StartUpViewController: UIViewController {
         setUpElements()
     }
 
+    @IBAction func signUpTapped(_ sender: Any) {
+        if let regVC = RegistrationViewController.instantiate() {
+            self.navigationController?.pushViewController(regVC, animated: true)
+        }
+    }
+
+    @IBAction func loginTapped(_ sender: Any) {
+        if let loginVC = LoginViewController.instantiate() {
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
 //        setUpVideo()
     }

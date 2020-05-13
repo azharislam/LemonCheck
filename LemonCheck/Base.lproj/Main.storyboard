@@ -25,7 +25,7 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <segue destination="mUL-9B-O1o" kind="show" id="xuR-Ei-yzK"/>
+                                            <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YlE-hf-DVq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -57,7 +57,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="7DI-WI-OZu" kind="show" id="3RF-rE-GCC"/>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NsR-Cz-waM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,13 +87,13 @@
         <!--Registration View Controller-->
         <scene sceneID="grc-ih-zFz">
             <objects>
-                <viewController id="mUL-9B-O1o" customClass="RegistrationViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegVC" id="mUL-9B-O1o" customClass="RegistrationViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bFo-bk-rIE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-Pi-qlT">
-                                <rect key="frame" x="40" y="244" width="295" height="320.5"/>
+                                <rect key="frame" x="40" y="200" width="295" height="320.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMS-hk-qv7">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -134,13 +134,13 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2T-NY-r5L">
-                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <rect key="frame" x="16" y="16" width="30" height="30"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="mUL-9B-O1o" eventType="touchUpInside" id="H2B-7M-lXc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-Ot-kau">
-                                <rect key="frame" x="40" y="144" width="295" height="29"/>
+                                <rect key="frame" x="40" y="100" width="295" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Hello! ">
                                         <attributes>
@@ -153,7 +153,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpu-73-3Ru">
-                                <rect key="frame" x="40" y="178" width="295" height="27.5"/>
+                                <rect key="frame" x="40" y="134" width="295" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Sign up to get started">
                                         <attributes>
@@ -787,13 +787,13 @@
         <!--Login View Controller-->
         <scene sceneID="xjm-c7-CWP">
             <objects>
-                <viewController id="7DI-WI-OZu" customClass="LoginViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="7DI-WI-OZu" customClass="LoginViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J2E-Y3-xBN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-qU-fvC">
-                                <rect key="frame" x="40" y="244" width="295" height="125"/>
+                                <rect key="frame" x="40" y="200" width="295" height="125"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-Oa-4h8">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -814,7 +814,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E3-z4-g1u">
-                                <rect key="frame" x="40" y="144" width="295" height="27.5"/>
+                                <rect key="frame" x="40" y="100" width="295" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Hello again,">
                                         <attributes>
@@ -827,7 +827,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dna-Ur-T9i">
-                                <rect key="frame" x="40" y="176.5" width="295" height="27.5"/>
+                                <rect key="frame" x="40" y="132.5" width="295" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome back!">
                                         <attributes>
@@ -840,14 +840,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsE-VG-Mz9">
-                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <rect key="frame" x="16" y="16" width="30" height="30"/>
                                 <color key="tintColor" red="0.18561189019999999" green="0.18471521439999999" blue="0.18650856599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="9dN-RO-7xJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hy-lp-a1z">
-                                <rect key="frame" x="40" y="419" width="295" height="50"/>
+                                <rect key="frame" x="40" y="375" width="295" height="50"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.18561189019999999" green="0.18471521439999999" blue="0.18650856599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -856,7 +856,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-vn-bbG">
-                                <rect key="frame" x="40" y="489" width="295" height="32.5"/>
+                                <rect key="frame" x="40" y="445" width="295" height="32.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">
@@ -872,7 +872,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-Rm-gQ1">
-                                <rect key="frame" x="40" y="384" width="295" height="18"/>
+                                <rect key="frame" x="40" y="340" width="295" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

@@ -30,14 +30,21 @@ class ForgotPasswordViewController: UIViewController {
             return print("Invalid email")
         }
 
-        self.resetPassword(email: email, onSuccess: {
-            self.view.endEditing(true)
-            print("Password reset link sent to email")
-        }) { (errorMessage) in
-            print("Error sending reset email to user")
-        }
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
+                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetFailedAlert, animated: true, completion: nil)
+                } else {
+                    let resetEmailSentAlert = UIAlertController(title: "Reset email sent successfully", message: "Check your email", preferredStyle: .alert)
+                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetEmailSentAlert, animated: true, completion: nil)
+                }
+            }
+            self.popView()
+        })
 
-        popView()
     }
 
     private func popView() {
