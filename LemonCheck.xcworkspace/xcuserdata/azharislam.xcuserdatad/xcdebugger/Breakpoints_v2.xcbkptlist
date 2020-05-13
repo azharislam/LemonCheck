@@ -68,53 +68,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3138FB9-6DFD-45BD-ABFE-5C537DA57A35"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LemonCheck/View/Controllers/Sign In/ForgotPasswordViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "resetPasswordTapped(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F3138FB9-6DFD-45BD-ABFE-5C537DA57A35 - 4ab711681a899a38"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LemonCheck.ForgotPasswordViewController.resetPasswordTapped(Any) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/ForgotPasswordViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "744">
-               </Location>
-               <Location
-                  uuid = "F3138FB9-6DFD-45BD-ABFE-5C537DA57A35 - f53fc8634daa7952"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LemonCheck.ForgotPasswordViewController.resetPasswordTapped(Any) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/ForgotPasswordViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "158">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

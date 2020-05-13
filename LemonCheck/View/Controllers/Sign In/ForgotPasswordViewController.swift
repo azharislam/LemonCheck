@@ -22,7 +22,7 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func resetPasswordTapped(_ sender: Any) {
@@ -30,21 +30,7 @@ class ForgotPasswordViewController: UIViewController {
             return print("Invalid email")
         }
 
-        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
-                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(resetFailedAlert, animated: true, completion: nil)
-                } else {
-                    let resetEmailSentAlert = UIAlertController(title: "Reset email sent successfully", message: "Check your email", preferredStyle: .alert)
-                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(resetEmailSentAlert, animated: true, completion: nil)
-                }
-            }
-            self.popView()
-        })
-
+        resetPassword(email: email)
     }
 
     private func popView() {
@@ -76,15 +62,25 @@ class ForgotPasswordViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
     }
 
-    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            if error != nil {
-                onSuccess()
-            } else {
-                guard let error = error else { return }
-                onError(error.localizedDescription)
+    func resetPassword(email: String) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
+                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetFailedAlert, animated: true, completion: nil)
+                } else {
+                    let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
+                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    if let loginVC = LoginViewController.instantiate() {
+                        let rootViewController = UINavigationController(rootViewController: loginVC)
+                        self.view.window?.rootViewController = rootViewController
+                        self.view.window?.makeKeyAndVisible()
+                        loginVC.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                }
             }
-        }
+        })
     }
 
 }
