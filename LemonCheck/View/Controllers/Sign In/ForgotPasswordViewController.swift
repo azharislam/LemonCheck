@@ -22,24 +22,27 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     @IBAction func resetPasswordTapped(_ sender: Any) {
         guard let email = resetEmailField.text, email != "" else {
-            return //error
+            return print("Invalid email")
         }
 
-        self.resetPassword(email: email, onSuccess: { [weak self] in
-            guard let self = self else { return }
+        self.resetPassword(email: email, onSuccess: {
             self.view.endEditing(true)
             print("Password reset link sent to email")
-            self.navigationController?.dismiss(animated: true, completion: nil)
         }) { (errorMessage) in
             print("Error sending reset email to user")
         }
+
+        popView()
     }
 
+    private func popView() {
+        navigationController?.popViewController(animated: true)
+    }
 
     private func setUpNavigation() {
         navigationController?.navigationBar.isHidden = true

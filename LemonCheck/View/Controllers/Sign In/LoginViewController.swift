@@ -29,6 +29,12 @@ class LoginViewController: UIViewController {
          signIn()
     }
 
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        if let forgotVC = ForgotPasswordViewController.instantiate() {
+            self.navigationController?.pushViewController(forgotVC, animated: true)
+        }
+    }
+
 
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

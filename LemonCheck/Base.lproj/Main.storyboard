@@ -697,19 +697,19 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="40N-CE-zz7">
             <objects>
-                <viewController id="tnY-pE-bIF" customClass="ForgotPasswordViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotVC" id="tnY-pE-bIF" customClass="ForgotPasswordViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqu-ho-UvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-Ru-H9a">
-                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <rect key="frame" x="16" y="16" width="30" height="30"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="tnY-pE-bIF" eventType="touchUpInside" id="tme-OW-hiF"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="lOT-5d-osM">
-                                <rect key="frame" x="40" y="194" width="295" height="125"/>
+                                <rect key="frame" x="40" y="150" width="295" height="125"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter registered email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-5S-s5j">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -732,7 +732,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-57-DaQ">
-                                <rect key="frame" x="40" y="114" width="295" height="27.5"/>
+                                <rect key="frame" x="40" y="70" width="295" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Forgot Your Password?">
                                         <attributes>
@@ -744,8 +744,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpw-Yr-eZs">
-                                <rect key="frame" x="40" y="151.5" width="295" height="16.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpw-Yr-eZs">
+                                <rect key="frame" x="40" y="107.5" width="295" height="16.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="We will send you a password reset link to your email">
                                         <attributes>
@@ -868,7 +868,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="tnY-pE-bIF" kind="show" id="iKY-UI-Y61"/>
+                                    <action selector="forgotPasswordTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="gNm-rK-9i5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-Rm-gQ1">
