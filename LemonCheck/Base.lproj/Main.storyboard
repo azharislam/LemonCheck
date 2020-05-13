@@ -699,7 +699,7 @@
             <objects>
                 <viewController storyboardIdentifier="ForgotVC" id="tnY-pE-bIF" customClass="ForgotPasswordViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqu-ho-UvO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-Ru-H9a">
@@ -782,7 +782,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y2-gQ-PeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="932"/>
+            <point key="canvasLocation" x="1012" y="812"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="xjm-c7-CWP">
@@ -869,6 +869,7 @@
                                 </state>
                                 <connections>
                                     <action selector="forgotPasswordTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="gNm-rK-9i5"/>
+                                    <segue destination="tnY-pE-bIF" kind="show" id="I0s-pi-Z6t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-Rm-gQ1">

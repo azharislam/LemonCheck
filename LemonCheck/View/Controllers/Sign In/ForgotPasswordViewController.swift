@@ -63,24 +63,23 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     func resetPassword(email: String) {
-        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
-                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(resetFailedAlert, animated: true, completion: nil)
-                } else {
-                    let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
-                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    if let loginVC = LoginViewController.instantiate() {
-                        let rootViewController = UINavigationController(rootViewController: loginVC)
-                        self.view.window?.rootViewController = rootViewController
-                        self.view.window?.makeKeyAndVisible()
-                        loginVC.present(resetEmailSentAlert, animated: true, completion: nil)
+        if LoginViewController.instantiate() != nil {
+            Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
+                        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(resetFailedAlert, animated: true, completion: nil)
+                    } else {
+                        let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.navigationController?.popViewController(animated: true)
+                        self.navigationController?.present(resetEmailSentAlert, animated: true, completion: nil)
                     }
                 }
-            }
-        })
+            })
+        } else {
+            print("Login View Controller is not in the frame")
+        }
     }
-
 }

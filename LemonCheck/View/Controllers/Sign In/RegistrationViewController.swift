@@ -73,6 +73,7 @@ class RegistrationViewController: UIViewController {
         } else {
             self.createUser(auth: Auth.auth())
             self.sendConfirmationEmail()
+            self.transitionToHome()
         }
     }
 
