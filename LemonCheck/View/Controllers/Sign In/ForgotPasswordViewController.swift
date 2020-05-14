@@ -14,6 +14,9 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetEmailField: UITextField!
     @IBOutlet weak var resetPasswordButton: UIButton!
+    @IBOutlet weak var forgotPwTitle: UILabel!
+    @IBOutlet weak var forgotPwSubtitle: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

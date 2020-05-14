@@ -16,10 +16,9 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-
-
+    @IBOutlet weak var helloTitle: UILabel!
+    @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

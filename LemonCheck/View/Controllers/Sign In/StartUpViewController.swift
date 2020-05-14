@@ -13,6 +13,8 @@ class StartUpViewController: UIViewController {
 
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpLabel: UILabel!
+    
 
     private var videoPlayer: AVPlayer?
     private var videoPlayerLayer: AVPlayerLayer?

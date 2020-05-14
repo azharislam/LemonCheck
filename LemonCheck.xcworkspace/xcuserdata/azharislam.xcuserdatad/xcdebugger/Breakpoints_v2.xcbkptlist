@@ -14,8 +14,8 @@
             filePath = "LemonCheck/View/Controllers/Sign In/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "createUser(auth:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "LemonCheck/View/Controllers/Sign In/ForgotPasswordViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "resetPassword(email:)"
             landmarkType = "7">
          </BreakpointContent>

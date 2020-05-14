@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forgottenPassword: UIButton!
+    @IBOutlet weak var helloTitle: UILabel!
+    @IBOutlet weak var helloSubtitle: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,9 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-//        if let forgotVC = ForgotPasswordViewController.instantiate() {
-//            self.navigationController?.pushViewController(forgotVC, animated: true)
-//        }
+        if let forgotVC = ForgotPasswordViewController.instantiate() {
+            self.navigationController?.pushViewController(forgotVC, animated: true)
+        }
     }
 
 
