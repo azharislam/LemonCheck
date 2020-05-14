@@ -39,9 +39,9 @@ class RegistrationViewController: UIViewController {
 
     private func setUpElements() {
         errorLabel.alpha = 0
-        Utilities.newUserTextField(firstNameField)
-        Utilities.newUserTextField(emailField)
-        Utilities.newUserTextField(passwordField)
+        Utilities.styleTextField(firstNameField)
+        Utilities.styleTextField(emailField)
+        Utilities.styleTextField(passwordField)
         Utilities.styleFilledButton(signupButton)
         assignbackground()
     }
