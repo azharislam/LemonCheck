@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "82218898-8CE1-47D2-957C-C6B418A14466"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LemonCheck/View/Controllers/Sign In/RegistrationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "sendConfirmationEmail()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2C0FA23A-8B2B-4849-8583-490946242970"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "LemonCheck/View/Controllers/Sign In/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "createUser(auth:)"
             landmarkType = "7">
             <Locations>
@@ -46,8 +30,8 @@
                   urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/RegistrationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
                   offsetFromSymbolStart = "550">
                </Location>
                <Location
@@ -61,8 +45,8 @@
                   urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/RegistrationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
                   offsetFromSymbolStart = "106">
                </Location>
             </Locations>
@@ -71,49 +55,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "07B044D8-2554-455B-8280-7AD17DA1F327"
+            uuid = "B053CBE5-AB27-4DC5-B8B8-ADC4270B75F4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LemonCheck/View/Controllers/Sign In/ForgotPasswordViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "resetPasswordTapped(_:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "resetPassword(email:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "07B044D8-2554-455B-8280-7AD17DA1F327 - 6ab18463f6ed376c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in LemonCheck.ForgotPasswordViewController.resetPasswordTapped(Any) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/ForgotPasswordViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "396">
-               </Location>
-               <Location
-                  uuid = "07B044D8-2554-455B-8280-7AD17DA1F327 - ebb23524c357fd8e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in LemonCheck.ForgotPasswordViewController.resetPasswordTapped(Any) -&gt; ()"
-                  moduleName = "LemonCheck"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/azharislam/Documents/iOS%20Projects/LemonCheck/LemonCheck/View/Controllers/Sign%20In/ForgotPasswordViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -31,11 +31,12 @@
 		63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C3624676F1D0031F6DB /* MOTDataModel.swift */; };
 		63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
-		E61ACE5E4F49C88A575773E0 /* Pods_LemonCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */; };
+		EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.release.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.release.xcconfig"; sourceTree = "<group>"; };
+		4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF02465AB4C0031F6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		63356C3624676F1D0031F6DB /* MOTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTDataModel.swift; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
-		FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61ACE5E4F49C88A575773E0 /* Pods_LemonCheck.framework in Frameworks */,
+				EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +244,7 @@
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE3DF1D36C9DB45030787CFB /* Pods_LemonCheck.framework */,
+				4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 				63356BE72465AB4C0031F6DB /* Sources */,
 				63356BE82465AB4C0031F6DB /* Frameworks */,
 				63356BE92465AB4C0031F6DB /* Resources */,
-				BD87AEFDD826DC9B79FE0C2E /* [CP] Embed Pods Frameworks */,
+				01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,21 +319,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BD87AEFDD826DC9B79FE0C2E /* [CP] Embed Pods Frameworks */ = {
+		01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E7DC45CD5EC779BFE8C8A5B8 /* [CP] Check Pods Manifest.lock */ = {
