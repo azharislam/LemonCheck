@@ -16,7 +16,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var resetPasswordButton: UIButton!
     @IBOutlet weak var forgotPwTitle: UILabel!
     @IBOutlet weak var forgotPwSubtitle: UILabel!
-    
+    @IBOutlet weak var errorLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,11 @@ class ForgotPasswordViewController: UIViewController {
 
     private func popView() {
         navigationController?.popViewController(animated: true)
+    }
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
 
     private func setUpNavigation() {
@@ -72,9 +77,7 @@ class ForgotPasswordViewController: UIViewController {
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
-                        let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
-                        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(resetFailedAlert, animated: true, completion: nil)
+                        self.showError(error.localizedDescription)
                     } else {
                         let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
                         resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
