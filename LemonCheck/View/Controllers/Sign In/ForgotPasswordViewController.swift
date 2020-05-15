@@ -56,20 +56,7 @@ class ForgotPasswordViewController: UIViewController {
         Utilities.styleFilledButton(resetPasswordButton)
         Utilities.formatBoldTitle(forgotPwTitle, "Forgot your password")
         Utilities.formatBody(forgotPwSubtitle, "We will send a password reset link to the registered email.")
-        assignbackground()
-    }
-
-    private func assignbackground() {
-        let background = UIImage(named: "background")
-
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        self.view.addBackground()
     }
 
     func resetPassword(email: String) {
