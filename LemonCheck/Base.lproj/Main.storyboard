@@ -184,7 +184,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R3M-Ot-kau" firstAttribute="top" secondItem="FB5-H6-6VO" secondAttribute="top" constant="100" id="0NE-lO-Pzg"/>
-                            <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" secondItem="eFJ-Pi-qlT" secondAttribute="trailing" constant="40" id="0Vj-R0-w80"/>
+                            <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eFJ-Pi-qlT" secondAttribute="trailing" constant="40" id="0Vj-R0-w80"/>
                             <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" secondItem="Qpu-73-3Ru" secondAttribute="trailing" constant="40" id="0qp-Pb-Jzx"/>
                             <constraint firstItem="Qpu-73-3Ru" firstAttribute="top" secondItem="R3M-Ot-kau" secondAttribute="bottom" constant="5" id="JXH-Uz-OgR"/>
                             <constraint firstItem="6gB-DY-UXh" firstAttribute="height" secondItem="yMS-hk-qv7" secondAttribute="height" id="WzI-cv-2Fp"/>
