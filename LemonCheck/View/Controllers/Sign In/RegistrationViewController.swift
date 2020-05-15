@@ -16,15 +16,15 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-
-
+    @IBOutlet weak var helloTitle: UILabel!
+    @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
         setUpNavigation()
+        self.view.addBackground()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -40,11 +40,13 @@ class RegistrationViewController: UIViewController {
 
     private func setUpElements() {
         errorLabel.alpha = 0
-        Utilities.newUserTextField(firstNameField)
-        Utilities.newUserTextField(emailField)
-        Utilities.newUserTextField(passwordField)
+        Utilities.styleTextField(firstNameField)
+        Utilities.styleTextField(emailField)
+        Utilities.styleTextField(passwordField)
         Utilities.styleFilledButton(signupButton)
-        assignbackground()
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func validateFields() -> String? {
@@ -73,26 +75,13 @@ class RegistrationViewController: UIViewController {
         } else {
             self.createUser(auth: Auth.auth())
             self.sendConfirmationEmail()
+            self.transitionToHome()
         }
     }
 
     private func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-
-    // Add background image
-    func assignbackground(){
-        let background = UIImage(named: "background")
-
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
     }
 
     private func transitionToHome() {

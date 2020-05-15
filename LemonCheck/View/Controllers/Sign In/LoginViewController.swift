@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forgottenPassword: UIButton!
+    @IBOutlet weak var helloTitle: UILabel!
+    @IBOutlet weak var helloSubtitle: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,20 +54,10 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(loginEmail)
         Utilities.styleTextField(loginPassword)
         Utilities.styleFilledButton(loginButton)
-        assignbackground()
-    }
-
-    private func assignbackground() {
-        let background = UIImage(named: "background")
-
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        Utilities.stylePasswordButton(forgottenPassword)
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
+        self.view.addBackground()
     }
 
     private func signIn() {

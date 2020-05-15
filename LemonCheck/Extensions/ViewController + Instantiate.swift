@@ -9,6 +9,30 @@
 import Foundation
 import UIKit
 
+extension RegistrationViewController {
+
+    static func instantiate() -> RegistrationViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let regVC = storyboard.instantiateViewController(identifier: "RegVC") as? RegistrationViewController {
+            return regVC
+        }
+        return nil
+    }
+}
+
+
+extension LoginViewController {
+
+    static func instantiate() -> LoginViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let loginVC = storyboard.instantiateViewController(identifier: "LoginVC") as? LoginViewController {
+            return loginVC
+        }
+        return nil
+    }
+}
+
+
 extension HomeViewController {
 
     static func instantiate() -> HomeViewController? {

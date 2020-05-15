@@ -14,6 +14,9 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetEmailField: UITextField!
     @IBOutlet weak var resetPasswordButton: UIButton!
+    @IBOutlet weak var forgotPwTitle: UILabel!
+    @IBOutlet weak var forgotPwSubtitle: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func resetPasswordTapped(_ sender: Any) {
@@ -30,18 +33,16 @@ class ForgotPasswordViewController: UIViewController {
             return print("Invalid email")
         }
 
-        self.resetPassword(email: email, onSuccess: {
-            self.view.endEditing(true)
-            print("Password reset link sent to email")
-        }) { (errorMessage) in
-            print("Error sending reset email to user")
-        }
-
-        popView()
+        resetPassword(email: email)
     }
 
     private func popView() {
         navigationController?.popViewController(animated: true)
+    }
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
 
     private func setUpNavigation() {
@@ -53,31 +54,27 @@ class ForgotPasswordViewController: UIViewController {
     private func setUpElements() {
         Utilities.styleTextField(resetEmailField)
         Utilities.styleFilledButton(resetPasswordButton)
-        assignbackground()
+        Utilities.formatBoldTitle(forgotPwTitle, "Forgot your password")
+        Utilities.formatBody(forgotPwSubtitle, "We will send a password reset link to the registered email.")
+        self.view.addBackground()
     }
 
-    private func assignbackground() {
-        let background = UIImage(named: "background")
-
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
-    }
-
-    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            if error != nil {
-                onSuccess()
-            } else {
-                guard let error = error else { return }
-                onError(error.localizedDescription)
-            }
+    func resetPassword(email: String) {
+        if LoginViewController.instantiate() != nil {
+            Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        self.showError(error.localizedDescription)
+                    } else {
+                        let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.navigationController?.popViewController(animated: true)
+                        self.navigationController?.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                }
+            })
+        } else {
+            print("Login View Controller is not in the frame")
         }
     }
-
 }

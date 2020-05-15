@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF02465AB4C0031F6DB /* SceneDelegate.swift */; };
 		63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF42465AB4C0031F6DB /* Main.storyboard */; };
@@ -30,8 +31,9 @@
 		63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C32246640680031F6DB /* VerifyVehicleViewController.swift */; };
 		63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C3624676F1D0031F6DB /* MOTDataModel.swift */; };
 		63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
+		634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FD246E01560091C4A7 /* UIViewController + UI.swift */; };
+		63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
-		EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +64,10 @@
 		63356C302465FF620031F6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63356C32246640680031F6DB /* VerifyVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleViewController.swift; sourceTree = "<group>"; };
 		63356C3624676F1D0031F6DB /* MOTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTDataModel.swift; sourceTree = "<group>"; };
+		634604FD246E01560091C4A7 /* UIViewController + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UI.swift"; sourceTree = "<group>"; };
+		634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Background.swift"; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */,
+				5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,8 @@
 			children = (
 				63356C0E2465B0660031F6DB /* Date + Time.swift */,
 				63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */,
+				634604FD246E01560091C4A7 /* UIViewController + UI.swift */,
+				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,7 +251,7 @@
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */,
+				7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,7 +267,7 @@
 				63356BE72465AB4C0031F6DB /* Sources */,
 				63356BE82465AB4C0031F6DB /* Frameworks */,
 				63356BE92465AB4C0031F6DB /* Resources */,
-				01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */,
+				392E7B034A8D27E060069F1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,7 +326,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */ = {
+		392E7B034A8D27E060069F1A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,9 +382,11 @@
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
 				63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */,
+				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
+				634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */,
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,

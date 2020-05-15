@@ -9,26 +9,43 @@
 import Foundation
 import UIKit
 
-class Utilities {
+final class Utilities {
 
-    static func styleTextField(_ textfield:UITextField) {
+    // MARK: - Textfields
 
-        // Create the bottom line
+    static func styleTextField(_ textfield: UITextField) {
+
+        // Text
+        textfield.textColor = .black
+        textfield.font = UIFont(name: "Avenir", size: 15)
+        textfield.autocorrectionType = .no
+
+        // Placeholder
+        let color = UIColor.gray
+        let placeholder = textfield.placeholder ?? ""
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : color])
+
+        // Design
         let bottomLine = CALayer()
-
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 1)
         bottomLine.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1).cgColor
-
-        // Remove border on text field
         textfield.borderStyle = .none
-
-        // Add the line to the text field
         textfield.layer.addSublayer(bottomLine)
 
     }
 
-    static func newUserTextField(_ textfield:UITextField) {
+    static func passwordTextField(_ textfield: UITextField) {
 
+        // Text
+        textfield.textColor = .black //change to password text
+        textfield.font = UIFont(name: "Avenir", size: 15)
+
+        // Placeholder
+        let color = UIColor.darkGray
+        let placeholder = textfield.placeholder ?? ""
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : color])
+
+        // Textfield
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 1)
         bottomLine.backgroundColor = UIColor.darkGray.cgColor
@@ -36,7 +53,9 @@ class Utilities {
         textfield.layer.addSublayer(bottomLine)
     }
 
-    static func styleFilledButton(_ button:UIButton) {
+    // MARK: - Buttons
+
+    static func styleFilledButton(_ button: UIButton) {
 
         button.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
         button.layer.cornerRadius = 25.0
@@ -49,19 +68,34 @@ class Utilities {
         button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
-    static func styleSmallFilledButton(_ button:UIButton) {
-        // Filled rounded corner style
-        button.backgroundColor = UIColor.gray
-        button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.white
+    static func stylePasswordButton(_ button: UIButton) {
+
+        let orange = UIColor.init(red: 252/255, green: 184/255, blue: 36/255, alpha: 1)
+        button.setTitleColor(orange, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
-    static func styleHollowButton(_ button:UIButton) {
+    // MARK: - Labels
 
-        // Hollow rounded corner style
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.black.cgColor
-        button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.black
+    static func formatTitle(_ label: UILabel) {
+        label.textColor = .darkGray
+        label.font = UIFont(name: "AvenirNext-DemiBold", size: 25)
+    }
+
+    static func formatSubtitle(_ label: UILabel) {
+        label.textColor = .darkGray
+        label.font = UIFont(name: "Avenir Next", size: 20)
+    }
+
+    static func formatBoldTitle(_ label: UILabel, _ string: String) {
+        label.text = string
+        label.textColor = .darkGray
+        label.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
+    }
+
+    static func formatBody(_ label: UILabel, _ string: String) {
+        label.text = string
+        label.textColor = .darkGray
+        label.font = UIFont(name: "Avenir Next", size: 15)
     }
 }
