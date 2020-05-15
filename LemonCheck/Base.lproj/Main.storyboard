@@ -150,7 +150,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-Ot-kau">
                                 <rect key="frame" x="40" y="100" width="334" height="29"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Hello! ">
+                                    <fragment content="Hello and welcome!">
                                         <attributes>
                                             <color key="NSColor" red="0.18199919429730829" green="0.18987570081280519" blue="0.19761937399543161" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="21" name="AvenirNext-Regular"/>
@@ -730,9 +730,9 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="lOT-5d-osM">
-                                <rect key="frame" x="40" y="150" width="334" height="125"/>
+                                <rect key="frame" x="40" y="164" width="334" height="125"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter registered email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-5S-s5j">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-5S-s5j">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="VLa-VF-5nQ"/>
@@ -742,7 +742,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-f3-afx">
                                         <rect key="frame" x="0.0" y="75" width="334" height="50"/>
-                                        <state key="normal" title="Reset My Password"/>
+                                        <state key="normal" title="Reset Password"/>
                                         <connections>
                                             <action selector="resetPasswordTapped:" destination="tnY-pE-bIF" eventType="touchUpInside" id="NVp-f5-vjO"/>
                                         </connections>
@@ -783,6 +783,7 @@
                             <constraint firstItem="xpw-Yr-eZs" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="1ct-f9-hkB"/>
                             <constraint firstItem="TJq-i3-1Xp" firstAttribute="trailing" secondItem="fOr-57-DaQ" secondAttribute="trailing" constant="40" id="21Q-jC-zSo"/>
                             <constraint firstItem="lOT-5d-osM" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="6CF-Nu-oNy"/>
+                            <constraint firstItem="xpw-Yr-eZs" firstAttribute="bottom" secondItem="lOT-5d-osM" secondAttribute="top" constant="-40" id="Dly-Bs-4jy"/>
                             <constraint firstItem="fOr-57-DaQ" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="70" id="Pez-sw-Zff"/>
                             <constraint firstItem="8Jw-Ru-H9a" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="16" id="Phb-cf-jUC"/>
                             <constraint firstItem="TJq-i3-1Xp" firstAttribute="trailing" secondItem="xpw-Yr-eZs" secondAttribute="trailing" constant="40" id="QKE-qz-14f"/>
@@ -790,7 +791,6 @@
                             <constraint firstItem="8Jw-Ru-H9a" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="16" id="akJ-CZ-ceu"/>
                             <constraint firstItem="xpw-Yr-eZs" firstAttribute="top" secondItem="fOr-57-DaQ" secondAttribute="bottom" constant="10" id="c3j-9c-j0S"/>
                             <constraint firstItem="fOr-57-DaQ" firstAttribute="leading" secondItem="TJq-i3-1Xp" secondAttribute="leading" constant="40" id="vlD-bc-Qgn"/>
-                            <constraint firstItem="lOT-5d-osM" firstAttribute="top" secondItem="TJq-i3-1Xp" secondAttribute="top" constant="150" id="z06-mI-uPH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TJq-i3-1Xp"/>
                     </view>

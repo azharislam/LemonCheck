@@ -49,6 +49,8 @@ class ForgotPasswordViewController: UIViewController {
     private func setUpElements() {
         Utilities.styleTextField(resetEmailField)
         Utilities.styleFilledButton(resetPasswordButton)
+        Utilities.formatBoldTitle(forgotPwTitle, "Forgot your password")
+        Utilities.formatBody(forgotPwSubtitle, "We will send a password reset link to the registered email")
         assignbackground()
     }
 

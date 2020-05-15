@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Utilities {
+final class Utilities {
 
     // MARK: - Textfields
 
@@ -21,7 +21,7 @@ class Utilities {
         textfield.autocorrectionType = .no
 
         // Placeholder
-        let color = UIColor.darkGray
+        let color = UIColor.gray
         let placeholder = textfield.placeholder ?? ""
         textfield.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : color])
 
@@ -79,11 +79,23 @@ class Utilities {
 
     static func formatTitle(_ label: UILabel) {
         label.textColor = .darkGray
-        label.font = UIFont(name: "Avenir Next", size: 25)
+        label.font = UIFont(name: "AvenirNext-DemiBold", size: 25)
     }
 
     static func formatSubtitle(_ label: UILabel) {
         label.textColor = .darkGray
         label.font = UIFont(name: "Avenir Next", size: 20)
+    }
+
+    static func formatBoldTitle(_ label: UILabel, _ string: String) {
+        label.text = string
+        label.textColor = .darkGray
+        label.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
+    }
+
+    static func formatBody(_ label: UILabel, _ string: String) {
+        label.text = string
+        label.textColor = .darkGray
+        label.font = UIFont(name: "Avenir Next", size: 15)
     }
 }
