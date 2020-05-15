@@ -54,6 +54,9 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(loginEmail)
         Utilities.styleTextField(loginPassword)
         Utilities.styleFilledButton(loginButton)
+        Utilities.stylePasswordButton(forgottenPassword)
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
         assignbackground()
     }
 

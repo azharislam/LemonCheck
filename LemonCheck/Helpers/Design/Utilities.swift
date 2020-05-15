@@ -13,11 +13,12 @@ class Utilities {
 
     // MARK: - Textfields
 
-    static func styleTextField(_ textfield:UITextField) {
+    static func styleTextField(_ textfield: UITextField) {
 
         // Text
         textfield.textColor = .black
         textfield.font = UIFont(name: "Avenir", size: 15)
+        textfield.autocorrectionType = .no
 
         // Placeholder
         let color = UIColor.darkGray
@@ -33,7 +34,7 @@ class Utilities {
 
     }
 
-    static func passwordTextField(_ textfield:UITextField) {
+    static func passwordTextField(_ textfield: UITextField) {
 
         // Text
         textfield.textColor = .black //change to password text
@@ -54,7 +55,7 @@ class Utilities {
 
     // MARK: - Buttons
 
-    static func styleFilledButton(_ button:UIButton) {
+    static func styleFilledButton(_ button: UIButton) {
 
         button.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
         button.layer.cornerRadius = 25.0
@@ -67,13 +68,22 @@ class Utilities {
         button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
-    // MARK: - Labels
+    static func stylePasswordButton(_ button: UIButton) {
 
-    static func formatTitle(_ button: UILabel) {
-        //format header title
+        let orange = UIColor.init(red: 252/255, green: 184/255, blue: 36/255, alpha: 1)
+        button.setTitleColor(orange, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
-    static func formatSubtitle(_ button: UILabel) {
-        //format subtitle
+    // MARK: - Labels
+
+    static func formatTitle(_ label: UILabel) {
+        label.textColor = .darkGray
+        label.font = UIFont(name: "Avenir Next", size: 25)
+    }
+
+    static func formatSubtitle(_ label: UILabel) {
+        label.textColor = .darkGray
+        label.font = UIFont(name: "Avenir Next", size: 20)
     }
 }

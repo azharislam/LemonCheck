@@ -43,7 +43,10 @@ class RegistrationViewController: UIViewController {
         Utilities.styleTextField(emailField)
         Utilities.styleTextField(passwordField)
         Utilities.styleFilledButton(signupButton)
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
         assignbackground()
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func validateFields() -> String? {
