@@ -57,20 +57,7 @@ class LoginViewController: UIViewController {
         Utilities.stylePasswordButton(forgottenPassword)
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
-        assignbackground()
-    }
-
-    private func assignbackground() {
-        let background = UIImage(named: "background")
-
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        self.view.addBackground()
     }
 
     private func signIn() {
