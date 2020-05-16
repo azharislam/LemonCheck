@@ -57,6 +57,7 @@ class ForgotPasswordViewController: UIViewController {
         Utilities.formatBoldTitle(forgotPwTitle, "Forgot your password")
         Utilities.formatBody(forgotPwSubtitle, "We will send a password reset link to the registered email.")
         self.view.addBackground()
+        self.hideKeyboardWhenTappedAround()
     }
 
     func resetPassword(email: String) {

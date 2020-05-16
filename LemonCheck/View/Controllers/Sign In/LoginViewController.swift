@@ -58,6 +58,7 @@ class LoginViewController: UIViewController {
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
         self.view.addBackground()
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func signIn() {
