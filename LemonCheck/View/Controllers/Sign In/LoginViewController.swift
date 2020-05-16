@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
-         signIn()
+        signIn()
     }
 
     @IBAction func forgotPasswordTapped(_ sender: Any) {
@@ -58,17 +58,21 @@ class LoginViewController: UIViewController {
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
         self.view.addBackground()
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func signIn() {
+        self.loginButton.loadingIndicator(show: true)
         let userEmail = textFrom(loginEmail)
         let userPassword = textFrom(loginPassword)
         Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
             if let error = error {
+                self.loginButton.loadingIndicator(show: false)
                 self.errorLabel.text = error.localizedDescription
                 self.errorLabel.alpha = 1
             } else {
                 self.transitionToHome()
+                self.loginButton.loadingIndicator(show: false)
             }
         }
     }

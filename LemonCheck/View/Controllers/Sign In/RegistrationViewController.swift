@@ -74,8 +74,6 @@ class RegistrationViewController: UIViewController {
             showError(error!)
         } else {
             self.createUser(auth: Auth.auth())
-            self.sendConfirmationEmail()
-            self.transitionToHome()
         }
     }
 
@@ -93,6 +91,7 @@ class RegistrationViewController: UIViewController {
     }
 
     func createUser(auth: Auth) {
+        self.signupButton.loadingIndicator(show: true)
         let firstName = textFrom(firstNameField)
         let email = textFrom(emailField)
         let password = textFrom(passwordField)
@@ -102,6 +101,7 @@ class RegistrationViewController: UIViewController {
         // Create user
         auth.createUser(withEmail: email, password: password) { (result, err) in
             if err != nil {
+                self.signupButton.loadingIndicator(show: false)
                 self.showError("Error creating user")
             } else {
                 // Add user to database
@@ -111,6 +111,8 @@ class RegistrationViewController: UIViewController {
                     guard let error = error else {return}
                     self.showError(error.localizedDescription)
                 }
+                self.transitionToHome()
+                self.signupButton.loadingIndicator(show: false)
             }
         }
     }
