@@ -61,11 +61,14 @@ class ForgotPasswordViewController: UIViewController {
 
     func resetPassword(email: String) {
         if LoginViewController.instantiate() != nil {
+            self.resetPasswordButton.loadingIndicator(show: true)
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                 DispatchQueue.main.async {
                     if let error = error {
+                        self.resetPasswordButton.loadingIndicator(show: false)
                         self.showError(error.localizedDescription)
                     } else {
+                        self.resetPasswordButton.loadingIndicator(show: false)
                         let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
                         resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.navigationController?.popViewController(animated: true)

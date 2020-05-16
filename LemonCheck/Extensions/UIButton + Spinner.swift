@@ -24,6 +24,7 @@ extension UIButton {
             self.addSubview(indicator)
             indicator.startAnimating()
         } else {
+            self.setTitle(titleLabel?.text, for: .normal)
             if let indicator = self.viewWithTag(tag) as? UIActivityIndicatorView {
                 indicator.stopAnimating()
                 indicator.removeFromSuperview()
