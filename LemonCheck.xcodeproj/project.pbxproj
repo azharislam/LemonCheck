@@ -34,6 +34,8 @@
 		634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FD246E01560091C4A7 /* UIViewController + UI.swift */; };
 		63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */; };
 		6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */; };
+		6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050C2470872E0091C4A7 /* DatabaseErrors.swift */; };
+		6346050F2470B06A0091C4A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* UserData.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		634604FD246E01560091C4A7 /* UIViewController + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UI.swift"; sourceTree = "<group>"; };
 		634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Background.swift"; sourceTree = "<group>"; };
 		63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Spinner.swift"; sourceTree = "<group>"; };
+		6346050C2470872E0091C4A7 /* DatabaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrors.swift; sourceTree = "<group>"; };
+		6346050E2470B06A0091C4A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				63356C022465ABBC0031F6DB /* View */,
+				6346050B247087120091C4A7 /* Database */,
 				63356C042465ABD00031F6DB /* Network */,
 				63356C032465ABCB0031F6DB /* Helpers */,
 				63356C052465ABD50031F6DB /* Extensions */,
@@ -250,6 +255,15 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		6346050B247087120091C4A7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6346050C2470872E0091C4A7 /* DatabaseErrors.swift */,
+				6346050E2470B06A0091C4A7 /* UserData.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +391,7 @@
 				63356C252465C1FE0031F6DB /* Utilities.swift in Sources */,
 				63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */,
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
+				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
 				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
 				63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
@@ -391,6 +406,7 @@
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
 				634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */,
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
+				6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
 				63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */,
