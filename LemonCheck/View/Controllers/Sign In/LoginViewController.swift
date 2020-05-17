@@ -73,8 +73,8 @@ class LoginViewController: UIViewController {
                 self.loginButton.loadingIndicator(show: false)
                 self.showError(error)
             } else {
-                self.transitionToHome()
                 self.loginButton.loadingIndicator(show: false)
+                self.transitionToHome()
             }
         }
     }
@@ -99,6 +99,7 @@ class LoginViewController: UIViewController {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
+            homeVC.presentAlert(withTitle: "Welcome Back", message: "Login successful")
         }
     }
 

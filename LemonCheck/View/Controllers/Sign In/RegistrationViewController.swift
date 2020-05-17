@@ -141,6 +141,7 @@ class RegistrationViewController: UIViewController {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
+            homeVC.presentAlert(withTitle: "Success", message: "Your account has been successfully created")
         }
     }
 
