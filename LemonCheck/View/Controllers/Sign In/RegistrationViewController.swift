@@ -93,7 +93,10 @@ class RegistrationViewController: UIViewController {
 
     func createUser(auth: Auth) {
         self.signupButton.loadingIndicator(show: true)
-        let firstName = textFrom(firstNameField)
+        guard let fullNameField = firstNameField.text else {return}
+        let fullName = Name(fullName: fullNameField)
+        let firstName = fullName.first
+        let lastName = fullName.last
         let email = textFrom(emailField)
         let password = textFrom(passwordField)
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {return}
@@ -102,15 +105,21 @@ class RegistrationViewController: UIViewController {
         // Create user
         auth.createUser(withEmail: email, password: password) { (result, err) in
             if err != nil {
+                guard let error = err else { return }
                 self.signupButton.loadingIndicator(show: false)
-                self.showError(err!)
+                self.presentError(error)
             } else {
                 // Add user to database
                 guard let createUser = result else { return }
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstName": firstName, "userId": createUser.user.uid, "deviceId": deviceId]) { (error) in
+                db.collection("users").addDocument(data: ["firstName": firstName,
+                                                          "lastName": lastName,
+                                                          "userId": createUser.user.uid,
+                                                          "deviceId": deviceId])
+                {
+                    (error) in
                     guard let error = error else {return}
-                    self.showError(error.localizedDescription)
+                    self.presentError(error)
                 }
                 self.transitionToHome()
                 self.signupButton.loadingIndicator(show: false)

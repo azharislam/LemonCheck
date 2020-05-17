@@ -38,7 +38,6 @@ class LoginViewController: UIViewController {
         }
     }
 
-
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -68,8 +67,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
             if let error = error {
                 self.loginButton.loadingIndicator(show: false)
-                self.errorLabel.text = error.localizedDescription
-                self.errorLabel.alpha = 1
+                self.showError(error)
             } else {
                 self.transitionToHome()
                 self.loginButton.loadingIndicator(show: false)
