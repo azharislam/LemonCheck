@@ -64,10 +64,11 @@ class RegistrationViewController: UIViewController {
                 // Add user to database
                 guard let createUser = result else { return }
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstName": firstName,
-                                                          "lastName": lastName,
-                                                          "userId": createUser.user.uid,
-                                                          "deviceId": deviceId])
+                db.collection("users").addDocument(
+                    data: ["firstName": firstName,
+                           "lastName": lastName,
+                           "userId": createUser.user.uid,
+                           "deviceId": deviceId])
                 {
                     (error) in
                     guard let error = error else {return}
@@ -96,7 +97,7 @@ class RegistrationViewController: UIViewController {
 
     private func setUpNavigation() {
         navigationController?.navigationBar.isHidden = true
-        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.setImage(UIImage(named: Constants.Media.back), for: .normal)
         backButton.tintColor = .darkGray
     }
 
