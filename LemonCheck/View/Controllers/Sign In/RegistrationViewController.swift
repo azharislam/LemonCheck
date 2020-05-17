@@ -59,6 +59,7 @@ class RegistrationViewController: UIViewController {
         }
 
         if Validation.isPasswordValid(textFrom(passwordField)) == false {
+//            self.signupButton.loadingIndicator(show: false)
             return "Please make sure your password is at least 8 characters, contains a special character and a number"
         }
 
@@ -102,7 +103,7 @@ class RegistrationViewController: UIViewController {
         auth.createUser(withEmail: email, password: password) { (result, err) in
             if err != nil {
                 self.signupButton.loadingIndicator(show: false)
-                self.showError("Error creating user")
+                self.showError(err!)
             } else {
                 // Add user to database
                 guard let createUser = result else { return }
