@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+protocol AccountDetailsDelegate: NSObject {
+    func user(email: String?)
+}
+
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var firstNameField: UITextField!
@@ -19,6 +23,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var helloTitle: UILabel!
     @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    weak var delegate: AccountDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +80,7 @@ class RegistrationViewController: UIViewController {
                     self.presentError(error)
                 }
                 self.sendVerificationMail()
-                self.transitionToHome()
+                self.transitionToVerifyEmail()
                 self.signupButton.loadingIndicator(show: false)
             }
         }
@@ -87,8 +92,7 @@ class RegistrationViewController: UIViewController {
         
         if authUser != nil && !isVerified {
             authUser?.sendEmailVerification(completion: { (error) in
-                self.presentAlert(withTitle: "Success", message: "A verification link has been sent to your email")
-                //transition to verification view
+                print("Verification successfully sent to new user")
             })
         }
         else {
@@ -146,11 +150,11 @@ class RegistrationViewController: UIViewController {
         }
     }
 
-    private func transitionToLogin() {
-        if let homeVC = LoginViewController.instantiate() {
-            let rootViewController = UINavigationController(rootViewController: homeVC)
-            view.window?.rootViewController = rootViewController
-            view.window?.makeKeyAndVisible()
+    private func transitionToVerifyEmail() {
+        if let emailVC = EmailVerifyViewController.instantiate() {
+            self.delegate = emailVC
+            delegate?.user(email: textFrom(emailField))
+            self.navigationController?.pushViewController(emailVC, animated: true)
         }
     }
 

@@ -100,6 +100,122 @@
             </objects>
             <point key="canvasLocation" x="1012" y="110"/>
         </scene>
+        <!--Email Verify View Controller-->
+        <scene sceneID="NgU-rf-ZOa">
+            <objects>
+                <viewController storyboardIdentifier="EmailVC" id="di8-hB-cAs" customClass="EmailVerifyViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nog-aq-q7g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8r1-5K-6c9">
+                                <rect key="frame" x="40" y="691" width="334" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zU-11-MGL">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ejc-Yj-7Pq"/>
+                                        </constraints>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <segue destination="7DI-WI-OZu" kind="show" id="jWB-jD-Lfb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQz-Ju-Dd8">
+                                        <rect key="frame" x="0.0" y="75" width="334" height="30"/>
+                                        <state key="normal" title="Resend Verification"/>
+                                        <connections>
+                                            <action selector="resendTapped:" destination="di8-hB-cAs" eventType="touchUpInside" id="hRU-G0-iGh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hr-pC-E5y">
+                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="di8-hB-cAs" eventType="touchUpInside" id="e4E-yQ-hsE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent an email to " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJV-QQ-FK9">
+                                <rect key="frame" x="40" y="361" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iR-mT-Zgs">
+                                <rect key="frame" x="40" y="183" width="334" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MiC-QP-68K"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieg-se-Tka">
+                                <rect key="frame" x="40" y="94" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="azhartislam@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-jx-AA4">
+                                <rect key="frame" x="40" y="391.5" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-Pb-blH">
+                                <rect key="frame" x="40" y="417" width="334" height="26.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Please click the link to verify your email.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ieg-se-Tka" firstAttribute="top" secondItem="SxK-fx-7Nm" secondAttribute="top" constant="50" id="1CO-tV-qQT"/>
+                            <constraint firstItem="RBe-Pb-blH" firstAttribute="top" secondItem="JKs-jx-AA4" secondAttribute="bottom" constant="5" id="59g-Md-7k3"/>
+                            <constraint firstItem="JKs-jx-AA4" firstAttribute="top" secondItem="xJV-QQ-FK9" secondAttribute="bottom" constant="10" id="87P-zA-xnK"/>
+                            <constraint firstItem="RBe-Pb-blH" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="8eL-do-xbN"/>
+                            <constraint firstAttribute="bottom" secondItem="8r1-5K-6c9" secondAttribute="bottom" constant="100" id="9c2-qv-EtQ"/>
+                            <constraint firstItem="xJV-QQ-FK9" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="E63-WB-iZb"/>
+                            <constraint firstItem="JKs-jx-AA4" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="G9s-UB-Q20"/>
+                            <constraint firstItem="7Hr-pC-E5y" firstAttribute="top" secondItem="SxK-fx-7Nm" secondAttribute="top" constant="16" id="GPX-Lc-Edk"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="ieg-se-Tka" secondAttribute="trailing" constant="40" id="IkZ-9p-FEE"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="8r1-5K-6c9" secondAttribute="trailing" constant="40" id="LdI-HG-kjr"/>
+                            <constraint firstItem="7Hr-pC-E5y" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="16" id="M9p-wc-qxy"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="JKs-jx-AA4" secondAttribute="trailing" constant="40" id="NKh-rb-Z08"/>
+                            <constraint firstItem="xJV-QQ-FK9" firstAttribute="top" secondItem="1iR-mT-Zgs" secondAttribute="bottom" constant="50" id="PET-xP-cR5"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="xJV-QQ-FK9" secondAttribute="trailing" constant="40" id="QFV-uA-BxH"/>
+                            <constraint firstItem="1iR-mT-Zgs" firstAttribute="centerX" secondItem="nog-aq-q7g" secondAttribute="centerX" id="Rg8-vE-wWr"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="RBe-Pb-blH" secondAttribute="trailing" constant="40" id="Wrp-uz-Uf0"/>
+                            <constraint firstItem="SxK-fx-7Nm" firstAttribute="trailing" secondItem="1iR-mT-Zgs" secondAttribute="trailing" constant="40" id="Z2V-Fx-da1"/>
+                            <constraint firstItem="ieg-se-Tka" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="a7f-zT-6AL"/>
+                            <constraint firstItem="1iR-mT-Zgs" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="hk5-QR-dpK"/>
+                            <constraint firstItem="1iR-mT-Zgs" firstAttribute="top" secondItem="nog-aq-q7g" secondAttribute="top" constant="183" id="oEF-w1-BL1"/>
+                            <constraint firstItem="8r1-5K-6c9" firstAttribute="leading" secondItem="SxK-fx-7Nm" secondAttribute="leading" constant="40" id="rhQ-ld-n9U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SxK-fx-7Nm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yQx-BZ-L4I"/>
+                    <connections>
+                        <outlet property="activateLabel" destination="RBe-Pb-blH" id="i4D-ed-5cb"/>
+                        <outlet property="backButton" destination="7Hr-pC-E5y" id="Cbe-ez-m1z"/>
+                        <outlet property="emailLabel" destination="JKs-jx-AA4" id="Byr-SX-FFE"/>
+                        <outlet property="loginButton" destination="4zU-11-MGL" id="emi-i7-2Hm"/>
+                        <outlet property="resendButton" destination="xQz-Ju-Dd8" id="n7A-9p-Wbt"/>
+                        <outlet property="titleLabel" destination="ieg-se-Tka" id="LTD-Z7-eRI"/>
+                        <outlet property="verifyImage" destination="1iR-mT-Zgs" id="pxd-fz-RHU"/>
+                        <outlet property="verifyInfoLabel" destination="xJV-QQ-FK9" id="awu-Aq-Lj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNW-aW-YQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020.2898550724639" y="-585.26785714285711"/>
+        </scene>
         <!--Registration View Controller-->
         <scene sceneID="grc-ih-zFz">
             <objects>
@@ -821,11 +937,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="7DI-WI-OZu" customClass="LoginViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J2E-Y3-xBN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-qU-fvC">
-                                <rect key="frame" x="40" y="244" width="334" height="168"/>
+                                <rect key="frame" x="40" y="200" width="334" height="168"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-Oa-4h8">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -852,7 +968,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E3-z4-g1u">
-                                <rect key="frame" x="40" y="144" width="334" height="27.5"/>
+                                <rect key="frame" x="40" y="100" width="334" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Hello again,">
                                         <attributes>
@@ -865,7 +981,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dna-Ur-T9i">
-                                <rect key="frame" x="40" y="176.5" width="334" height="27.5"/>
+                                <rect key="frame" x="40" y="132.5" width="334" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome back!">
                                         <attributes>
@@ -878,14 +994,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsE-VG-Mz9">
-                                <rect key="frame" x="16" y="60" width="30" height="30"/>
+                                <rect key="frame" x="16" y="16" width="30" height="30"/>
                                 <color key="tintColor" red="0.18561189019999999" green="0.18471521439999999" blue="0.18650856599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="9dN-RO-7xJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hy-lp-a1z">
-                                <rect key="frame" x="40" y="432" width="334" height="50"/>
+                                <rect key="frame" x="40" y="388" width="334" height="50"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.18561189019999999" green="0.18471521439999999" blue="0.18650856599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -894,7 +1010,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-vn-bbG">
-                                <rect key="frame" x="40" y="502" width="334" height="32.5"/>
+                                <rect key="frame" x="40" y="458" width="334" height="32.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">

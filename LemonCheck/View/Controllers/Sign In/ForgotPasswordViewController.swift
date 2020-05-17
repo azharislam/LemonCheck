@@ -40,10 +40,6 @@ class ForgotPasswordViewController: UIViewController {
         }
     }
 
-    private func popView() {
-        navigationController?.popViewController(animated: true)
-    }
-
     private func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1

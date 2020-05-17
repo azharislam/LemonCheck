@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
-            homeVC.presentAlert(withTitle: "Welcome Back", message: "Login successful")
+            homeVC.presentAlert(withTitle: "Success", message: "Welcome to Lemon Check")
         }
     }
 

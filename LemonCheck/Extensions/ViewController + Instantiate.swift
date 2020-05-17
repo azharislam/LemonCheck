@@ -87,3 +87,14 @@ extension ForgotPasswordViewController {
         return nil
     }
 }
+
+extension EmailVerifyViewController {
+
+    static func instantiate() -> EmailVerifyViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let emailVC = storyboard.instantiateViewController(identifier: "EmailVC") as? EmailVerifyViewController {
+            return emailVC
+        }
+        return nil
+    }
+}

@@ -69,9 +69,7 @@ final class Utilities {
     }
 
     static func stylePasswordButton(_ button: UIButton) {
-
-        let orange = UIColor.init(red: 252/255, green: 184/255, blue: 36/255, alpha: 1)
-        button.setTitleColor(orange, for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
@@ -91,6 +89,11 @@ final class Utilities {
         label.text = string
         label.textColor = .darkGray
         label.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
+    }
+
+    static func formatEmailTitle(_ label: UILabel) {
+        label.textColor = .darkGray
+        label.font = UIFont(name: "AvenirNext-Bold", size: 20)
     }
 
     static func formatBody(_ label: UILabel, _ string: String) {
