@@ -74,24 +74,25 @@ class RegistrationViewController: UIViewController {
                     guard let error = error else {return}
                     self.presentError(error)
                 }
+                self.sendVerificationMail()
                 self.transitionToHome()
                 self.signupButton.loadingIndicator(show: false)
             }
         }
     }
 
-    private func sendConfirmationEmail() {
-
-        guard let authUser = Auth.auth().currentUser else { return }
-
-        // Here you check if user exist
-        if authUser.isEmailVerified == false {
-            authUser.sendEmailVerification(completion: { (error) in
-                print("Email verification sent")
+    public func sendVerificationMail() {
+        let authUser = Auth.auth().currentUser
+        guard let isVerified = authUser?.isEmailVerified else { return }
+        
+        if authUser != nil && !isVerified {
+            authUser?.sendEmailVerification(completion: { (error) in
+                self.presentAlert(withTitle: "Success", message: "A verification link has been sent to your email")
+                //transition to verification view
             })
         }
         else {
-            print("Waiting for user to be verified")
+            print("Error sending verification link")
         }
     }
 
@@ -142,6 +143,14 @@ class RegistrationViewController: UIViewController {
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
             homeVC.presentAlert(withTitle: "Success", message: "Your account has been successfully created")
+        }
+    }
+
+    private func transitionToLogin() {
+        if let homeVC = LoginViewController.instantiate() {
+            let rootViewController = UINavigationController(rootViewController: homeVC)
+            view.window?.rootViewController = rootViewController
+            view.window?.makeKeyAndVisible()
         }
     }
 
