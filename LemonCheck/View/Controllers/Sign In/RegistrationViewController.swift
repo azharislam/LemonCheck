@@ -24,46 +24,11 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         setUpNavigation()
-        self.view.addBackground()
+        view.addBackground()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-    }
-
-    private func setUpNavigation() {
-        navigationController?.navigationBar.isHidden = true
-        backButton.setImage(UIImage(named: "return"), for: .normal)
-        backButton.tintColor = .darkGray
-    }
-
-
-    private func setUpElements() {
-        errorLabel.alpha = 0
-        Utilities.styleTextField(firstNameField)
-        Utilities.styleTextField(emailField)
-        Utilities.styleTextField(passwordField)
-        Utilities.styleFilledButton(signupButton)
-        Utilities.formatTitle(helloTitle)
-        Utilities.formatSubtitle(helloSubtitle)
-        self.hideKeyboardWhenTappedAround()
-    }
-
-    private func validateFields() -> String? {
-
-        // Check that all fields are filled in
-        if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return "Please fill in all fields"
-        }
-
-        if Validation.isPasswordValid(textFrom(passwordField)) == false {
-//            self.signupButton.loadingIndicator(show: false)
-            return "Please make sure your password is at least 8 characters, contains a special character and a number"
-        }
-
-        return nil
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
@@ -75,19 +40,6 @@ class RegistrationViewController: UIViewController {
             showError(error!)
         } else {
             self.createUser(auth: Auth.auth())
-        }
-    }
-
-    private func showError(_ message: String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
-
-    private func transitionToHome() {
-        if let homeVC = HomeViewController.instantiate() {
-            let rootViewController = UINavigationController(rootViewController: homeVC)
-            view.window?.rootViewController = rootViewController
-            view.window?.makeKeyAndVisible()
         }
     }
 
@@ -138,13 +90,57 @@ class RegistrationViewController: UIViewController {
             })
         }
         else {
-              print("Waiting for user to be verified")
+            print("Waiting for user to be verified")
         }
+    }
+
+    private func setUpNavigation() {
+        navigationController?.navigationBar.isHidden = true
+        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.tintColor = .darkGray
+    }
+
+    private func setUpElements() {
+        errorLabel.alpha = 0
+        Utilities.styleTextField(firstNameField)
+        Utilities.styleTextField(emailField)
+        Utilities.styleTextField(passwordField)
+        Utilities.styleFilledButton(signupButton)
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func textFrom(_ text: UITextField) -> String {
         guard let fieldText = text.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return ""}
         return fieldText
+    }
+
+    private func validateFields() -> String? {
+        if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return Constants.Signup.fillInFields
+        }
+
+        if Validation.isPasswordValid(textFrom(passwordField)) == false {
+            return Constants.Signup.passwordError
+        }
+        
+        return nil
+    }
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+
+    private func transitionToHome() {
+        if let homeVC = HomeViewController.instantiate() {
+            let rootViewController = UINavigationController(rootViewController: homeVC)
+            view.window?.rootViewController = rootViewController
+            view.window?.makeKeyAndVisible()
+        }
     }
 
 }
