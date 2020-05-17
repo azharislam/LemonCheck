@@ -129,7 +129,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4am-xq-GtJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4am-xq-GtJ">
                                         <rect key="frame" x="0.0" y="225" width="334" height="18"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,6 +138,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Q0E-5O-2uA" firstAttribute="height" secondItem="yMS-hk-qv7" secondAttribute="height" id="2kF-mR-z7Y"/>
+                                    <constraint firstItem="4am-xq-GtJ" firstAttribute="width" secondItem="yMS-hk-qv7" secondAttribute="width" id="ZO9-8I-6Du"/>
                                     <constraint firstItem="j7C-cf-h2C" firstAttribute="height" secondItem="yMS-hk-qv7" secondAttribute="height" id="fk5-Qg-CGj"/>
                                 </constraints>
                             </stackView>
@@ -184,7 +185,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R3M-Ot-kau" firstAttribute="top" secondItem="FB5-H6-6VO" secondAttribute="top" constant="100" id="0NE-lO-Pzg"/>
-                            <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eFJ-Pi-qlT" secondAttribute="trailing" constant="40" id="0Vj-R0-w80"/>
+                            <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" secondItem="eFJ-Pi-qlT" secondAttribute="trailing" constant="40" id="0Vj-R0-w80"/>
                             <constraint firstItem="FB5-H6-6VO" firstAttribute="trailing" secondItem="Qpu-73-3Ru" secondAttribute="trailing" constant="40" id="0qp-Pb-Jzx"/>
                             <constraint firstItem="Qpu-73-3Ru" firstAttribute="top" secondItem="R3M-Ot-kau" secondAttribute="bottom" constant="5" id="JXH-Uz-OgR"/>
                             <constraint firstItem="6gB-DY-UXh" firstAttribute="height" secondItem="yMS-hk-qv7" secondAttribute="height" id="WzI-cv-2Fp"/>
@@ -740,7 +741,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-ny-fxw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-ny-fxw">
                                         <rect key="frame" x="0.0" y="71" width="334" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

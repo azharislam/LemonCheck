@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct DataConstants {
+
+    struct Users {
+        static let users = "users"
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let email = "email"
+        static let password = "password"
+        static let uid = "uid"
+        static let deviceId = "deviceId"
+    }
+}

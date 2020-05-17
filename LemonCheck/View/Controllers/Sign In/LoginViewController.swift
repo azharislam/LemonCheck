@@ -11,7 +11,6 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -20,7 +19,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgottenPassword: UIButton!
     @IBOutlet weak var helloTitle: UILabel!
     @IBOutlet weak var helloSubtitle: UILabel!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +27,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
-        signIn()
+        let error = validateFields()
+
+        if error != nil {
+            showError(error!)
+        } else {
+            signIn()
+        }
     }
 
     @IBAction func forgotPasswordTapped(_ sender: Any) {
@@ -38,14 +42,13 @@ class LoginViewController: UIViewController {
         }
     }
 
-
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 
     private func setUpNavigation() {
         navigationController?.navigationBar.isHidden = true
-        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.setImage(UIImage(named: Constants.Media.back), for: .normal)
         backButton.tintColor = .darkGray
     }
 
@@ -68,20 +71,35 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
             if let error = error {
                 self.loginButton.loadingIndicator(show: false)
-                self.errorLabel.text = error.localizedDescription
-                self.errorLabel.alpha = 1
+                self.showError(error)
             } else {
-                self.transitionToHome()
                 self.loginButton.loadingIndicator(show: false)
+                self.transitionToHome()
             }
         }
     }
+
+    private func validateFields() -> String? {
+        if loginEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            loginPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return Constants.Signup.fillInFields
+        }
+
+        return nil
+    }
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+
 
     private func transitionToHome() {
         if let homeVC = HomeViewController.instantiate() {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
+            homeVC.presentAlert(withTitle: "Welcome Back", message: "Login successful")
         }
     }
 

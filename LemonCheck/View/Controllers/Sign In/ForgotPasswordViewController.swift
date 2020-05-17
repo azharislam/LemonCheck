@@ -29,11 +29,15 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     @IBAction func resetPasswordTapped(_ sender: Any) {
-        guard let email = resetEmailField.text, email != "" else {
-            return print("Invalid email")
-        }
+        guard let email = resetEmailField.text else { return }
+        let error = validateField()
 
-        resetPassword(email: email)
+        if error != nil {
+            guard let error = error else {return}
+            showError(error)
+        } else {
+            self.resetPassword(email: email)
+        }
     }
 
     private func popView() {
@@ -47,17 +51,25 @@ class ForgotPasswordViewController: UIViewController {
 
     private func setUpNavigation() {
         navigationController?.navigationBar.isHidden = true
-        backButton.setImage(UIImage(named: "return"), for: .normal)
+        backButton.setImage(UIImage(named: Constants.Media.back), for: .normal)
         backButton.tintColor = .darkGray
     }
 
     private func setUpElements() {
+        errorLabel.alpha = 0
         Utilities.styleTextField(resetEmailField)
         Utilities.styleFilledButton(resetPasswordButton)
-        Utilities.formatBoldTitle(forgotPwTitle, "Forgot your password")
-        Utilities.formatBody(forgotPwSubtitle, "We will send a password reset link to the registered email.")
+        Utilities.formatBoldTitle(forgotPwTitle, Constants.UI.resetPwTitle)
+        Utilities.formatBody(forgotPwSubtitle, Constants.UI.resetPwSubtitle)
         self.view.addBackground()
         self.hideKeyboardWhenTappedAround()
+    }
+
+    private func validateField() -> String? {
+        if resetEmailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return Constants.Signup.resetEmail
+        }
+        return nil
     }
 
     func resetPassword(email: String) {
@@ -67,13 +79,11 @@ class ForgotPasswordViewController: UIViewController {
                 DispatchQueue.main.async {
                     if let error = error {
                         self.resetPasswordButton.loadingIndicator(show: false)
-                        self.showError(error.localizedDescription)
+                        self.presentError(error)
                     } else {
                         self.resetPasswordButton.loadingIndicator(show: false)
-                        let resetEmailSentAlert = UIAlertController(title: "Reset Link Sent", message: "Check your email and follow instructions", preferredStyle: .alert)
-                        resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.navigationController?.popViewController(animated: true)
-                        self.navigationController?.present(resetEmailSentAlert, animated: true, completion: nil)
+                        self.navigationController?.presentAlert(withTitle: Constants.Alert.resetLink, message: Constants.Alert.resetText)
                     }
                 }
             })

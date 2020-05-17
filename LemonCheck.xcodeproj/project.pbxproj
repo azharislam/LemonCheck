@@ -36,6 +36,8 @@
 		6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */; };
 		6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050C2470872E0091C4A7 /* DatabaseErrors.swift */; };
 		6346050F2470B06A0091C4A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* UserData.swift */; };
+		634605112470B7E90091C4A7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605102470B7E90091C4A7 /* Name.swift */; };
+		634605132470C2BC0091C4A7 /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* UIAlertViewController.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Spinner.swift"; sourceTree = "<group>"; };
 		6346050C2470872E0091C4A7 /* DatabaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrors.swift; sourceTree = "<group>"; };
 		6346050E2470B06A0091C4A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		634605102470B7E90091C4A7 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		634605122470C2BC0091C4A7 /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				634604FD246E01560091C4A7 /* UIViewController + UI.swift */,
 				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
 				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
+				634605122470C2BC0091C4A7 /* UIAlertViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			children = (
 				6346050C2470872E0091C4A7 /* DatabaseErrors.swift */,
 				6346050E2470B06A0091C4A7 /* UserData.swift */,
+				634605102470B7E90091C4A7 /* Name.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
 				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
 				63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */,
+				634605132470C2BC0091C4A7 /* UIAlertViewController.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
 				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
@@ -411,6 +418,7 @@
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
 				63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */,
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
+				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
 			);

@@ -24,45 +24,11 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         setUpNavigation()
-        self.view.addBackground()
+        view.addBackground()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-    }
-
-    private func setUpNavigation() {
-        navigationController?.navigationBar.isHidden = true
-        backButton.setImage(UIImage(named: "return"), for: .normal)
-        backButton.tintColor = .darkGray
-    }
-
-
-    private func setUpElements() {
-        errorLabel.alpha = 0
-        Utilities.styleTextField(firstNameField)
-        Utilities.styleTextField(emailField)
-        Utilities.styleTextField(passwordField)
-        Utilities.styleFilledButton(signupButton)
-        Utilities.formatTitle(helloTitle)
-        Utilities.formatSubtitle(helloSubtitle)
-        self.hideKeyboardWhenTappedAround()
-    }
-
-    private func validateFields() -> String? {
-
-        // Check that all fields are filled in
-        if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return "Please fill in all fields"
-        }
-
-        if Validation.isPasswordValid(textFrom(passwordField)) == false {
-            return "Please make sure your password is at least 8 characters, contains a special character and a number"
-        }
-
-        return nil
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
@@ -77,6 +43,95 @@ class RegistrationViewController: UIViewController {
         }
     }
 
+    func createUser(auth: Auth) {
+        self.signupButton.loadingIndicator(show: true)
+        guard let fullNameField = firstNameField.text else {return}
+        let fullName = Name(fullName: fullNameField)
+        let firstName = fullName.first
+        let lastName = fullName.last
+        let email = textFrom(emailField)
+        let password = textFrom(passwordField)
+        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {return}
+
+
+        // Create user
+        auth.createUser(withEmail: email, password: password) { (result, err) in
+            if err != nil {
+                guard let error = err else { return }
+                self.signupButton.loadingIndicator(show: false)
+                self.presentError(error)
+            } else {
+                // Add user to database
+                guard let createUser = result else { return }
+                let db = Firestore.firestore()
+                db.collection("users").addDocument(
+                    data: ["firstName": firstName,
+                           "lastName": lastName,
+                           "userId": createUser.user.uid,
+                           "deviceId": deviceId])
+                {
+                    (error) in
+                    guard let error = error else {return}
+                    self.presentError(error)
+                }
+                self.sendVerificationMail()
+                self.transitionToHome()
+                self.signupButton.loadingIndicator(show: false)
+            }
+        }
+    }
+
+    public func sendVerificationMail() {
+        let authUser = Auth.auth().currentUser
+        guard let isVerified = authUser?.isEmailVerified else { return }
+        
+        if authUser != nil && !isVerified {
+            authUser?.sendEmailVerification(completion: { (error) in
+                self.presentAlert(withTitle: "Success", message: "A verification link has been sent to your email")
+                //transition to verification view
+            })
+        }
+        else {
+            print("Error sending verification link")
+        }
+    }
+
+    private func setUpNavigation() {
+        navigationController?.navigationBar.isHidden = true
+        backButton.setImage(UIImage(named: Constants.Media.back), for: .normal)
+        backButton.tintColor = .darkGray
+    }
+
+    private func setUpElements() {
+        errorLabel.alpha = 0
+        Utilities.styleTextField(firstNameField)
+        Utilities.styleTextField(emailField)
+        Utilities.styleTextField(passwordField)
+        Utilities.styleFilledButton(signupButton)
+        Utilities.formatTitle(helloTitle)
+        Utilities.formatSubtitle(helloSubtitle)
+        self.hideKeyboardWhenTappedAround()
+    }
+
+    private func textFrom(_ text: UITextField) -> String {
+        guard let fieldText = text.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return ""}
+        return fieldText
+    }
+
+    private func validateFields() -> String? {
+        if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return Constants.Signup.fillInFields
+        }
+
+        if Validation.isPasswordValid(textFrom(passwordField)) == false {
+            return Constants.Signup.passwordError
+        }
+        
+        return nil
+    }
+
     private func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
@@ -87,54 +142,16 @@ class RegistrationViewController: UIViewController {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
+            homeVC.presentAlert(withTitle: "Success", message: "Your account has been successfully created")
         }
     }
 
-    func createUser(auth: Auth) {
-        self.signupButton.loadingIndicator(show: true)
-        let firstName = textFrom(firstNameField)
-        let email = textFrom(emailField)
-        let password = textFrom(passwordField)
-        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {return}
-
-
-        // Create user
-        auth.createUser(withEmail: email, password: password) { (result, err) in
-            if err != nil {
-                self.signupButton.loadingIndicator(show: false)
-                self.showError("Error creating user")
-            } else {
-                // Add user to database
-                guard let createUser = result else { return }
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstName": firstName, "userId": createUser.user.uid, "deviceId": deviceId]) { (error) in
-                    guard let error = error else {return}
-                    self.showError(error.localizedDescription)
-                }
-                self.transitionToHome()
-                self.signupButton.loadingIndicator(show: false)
-            }
+    private func transitionToLogin() {
+        if let homeVC = LoginViewController.instantiate() {
+            let rootViewController = UINavigationController(rootViewController: homeVC)
+            view.window?.rootViewController = rootViewController
+            view.window?.makeKeyAndVisible()
         }
-    }
-
-    private func sendConfirmationEmail() {
-
-        guard let authUser = Auth.auth().currentUser else { return }
-
-        // Here you check if user exist
-        if authUser.isEmailVerified == false {
-            authUser.sendEmailVerification(completion: { (error) in
-                print("Email verification sent")
-            })
-        }
-        else {
-              print("Waiting for user to be verified")
-        }
-    }
-
-    private func textFrom(_ text: UITextField) -> String {
-        guard let fieldText = text.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return ""}
-        return fieldText
     }
 
 }
