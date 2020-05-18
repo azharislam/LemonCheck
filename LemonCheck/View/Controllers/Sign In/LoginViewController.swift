@@ -96,6 +96,7 @@ class LoginViewController: UIViewController {
             if authUser != nil && !isVerified {
                 self.loginButton.loadingIndicator(show: false)
                 self.presentAlert(withTitle: "Verify Email", message: "Please verify your email first before logging in")
+                self.clearFields()
             } else {
                 self.loginButton.loadingIndicator(show: false)
                 self.transitionToHome()
@@ -110,6 +111,11 @@ class LoginViewController: UIViewController {
         }
 
         return nil
+    }
+
+    private func clearFields() {
+        loginEmail.text?.removeAll()
+        loginPassword.text?.removeAll()
     }
 
     private func showError(_ message: String) {

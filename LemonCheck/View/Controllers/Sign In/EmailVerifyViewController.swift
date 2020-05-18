@@ -60,6 +60,7 @@ class EmailVerifyViewController: UIViewController {
 
         if authUser != nil && !isVerified {
             authUser?.sendEmailVerification(completion: { (error) in
+                self.presentAlert(withTitle: "Sent", message: "Please check your email")
                 print("Verification successfully sent to new user")
             })
         }
@@ -67,6 +68,5 @@ class EmailVerifyViewController: UIViewController {
             print("Error sending verification link")
         }
     }
-    
 
 }

@@ -1009,17 +1009,11 @@
                                     <action selector="loginTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="e23-Rl-N0y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-vn-bbG">
-                                <rect key="frame" x="40" y="458" width="334" height="32.5"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Forgot your password?">
-                                            <attributes>
-                                                <color key="NSColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="15" name="AvenirNext-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-vn-bbG">
+                                <rect key="frame" x="40" y="458" width="334" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Forgot your password?">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="forgotPasswordTapped:" destination="7DI-WI-OZu" eventType="touchUpInside" id="gNm-rK-9i5"/>
