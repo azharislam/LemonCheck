@@ -9,10 +9,6 @@
 import UIKit
 import Firebase
 
-protocol AccountDetailsDelegate: NSObject {
-    func user(email: String?)
-}
-
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var firstNameField: UITextField!
@@ -23,7 +19,6 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var helloTitle: UILabel!
     @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    weak var delegate: AccountDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,8 +147,6 @@ class RegistrationViewController: UIViewController {
 
     private func transitionToVerifyEmail() {
         if let emailVC = EmailVerifyViewController.instantiate() {
-            self.delegate = emailVC
-            delegate?.user(email: textFrom(emailField))
             self.navigationController?.pushViewController(emailVC, animated: true)
         }
     }

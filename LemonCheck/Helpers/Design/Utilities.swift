@@ -91,7 +91,8 @@ final class Utilities {
         label.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
     }
 
-    static func formatEmailTitle(_ label: UILabel) {
+    static func formatEmailTitle(_ label: UILabel, _ string: String) {
+        label.text = string
         label.textColor = .darkGray
         label.font = UIFont(name: "AvenirNext-Bold", size: 20)
     }

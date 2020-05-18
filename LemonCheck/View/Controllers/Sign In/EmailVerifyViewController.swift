@@ -33,6 +33,7 @@ class EmailVerifyViewController: UIViewController {
 
     @IBAction func resendTapped(_ sender: Any) {
         sendVerificationMail()
+        print("resend tapped")
     }
 
     private func setUpNavigation() {
@@ -42,10 +43,11 @@ class EmailVerifyViewController: UIViewController {
     }
 
     private func setUpElements() {
+        guard let userEmail = Auth.auth().currentUser?.email else { return }
         Utilities.styleFilledButton(loginButton)
         Utilities.stylePasswordButton(resendButton)
         Utilities.formatBoldTitle(verifyInfoLabel, "An email has been sent to")
-        Utilities.formatEmailTitle(emailLabel)
+        Utilities.formatEmailTitle(emailLabel, userEmail)
         Utilities.formatBoldTitle(activateLabel, "Please click the link to verify your email.")
         Utilities.formatTitle(titleLabel)
         self.view.addBackground()
@@ -66,12 +68,5 @@ class EmailVerifyViewController: UIViewController {
         }
     }
     
-
-}
-
-extension EmailVerifyViewController: AccountDetailsDelegate {
-    func user(email: String?) {
-        self.emailLabel.text = email
-    }
 
 }
