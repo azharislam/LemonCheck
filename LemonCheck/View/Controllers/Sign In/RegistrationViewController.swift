@@ -24,7 +24,6 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         setUpNavigation()
-        view.addBackground()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -109,6 +108,7 @@ class RegistrationViewController: UIViewController {
         Utilities.styleFilledButton(signupButton)
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
+        view.addBackground()
         self.hideKeyboardWhenTappedAround()
     }
 
