@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
         if error != nil {
             showError(error!)
         } else {
-           login()
+           signIn()
         }
     }
 
@@ -65,18 +65,29 @@ class LoginViewController: UIViewController {
     }
 
     private func signIn() {
-        self.loginButton.loadingIndicator(show: true)
         let userEmail = textFrom(loginEmail)
         let userPassword = textFrom(loginPassword)
-        Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
-            if let error = error {
-                self.loginButton.loadingIndicator(show: false)
-                self.showError(error)
-            } else {
-                self.loginButton.loadingIndicator(show: false)
-                self.transitionToHome()
+        self.loginButton.loadingIndicator(show: true)
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            if error == nil {
+                Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (user, error) in
+                    if let error = error {
+                        self.showError(error)
+                        return
+                    }
+                }
+
+                if Auth.auth().currentUser?.isEmailVerified == true {
+                    self.loginButton.loadingIndicator(show: false)
+                    self.transitionToHome()
+                    print("User verified")
+                } else {
+                    self.loginButton.loadingIndicator(show: false)
+                    self.presentAlert(withTitle: "Verify Email", message: "Please verify your email first before logging in")
+                    print("User not verified")
+                }
             }
-        }
+        })
     }
 
     private func login() {
@@ -86,17 +97,14 @@ class LoginViewController: UIViewController {
         self.loginButton.loadingIndicator(show: true)
 
         guard let isVerified = authUser?.isEmailVerified else { return }
-
         Auth.auth().signIn(withEmail: userEmail, password: userPassword, completion: {(user, error) in
             if let firebaseError = error {
                 self.loginButton.loadingIndicator(show: false)
                 self.showError(firebaseError)
             }
-
             if authUser != nil && !isVerified {
                 self.loginButton.loadingIndicator(show: false)
                 self.presentAlert(withTitle: "Verify Email", message: "Please verify your email first before logging in")
-                self.clearFields()
             } else {
                 self.loginButton.loadingIndicator(show: false)
                 self.transitionToHome()

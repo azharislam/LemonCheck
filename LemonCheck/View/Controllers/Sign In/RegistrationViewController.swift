@@ -20,6 +20,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
 
+    var userCount = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
@@ -31,8 +33,6 @@ class RegistrationViewController: UIViewController {
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
-
-        // Validate fields
         let error = validateFields()
 
         if error != nil {

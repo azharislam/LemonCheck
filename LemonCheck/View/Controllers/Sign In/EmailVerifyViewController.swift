@@ -54,19 +54,40 @@ class EmailVerifyViewController: UIViewController {
         self.verifyImage.image = UIImage(named: "verifyEmail1")
     }
 
+    private func userVerified() {
+        let authUser = Auth.auth().currentUser
+               guard let isVerified = authUser?.isEmailVerified else { return }
+
+        if authUser != nil && isVerified {
+            transitionToHome()
+        } else {
+            
+        }
+    }
+
+    private func transitionToHome() {
+        if let homeVC = HomeViewController.instantiate() {
+            let rootViewController = UINavigationController(rootViewController: homeVC)
+            view.window?.rootViewController = rootViewController
+            view.window?.makeKeyAndVisible()
+            homeVC.presentAlert(withTitle: "Success", message: "Welcome to Lemon Check")
+        }
+    }
+
     public func sendVerificationMail() {
         let authUser = Auth.auth().currentUser
-        guard let isVerified = authUser?.isEmailVerified else { return }
 
-        if authUser != nil && !isVerified {
-            authUser?.sendEmailVerification(completion: { (error) in
-                self.presentAlert(withTitle: "Sent", message: "Please check your email")
-                print("Verification successfully sent to new user")
-            })
-        }
-        else {
-            print("Error sending verification link")
-        }
+        authUser?.reload(completion: { (error) in
+            if error != nil {
+                authUser?.sendEmailVerification(completion: { (error) in
+                    self.presentAlert(withTitle: "Sent", message: "Please check your email")
+                    print("Verification successfully sent to new user")
+                })
+            } else {
+                guard let error = error else {return}
+                print(error.localizedDescription)
+            }
+        })
     }
 
 }
