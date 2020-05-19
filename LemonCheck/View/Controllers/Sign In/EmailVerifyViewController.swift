@@ -32,7 +32,7 @@ class EmailVerifyViewController: UIViewController {
     }
 
     @IBAction func resendTapped(_ sender: Any) {
-        sendVerificationMail()
+//        sendVerificationMail()
         print("resend tapped")
     }
 
