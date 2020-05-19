@@ -74,7 +74,7 @@ class EmailVerifyViewController: UIViewController {
         }
     }
 
-    public func sendVerificationMail() {
+    private func sendVerificationMail() {
         let authUser = Auth.auth().currentUser
 
         authUser?.reload(completion: { (error) in

@@ -19,9 +19,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var helloTitle: UILabel!
     @IBOutlet weak var helloSubtitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
-
-    var userCount = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()

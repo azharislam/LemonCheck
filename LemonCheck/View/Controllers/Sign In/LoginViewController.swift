@@ -121,11 +121,6 @@ class LoginViewController: UIViewController {
         return nil
     }
 
-    private func clearFields() {
-        loginEmail.text?.removeAll()
-        loginPassword.text?.removeAll()
-    }
-
     private func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
