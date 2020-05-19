@@ -71,7 +71,8 @@ class ForgotPasswordViewController: UIViewController {
     func resetPassword(email: String) {
         if LoginViewController.instantiate() != nil {
             self.resetPasswordButton.loadingIndicator(show: true)
-            Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            Auth.auth().sendPasswordReset(withEmail: email, completion: { [weak self] (error) in
+                guard let self = self else {return}
                 DispatchQueue.main.async {
                     if let error = error {
                         self.resetPasswordButton.loadingIndicator(show: false)

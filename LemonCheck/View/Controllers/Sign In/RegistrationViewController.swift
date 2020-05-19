@@ -52,28 +52,31 @@ class RegistrationViewController: UIViewController {
 
 
         // Create user
-        auth.createUser(withEmail: email, password: password) { (result, err) in
-            if err != nil {
-                guard let error = err else { return }
-                self.signupButton.loadingIndicator(show: false)
-                self.presentError(error)
-            } else {
-                // Add user to database
-                guard let createUser = result else { return }
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(
-                    data: ["firstName": firstName,
-                           "lastName": lastName,
-                           "userId": createUser.user.uid,
-                           "deviceId": deviceId])
-                {
-                    (error) in
-                    guard let error = error else {return}
+        DispatchQueue.main.async {
+            auth.createUser(withEmail: email, password: password) { [weak self] (result, err) in
+                guard let self = self else {return}
+                if err != nil {
+                    guard let error = err else { return }
+                    self.signupButton.loadingIndicator(show: false)
                     self.presentError(error)
+                } else {
+                    // Add user to database
+                    guard let createUser = result else { return }
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(
+                        data: ["firstName": firstName,
+                               "lastName": lastName,
+                               "userId": createUser.user.uid,
+                               "deviceId": deviceId])
+                    {
+                        (error) in
+                        guard let error = error else {return}
+                        self.presentError(error)
+                    }
+                    self.sendVerificationMail()
+                    self.transitionToVerifyEmail()
+                    self.signupButton.loadingIndicator(show: false)
                 }
-                self.sendVerificationMail()
-                self.transitionToVerifyEmail()
-                self.signupButton.loadingIndicator(show: false)
             }
         }
     }
