@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
         if error != nil {
             showError(error!)
         } else {
-            signIn()
+           signIn()
         }
     }
 
@@ -65,17 +65,31 @@ class LoginViewController: UIViewController {
     }
 
     private func signIn() {
-        self.loginButton.loadingIndicator(show: true)
         let userEmail = textFrom(loginEmail)
         let userPassword = textFrom(loginPassword)
-        Auth.auth().signIn(withEmail: userEmail, password: userPassword) { (result, error) in
-            if let error = error {
-                self.loginButton.loadingIndicator(show: false)
-                self.showError(error)
-            } else {
-                self.loginButton.loadingIndicator(show: false)
-                self.transitionToHome()
-            }
+        self.loginButton.loadingIndicator(show: true)
+        DispatchQueue.main.async {
+            Auth.auth().currentUser?.reload(completion: { (error) in
+                if error == nil {
+                    Auth.auth().signIn(withEmail: userEmail, password: userPassword) { [weak self] (user, error) in
+                        guard let self = self else {return}
+                        if let error = error {
+                            self.showError(error)
+                            return
+                        }
+                    }
+
+                    if Auth.auth().currentUser?.isEmailVerified == true {
+                        self.loginButton.loadingIndicator(show: false)
+                        self.transitionToHome()
+                        print("User verified")
+                    } else {
+                        self.loginButton.loadingIndicator(show: false)
+                        self.presentAlert(withTitle: "Verify Email", message: "Please verify your email first before logging in")
+                        print("User not verified")
+                    }
+                }
+            })
         }
     }
 
@@ -99,7 +113,7 @@ class LoginViewController: UIViewController {
             let rootViewController = UINavigationController(rootViewController: homeVC)
             view.window?.rootViewController = rootViewController
             view.window?.makeKeyAndVisible()
-            homeVC.presentAlert(withTitle: "Welcome Back", message: "Login successful")
+            homeVC.presentAlert(withTitle: "Success", message: "Welcome to Lemon Check")
         }
     }
 

@@ -31,13 +31,14 @@
 		63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C32246640680031F6DB /* VerifyVehicleViewController.swift */; };
 		63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C3624676F1D0031F6DB /* MOTDataModel.swift */; };
 		63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
-		634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FD246E01560091C4A7 /* UIViewController + UI.swift */; };
+		634604FE246E01560091C4A7 /* ViewController + Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */; };
 		63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */; };
 		6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */; };
 		6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050C2470872E0091C4A7 /* DatabaseErrors.swift */; };
 		6346050F2470B06A0091C4A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* UserData.swift */; };
 		634605112470B7E90091C4A7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605102470B7E90091C4A7 /* Name.swift */; };
-		634605132470C2BC0091C4A7 /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* UIAlertViewController.swift */; };
+		634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* ViewController + Alert.swift */; };
+		634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605142471D9140091C4A7 /* EmailVerifyViewController.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,13 +69,14 @@
 		63356C302465FF620031F6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63356C32246640680031F6DB /* VerifyVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleViewController.swift; sourceTree = "<group>"; };
 		63356C3624676F1D0031F6DB /* MOTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTDataModel.swift; sourceTree = "<group>"; };
-		634604FD246E01560091C4A7 /* UIViewController + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UI.swift"; sourceTree = "<group>"; };
+		634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Keyboard.swift"; sourceTree = "<group>"; };
 		634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Background.swift"; sourceTree = "<group>"; };
 		63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Spinner.swift"; sourceTree = "<group>"; };
 		6346050C2470872E0091C4A7 /* DatabaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrors.swift; sourceTree = "<group>"; };
 		6346050E2470B06A0091C4A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		634605102470B7E90091C4A7 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
-		634605122470C2BC0091C4A7 /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
+		634605122470C2BC0091C4A7 /* ViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Alert.swift"; sourceTree = "<group>"; };
+		634605142471D9140091C4A7 /* EmailVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewController.swift; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,10 +175,10 @@
 			children = (
 				63356C0E2465B0660031F6DB /* Date + Time.swift */,
 				63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */,
-				634604FD246E01560091C4A7 /* UIViewController + UI.swift */,
+				634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */,
+				634605122470C2BC0091C4A7 /* ViewController + Alert.swift */,
 				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
 				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
-				634605122470C2BC0091C4A7 /* UIAlertViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 				63356C122465B4380031F6DB /* RegistrationViewController.swift */,
 				63356C142465B4440031F6DB /* LoginViewController.swift */,
 				63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */,
+				634605142471D9140091C4A7 /* EmailVerifyViewController.swift */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
@@ -400,10 +403,11 @@
 				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
 				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
 				63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */,
-				634605132470C2BC0091C4A7 /* UIAlertViewController.swift in Sources */,
+				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
 				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
+				634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
 				63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */,
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
@@ -411,7 +415,7 @@
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
 				63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
-				634604FE246E01560091C4A7 /* UIViewController + UI.swift in Sources */,
+				634604FE246E01560091C4A7 /* ViewController + Keyboard.swift in Sources */,
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
 				6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
