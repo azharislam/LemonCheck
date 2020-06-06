@@ -50,7 +50,7 @@ class EmailVerifyViewController: UIViewController {
         Utilities.formatEmailTitle(emailLabel, userEmail)
         Utilities.formatBoldTitle(activateLabel, "Please click the link to verify your email.")
         Utilities.formatTitle(titleLabel)
-        self.view.addBackground()
+        self.view.addLoginBackground()
         self.verifyImage.image = UIImage(named: "verifyEmail1")
     }
 

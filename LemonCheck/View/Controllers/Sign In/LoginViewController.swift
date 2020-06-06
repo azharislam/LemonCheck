@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         Utilities.stylePasswordButton(forgottenPassword)
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
-        self.view.addBackground()
+        self.view.addLoginBackground()
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -77,6 +77,7 @@ class LoginViewController: UIViewController {
                             self.showError(error)
                             return
                         }
+                        self.loginButton.loadingIndicator(show: false)
                     }
 
                     if Auth.auth().currentUser?.isEmailVerified == true {

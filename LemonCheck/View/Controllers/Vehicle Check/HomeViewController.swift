@@ -17,11 +17,16 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
+
+    
     private let transition = SlideTransition()
     weak var delegate: RegSearchDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchField.delegate = self
+        Utilities.styleSearchField(searchField)
         setNavigationItems()
     }
 
@@ -39,6 +44,8 @@ class HomeViewController: UIViewController {
         navigationBar?.barTintColor = UIColor.white
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         self.view.backgroundColor = UIColor.white
+        self.view.addMainBackground()
+        self.logoImage.image = UIImage(named: "logoImage")
     }
 
     @IBAction func searchPressed(_ sender: Any) {
@@ -73,4 +80,17 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         return transition
     }
 
+}
+
+extension HomeViewController: UITextFieldDelegate {
+
+func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+    let currentCharacterCount = textField.text?.count ?? 0
+    if range.length + range.location > currentCharacterCount {
+        return false
+    }
+    let newLength = currentCharacterCount + string.count - range.length
+    return newLength <= 8
+    }
 }

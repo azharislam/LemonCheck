@@ -57,7 +57,7 @@ class ForgotPasswordViewController: UIViewController {
         Utilities.styleFilledButton(resetPasswordButton)
         Utilities.formatBoldTitle(forgotPwTitle, Constants.UI.resetPwTitle)
         Utilities.formatBody(forgotPwSubtitle, Constants.UI.resetPwSubtitle)
-        self.view.addBackground()
+        self.view.addLoginBackground()
         self.hideKeyboardWhenTappedAround()
     }
 

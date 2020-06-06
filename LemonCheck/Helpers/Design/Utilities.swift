@@ -53,6 +53,23 @@ final class Utilities {
         textfield.layer.addSublayer(bottomLine)
     }
 
+    static func styleSearchField(_ textfield: UITextField) {
+
+        // Text
+        textfield.textColor = .black //change to password text
+        textfield.font = UIFont(name: "UKNumberPlate", size: 36)
+
+        // Placeholder
+        let color = UIColor.darkGray
+        let placeholder = textfield.placeholder ?? ""
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : color])
+
+        // Textfield
+        textfield.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
+        textfield.textAlignment = .center
+        textfield.borderStyle = .none
+    }
+
     // MARK: - Buttons
 
     static func styleFilledButton(_ button: UIButton) {

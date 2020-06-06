@@ -39,6 +39,7 @@
 		634605112470B7E90091C4A7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605102470B7E90091C4A7 /* Name.swift */; };
 		634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* ViewController + Alert.swift */; };
 		634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605142471D9140091C4A7 /* EmailVerifyViewController.swift */; };
+		63A50AF7248BEAB000B4E023 /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63A50AF6248BEAB000B4E023 /* UKNumberPlate.ttf */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		634605102470B7E90091C4A7 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		634605122470C2BC0091C4A7 /* ViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Alert.swift"; sourceTree = "<group>"; };
 		634605142471D9140091C4A7 /* EmailVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewController.swift; sourceTree = "<group>"; };
+		63A50AF6248BEAB000B4E023 /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		63356C0A2465AC440031F6DB /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				63A50AF5248BEA9800B4E023 /* Fonts */,
 				63356C242465C1FE0031F6DB /* Utilities.swift */,
 				63356C2A2465D15A0031F6DB /* SlideTransition.swift */,
 			);
@@ -271,6 +274,14 @@
 				634605102470B7E90091C4A7 /* Name.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		63A50AF5248BEA9800B4E023 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				63A50AF6248BEAB000B4E023 /* UKNumberPlate.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
@@ -344,6 +355,7 @@
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
+				63A50AF7248BEAB000B4E023 /* UKNumberPlate.ttf in Resources */,
 				63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

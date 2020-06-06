@@ -109,7 +109,7 @@ class RegistrationViewController: UIViewController {
         Utilities.styleFilledButton(signupButton)
         Utilities.formatTitle(helloTitle)
         Utilities.formatSubtitle(helloSubtitle)
-        view.addBackground()
+        view.addLoginBackground()
         self.hideKeyboardWhenTappedAround()
     }
 
