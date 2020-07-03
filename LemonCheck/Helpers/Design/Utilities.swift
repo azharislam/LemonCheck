@@ -85,6 +85,14 @@ final class Utilities {
         button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
     }
 
+    static func styleSearchButton(_ button: UIButton) {
+
+        button.backgroundColor = UIColor.init(red: 57/255, green: 127/255, blue: 210/255, alpha: 1)
+        button.setTitle("GO", for: .normal)
+        button.setTitleColor(UIColor.darkGray, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)
+    }
+
     static func stylePasswordButton(_ button: UIButton) {
         button.setTitleColor(.darkGray, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir New", size: 20)

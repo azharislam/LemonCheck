@@ -65,7 +65,6 @@ class HomeViewController: UIViewController {
             print("Please enter a valid vehicle registration number")
         }
     }
-
 }
 
 extension HomeViewController: UIViewControllerTransitioningDelegate {
@@ -84,13 +83,14 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
 
 extension HomeViewController: UITextFieldDelegate {
 
-func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-    let currentCharacterCount = textField.text?.count ?? 0
-    if range.length + range.location > currentCharacterCount {
-        return false
-    }
-    let newLength = currentCharacterCount + string.count - range.length
-    return newLength <= 8
+        let currentCharacterCount = textField.text?.count ?? 0
+        if range.length + range.location > currentCharacterCount {
+            return false
+        }
+        let newLength = currentCharacterCount + string.count - range.length
+
+        return newLength <= 8
     }
 }
