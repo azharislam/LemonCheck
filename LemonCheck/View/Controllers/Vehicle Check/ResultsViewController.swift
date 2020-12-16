@@ -1,4 +1,3 @@
-//
 //  ResultsViewController.swift
 //  LemonCheck
 //
@@ -7,96 +6,119 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
+
 
 class ResultsViewController: UIViewController {
-
-    private let transition = SlideTransition()
+    
+    @IBOutlet weak var goToResultsButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var makeLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var colourLabel: UILabel!
+    @IBOutlet weak var prevKeeperLabel: UILabel!
+    @IBOutlet weak var writtenOffLabel: UILabel!
+    @IBOutlet weak var writeOffDate: UILabel!
+    @IBOutlet weak var financeRecordCountLabel: UILabel!
+    @IBOutlet weak var financeRecordInfoLabel: UILabel!
+    @IBOutlet weak var stolenLabel: UILabel!
+    @IBOutlet weak var stolenInfoLabel: UILabel!
+    @IBOutlet weak var regLabel: UILabel!
+    @IBOutlet weak var firstRegisteredData: UILabel!
+    @IBOutlet weak var importedData: UILabel!
+    @IBOutlet weak var mileageAnomalyData: UILabel!
+    
+    
     private let service = RCNetworkRequest()
+    private var vehicle: MOTCheck?
+    private let transition = SlideTransition()
 
-    private var database = Database.database().reference()
-    private var vehicle: Vehicle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dismiss(animated: true)
+        let start = Date()
+        setUpView()
+        verifyCheckFor(vrm: VehicleInput.shared.reg!)
+        let end = Date()
+        print("Elapsed Time Results: \(end.timeIntervalSince(start))")
     }
-
-    @IBAction func menuButtonTapped(_ sender: Any) {
-        if let menuVc = MenuViewController.instantiate() {
-            menuVc.modalPresentationStyle = .overCurrentContext
-            menuVc.transitioningDelegate = self
-            present(menuVc, animated: true)
-        }
+    
+    
+    func setUpView() {
+        navigationItem.hidesBackButton = true
     }
-
-    func setNavigationItems() {
-            let navigationBar = navigationController?.navigationBar
-            navigationBar?.barTintColor = UIColor.white
-            self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-            self.view.backgroundColor = UIColor.white
-        }
+    
 
     func displayVehicleInfo(using viewModel: VdiViewModel) {
-//        userRegLabel?.text = viewModel.vrm
-//        makeLabel?.text = viewModel.make
-//        modelLabel?.text = viewModel.model
+        let motViewModel = MotViewModel(dataModel: vehicle!)
+        let txtReg:String = VehicleInput.shared.reg!
+        
+        if(viewModel.make == nil) {
+            print("Error, no data retrieved")
+            return
+        } else {
+        regLabel?.text = txtReg
+            makeLabel?.text = String("\(motViewModel.year!) \(motViewModel.colour!) \(viewModel.make!) \(motViewModel.model!)")
+        prevKeeperLabel.text = String("\(viewModel.previousKeeperCount!)")
+        importedData.text = viewModel.imported?.description
+
+        
+        if(viewModel.writtenOff == false) {
+            //writtenOffLabel.textColor = UIColor.green
+            writtenOffLabel.text = "No"
+        } else {
+            writtenOffLabel.text = "Yes"
+        }
+        
+        
+        if(viewModel.financeRecordList == []) {
+            //financeRecordInfoLabel.textColor = UIColor.green
+            financeRecordInfoLabel.text = "No"
+        } else {
+            financeRecordInfoLabel.text = "Yes"
+        }
+        
+
+        if(viewModel.stolen == false) {
+            //stolenLabel.textColor = UIColor.green
+            stolenLabel.text = "No"
+        } else {
+            stolenLabel.text = "Yes"
+        }
+            
+        
+            if(viewModel.imported == false) {
+            //stolenLabel.textColor = UIColor.green
+            importedData.text = "No"
+        } else {
+            importedData.text = "Yes"
+        }
+            
+        }
     }
-
-    func searchReferenceId() -> String {
-        let uuid = UUID().uuidString
-        return "VRS" + uuid
-    }
-
-
-    func vehicleSearchResults(_ viewModel: VdiViewModel) -> [String: Any] {
-        let results: [String: Any] = [
-            "Reference" : searchReferenceId(),
-            "Date" : Date().string(format: "yyyy-MM-dd"),
-            "Vrm" : viewModel.vrm ?? "",
-            "Make" : viewModel.make ?? "",
-            "Model": viewModel.model ?? "",
-            "YearOfManufacture" : viewModel.yearOfManufacture ?? "",
-            "PreviousKeeperCount" : viewModel.previousKeeperCount ?? 0,
-            "WrittenOff" : viewModel.writtenOff ?? false,
-            "WriteOffCategory" : viewModel.writeOffCategory ?? "Not available",
-            "WriteOffDate" : viewModel.writeOffDate ?? "",
-            "FinanceRecordCount" : viewModel.financeRecordCount ?? 0,
-            "FinanceRecordList" : viewModel.financeRecordList ?? [""],
-            "Stolen" : viewModel.stolen ?? false,
-            "StolenInfoSource" : viewModel.stolenInfoSource ?? "",
-            "Scrapped" : viewModel.scrapped ?? false,
-            "ScrapDate" : viewModel.scrapDate ?? "",
-            "Imported" : viewModel.imported ?? false,
-            "ImportDate" : viewModel.importedDate ?? ""
-        ]
-
-        return results
-    }
-
 }
 
+
 extension ResultsViewController: RegSearchDelegate {
+    
     func verifyCheckFor(vrm: String?) {
-        //
-    }
-
-    func getFullCheck(vrm: String?) {
-        guard let authUser = Auth.auth().currentUser, let userVrm = vrm else { return }
-
-        let currentDate = Date().description
-
-        service.getFullVehicleDataFrom(regNumber: userVrm) {[weak self] (response, error) in
+        guard let userVrm = vrm else {
+            print("UNEXPECTEDLY RETURNED")
+            return
+        }
+        
+        service.getFullVehicleDataFrom(regNumber: userVrm, completion: { [weak self] (response, error) in
             guard let self = self else {return}
             if let response = response {
                 let viewModel = VdiViewModel(dataModel: response)
                 self.displayVehicleInfo(using: viewModel)
-                self.database.child("customer").child("id").child(authUser.uid).child("vrmSearch").child(currentDate).setValue(self.vehicleSearchResults(viewModel))
+            } else {
+                print("Cannot find vehicle")
             }
-        }
+        })
     }
 }
+
 
 extension ResultsViewController: UIViewControllerTransitioningDelegate {
 
@@ -105,9 +127,10 @@ extension ResultsViewController: UIViewControllerTransitioningDelegate {
         return transition
     }
 
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
         return transition
     }
-
 }
+

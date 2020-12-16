@@ -7,61 +7,94 @@
 //
 
 import UIKit
+import Foundation
+
 
 class VerifyVehicleViewController: UIViewController {
-
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var makeLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var colourLabel: UILabel!
     @IBOutlet weak var goToResultsButton: UIButton!
+    @IBOutlet weak var regSearchField: UITextField!
+    @IBOutlet weak var ApplePayBtn: UIButton!
+    @IBOutlet weak var regLabel: UILabel!
+    @IBOutlet weak var yearAndMake: UILabel!
+    @IBOutlet weak var bgVerifyImage: UIImageView!
+    @IBOutlet weak var verifyTextImage: UIImageView!
     
     private let service = RCNetworkRequest()
     private var vehicle: MOTCheck?
     private let transition = SlideTransition()
-
-
+    private var carMake = ""
+    private var carColour = ""
+    private var carYear = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    @IBAction func menuButtonTapped(_ sender: Any) {
-        if let menuVc = MenuViewController.instantiate() {
-            menuVc.modalPresentationStyle = .overCurrentContext
-            menuVc.transitioningDelegate = self
-            present(menuVc, animated: true)
+        setView()
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
+                self.getDVLAdata()
+            }
         }
     }
     
-
-    func displayVehicleInfo(using viewModel: MotViewModel) {
-        makeLabel?.text = viewModel.make
-        modelLabel?.text = viewModel.model
-        yearLabel.text = viewModel.year
-        colourLabel.text = viewModel.colour
+    
+    func setView() {
+        super.viewWillDisappear(true)
+        //pushing background images to the back
+        self.view.sendSubviewToBack(bgVerifyImage)
+        self.view.sendSubviewToBack(verifyTextImage)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
-}
-
-extension VerifyVehicleViewController: RegSearchDelegate {
-    func verifyCheckFor(vrm: String?) {
-        guard let userVrm = vrm else { return }
-        service.getInitialVehicleData(regNumber: userVrm, completion: { [weak self] (response, error) in
-            guard let self = self else {return}
-            if let response = response {
-                let viewModel = MotViewModel(dataModel: response)
-                self.displayVehicleInfo(using: viewModel)
-            } else {
-                print("Cannot find vehicle")
+    
+    
+    @IBAction func ApplePayBtn(_ sender: Any) {
+        print("Apple pay button pressed")
+        if let rgVC = ResultsViewController.instantiate() {
+            self.navigationController?.pushViewController(rgVC, animated: true)
+        }
+    }
+    
+    
+    func getDVLAdata() {
+        NetworkManager.downloadPlayerProfile {
+            jsonData in guard let jData = jsonData else { return }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: jData, options: []) as? [String: Any] {
+                    if let registrationNumber = json["registrationNumber"] as? String {
+                        print(registrationNumber)
+                        regLabel.text = VehicleInput.shared.reg!
+                    }
+                    
+                    if let make = json["make"] as? String {
+                        carMake = make
+                    }
+                    
+                    if let colour = json["colour"] as? String {
+                        carColour = colour
+                        colourLabel.text = carColour
+                    }
+                    
+                    if let year = json["yearOfManufacture"] as? Int {
+                        carYear = year
+                        yearAndMake.text = String("\(carYear) \(carMake)")
+                        print(year)
+                    }
+                }
+            } catch let err {
+                print(err.localizedDescription)
             }
-        })
-    }
-
-    func getFullCheck(vrm: String?) {
-        //
+        }
     }
 }
+
 
 extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
 
@@ -70,9 +103,9 @@ extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
         return transition
     }
 
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
         return transition
     }
-
 }

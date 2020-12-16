@@ -10,8 +10,14 @@ import UIKit
 
 protocol RegSearchDelegate: NSObjectProtocol {
     func verifyCheckFor(vrm: String?)
-    func getFullCheck(vrm: String?)
 }
+
+
+public class VehicleInput {
+     public var reg: String? = nil
+     public static let shared = VehicleInput()
+}
+
 
 class HomeViewController: UIViewController {
 
@@ -19,47 +25,49 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     private let transition = SlideTransition()
     weak var delegate: RegSearchDelegate?
+    let backgroundImageView = UIImageView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationItems()
-    }
-
-    @IBAction func menuButtonTapped(_ sender: Any) {
-        if let menuVc = MenuViewController.instantiate() {
-            menuVc.modalPresentationStyle = .overCurrentContext
-            menuVc.transitioningDelegate = self
-            present(menuVc, animated: true)
-        }
+        setView()
     }
     
-
-    func setNavigationItems() {
-        let navigationBar = navigationController?.navigationBar
-        navigationBar?.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        self.view.backgroundColor = UIColor.white
+    
+    func setView(){
+        searchField.autocapitalizationType = .allCharacters
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        view.addSubview(backgroundImageView)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        backgroundImageView.image = UIImage(named: "background")
     }
+        
 
     @IBAction func searchPressed(_ sender: Any) {
         guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         searchFor(input: userInput)
     }
 
-    private func searchFor(input: String) {
+    
+    func searchFor(input: String) {
+        VehicleInput.shared.reg = input
         if input != "" {
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
-                self.delegate = rgVC
-                rgVC.verifyCheckFor(vrm: input)
+                //Push next screen
                 self.navigationController?.pushViewController(rgVC, animated: true)
             }
         } else {
             print("Please enter a valid vehicle registration number")
         }
     }
-
 }
+
 
 extension HomeViewController: UIViewControllerTransitioningDelegate {
 
@@ -68,9 +76,9 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         return transition
     }
 
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
         return transition
     }
-
 }
