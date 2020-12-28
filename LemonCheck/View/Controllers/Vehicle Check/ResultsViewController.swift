@@ -10,6 +10,7 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var goToResultsButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var makeLabel: UILabel!
@@ -121,17 +122,14 @@ extension ResultsViewController: RegSearchDelegate {
 }
 
 
-extension ResultsViewController: UIViewControllerTransitioningDelegate {
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        return transition
+extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        return transition
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
+    
+    
 }
-

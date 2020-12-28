@@ -27,7 +27,6 @@ class VerifyVehicleViewController: UIViewController {
     
     private let service = RCNetworkRequest()
     private var vehicle: MOTCheck?
-    private let transition = SlideTransition()
     private var carMake = ""
     private var carColour = ""
     private var carYear = 0
@@ -44,23 +43,21 @@ class VerifyVehicleViewController: UIViewController {
         }
     }
     
-    
     func setView() {
         super.viewWillDisappear(true)
-        //pushing background images to the back
-        self.view.sendSubviewToBack(bgVerifyImage)
-        self.view.sendSubviewToBack(verifyTextImage)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     
     @IBAction func ApplePayBtn(_ sender: Any) {
-        print("Apple pay button pressed")
+        print("Apple Pay button pressed")
         if let rgVC = ResultsViewController.instantiate() {
             self.navigationController?.pushViewController(rgVC, animated: true)
         }
     }
     
+    
+    // MARK:- Network call to DVLA API
     
     func getDVLAdata() {
         NetworkManager.downloadPlayerProfile {
@@ -92,20 +89,5 @@ class VerifyVehicleViewController: UIViewController {
                 print(err.localizedDescription)
             }
         }
-    }
-}
-
-
-extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        return transition
-    }
-
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        return transition
     }
 }

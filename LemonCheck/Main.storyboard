@@ -852,11 +852,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_verify2" translatesAutoresizingMaskIntoConstraints="NO" id="85e-lL-cQA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="367"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZR-JC-qsP" userLabel="ApplePayBtn">
                                 <rect key="frame" x="111" y="733" width="193" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -904,10 +899,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verify_text" translatesAutoresizingMaskIntoConstraints="NO" id="VaE-rD-SYE" userLabel="verifyTextImage">
-                                <rect key="frame" x="0.0" y="410" width="414" height="486"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iVe-KL-dln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -915,10 +906,8 @@
                     <navigationItem key="navigationItem" title="Find your vehicle" id="gDL-QO-kih"/>
                     <connections>
                         <outlet property="ApplePayBtn" destination="pZR-JC-qsP" id="aJi-ZT-bem"/>
-                        <outlet property="bgVerifyImage" destination="85e-lL-cQA" id="YnS-dz-pDQ"/>
                         <outlet property="colourLabel" destination="h6I-QO-PvD" id="bgp-tR-Ip8"/>
                         <outlet property="regLabel" destination="Pz5-3w-GQ3" id="Y33-sy-iqJ"/>
-                        <outlet property="verifyTextImage" destination="VaE-rD-SYE" id="q4h-9T-yGf"/>
                         <outlet property="yearAndMake" destination="gNi-c8-psP" id="yop-ti-SbE"/>
                         <segue destination="3RM-4T-sfp" kind="show" identifier="verifyToFullCheck" id="tin-Yd-m1o"/>
                     </connections>
@@ -935,145 +924,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUd-B2-4Z7">
-                                <rect key="frame" x="138" y="122" width="44" height="29"/>
-                                <color key="backgroundColor" red="1" green="0.80052083730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Fx5-aV-ckU">
-                                <rect key="frame" x="1" y="202" width="410" height="143.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="40L-BS-CN5">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="143.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Registered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyP-UZ-qgv">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Keepers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQJ-KM-Z27">
-                                                <rect key="frame" x="0.0" y="20.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage Discrepancy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVv-ub-1DW">
-                                                <rect key="frame" x="0.0" y="41" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imported" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u68-v1-Wbs">
-                                                <rect key="frame" x="0.0" y="61.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-pX-yih">
-                                                <rect key="frame" x="0.0" y="82" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outstanding Finance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qht-qz-Tm4">
-                                                <rect key="frame" x="0.0" y="102.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stolen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYw-zM-Og9">
-                                                <rect key="frame" x="0.0" y="123" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.80052083730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-vC-xCR">
-                                        <rect key="frame" x="205" y="0.0" width="205" height="143.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstRegisteredData" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raK-14-sK1">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Keepers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-AE-E3D" userLabel="previousKeeperLabel">
-                                                <rect key="frame" x="0.0" y="20.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MileageAnomalyData" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COJ-8w-p11">
-                                                <rect key="frame" x="0.0" y="41" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imported Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gee-Iw-Tsy">
-                                                <rect key="frame" x="0.0" y="61.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WrittenOff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqt-TO-ICe" userLabel="writtenOffLabel">
-                                                <rect key="frame" x="0.0" y="82" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FinanceInfo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkS-A8-qkQ" userLabel="financeRecordInfoLabel">
-                                                <rect key="frame" x="0.0" y="102.5" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stolen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDB-uf-TPo" userLabel="stolenLabel">
-                                                <rect key="frame" x="0.0" y="123" width="205" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="410" id="Uki-re-oLs"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year+Colour+Make+Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-R0-mwH">
-                                <rect key="frame" x="112" y="165" width="202" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZJz-wc-2x0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ycr-oh-nsD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fx5-aV-ckU" firstAttribute="leading" secondItem="Ycr-oh-nsD" secondAttribute="leading" constant="1" id="7zG-7q-PoN"/>
-                            <constraint firstItem="Fx5-aV-ckU" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" constant="114" id="CwT-gK-6gA"/>
-                            <constraint firstItem="Ycr-oh-nsD" firstAttribute="trailing" secondItem="WSD-R0-mwH" secondAttribute="trailing" constant="100" id="Ep6-rx-G9s"/>
-                            <constraint firstItem="WSD-R0-mwH" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" constant="77" id="HLo-gi-laI"/>
-                            <constraint firstItem="RUd-B2-4Z7" firstAttribute="leading" secondItem="Ycr-oh-nsD" secondAttribute="leading" constant="138" id="WR8-ZA-AGm"/>
-                            <constraint firstItem="RUd-B2-4Z7" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" constant="34" id="pU3-DR-aW5"/>
+                            <constraint firstItem="ZJz-wc-2x0" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" id="Hep-Ki-cTC"/>
+                            <constraint firstItem="ZJz-wc-2x0" firstAttribute="leading" secondItem="Ycr-oh-nsD" secondAttribute="leading" id="Vg0-L6-v5h"/>
+                            <constraint firstItem="Ycr-oh-nsD" firstAttribute="trailing" secondItem="ZJz-wc-2x0" secondAttribute="trailing" id="pxk-5C-sYA"/>
+                            <constraint firstItem="Ycr-oh-nsD" firstAttribute="bottom" secondItem="ZJz-wc-2x0" secondAttribute="bottom" id="qnY-pd-Rye"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="cs9-SW-NaC"/>
                     <connections>
-                        <outlet property="financeRecordInfoLabel" destination="BkS-A8-qkQ" id="nCZ-GT-bm2"/>
-                        <outlet property="firstRegisteredData" destination="raK-14-sK1" id="a2k-Eq-hd0"/>
-                        <outlet property="importedData" destination="gee-Iw-Tsy" id="7ca-ML-nWv"/>
-                        <outlet property="makeLabel" destination="WSD-R0-mwH" id="l1u-xV-bso"/>
-                        <outlet property="mileageAnomalyData" destination="COJ-8w-p11" id="Awc-s9-1uQ"/>
-                        <outlet property="prevKeeperLabel" destination="BtL-AE-E3D" id="iRc-FQ-UAf"/>
-                        <outlet property="regLabel" destination="RUd-B2-4Z7" id="SrM-e2-FCo"/>
-                        <outlet property="stolenLabel" destination="EDB-uf-TPo" id="rDG-cL-5Jq"/>
-                        <outlet property="writtenOffLabel" destination="sqt-TO-ICe" id="fsp-z1-Uqn"/>
+                        <outlet property="resultTable" destination="ZJz-wc-2x0" id="56U-yf-efH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7j-SW-XNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1136,7 +1003,6 @@
     </scenes>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="bg_verify2" width="828" height="1000"/>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="home" width="512" height="512"/>
         <image name="interface" width="512" height="512"/>
@@ -1145,7 +1011,6 @@
         <image name="signout" width="512" height="512"/>
         <image name="social-media" width="512" height="512"/>
         <image name="transportation" width="512" height="512"/>
-        <image name="verify_text" width="828" height="1000"/>
         <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
