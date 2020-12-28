@@ -27,7 +27,8 @@ struct DataItems : Codable {
     let vrm: String?
     let make : String?
     let model : String?
-    let yearOfManufacture: String?
+    let year: String?
+    let colour: String?
     let previousKeeperCount : Int?
     let writtenOff : Bool?
     let writeOffCategory : String?
@@ -45,7 +46,8 @@ struct DataItems : Codable {
         case vrm = "Vrm"
         case make = "Make"
         case model = "Model"
-        case yearOfManufacture = "YearOfManufacture"
+        case year = "YearOfManufacture"
+        case colour = "Colour"
         case previousKeeperCount = "PreviousKeeperCount"
         case writtenOff = "WrittenOff"
         case writeOffCategory = "WriteOffCategory"

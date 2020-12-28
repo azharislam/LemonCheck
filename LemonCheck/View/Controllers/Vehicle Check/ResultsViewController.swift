@@ -41,6 +41,7 @@ class ResultsViewController: UIViewController {
         verifyCheckFor(vrm: VehicleInput.shared.reg!)
         let end = Date()
         print("Elapsed Time Results: \(end.timeIntervalSince(start))")
+        print("results view loaded")
     }
     
     
@@ -50,50 +51,51 @@ class ResultsViewController: UIViewController {
     
 
     func displayVehicleInfo(using viewModel: VdiViewModel) {
-        guard let vehicle = vehicle else {return}
-        let motViewModel = MotViewModel(dataModel: vehicle)
         let txtReg:String = VehicleInput.shared.reg!
+        print("func displayvehicleinfo executed3")
         
         if(viewModel.make == nil) {
             print("Error, no data retrieved")
             return
         } else {
-        regLabel?.text = txtReg
-            makeLabel?.text = String("\(motViewModel.year!) \(motViewModel.colour!) \(viewModel.make!) \(motViewModel.model!)")
-        prevKeeperLabel.text = String("\(viewModel.previousKeeperCount!)")
-        importedData.text = viewModel.imported?.description
-
-        
-        if(viewModel.writtenOff == false) {
-            //writtenOffLabel.textColor = UIColor.green
-            writtenOffLabel.text = "No"
-        } else {
-            writtenOffLabel.text = "Yes"
-        }
-        
-        
-        if(viewModel.financeRecordList == []) {
-            //financeRecordInfoLabel.textColor = UIColor.green
-            financeRecordInfoLabel.text = "No"
-        } else {
-            financeRecordInfoLabel.text = "Yes"
-        }
-        
-
-        if(viewModel.stolen == false) {
-            //stolenLabel.textColor = UIColor.green
-            stolenLabel.text = "No"
-        } else {
-            stolenLabel.text = "Yes"
-        }
+            print("fun displayvehicleinfo reg: \(txtReg) ")
+            regLabel?.text = txtReg
+            makeLabel?.text = String("\(viewModel.year!) \(viewModel.colour!) \(viewModel.make!) \(viewModel.model!)")
             
-        
-            if(viewModel.imported == false) {
-            //stolenLabel.textColor = UIColor.green
-            importedData.text = "No"
-        } else {
-            importedData.text = "Yes"
-        }
+            prevKeeperLabel.text = String("\(viewModel.previousKeeperCount!)")
+            importedData.text = viewModel.imported?.description
+
+            
+            if(viewModel.writtenOff == false) {
+                //writtenOffLabel.textColor = UIColor.green
+                writtenOffLabel.text = "No"
+            } else {
+                writtenOffLabel.text = "Yes"
+            }
+            
+            
+            if(viewModel.financeRecordList == []) {
+                //financeRecordInfoLabel.textColor = UIColor.green
+                financeRecordInfoLabel.text = "No"
+            } else {
+                financeRecordInfoLabel.text = "Yes"
+            }
+            
+
+            if(viewModel.stolen == false) {
+                //stolenLabel.textColor = UIColor.green
+                stolenLabel.text = "No"
+            } else {
+                stolenLabel.text = "Yes"
+            }
+                
+            
+                if(viewModel.imported == false) {
+                //stolenLabel.textColor = UIColor.green
+                importedData.text = "No"
+            } else {
+                importedData.text = "Yes"
+            }
             
         }
     }

@@ -13,7 +13,8 @@ struct VdiViewModel {
     let vrm: String?
     let make : String?
     let model : String?
-    let yearOfManufacture: String?
+    let colour: String?
+    let year: String?
     let previousKeeperCount : Int?
     let writtenOff : Bool?
     let writeOffCategory : String?
@@ -32,7 +33,8 @@ struct VdiViewModel {
         self.vrm = dataModel.response?.dataItems?.vrm
         self.make = dataModel.response?.dataItems?.make
         self.model = dataModel.response?.dataItems?.model
-        self.yearOfManufacture = dataModel.response?.dataItems?.yearOfManufacture
+        self.year = dataModel.response?.dataItems?.year
+        self.colour = dataModel.response?.dataItems?.colour
         self.previousKeeperCount = dataModel.response?.dataItems?.previousKeeperCount
         self.writtenOff = dataModel.response?.dataItems?.writtenOff
         self.writeOffCategory = dataModel.response?.dataItems?.writeOffCategory
