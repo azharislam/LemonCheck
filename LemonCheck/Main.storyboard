@@ -972,7 +972,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellView" destination="Mz5-Cc-5Qg" id="EHc-MT-0Tz"/>
+                                            <outlet property="cellView" destination="ThC-Yu-eBd" id="XJI-UV-rZN"/>
                                             <outlet property="resultCircle" destination="Mz5-Cc-5Qg" id="eO9-aY-E9q"/>
                                             <outlet property="resultLabel" destination="yOC-Tm-HSA" id="uAx-2A-AX6"/>
                                         </connections>
