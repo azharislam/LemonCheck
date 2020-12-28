@@ -33,6 +33,22 @@ class ResultsViewController: UIViewController {
     private let service = RCNetworkRequest()
     private var vehicle: MOTCheck?
     private let transition = SlideTransition()
+    let dataElements = [
+        "Make",
+        "Model",
+        "Year Of Manufacture",
+        "Previous Keeper Count",
+        "Written Off?",
+        "Write Off Category",
+        "Write Off Date",
+        "Finance Record Count",
+        "Finance Record List",
+        "Stolen?",
+        "Stolen Info Source",
+        "Scrapped",
+        "Scrap Date",
+        "Imported?",
+        "Import Date"]
 
 
     override func viewDidLoad() {
@@ -72,10 +88,18 @@ class ResultsViewController: UIViewController {
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataElements.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = resultTable.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultsTableViewCell else { return UITableViewCell()}
+        cell.resultLabel.text = dataElements[indexPath.row]
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        cell.resultCircle.layer.cornerRadius = cell.resultCircle.frame.height / 2
+        return cell
     }
 }
