@@ -157,7 +157,6 @@
 				63356C2F2465D2D20031F6DB /* Structs */,
 				63356C0B2465AC8A0031F6DB /* Form */,
 				63356C0A2465AC440031F6DB /* Design */,
-				63356C092465AC380031F6DB /* Media */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -214,13 +213,6 @@
 				63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		63356C092465AC380031F6DB /* Media */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Media;
 			sourceTree = "<group>";
 		};
 		63356C0A2465AC440031F6DB /* Design */ = {

@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    private let transition = SlideTransition()
     weak var delegate: RegSearchDelegate?
     let backgroundImageView = UIImageView()
     
@@ -65,20 +64,5 @@ class HomeViewController: UIViewController {
         } else {
             print("Please enter a valid vehicle registration number")
         }
-    }
-}
-
-
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        return transition
-    }
-
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        return transition
     }
 }

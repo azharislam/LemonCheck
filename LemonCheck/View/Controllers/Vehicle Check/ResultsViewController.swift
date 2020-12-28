@@ -50,7 +50,8 @@ class ResultsViewController: UIViewController {
     
 
     func displayVehicleInfo(using viewModel: VdiViewModel) {
-        let motViewModel = MotViewModel(dataModel: vehicle!)
+        guard let vehicle = vehicle else {return}
+        let motViewModel = MotViewModel(dataModel: vehicle)
         let txtReg:String = VehicleInput.shared.reg!
         
         if(viewModel.make == nil) {
