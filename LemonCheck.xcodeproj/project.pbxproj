@@ -18,7 +18,6 @@
 		63356C152465B4440031F6DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C142465B4440031F6DB /* LoginViewController.swift */; };
 		63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C162465BFE90031F6DB /* HomeViewController.swift */; };
 		63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C182465BFF40031F6DB /* ResultsViewController.swift */; };
-		63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1A2465C0010031F6DB /* MenuViewController.swift */; };
 		63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1C2465C03A0031F6DB /* NetworkRequester.swift */; };
 		63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */; };
 		63356C252465C1FE0031F6DB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C242465C1FE0031F6DB /* Utilities.swift */; };
@@ -41,6 +40,8 @@
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
+		B9DA4A48259A309D00C9F50D /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */; };
+		B9DA4A49259A309D00C9F50D /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DA4A47259A309D00C9F50D /* ResultsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,6 @@
 		63356C142465B4440031F6DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63356C162465BFE90031F6DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63356C182465BFF40031F6DB /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		63356C1A2465C0010031F6DB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		63356C1C2465C03A0031F6DB /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataModel.swift; sourceTree = "<group>"; };
 		63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B9DA4A47259A309D00C9F50D /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +190,9 @@
 		63356C062465AC010031F6DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9DA4A42259A305500C9F50D /* Cells */,
 				63356C072465AC080031F6DB /* Sign In */,
 				63356C0C2465ACBA0031F6DB /* Vehicle Check */,
-				63356C0D2465ACD50031F6DB /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,14 +244,6 @@
 			path = "Vehicle Check";
 			sourceTree = "<group>";
 		};
-		63356C0D2465ACD50031F6DB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				63356C1A2465C0010031F6DB /* MenuViewController.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		63356C2F2465D2D20031F6DB /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +268,15 @@
 				7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9DA4A42259A305500C9F50D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */,
+				B9DA4A47259A309D00C9F50D /* ResultsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
+				B9DA4A49259A309D00C9F50D /* ResultsTableViewCell.xib in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
 				B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */,
@@ -397,10 +401,10 @@
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
 				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
 				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
-				63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
 				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
+				B9DA4A48259A309D00C9F50D /* ResultsTableViewCell.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
