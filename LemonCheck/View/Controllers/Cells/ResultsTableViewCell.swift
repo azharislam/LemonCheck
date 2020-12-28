@@ -9,5 +9,9 @@
 import UIKit
 
 class ResultsTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var resultCircle: UIView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var cellView: UIView!
     
 }

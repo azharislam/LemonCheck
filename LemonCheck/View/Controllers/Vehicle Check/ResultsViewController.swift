@@ -37,89 +37,37 @@ class ResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let start = Date()
-        setUpView()
-        verifyCheckFor(vrm: VehicleInput.shared.reg!)
-        let end = Date()
-        print("Elapsed Time Results: \(end.timeIntervalSince(start))")
-    }
-    
-    
-    func setUpView() {
+        resultTable.delegate = self
+        resultTable.dataSource = self
         navigationItem.hidesBackButton = true
-    }
-    
 
-    func displayVehicleInfo(using viewModel: VdiViewModel) {
-        guard let vehicle = vehicle else {return}
-        let motViewModel = MotViewModel(dataModel: vehicle)
-        let txtReg:String = VehicleInput.shared.reg!
-        
-        if(viewModel.make == nil) {
-            print("Error, no data retrieved")
-            return
-        } else {
-        regLabel?.text = txtReg
-            makeLabel?.text = String("\(motViewModel.year!) \(motViewModel.colour!) \(viewModel.make!) \(motViewModel.model!)")
-        prevKeeperLabel.text = String("\(viewModel.previousKeeperCount!)")
-        importedData.text = viewModel.imported?.description
-
-        
-        if(viewModel.writtenOff == false) {
-            //writtenOffLabel.textColor = UIColor.green
-            writtenOffLabel.text = "No"
-        } else {
-            writtenOffLabel.text = "Yes"
-        }
-        
-        
-        if(viewModel.financeRecordList == []) {
-            //financeRecordInfoLabel.textColor = UIColor.green
-            financeRecordInfoLabel.text = "No"
-        } else {
-            financeRecordInfoLabel.text = "Yes"
-        }
-        
-
-        if(viewModel.stolen == false) {
-            //stolenLabel.textColor = UIColor.green
-            stolenLabel.text = "No"
-        } else {
-            stolenLabel.text = "Yes"
-        }
-            
-        
-            if(viewModel.imported == false) {
-            //stolenLabel.textColor = UIColor.green
-            importedData.text = "No"
-        } else {
-            importedData.text = "Yes"
-        }
-            
-        }
+//        let start = Date()
+//        verifyCheckFor(vrm: VehicleInput.shared.reg!)
+//        let end = Date()
+//        print("Elapsed Time Results: \(end.timeIntervalSince(start))")
     }
 }
 
 
-extension ResultsViewController: RegSearchDelegate {
-    
-    func verifyCheckFor(vrm: String?) {
-        guard let userVrm = vrm else {
-            print("UNEXPECTEDLY RETURNED")
-            return
-        }
-        
-        service.getFullVehicleDataFrom(regNumber: userVrm, completion: { [weak self] (response, error) in
-            guard let self = self else {return}
-            if let response = response {
-                let viewModel = VdiViewModel(dataModel: response)
-                self.displayVehicleInfo(using: viewModel)
-            } else {
-                print("Cannot find vehicle")
-            }
-        })
-    }
-}
+//extension ResultsViewController: RegSearchDelegate {
+//
+//    func verifyCheckFor(vrm: String?) {
+//        guard let userVrm = vrm else {
+//            print("UNEXPECTEDLY RETURNED")
+//            return
+//        }
+//
+//        service.getFullVehicleDataFrom(regNumber: userVrm, completion: { [weak self] (response, error) in
+//            guard let self = self else {return}
+//            if let response = response {
+//                let viewModel = VdiViewModel(dataModel: response)
+////                self.displayVehicleInfo(using: viewModel)
+//            } else {
+//                print("Cannot find vehicle")
+//            }
+//        })
+//    }
+//}
 
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
