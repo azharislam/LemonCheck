@@ -62,8 +62,9 @@ class LoginViewController: UIViewController {
         appleLogInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         appleLogInButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         
-        
     }
+}
+
     
     
     /*
@@ -76,7 +77,6 @@ class LoginViewController: UIViewController {
      }
      */
     
-}
 
 extension LoginViewController: ASAuthorizationControllerDelegate {
     

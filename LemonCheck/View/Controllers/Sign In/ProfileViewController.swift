@@ -75,6 +75,6 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: LoginViewControllerDelegate {
     func didFinishAuth() {
-        label.text = "User identifier: \(UserDefaults.standard.stringArray(forKey: SignInWithAppleManager.userIdentifierKey)!)"
+        label.text = "User identifier: \(UserDefaults.standard.string(forKey: SignInWithAppleManager.userIdentifierKey)!)"
     }
 }
