@@ -76,7 +76,7 @@ extension OrdersView: ASAuthorizationControllerDelegate {
             
             Auth.auth().signIn(with: credential) { (AuthDataResult, error) in
                 if let user = AuthDataResult?.user {
-                    print("Nice! You're now signed in as \(user.uid), email: \(user.email ?? "unknown")")
+                    print("Nice! You're now signed in as \(user.uid), email: \(user.email ?? "unknown") name: ")
                 }
             }
         }
