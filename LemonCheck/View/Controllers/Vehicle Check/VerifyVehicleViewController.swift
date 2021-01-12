@@ -48,8 +48,6 @@ class VerifyVehicleViewController: UIViewController {
     func setView() {
         super.viewWillDisappear(true)
         //pushing background images to the back
-        self.view.sendSubviewToBack(bgVerifyImage)
-        self.view.sendSubviewToBack(verifyTextImage)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

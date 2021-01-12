@@ -93,16 +93,24 @@
             </objects>
             <point key="canvasLocation" x="-1971" y="-879"/>
         </scene>
-        <!--Newsfeed View Controller-->
+        <!--Orders View-->
         <scene sceneID="nrn-3f-3I3">
             <objects>
-                <viewController id="a1w-9k-osn" customClass="NewsfeedViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a1w-9k-osn" customClass="OrdersView" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpm-wO-5xQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-zE-oAU">
+                                <rect key="frame" x="169" y="496" width="125" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="a1w-9k-osn" eventType="touchUpInside" id="2G2-qR-sR8"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-SP-koq">
-                                <rect key="frame" x="131" y="433" width="153" height="30"/>
+                                <rect key="frame" x="131" y="137" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -116,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-10-fO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="-879"/>
+            <point key="canvasLocation" x="-1097.1014492753625" y="-879.24107142857144"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="aQ0-Wr-QWK">
@@ -127,21 +135,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-Xf-zQD">
-                                <rect key="frame" x="171" y="433" width="73" height="30"/>
+                                <rect key="frame" x="171" y="373" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Profile view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8H-1g-OA9">
+                                <rect key="frame" x="139" y="277.5" width="136" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nla-yF-7Ea"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nla-yF-7Ea" firstAttribute="bottom" secondItem="z8H-1g-OA9" secondAttribute="bottom" constant="515" id="Yed-uj-i0P"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DWb-Mu-BzN"/>
+                    <connections>
+                        <outlet property="label" destination="z8H-1g-OA9" id="OTA-6N-guo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnO-20-PfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="-879"/>
+            <point key="canvasLocation" x="-278.26086956521743" y="-879.24107142857144"/>
         </scene>
         <!--Find your vehicle-->
         <scene sceneID="MB6-16-Wzu">
@@ -151,11 +170,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_verify2" translatesAutoresizingMaskIntoConstraints="NO" id="85e-lL-cQA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="367"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZR-JC-qsP" userLabel="ApplePayBtn">
                                 <rect key="frame" x="111" y="733" width="193" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,10 +217,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verify_text" translatesAutoresizingMaskIntoConstraints="NO" id="VaE-rD-SYE" userLabel="verifyTextImage">
-                                <rect key="frame" x="0.0" y="410" width="414" height="486"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iVe-KL-dln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -214,10 +224,8 @@
                     <navigationItem key="navigationItem" title="Find your vehicle" id="gDL-QO-kih"/>
                     <connections>
                         <outlet property="ApplePayBtn" destination="pZR-JC-qsP" id="aJi-ZT-bem"/>
-                        <outlet property="bgVerifyImage" destination="85e-lL-cQA" id="YnS-dz-pDQ"/>
                         <outlet property="colourLabel" destination="h6I-QO-PvD" id="bgp-tR-Ip8"/>
                         <outlet property="regLabel" destination="Pz5-3w-GQ3" id="Y33-sy-iqJ"/>
-                        <outlet property="verifyTextImage" destination="VaE-rD-SYE" id="q4h-9T-yGf"/>
                         <outlet property="yearAndMake" destination="gNi-c8-psP" id="yop-ti-SbE"/>
                         <segue destination="3RM-4T-sfp" kind="show" identifier="verifyToFullCheck" id="tin-Yd-m1o"/>
                     </connections>
@@ -451,11 +459,9 @@
     </scenes>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="bg_verify2" width="828" height="1000"/>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="verify_text" width="828" height="1000"/>
         <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

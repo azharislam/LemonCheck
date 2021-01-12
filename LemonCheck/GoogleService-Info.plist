@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1063453965988-obi0ojll2dcehptk6i49ia51eslbboqo.apps.googleusercontent.com</string>
+	<string>1063453965988-431ern951e64s5q9f2pm4kqsouod7ujb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1063453965988-obi0ojll2dcehptk6i49ia51eslbboqo</string>
+	<string>com.googleusercontent.apps.1063453965988-431ern951e64s5q9f2pm4kqsouod7ujb</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBTj7WEd-bKCKT7Ar1p3NCD6Pg7rG_BFpM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>varleyParker.LemonCheck</string>
+	<string>com.varleyparker.lemoncheck</string>
 	<key>PROJECT_ID</key>
 	<string>lemoncheck-35cc5</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1063453965988:ios:01ff81964a959b93ed7031</string>
+	<string>1:1063453965988:ios:21cc3b79c32e1253ed7031</string>
 	<key>DATABASE_URL</key>
 	<string>https://lemoncheck-35cc5.firebaseio.com</string>
 </dict>

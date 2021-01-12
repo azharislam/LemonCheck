@@ -88,6 +88,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     private func signInWithExistingAccount(credential: ASAuthorizationAppleIDCredential){
         print("Sign in with existing user: \(credential.user)")
+        print("Their name is: \(credential.fullName!)")
         delegate?.didFinishAuth()
         self.dismiss(animated: true, completion: nil)
     }
@@ -103,9 +104,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         switch authorization.credential {
         
         case let appleIdCredential as ASAuthorizationAppleIDCredential:
-            let userId = appleIdCredential.user
-            UserDefaults.standard.set(userId, forKey: SignInWithAppleManager.userIdentifierKey)
             
+            let userId = appleIdCredential.user
+            //let fullName = appleIdCredential.fullName
+            UserDefaults.standard.set(userId, forKey: SignInWithAppleManager.userIdentifierKey)
+
             if let _ = appleIdCredential.email, let _ = appleIdCredential.fullName {
                 registerNewAccount(credential: appleIdCredential)
             } else {

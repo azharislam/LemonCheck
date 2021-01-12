@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    let label = UILabel()
+    @IBOutlet weak var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,15 @@ class ProfileViewController: UIViewController {
         label.numberOfLines = 0
         label.text = "User identifier: "
         
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(UIView())
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+//        view.addSubview(stackView)
+//        stackView.addArrangedSubview(label)
+//        stackView.addArrangedSubview(UIView())
+//        
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+//        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +56,7 @@ class ProfileViewController: UIViewController {
                 self.present(controller, animated: true, completion: nil)
             case .signedIn:
                 print("Signed in")
+                print("User identifier: \(UserDefaults.standard.string(forKey: SignInWithAppleManager.userIdentifierKey)!)")
             }
         }
     }
@@ -75,6 +76,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: LoginViewControllerDelegate {
     func didFinishAuth() {
+        //label.text = "User identifier: \(UserDefaults.standard.string(forKey: SignInWithAppleManager.userIdentifierKey)!)"
         label.text = "User identifier: \(UserDefaults.standard.string(forKey: SignInWithAppleManager.userIdentifierKey)!)"
     }
 }
