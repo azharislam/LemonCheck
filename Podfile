@@ -11,5 +11,6 @@ target 'LemonCheck' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase/Analytics',:modular_headers => true
   pod 'Firebase/Auth',:modular_headers => true
+  pod 'Firebase/Firestore',:modular_headers => true
   pod 'Alamofire', '~> 5.1'
 end
