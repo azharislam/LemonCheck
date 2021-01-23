@@ -12,5 +12,7 @@ target 'LemonCheck' do
   pod 'Firebase/Analytics',:modular_headers => true
   pod 'Firebase/Auth',:modular_headers => true
   pod 'Firebase/Firestore',:modular_headers => true
+  pod 'FirebaseUI',:modular_headers => true
+  pod 'Firebase',:modular_headers => true
   pod 'Alamofire', '~> 5.1'
 end
