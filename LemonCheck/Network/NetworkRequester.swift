@@ -9,7 +9,19 @@
 import Foundation
 import Alamofire
 
-final class RCNetworkRequest {
+enum APIResponseError: Error {
+    case networkFailure
+    case dataInvalid
+}
+
+protocol LCNetworkRequestDelegate: class {
+    func requestDidFinish(request: LCNetworkRequest, data: Vehicle)
+    func requestDidFinish(request: LCNetworkRequest, error: APIResponseError)
+}
+
+final class LCNetworkRequest {
+    
+    weak var delegate: LCNetworkRequestDelegate?
 
     let apiKey = "aeea2a18-a018-4207-a6f8-7fc6e29169f0"
     var regNumber = ""
@@ -31,25 +43,6 @@ final class RCNetworkRequest {
     typealias VehicleDataCompletionHandler = (Vehicle?, Error?) -> Void
     typealias MOTDataCompletionHandler = (MOTCheck?, Error?) -> Void
 
-    func getInitialVehicleData(regNumber: String, completion: @escaping MOTDataCompletionHandler) {
-        AF.request(self.motUrl + regNumber,
-                   method: .get,
-                   parameters: nil,
-                   encoding: URLEncoding.default,
-                   headers: nil,
-                   interceptor: nil).response { (responseData) in
-                    guard let data = responseData.data else {return}
-                    do {
-                        let vehicleInfo = try JSONDecoder().decode(MOTCheck.self, from: data)
-                        print("Vehicle information succesfully decoded")
-                        completion(vehicleInfo, nil)
-                    } catch {
-                        print("Error decoding == \(error)")
-                        completion(nil, error)
-                    }
-        }
-    }
-
     func getFullVehicleDataFrom(regNumber: String, completion: @escaping VehicleDataCompletionHandler) {
         AF.request(self.vdiUrl + regNumber,
                    method: .get,
@@ -61,6 +54,7 @@ final class RCNetworkRequest {
                     do {
                         let vehicleInfo = try JSONDecoder().decode(Vehicle.self, from: data)
                         print("Vehicle information succesfully decoded")
+                        self.delegate?.requestDidFinish(request: self, data: vehicleInfo)
                         completion(vehicleInfo, nil)
                     } catch {
                         print("Error decoding == \(error)")

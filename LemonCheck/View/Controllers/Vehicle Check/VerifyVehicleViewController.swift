@@ -25,7 +25,7 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var bgVerifyImage: UIImageView!
     @IBOutlet weak var verifyTextImage: UIImageView!
     
-    private let service = RCNetworkRequest()
+    private let service = LCNetworkRequest()
     private var vehicle: MOTCheck?
     private var carMake = ""
     private var carColour = ""
@@ -50,12 +50,21 @@ class VerifyVehicleViewController: UIViewController {
     
     
     @IBAction func ApplePayBtn(_ sender: Any) {
-        print("Apple Pay button pressed")
-        if let rgVC = ResultsViewController.instantiate() {
-            self.navigationController?.pushViewController(rgVC, animated: true)
+        
+        // Here we make the network call before we open the new view. This is so everything is loaded before the new view is loaded. We pass the vehicle response from the API and assign it to the vehicle instance in the Results, meaning the results will have the users vehicle search ready to access when the new view is opened.
+        
+        service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
+            guard let self = self else {return}
+            if let response = response {
+                if let rgVC = ResultsViewController.instantiate() {
+                    self.navigationController?.pushViewController(rgVC, animated: true)
+                    rgVC.vehicle = response
+                }
+            } else {
+                print("Cannot find vehicle")
+            }
         }
     }
-    
     
     // MARK:- Network call to DVLA API
     

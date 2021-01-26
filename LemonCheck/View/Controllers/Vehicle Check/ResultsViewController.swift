@@ -30,8 +30,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var mileageAnomalyData: UILabel!
     
     
-    private let service = RCNetworkRequest()
-    private var vehicle: MOTCheck?
+    private let service = LCNetworkRequest()
+    var vehicle: Vehicle?
     private let transition = SlideTransition()
     let dataElements = [
         "Make",
@@ -56,7 +56,7 @@ class ResultsViewController: UIViewController {
         resultTable.delegate = self
         resultTable.dataSource = self
         navigationItem.hidesBackButton = true
-
+        print("\(vehicle)")
 //        let start = Date()
 //        verifyCheckFor(vrm: VehicleInput.shared.reg!)
 //        let end = Date()
@@ -87,6 +87,10 @@ class ResultsViewController: UIViewController {
 
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
+//    func update(_ data: Vehicle) {
+//        self.vehicle = data
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataElements.count
     }
@@ -100,6 +104,21 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.resultLabel.text = dataElements[indexPath.row]
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         cell.resultCircle.layer.cornerRadius = cell.resultCircle.frame.height / 2
+        if vehicle?.response?.dataItems?.writtenOff == false {
+            cell.resultCircle.backgroundColor = .green
+        }
         return cell
     }
 }
+
+//extension ResultsViewController: LCNetworkRequestDelegate {
+//    func requestDidFinish(request: LCNetworkRequest, data: Vehicle) {
+//        self.update(data)
+//        self.resultTable.reloadData()
+//    }
+//
+//    func requestDidFinish(request: LCNetworkRequest, error: APIResponseError) {
+//        print(error.localizedDescription)
+//    }
+//
+//}
