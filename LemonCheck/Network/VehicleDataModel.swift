@@ -60,3 +60,70 @@ struct DataItems : Codable {
         case importDate = "ImportDate"
     }
 }
+
+extension Vehicle {
+    
+    var make: String {
+        return "\(response?.dataItems?.make ?? "")"
+    }
+    
+    var model: String {
+        return "\(response?.dataItems?.model ?? "")"
+    }
+    
+    var vrm: String {
+        return "\(response?.dataItems?.vrm ?? "")"
+    }
+    
+    var year: String {
+        return "\(response?.dataItems?.yearOfManufacture ?? "")"
+    }
+    
+    var previousKeeperCount: String {
+        return "\(response?.dataItems?.previousKeeperCount ?? 0)"
+    }
+    
+    var isWrittenOff: Bool {
+        return response?.dataItems?.writtenOff ?? false
+    }
+    
+    var isScrapped: Bool {
+        return response?.dataItems?.scrapped ?? false
+    }
+    
+    var isStolen: Bool {
+        return response?.dataItems?.stolen ?? false
+    }
+    
+    var isImported: Bool {
+        return response?.dataItems?.imported ?? false
+    }
+    
+    var financeRecordCount: String {
+        return "\(response?.dataItems?.financeRecordCount ?? 0)"
+    }
+    
+    var financeRecordList: [String]? {
+        return response?.dataItems?.financeRecordList ?? [""]
+    }
+    
+    var writeOffDate: String {
+        return "\(response?.dataItems?.writeOffDate ?? "")"
+    }
+    
+    var stolenInfoSource: String {
+        return "\(response?.dataItems?.stolenInfoSource ?? "")"
+    }
+    
+    var importDate: String {
+        return "\(response?.dataItems?.importDate ?? "")"
+    }
+    
+    var scrapDate: String {
+        return "\(response?.dataItems?.scrapDate ?? "")"
+    }
+    
+    var writeOffCategory: String {
+        return "\(response?.dataItems?.writeOffCategory ?? "")"
+    }
+}

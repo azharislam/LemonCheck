@@ -13,5 +13,14 @@ class ResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var resultCircle: UIView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
+    var isOn: Bool = false
+    
+    override func layoutSubviews() {
+        if !isOn {
+            resultCircle.backgroundColor = .green
+        } else {
+            resultCircle.backgroundColor = .red
+        }
+    }
     
 }
