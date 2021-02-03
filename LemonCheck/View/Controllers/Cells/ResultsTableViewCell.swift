@@ -2,25 +2,34 @@
 //  ResultsTableViewCell.swift
 //  LemonCheck
 //
-//  Created by Az on 28/12/2020.
-//  Copyright © 2020 Varley Parker. All rights reserved.
+//  Created by Az on 03/02/2021.
+//  Copyright © 2021 Varley Parker. All rights reserved.
 //
 
 import UIKit
 
 class ResultsTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var resultCircle: UIView!
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var cellView: UIView!
+    
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var label: UILabel!
     var isOn: Bool = false
     
     override func layoutSubviews() {
+        //if isOn
+        //show green border
+        //show Checkmark icon
+        //else show yellow arrow
+        //yellow border
+        self.layer.cornerRadius = 18
+        self.layer.borderWidth = 2
+        
         if !isOn {
-            resultCircle.backgroundColor = .green
+            self.layer.borderColor = UIColor.yellow.cgColor
+            //icon is yellow arrow
         } else {
-            resultCircle.backgroundColor = .red
+            self.layer.borderColor = UIColor.green.cgColor
+            //icon is green check
         }
+        
     }
-    
 }

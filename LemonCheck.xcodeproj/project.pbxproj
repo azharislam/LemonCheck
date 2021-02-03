@@ -40,7 +40,9 @@
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
-		B9DA4A48259A309D00C9F50D /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */; };
+		B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */; };
+		B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */; };
+		B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +83,9 @@
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,7 +275,9 @@
 		B9DA4A42259A305500C9F50D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B9DA4A46259A309D00C9F50D /* ResultsTableViewCell.swift */,
+				B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */,
+				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
+				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
+				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
 				B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */,
@@ -400,12 +407,13 @@
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
 				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
-				B9DA4A48259A309D00C9F50D /* ResultsTableViewCell.swift in Sources */,
+				B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
 				63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */,
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
+				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,

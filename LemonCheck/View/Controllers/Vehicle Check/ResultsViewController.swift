@@ -7,6 +7,19 @@
 
 import UIKit
 
+enum ResultData: Int {
+    case make
+    case model
+    case year
+    
+    case Phone
+    init?(indexPath: NSIndexPath) {
+        self.init(rawValue: indexPath.section)
+    }
+
+    static var numberOfSections: Int { return 3 }
+}
+
 
 class ResultsViewController: UIViewController {
     
@@ -55,8 +68,10 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         resultTable.delegate = self
         resultTable.dataSource = self
+        resultTable.register(UINib(nibName: "ResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
         navigationItem.hidesBackButton = true
         print("\(vehicle)")
+        resultTable.layer.cornerRadius = 18
 //        let start = Date()
 //        verifyCheckFor(vrm: VehicleInput.shared.reg!)
 //        let end = Date()
@@ -101,11 +116,11 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = resultTable.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultsTableViewCell else { return UITableViewCell()}
-        cell.resultLabel.text = dataElements[indexPath.row]
-        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
-        cell.resultCircle.layer.cornerRadius = cell.resultCircle.frame.height / 2
-        if vehicle?.response?.dataItems?.writtenOff == false {
-            cell.resultCircle.backgroundColor = .green
+        cell.label.text = dataElements[indexPath.row]
+        if indexPath.row == 0 {
+            if vehicle?.isWrittenOff == true {
+                cell.isOn = true
+            }
         }
         return cell
     }

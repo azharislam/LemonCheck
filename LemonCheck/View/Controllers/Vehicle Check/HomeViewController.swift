@@ -22,11 +22,17 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var panel: UIView!
+    
     weak var delegate: RegSearchDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        searchButton.layer.cornerRadius = 8
+        searchButton.layer.cornerRadius = 8
+        panel.layer.cornerRadius = 18
+        
     }
 
     @IBAction func searchPressed(_ sender: Any) {
