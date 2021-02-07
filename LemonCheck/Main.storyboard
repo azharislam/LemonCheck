@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UKNumberPlate.ttf">
+            <string>UKNumberPlate</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Start Up View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -740,50 +745,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1W-cI-TUM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="383"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter registration" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-eZ-ALK">
-                                        <rect key="frame" x="50" y="166.5" width="250" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-eZ-ALK">
+                                        <rect key="frame" x="92" y="200" width="230" height="75"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="uBC-T1-hco"/>
-                                            <constraint firstAttribute="height" constant="50" id="uwt-Y8-dgf"/>
+                                            <constraint firstAttribute="width" constant="230" id="uBC-T1-hco"/>
+                                            <constraint firstAttribute="height" constant="75" id="uwt-Y8-dgf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="UKNumberPlate" family="UKNumberPlate" pointSize="36"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnX-yK-cZj">
-                                        <rect key="frame" x="305" y="166.5" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="272" y="200" width="50" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="yqN-wI-IVW"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                         <connections>
                                             <action selector="searchPressed:" destination="qEW-Ke-fQo" eventType="touchUpInside" id="lhX-cd-VDM"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Could it be a lemon? Check now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uz-zS-koJ">
-                                        <rect key="frame" x="50" y="128" width="244" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cq5-ds-HL3">
+                                        <rect key="frame" x="157" y="68" width="100" height="100"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
+                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="top" secondItem="X1W-cI-TUM" secondAttribute="topMargin" constant="16" id="90m-1f-1wO"/>
                                     <constraint firstItem="SnX-yK-cZj" firstAttribute="height" secondItem="qVY-eZ-ALK" secondAttribute="height" id="EGe-1q-VxM"/>
+                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="top" secondItem="Cq5-ds-HL3" secondAttribute="bottom" constant="32" id="Gfx-6J-v0F"/>
+                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="centerY" secondItem="X1W-cI-TUM" secondAttribute="centerY" constant="62.5" id="KRV-ve-QBO"/>
                                     <constraint firstItem="SnX-yK-cZj" firstAttribute="top" secondItem="qVY-eZ-ALK" secondAttribute="top" id="Lbx-aI-KFg"/>
-                                    <constraint firstItem="SnX-yK-cZj" firstAttribute="leading" secondItem="qVY-eZ-ALK" secondAttribute="trailing" constant="5" id="OrR-qH-0fU"/>
-                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="leading" secondItem="X1W-cI-TUM" secondAttribute="leading" constant="50" id="f4e-4w-wOw"/>
-                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="centerY" secondItem="X1W-cI-TUM" secondAttribute="centerY" id="k4f-Ps-Ago"/>
-                                    <constraint firstAttribute="height" constant="383" id="vkv-Y2-sfn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cq5-ds-HL3" secondAttribute="trailing" constant="157" id="MwU-yJ-nvk"/>
+                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="leading" secondItem="X1W-cI-TUM" secondAttribute="leading" constant="157" id="QdJ-Ph-0WM"/>
+                                    <constraint firstAttribute="bottom" secondItem="qVY-eZ-ALK" secondAttribute="bottom" constant="75" id="TNE-h9-CoT"/>
+                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="centerX" secondItem="X1W-cI-TUM" secondAttribute="centerX" id="vKM-BU-YOl"/>
+                                    <constraint firstAttribute="height" constant="350" id="vkv-Y2-sfn"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="P7a-pU-Iiq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="X1W-cI-TUM" firstAttribute="leading" secondItem="RxI-9F-Rq5" secondAttribute="leading" id="KSR-xn-Ofy"/>
+                            <constraint firstItem="SnX-yK-cZj" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" constant="90" id="LOM-2S-hqo"/>
+                            <constraint firstItem="qVY-eZ-ALK" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" id="Zeo-ep-4sk"/>
                             <constraint firstAttribute="trailing" secondItem="X1W-cI-TUM" secondAttribute="trailing" id="bE9-kG-PZ1"/>
                             <constraint firstItem="X1W-cI-TUM" firstAttribute="top" secondItem="RxI-9F-Rq5" secondAttribute="top" id="fBZ-eY-Vo7"/>
                         </constraints>
@@ -858,18 +867,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZR-JC-qsP" userLabel="ApplePayBtn">
-                                <rect key="frame" x="111" y="733" width="193" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Pay with Apple Pay" image="applelogo" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="ApplePayBtn:" destination="4l9-6n-08K" eventType="touchUpInside" id="eDU-1I-PDM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YearAndMake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNi-c8-psP" userLabel="YearAndMakeLabel">
                                 <rect key="frame" x="76" y="207" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -898,20 +895,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="£4.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJz-jP-8Ni">
-                                <rect key="frame" x="76" y="339" width="262" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yll-xW-QFS">
+                                <rect key="frame" x="0.0" y="353" width="414" height="500"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZR-JC-qsP" userLabel="ApplePayBtn">
+                                        <rect key="frame" x="110" y="403" width="193" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Pay with Apple Pay" image="applelogo" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ApplePayBtn:" destination="4l9-6n-08K" eventType="touchUpInside" id="eDU-1I-PDM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pZR-JC-qsP" firstAttribute="leading" secondItem="yll-xW-QFS" secondAttribute="leading" constant="110" id="W83-mY-cj7"/>
+                                    <constraint firstAttribute="trailing" secondItem="pZR-JC-qsP" secondAttribute="trailing" constant="111" id="aXr-YT-41f"/>
+                                    <constraint firstAttribute="height" constant="500" id="mVv-3z-fdi"/>
+                                    <constraint firstAttribute="bottom" secondItem="pZR-JC-qsP" secondAttribute="bottom" constant="75" id="yuj-Hh-0SG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iVe-KL-dln"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="iVe-KL-dln" firstAttribute="trailing" secondItem="yll-xW-QFS" secondAttribute="trailing" id="1Xz-tQ-dyd"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yll-xW-QFS" secondAttribute="bottom" constant="-40" id="MgL-rm-7md"/>
+                            <constraint firstItem="yll-xW-QFS" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" id="ufQ-aU-mQ3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find your vehicle" id="gDL-QO-kih"/>
                     <connections>
                         <outlet property="ApplePayBtn" destination="pZR-JC-qsP" id="aJi-ZT-bem"/>
+                        <outlet property="buyNowPanel" destination="yll-xW-QFS" id="d9h-HY-t9h"/>
                         <outlet property="colourLabel" destination="h6I-QO-PvD" id="bgp-tR-Ip8"/>
                         <outlet property="regLabel" destination="Pz5-3w-GQ3" id="Y33-sy-iqJ"/>
                         <outlet property="yearAndMake" destination="gNi-c8-psP" id="yop-ti-SbE"/>
@@ -1006,6 +1025,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LemonCheckImage" width="761" height="725"/>
         <image name="applelogo" catalog="system" width="103" height="128"/>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="home" width="512" height="512"/>

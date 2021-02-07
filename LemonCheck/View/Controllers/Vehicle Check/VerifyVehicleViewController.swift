@@ -24,6 +24,7 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var yearAndMake: UILabel!
     @IBOutlet weak var bgVerifyImage: UIImageView!
     @IBOutlet weak var verifyTextImage: UIImageView!
+    @IBOutlet weak var buyNowPanel: UIView!
     
     private let service = LCNetworkRequest()
     private var vehicle: MOTCheck?
@@ -35,6 +36,7 @@ class VerifyVehicleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        buyNowPanel.layer.cornerRadius = 18
         
         DispatchQueue.global(qos: .userInteractive).async {
             DispatchQueue.main.async {
