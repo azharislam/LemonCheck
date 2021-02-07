@@ -39,6 +39,7 @@
 		634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605142471D9140091C4A7 /* EmailVerifyViewController.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
+		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
 		B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */; };
@@ -83,6 +84,7 @@
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
+		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldResultsTableViewCell.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */,
 				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
 				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
+				B94FAC8F25D04083006549AF /* PaymentPanelView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */,
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
 				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
