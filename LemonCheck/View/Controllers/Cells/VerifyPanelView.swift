@@ -8,6 +8,8 @@
 
 import UIKit
 
+@IBDesignable
+
 class VerifyPanelView: UIView {
     
     @IBOutlet weak var vrmPlate: UIView!
@@ -29,13 +31,15 @@ class VerifyPanelView: UIView {
         guard let view = self.loadViewFromNib(nibName: "VerifyPanelView") else {return}
         view.frame = self.bounds
         self.addSubview(view)
+        self.layer.borderColor = UIColor.yellow.cgColor
+        self.layer.borderWidth = 1
         vrmPlate.layer.cornerRadius = 12
         vrmPlate.layer.borderColor = UIColor.black.cgColor
         vrmPlate.layer.borderWidth = 1
     }
     
     func configureLabels(vrm: String?, make: String?, year: String?, colour: String?) {
-        vrmLabel.text = vrm
+        vrmLabel.text = vrm?.capitalized
         makeLabel.text = make
         yearLabel.text = year
         colourLabel.text = colour

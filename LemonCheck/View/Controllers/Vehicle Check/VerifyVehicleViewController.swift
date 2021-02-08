@@ -12,12 +12,13 @@ import Foundation
 
 class VerifyVehicleViewController: UIViewController {
     
-    @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var colourLabel: UILabel!
-    @IBOutlet weak var regLabel: UILabel!
+
     @IBOutlet weak var paymentPanel: PaymentPanelView!
-    @IBOutlet weak var vehiclePanel: UIView!
+    @IBOutlet weak var vehiclePanel: VerifyPanelView!
+    @IBOutlet weak var questionStackView: UIStackView!
+    
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
     
     private let service = LCNetworkRequest()
     private var vehicle: MOTCheck?
@@ -41,7 +42,20 @@ class VerifyVehicleViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    
+    @IBAction func yesButtonTapped(_ sender: Any) {
+        questionStackView.isHidden = true
+        paymentPanel.isHidden = false
+    }
+    
+    @IBAction func noButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func configureView() {
+        paymentPanel.isHidden = true
+        yesButton.layer.cornerRadius = 8
+        noButton.layer.cornerRadius = 8
         vehiclePanel.layer.cornerRadius = 18
         vehiclePanel.layer.borderColor = UIColor.yellow.cgColor
         vehiclePanel.layer.borderWidth = 2
@@ -69,25 +83,15 @@ class VerifyVehicleViewController: UIViewController {
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: jData, options: []) as? [String: Any] {
-                    if let registrationNumber = json["registrationNumber"] as? String {
-                        print(registrationNumber)
-                        regLabel.text = VehicleInput.shared.reg!
-                    }
-                    
-                    if let make = json["make"] as? String {
+                    if let registrationNumber = json["registrationNumber"] as? String,
+                       let make = json["make"] as? String,
+                        let colour = json["colour"] as? String,
+                        let year = json["yearOfManufacture"] as? Int
+                    {
                         carMake = make
-                        makeLabel.text = carMake
-                    }
-                    
-                    if let colour = json["colour"] as? String {
                         carColour = colour
-                        colourLabel.text = carColour
-                    }
-                    
-                    if let year = json["yearOfManufacture"] as? Int {
                         carYear = year
-                        yearLabel.text = "\(carYear)"
-                        print(year)
+                        vehiclePanel.configureLabels(vrm: registrationNumber, make: make, year: "\(year)", colour: colour)
                     }
                 }
             } catch let err {
