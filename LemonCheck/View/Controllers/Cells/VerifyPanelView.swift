@@ -33,6 +33,7 @@ class VerifyPanelView: UIView {
         self.addSubview(view)
         self.layer.borderColor = UIColor.yellow.cgColor
         self.layer.borderWidth = 1
+        self.layer.cornerRadius = 18
         vrmPlate.layer.cornerRadius = 12
         vrmPlate.layer.borderColor = UIColor.black.cgColor
         vrmPlate.layer.borderWidth = 1

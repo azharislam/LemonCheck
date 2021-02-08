@@ -34,6 +34,8 @@ class HomeViewController: UIViewController {
         searchField.layer.borderWidth = 1
         searchField.layer.cornerRadius = 5
         searchField.layer.borderColor = UIColor.black.cgColor
+        panel.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

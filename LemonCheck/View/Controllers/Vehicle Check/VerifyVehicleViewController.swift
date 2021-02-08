@@ -29,6 +29,7 @@ class VerifyVehicleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
         self.configureView()
         DispatchQueue.global(qos: .userInteractive).async {
             DispatchQueue.main.async {
@@ -56,9 +57,10 @@ class VerifyVehicleViewController: UIViewController {
         paymentPanel.isHidden = true
         yesButton.layer.cornerRadius = 8
         noButton.layer.cornerRadius = 8
-        vehiclePanel.layer.cornerRadius = 18
-        vehiclePanel.layer.borderColor = UIColor.yellow.cgColor
-        vehiclePanel.layer.borderWidth = 2
+        noButton.layer.borderWidth = 1
+        yesButton.layer.borderWidth = 1
+        noButton.layer.borderColor = UIColor.darkGray.cgColor
+        yesButton.layer.borderColor = UIColor.darkGray.cgColor
         paymentPanel.layer.cornerRadius = 18
         paymentPanel.callback = {
             self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
