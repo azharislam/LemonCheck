@@ -40,6 +40,7 @@
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
 		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
 		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
+		B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9325D16985006549AF /* PaymentPanelView.swift */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
 		B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
 		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
+		B94FAC9325D16985006549AF /* PaymentPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelView.swift; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldResultsTableViewCell.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
 				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
 				B94FAC8F25D04083006549AF /* PaymentPanelView.xib */,
+				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
 				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
+				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
 				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
