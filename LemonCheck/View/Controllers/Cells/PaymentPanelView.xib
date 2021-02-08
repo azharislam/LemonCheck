@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentPanelView" customModule="LemonCheck" customModuleProvider="target">
             <connections>
                 <outlet property="applePayButton" destination="VDa-eg-s2o" id="2pS-ko-GaA"/>
+                <outlet property="panelTitleLabel" destination="hpP-B8-aTa" id="wA5-NE-WcU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

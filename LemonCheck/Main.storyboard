@@ -867,73 +867,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YearAndMake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNi-c8-psP" userLabel="YearAndMakeLabel">
-                                <rect key="frame" x="76" y="207" width="262" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Colour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-QO-PvD">
-                                <rect key="frame" x="76" y="228" width="262" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz5-3w-GQ3">
-                                <rect key="frame" x="76" y="161" width="262" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Buy a full check now for only" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8a-GF-qhJ">
-                                <rect key="frame" x="76" y="280" width="262" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yll-xW-QFS">
-                                <rect key="frame" x="0.0" y="353" width="414" height="500"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZR-JC-qsP" userLabel="ApplePayBtn">
-                                        <rect key="frame" x="110" y="403" width="193" height="22"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Pay with Apple Pay" image="applelogo" catalog="system">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="ApplePayBtn:" destination="4l9-6n-08K" eventType="touchUpInside" id="eDU-1I-PDM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-yg-hZv" customClass="PaymentPanelView" customModule="LemonCheck" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="343" width="414" height="500"/>
                                 <constraints>
-                                    <constraint firstItem="pZR-JC-qsP" firstAttribute="leading" secondItem="yll-xW-QFS" secondAttribute="leading" constant="110" id="W83-mY-cj7"/>
-                                    <constraint firstAttribute="trailing" secondItem="pZR-JC-qsP" secondAttribute="trailing" constant="111" id="aXr-YT-41f"/>
-                                    <constraint firstAttribute="height" constant="500" id="mVv-3z-fdi"/>
-                                    <constraint firstAttribute="bottom" secondItem="pZR-JC-qsP" secondAttribute="bottom" constant="75" id="yuj-Hh-0SG"/>
+                                    <constraint firstAttribute="height" constant="500" id="soz-DT-tHQ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pa-M3-hlV">
+                                <rect key="frame" x="40" y="74" width="334" height="179"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A34-hv-6cK">
+                                <rect key="frame" x="40" y="74" width="334" height="179"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="VRM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilh-in-YGj">
+                                        <rect key="frame" x="126" y="0.0" width="82" height="37.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-Wi-Ya6">
+                                        <rect key="frame" x="146.5" y="47.5" width="41.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pca-5x-9pJ">
+                                        <rect key="frame" x="150" y="94.5" width="34" height="37.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk0-Zn-HWi">
+                                        <rect key="frame" x="142" y="142" width="50.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iVe-KL-dln"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="iVe-KL-dln" firstAttribute="trailing" secondItem="yll-xW-QFS" secondAttribute="trailing" id="1Xz-tQ-dyd"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="yll-xW-QFS" secondAttribute="bottom" constant="-40" id="MgL-rm-7md"/>
-                            <constraint firstItem="yll-xW-QFS" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" id="ufQ-aU-mQ3"/>
+                            <constraint firstItem="A34-hv-6cK" firstAttribute="bottom" secondItem="4pa-M3-hlV" secondAttribute="bottom" id="0SS-4R-Msk"/>
+                            <constraint firstItem="iVe-KL-dln" firstAttribute="bottom" secondItem="Xvy-yg-hZv" secondAttribute="bottom" constant="-30" id="2en-Ya-QsU"/>
+                            <constraint firstItem="iVe-KL-dln" firstAttribute="trailing" secondItem="4pa-M3-hlV" secondAttribute="trailing" constant="40" id="Fym-Zv-qme"/>
+                            <constraint firstItem="4pa-M3-hlV" firstAttribute="centerX" secondItem="iVe-KL-dln" secondAttribute="centerX" id="LDk-kA-D8D"/>
+                            <constraint firstItem="A34-hv-6cK" firstAttribute="trailing" secondItem="4pa-M3-hlV" secondAttribute="trailing" id="NMd-Tg-DeZ"/>
+                            <constraint firstItem="Xvy-yg-hZv" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" id="S1E-uL-cTP"/>
+                            <constraint firstItem="iVe-KL-dln" firstAttribute="trailing" secondItem="Xvy-yg-hZv" secondAttribute="trailing" id="VIA-ml-SI6"/>
+                            <constraint firstItem="4pa-M3-hlV" firstAttribute="top" secondItem="iVe-KL-dln" secondAttribute="top" constant="30" id="WmX-TW-pWd"/>
+                            <constraint firstItem="A34-hv-6cK" firstAttribute="top" secondItem="4pa-M3-hlV" secondAttribute="top" id="dC4-5Q-CXn"/>
+                            <constraint firstItem="A34-hv-6cK" firstAttribute="leading" secondItem="4pa-M3-hlV" secondAttribute="leading" id="jCD-aW-FTE"/>
+                            <constraint firstItem="4pa-M3-hlV" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" constant="40" id="oki-4n-JAu"/>
+                            <constraint firstItem="4pa-M3-hlV" firstAttribute="bottom" secondItem="Xvy-yg-hZv" secondAttribute="top" constant="-90" id="wOU-K4-vKP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find your vehicle" id="gDL-QO-kih"/>
                     <connections>
-                        <outlet property="ApplePayBtn" destination="pZR-JC-qsP" id="aJi-ZT-bem"/>
-                        <outlet property="buyNowPanel" destination="yll-xW-QFS" id="d9h-HY-t9h"/>
-                        <outlet property="colourLabel" destination="h6I-QO-PvD" id="bgp-tR-Ip8"/>
-                        <outlet property="regLabel" destination="Pz5-3w-GQ3" id="Y33-sy-iqJ"/>
-                        <outlet property="yearAndMake" destination="gNi-c8-psP" id="yop-ti-SbE"/>
+                        <outlet property="colourLabel" destination="tk0-Zn-HWi" id="udx-LY-IEd"/>
+                        <outlet property="makeLabel" destination="Ghf-Wi-Ya6" id="I5e-aY-NWe"/>
+                        <outlet property="paymentPanel" destination="Xvy-yg-hZv" id="yvu-oi-9qe"/>
+                        <outlet property="regLabel" destination="Ilh-in-YGj" id="Nfj-EK-cs4"/>
+                        <outlet property="vehiclePanel" destination="4pa-M3-hlV" id="EyJ-gv-nF2"/>
+                        <outlet property="yearLabel" destination="pca-5x-9pJ" id="tgh-3x-XQc"/>
                         <segue destination="3RM-4T-sfp" kind="show" identifier="verifyToFullCheck" id="tin-Yd-m1o"/>
                     </connections>
                 </viewController>
@@ -1026,7 +1024,6 @@
     </scenes>
     <resources>
         <image name="LemonCheckImage" width="761" height="725"/>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="home" width="512" height="512"/>
         <image name="interface" width="512" height="512"/>
