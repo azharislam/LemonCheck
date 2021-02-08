@@ -41,6 +41,8 @@
 		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
 		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
 		B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9325D16985006549AF /* PaymentPanelView.swift */; };
+		B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */; };
+		B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FACA025D1AD94006549AF /* VerifyPanelView.xib */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
 		B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */; };
@@ -87,6 +89,8 @@
 		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
 		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
 		B94FAC9325D16985006549AF /* PaymentPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelView.swift; sourceTree = "<group>"; };
+		B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPanelView.swift; sourceTree = "<group>"; };
+		B94FACA025D1AD94006549AF /* VerifyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPanelView.xib; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldResultsTableViewCell.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
 				B94FAC8F25D04083006549AF /* PaymentPanelView.xib */,
 				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
+				B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */,
+				B94FACA025D1AD94006549AF /* VerifyPanelView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
 				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
+				B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
 				B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */,
 				B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */,
@@ -434,6 +441,7 @@
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
 				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
+				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
 				63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */,
