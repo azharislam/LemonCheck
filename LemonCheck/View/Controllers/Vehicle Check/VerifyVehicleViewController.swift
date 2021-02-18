@@ -16,6 +16,7 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var paymentPanel: PaymentPanelView!
     @IBOutlet weak var vehiclePanel: VerifyPanelView!
     @IBOutlet weak var questionStackView: UIStackView!
+    @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
@@ -46,6 +47,7 @@ class VerifyVehicleViewController: UIViewController {
     
     @IBAction func yesButtonTapped(_ sender: Any) {
         questionStackView.isHidden = true
+        questionLabel.isHidden = true
         paymentPanel.isHidden = false
     }
     
@@ -62,7 +64,7 @@ class VerifyVehicleViewController: UIViewController {
         noButton.layer.borderColor = UIColor.darkGray.cgColor
         yesButton.layer.borderColor = UIColor.darkGray.cgColor
         paymentPanel.layer.cornerRadius = 18
-        paymentPanel.callback = {
+        paymentPanel.paymentCallback = {
             self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
                 guard let self = self else {return}
                 if let response = response {
@@ -74,6 +76,9 @@ class VerifyVehicleViewController: UIViewController {
                     print("Cannot find vehicle")
                 }
             }
+        }
+        paymentPanel.backCallBack = {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

@@ -753,7 +753,6 @@
                                             <constraint firstAttribute="width" constant="230" id="uBC-T1-hco"/>
                                             <constraint firstAttribute="height" constant="75" id="uwt-Y8-dgf"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="UKNumberPlate" family="UKNumberPlate" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -934,6 +933,7 @@
                     <connections>
                         <outlet property="noButton" destination="dV3-po-gte" id="4OR-Gu-nsm"/>
                         <outlet property="paymentPanel" destination="Xvy-yg-hZv" id="yvu-oi-9qe"/>
+                        <outlet property="questionLabel" destination="CmY-ff-ktX" id="qpI-yb-KM2"/>
                         <outlet property="questionStackView" destination="W9f-Uo-jne" id="UcP-rA-sq6"/>
                         <outlet property="vehiclePanel" destination="4pa-M3-hlV" id="cml-MS-Bwa"/>
                         <outlet property="yesButton" destination="uUw-8w-xZf" id="QFx-4y-GMx"/>

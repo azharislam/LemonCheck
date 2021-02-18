@@ -45,6 +45,7 @@
 		B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FACA025D1AD94006549AF /* VerifyPanelView.xib */; };
 		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
 		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
+		B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */; };
 		B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */; };
 		B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */; };
 		B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */; };
@@ -93,6 +94,7 @@
 		B94FACA025D1AD94006549AF /* VerifyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPanelView.xib; sourceTree = "<group>"; };
 		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Enum.swift"; sourceTree = "<group>"; };
 		B9DA4A46259A309D00C9F50D /* OldResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldResultsTableViewCell.swift; sourceTree = "<group>"; };
 		B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				634605122470C2BC0091C4A7 /* ViewController + Alert.swift */,
 				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
 				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
+				B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
 				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
+				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
 				63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,

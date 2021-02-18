@@ -37,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="AiL-6p-wqI" firstAttribute="centerY" secondItem="r78-JZ-fa2" secondAttribute="centerY" id="09T-DX-dny"/>
                         <constraint firstItem="AiL-6p-wqI" firstAttribute="centerX" secondItem="r78-JZ-fa2" secondAttribute="centerX" id="29m-Ig-jos"/>
@@ -101,7 +101,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
                 <constraint firstItem="r78-JZ-fa2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="74" id="M6Q-7s-6A5"/>
                 <constraint firstAttribute="bottom" secondItem="heA-cd-fn9" secondAttribute="bottom" constant="10" id="Q4N-nw-m9n"/>

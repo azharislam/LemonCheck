@@ -14,7 +14,10 @@ class PaymentPanelView: UIView {
     
     @IBOutlet weak var applePayButton: UIButton!
     @IBOutlet weak var panelTitleLabel: UILabel!
-    var callback: (() -> Void)?
+    @IBOutlet weak var searchAgainButton: UIButton!
+    
+    var paymentCallback: (() -> Void)?
+    var backCallBack: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,9 +35,14 @@ class PaymentPanelView: UIView {
     }
     
     @IBAction func applePayTapped(_ sender: Any) {
-        if let callback = callback {
+        if let callback = paymentCallback {
             callback()
         }
     }
     
+    @IBAction func searchAgainTapped(_ sender: Any) {
+        if let callback = backCallBack {
+            callback()
+        }
+    }
 }

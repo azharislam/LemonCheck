@@ -8,16 +8,11 @@
 import UIKit
 
 enum ResultData: Int {
-    case make
-    case model
-    case year
-    
-    case Phone
-    init?(indexPath: NSIndexPath) {
-        self.init(rawValue: indexPath.section)
-    }
-
-    static var numberOfSections: Int { return 3 }
+    case writtenOff
+    case financed
+    case stolen
+    case scrapped
+    case imported
 }
 
 
@@ -47,22 +42,12 @@ class ResultsViewController: UIViewController {
     var vehicle: Vehicle?
     private let transition = SlideTransition()
     let dataElements = [
-        "Make",
-        "Model",
-        "Year Of Manufacture",
-        "Previous Keeper Count",
         "Written Off?",
-        "Write Off Category",
-        "Write Off Date",
-        "Finance Record Count",
-        "Finance Record List",
+        "Financed?",
+        "Scrapped?",
         "Stolen?",
-        "Stolen Info Source",
-        "Scrapped",
-        "Scrap Date",
-        "Imported?",
-        "Import Date"]
-
+        "Imported?"
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,41 +55,13 @@ class ResultsViewController: UIViewController {
         resultTable.dataSource = self
         resultTable.register(UINib(nibName: "ResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
         navigationItem.hidesBackButton = true
-        print("\(vehicle)")
         resultTable.layer.cornerRadius = 18
-//        let start = Date()
-//        verifyCheckFor(vrm: VehicleInput.shared.reg!)
-//        let end = Date()
-//        print("Elapsed Time Results: \(end.timeIntervalSince(start))")
+        resultTable.separatorStyle = .none
+        resultTable.backgroundColor = .none
     }
 }
 
-
-//extension ResultsViewController: RegSearchDelegate {
-//
-//    func verifyCheckFor(vrm: String?) {
-//        guard let userVrm = vrm else {
-//            print("UNEXPECTEDLY RETURNED")
-//            return
-//        }
-//
-//        service.getFullVehicleDataFrom(regNumber: userVrm, completion: { [weak self] (response, error) in
-//            guard let self = self else {return}
-//            if let response = response {
-//                let viewModel = VdiViewModel(dataModel: response)
-////                self.displayVehicleInfo(using: viewModel)
-//            } else {
-//                print("Cannot find vehicle")
-//            }
-//        })
-//    }
-//}
-
-
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
-//    func update(_ data: Vehicle) {
-//        self.vehicle = data
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataElements.count
@@ -117,23 +74,29 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = resultTable.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultsTableViewCell else { return UITableViewCell()}
         cell.label.text = dataElements[indexPath.row]
-        if indexPath.row == 0 {
+        
+        switch indexPath.row.asTableSection {
+        case .writtenOff:
             if vehicle?.isWrittenOff == true {
+                cell.isOn = true
+            }
+        case .financed:
+            if vehicle?.isFinanced == true {
+                cell.isOn = true
+            }
+        case .scrapped:
+            if vehicle?.isScrapped == true {
+                cell.isOn = true
+            }
+        case .stolen:
+            if vehicle?.isStolen == true {
+                cell.isOn = true
+            }
+        case .imported:
+            if vehicle?.isImported == true {
                 cell.isOn = true
             }
         }
         return cell
     }
 }
-
-//extension ResultsViewController: LCNetworkRequestDelegate {
-//    func requestDidFinish(request: LCNetworkRequest, data: Vehicle) {
-//        self.update(data)
-//        self.resultTable.reloadData()
-//    }
-//
-//    func requestDidFinish(request: LCNetworkRequest, error: APIResponseError) {
-//        print(error.localizedDescription)
-//    }
-//
-//}

@@ -20,9 +20,11 @@ class ResultsTableViewCell: UITableViewCell {
         //show Checkmark icon
         //else show yellow arrow
         //yellow border
+        super.layoutSubviews()
         self.layer.cornerRadius = 18
         self.layer.borderWidth = 2
-        
+        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+
         if !isOn {
             self.layer.borderColor = UIColor.yellow.cgColor
             //icon is yellow arrow

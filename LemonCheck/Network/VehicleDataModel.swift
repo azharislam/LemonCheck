@@ -99,6 +99,15 @@ extension Vehicle {
         return response?.dataItems?.imported ?? false
     }
     
+    var isFinanced: Bool {
+        if let financeList = financeRecordList {
+            if !financeList.isEmpty {
+                return true
+            }
+        }
+        return false
+    }
+    
     var financeRecordCount: String {
         return "\(response?.dataItems?.financeRecordCount ?? 0)"
     }
