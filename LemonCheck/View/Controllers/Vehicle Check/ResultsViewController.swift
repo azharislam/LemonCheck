@@ -19,24 +19,7 @@ enum ResultData: Int {
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultTable: UITableView!
-    @IBOutlet weak var goToResultsButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var colourLabel: UILabel!
-    @IBOutlet weak var prevKeeperLabel: UILabel!
-    @IBOutlet weak var writtenOffLabel: UILabel!
-    @IBOutlet weak var writeOffDate: UILabel!
-    @IBOutlet weak var financeRecordCountLabel: UILabel!
-    @IBOutlet weak var financeRecordInfoLabel: UILabel!
-    @IBOutlet weak var stolenLabel: UILabel!
-    @IBOutlet weak var stolenInfoLabel: UILabel!
-    @IBOutlet weak var regLabel: UILabel!
-    @IBOutlet weak var firstRegisteredData: UILabel!
-    @IBOutlet weak var importedData: UILabel!
-    @IBOutlet weak var mileageAnomalyData: UILabel!
-    
+    @IBOutlet weak var vehicleInfoPanel: VerifyPanelView!
     
     private let service = LCNetworkRequest()
     var vehicle: Vehicle?
@@ -57,7 +40,18 @@ class ResultsViewController: UIViewController {
         navigationItem.hidesBackButton = true
         resultTable.layer.cornerRadius = 18
         resultTable.separatorStyle = .none
-        resultTable.backgroundColor = .none
+        resultTable.backgroundColor = .clear
+        configureView()
+    }
+    
+    private func configureView() {
+        vehicleInfoPanel.layer.cornerRadius = 18
+        vehicleInfoPanel.makeLabel.text = vehicle?.make
+        vehicleInfoPanel.vrmLabel.text = vehicle?.vrm
+        vehicleInfoPanel.colourLabel.text = vehicle?.model
+        vehicleInfoPanel.yearLabel.text = vehicle?.year
+        vehicleInfoPanel.layer.backgroundColor = UIColor.white.cgColor
+        vehicleInfoPanel.vrmPlate.backgroundColor = .yellow
     }
 }
 

@@ -954,16 +954,23 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZJz-wc-2x0">
                                 <rect key="frame" x="0.0" y="244" width="414" height="569"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bft-8e-AqT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ycr-oh-nsD"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bft-8e-AqT" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" id="5zU-Og-J6g"/>
+                            <constraint firstItem="bft-8e-AqT" firstAttribute="bottom" secondItem="ZJz-wc-2x0" secondAttribute="top" id="DGD-oy-Hp8"/>
                             <constraint firstItem="ZJz-wc-2x0" firstAttribute="top" secondItem="Ycr-oh-nsD" secondAttribute="top" constant="200" id="Hep-Ki-cTC"/>
                             <constraint firstItem="ZJz-wc-2x0" firstAttribute="leading" secondItem="Ycr-oh-nsD" secondAttribute="leading" id="Vg0-L6-v5h"/>
+                            <constraint firstItem="Ycr-oh-nsD" firstAttribute="trailing" secondItem="bft-8e-AqT" secondAttribute="trailing" id="lKe-ec-5Lr"/>
                             <constraint firstItem="Ycr-oh-nsD" firstAttribute="trailing" secondItem="ZJz-wc-2x0" secondAttribute="trailing" id="pxk-5C-sYA"/>
                             <constraint firstItem="Ycr-oh-nsD" firstAttribute="bottom" secondItem="ZJz-wc-2x0" secondAttribute="bottom" id="qnY-pd-Rye"/>
+                            <constraint firstItem="bft-8e-AqT" firstAttribute="leading" secondItem="Ycr-oh-nsD" secondAttribute="leading" id="uSp-Y9-oyX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="cs9-SW-NaC"/>

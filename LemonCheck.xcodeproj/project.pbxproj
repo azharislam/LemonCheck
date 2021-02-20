@@ -38,6 +38,10 @@
 		634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* ViewController + Alert.swift */; };
 		634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605142471D9140091C4A7 /* EmailVerifyViewController.swift */; };
 		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
+		B92A1D5A25E1A76D000D2E92 /* CarDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */; };
+		B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */; };
+		B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */; };
+		B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */; };
 		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
 		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
 		B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9325D16985006549AF /* PaymentPanelView.swift */; };
@@ -87,6 +91,10 @@
 		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailsView.xib; sourceTree = "<group>"; };
+		B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
+		B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberPlateView.xib; sourceTree = "<group>"; };
+		B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlateView.swift; sourceTree = "<group>"; };
 		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
 		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
 		B94FAC9325D16985006549AF /* PaymentPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelView.swift; sourceTree = "<group>"; };
@@ -148,8 +156,8 @@
 				63356C032465ABCB0031F6DB /* Helpers */,
 				63356C052465ABD50031F6DB /* Extensions */,
 				63356BEE2465AB4C0031F6DB /* AppDelegate.swift */,
-				B97729CB258A490100DE1AB9 /* Main.storyboard */,
 				63356BF02465AB4C0031F6DB /* SceneDelegate.swift */,
+				B97729CB258A490100DE1AB9 /* Main.storyboard */,
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
 				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
 				63356BFC2465AB500031F6DB /* Info.plist */,
@@ -304,6 +312,10 @@
 				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
 				B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */,
 				B94FACA025D1AD94006549AF /* VerifyPanelView.xib */,
+				B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */,
+				B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */,
+				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
+				B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -370,9 +382,11 @@
 			files = (
 				B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */,
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
+				B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */,
 				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
 				B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */,
+				B92A1D5A25E1A76D000D2E92 /* CarDetailsView.xib in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
 				B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */,
 				B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */,
@@ -433,9 +447,11 @@
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
 				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
 				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
+				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
 				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
+				B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */,
 				B9DA4A48259A309D00C9F50D /* OldResultsTableViewCell.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				634605152471D9140091C4A7 /* EmailVerifyViewController.swift in Sources */,
