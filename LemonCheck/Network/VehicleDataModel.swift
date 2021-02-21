@@ -78,7 +78,7 @@ extension Vehicle {
     }
     
     var year: String {
-        return "\(response?.dataItems?.yearOfManufacture ?? "")"
+        return "\(response?.dataItems?.year ?? "")"
     }
     
     var previousKeeperCount: String {

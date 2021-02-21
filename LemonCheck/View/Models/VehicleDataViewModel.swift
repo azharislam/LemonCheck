@@ -30,7 +30,7 @@ extension VdiViewModel {
     }
     
     var year: String {
-        return "\(dataModel.response?.dataItems?.yearOfManufacture ?? "")"
+        return "\(dataModel.response?.dataItems?.year ?? "")"
     }
     
     var previousKeeperCount: String {
