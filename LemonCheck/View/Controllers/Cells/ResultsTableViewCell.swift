@@ -30,7 +30,8 @@ class ResultsTableViewCell: UITableViewCell {
             self.bgView.layer.borderColor = UIColor.green.cgColor
             //icon is yellow arrow
         } else {
-            self.bgView.layer.borderColor = UIColor.yellow.cgColor
+            self.bgView.layer.borderColor = UIColor.systemYellow.cgColor
+            self.icon.image = UIImage(named: "rightArrow")
             //icon is green check
         }
         

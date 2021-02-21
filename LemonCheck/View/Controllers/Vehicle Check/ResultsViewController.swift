@@ -19,7 +19,7 @@ enum ResultData: Int {
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultTable: UITableView!
-    @IBOutlet weak var vehicleInfoPanel: VerifyPanelView!
+    @IBOutlet weak var vehicleDetailsView: CarDetailsView!
     
     private let service = LCNetworkRequest()
     var vehicle: Vehicle?
@@ -45,13 +45,11 @@ class ResultsViewController: UIViewController {
     }
     
     private func configureView() {
-        vehicleInfoPanel.layer.cornerRadius = 18
-        vehicleInfoPanel.makeLabel.text = vehicle?.make
-        vehicleInfoPanel.vrmLabel.text = vehicle?.vrm
-        vehicleInfoPanel.colourLabel.text = vehicle?.model
-        vehicleInfoPanel.yearLabel.text = vehicle?.year
-        vehicleInfoPanel.layer.backgroundColor = UIColor.white.cgColor
-        vehicleInfoPanel.vrmPlate.backgroundColor = .yellow
+        vehicleDetailsView.layer.cornerRadius = 12
+        vehicleDetailsView.layer.borderWidth = 2
+        vehicleDetailsView.layer.borderColor = UIColor.gray.cgColor
+        guard let vehicleDetails = vehicle else { return }
+        vehicleDetailsView.configurePanel(vrm: vehicleDetails.vrm, make: vehicleDetails.make, model: vehicleDetails.model, year: vehicleDetails.year, previousOwners: vehicleDetails.previousKeeperCount)
     }
 }
 

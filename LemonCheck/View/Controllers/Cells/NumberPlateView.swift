@@ -25,9 +25,17 @@ class NumberPlateView: UIView {
     }
     
     func configureView() {
-        self.layoutSubviews()
+        guard let view = self.loadViewFromNib(nibName: "NumberPlateView") else {return}
+        view.frame = self.bounds
+        self.addSubview(view)
         numberPlate.layer.cornerRadius = 12
         numberPlate.backgroundColor = .yellow
-        vrmLabel.font = UIFont(name: "UKNumberPlate", size: 50)
+        numberPlate.layer.borderWidth = 1
+        numberPlate.layer.borderColor = UIColor.black.cgColor
+        vrmLabel.font = UIFont(name: "UKNumberPlate", size: 32)
+    }
+    
+    func configureLabel(vrm: String) {
+        self.vrmLabel.text = vrm
     }
 }
