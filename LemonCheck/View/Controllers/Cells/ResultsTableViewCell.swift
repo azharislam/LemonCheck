@@ -17,11 +17,6 @@ class ResultsTableViewCell: UITableViewCell {
     var isOn: Bool = false
     
     override func layoutSubviews() {
-        //if isOn
-        //show green border
-        //show Checkmark icon
-        //else show yellow arrow
-        //yellow border
         super.layoutSubviews()
         self.bgView.layer.cornerRadius = 18
         self.bgView.layer.borderWidth = 2

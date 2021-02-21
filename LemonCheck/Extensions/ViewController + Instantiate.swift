@@ -9,29 +9,6 @@
 import Foundation
 import UIKit
 
-extension RegistrationViewController {
-
-    static func instantiate() -> RegistrationViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let regVC = storyboard.instantiateViewController(identifier: "RegVC") as? RegistrationViewController {
-            return regVC
-        }
-        return nil
-    }
-}
-
-
-extension LoginViewController {
-
-    static func instantiate() -> LoginViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let loginVC = storyboard.instantiateViewController(identifier: "LoginVC") as? LoginViewController {
-            return loginVC
-        }
-        return nil
-    }
-}
-
 
 extension HomeViewController {
 
@@ -61,28 +38,6 @@ extension ResultsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let resultVC = storyboard.instantiateViewController(identifier: "ResultVC") as? ResultsViewController {
             return resultVC
-        }
-        return nil
-    }
-}
-
-extension ForgotPasswordViewController {
-
-    static func instantiate() -> ForgotPasswordViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let forgotVC = storyboard.instantiateViewController(identifier: "ForgotVC") as? ForgotPasswordViewController {
-            return forgotVC
-        }
-        return nil
-    }
-}
-
-extension EmailVerifyViewController {
-
-    static func instantiate() -> EmailVerifyViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let emailVC = storyboard.instantiateViewController(identifier: "EmailVC") as? EmailVerifyViewController {
-            return emailVC
         }
         return nil
     }
