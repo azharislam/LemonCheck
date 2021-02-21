@@ -18,17 +18,20 @@ class ResultsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.configureView()
+    }
+    
+    private func configureView() {
         self.bgView.layer.cornerRadius = 18
         self.bgView.layer.borderWidth = 2
-
+        
         if !isOn {
             self.bgView.layer.borderColor = UIColor.green.cgColor
-            //icon is yellow arrow
+            self.icon.image = UIImage(named: "checkMark")
         } else {
             self.bgView.layer.borderColor = UIColor.systemYellow.cgColor
             self.icon.image = UIImage(named: "rightArrow")
             //icon is green check
         }
-        
     }
 }

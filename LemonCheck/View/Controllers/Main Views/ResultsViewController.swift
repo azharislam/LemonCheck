@@ -15,7 +15,6 @@ enum ResultData: Int {
     case imported
 }
 
-
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultTable: UITableView!

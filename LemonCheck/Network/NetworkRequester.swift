@@ -22,7 +22,7 @@ protocol LCNetworkRequestDelegate: class {
 final class LCNetworkRequest {
     
     weak var delegate: LCNetworkRequestDelegate?
-
+    
     let apiKey = "aeea2a18-a018-4207-a6f8-7fc6e29169f0"
     var regNumber = ""
     let dataPackage1 = "VdiCheckFull"
@@ -31,18 +31,22 @@ final class LCNetworkRequest {
     let apiVersion = 2
     var vehicleInformation: Vehicle?
     var motInformation: MOTCheck?
-
+    var carMake: String?
+    var carColour: String?
+    var carYear: String?
+    var vrm: String?
+    
     lazy var vdiUrl: String = {
         return "https://uk1.ukvehicledata.co.uk/api/datapackage/\(dataPackage1)?v=\(apiVersion)\(queryStringOptionals)&auth_apikey=\(apiKey)&key_VRM="
     }()
-
+    
     lazy var motUrl: String = {
         return "https://uk1.ukvehicledata.co.uk/api/datapackage/\(dataPackage2)?v=\(apiVersion)\(queryStringOptionals)&auth_apikey=\(apiKey)&key_VRM="
     }()
-
+    
     typealias VehicleDataCompletionHandler = (Vehicle?, Error?) -> Void
     typealias MOTDataCompletionHandler = (MOTCheck?, Error?) -> Void
-
+    
     func getFullVehicleDataFrom(regNumber: String, completion: @escaping VehicleDataCompletionHandler) {
         AF.request(self.vdiUrl + regNumber,
                    method: .get,
@@ -60,7 +64,30 @@ final class LCNetworkRequest {
                         print("Error decoding == \(error)")
                         completion(nil, error)
                     }
+                   }
+    }
+    
+    func getDVLAdata() {
+        NetworkManager.downloadPlayerProfile {
+            jsonData in guard let jData = jsonData else { return }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: jData, options: []) as? [String: Any] {
+                    if let registrationNumber = json["registrationNumber"] as? String,
+                       let make = json["make"] as? String,
+                       let colour = json["colour"] as? String,
+                       let year = json["yearOfManufacture"] as? Int
+                    {
+                        self.vrm = registrationNumber
+                        self.carMake = make
+                        self.carColour = colour
+                        self.carYear = "\(year)"
+                    }
+                }
+            } catch let err {
+                print(err.localizedDescription)
+            }
         }
     }
-
+    
 }

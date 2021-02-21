@@ -28,8 +28,8 @@ class PaymentPanelView: UIView {
         self.configureView()
     }
     
-    func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "PaymentPanelView") else {return}
+    private func configureView() {
+        guard let view = self.loadViewFromNib(nibName: PaymentPanelView.className) else {return}
         view.frame = self.bounds
         self.addSubview(view)
     }

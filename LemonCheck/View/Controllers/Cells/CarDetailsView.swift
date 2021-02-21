@@ -26,7 +26,7 @@ class CarDetailsView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "CarDetailsView") else {return}
+        guard let view = self.loadViewFromNib(nibName: CarDetailsView.className) else {return}
         view.frame = self.bounds
         self.addSubview(view)
     }

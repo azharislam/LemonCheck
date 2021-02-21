@@ -36,6 +36,7 @@
 		B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */; };
 		B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */; };
 		B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */; };
+		B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1DA125E2D041000D2E92 /* ClassName.swift */; };
 		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
 		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
 		B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9325D16985006549AF /* PaymentPanelView.swift */; };
@@ -82,6 +83,7 @@
 		B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
 		B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberPlateView.xib; sourceTree = "<group>"; };
 		B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlateView.swift; sourceTree = "<group>"; };
+		B92A1DA125E2D041000D2E92 /* ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
 		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
 		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
 		B94FAC9325D16985006549AF /* PaymentPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
 				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
 				B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */,
+				B92A1DA125E2D041000D2E92 /* ClassName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
 				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
+				B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
