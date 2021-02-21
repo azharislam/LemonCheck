@@ -18,47 +18,40 @@ public class VehicleInput {
      public static let shared = VehicleInput()
 }
 
-
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    weak var delegate: RegSearchDelegate?
-    let backgroundImageView = UIImageView()
+    @IBOutlet weak var panel: UIView!
     
+    weak var delegate: RegSearchDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        searchButton.layer.cornerRadius = 8
+        searchButton.layer.cornerRadius = 8
+        panel.layer.cornerRadius = 18
+        searchField.layer.borderWidth = 1
+        searchField.layer.cornerRadius = 5
+        searchField.layer.borderColor = UIColor.black.cgColor
+        panel.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
+
     }
     
-    
-    func setView(){
-        searchField.autocapitalizationType = .allCharacters
-        super.viewWillAppear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        view.addSubview(backgroundImageView)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        backgroundImageView.image = UIImage(named: "background")
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
-        
 
     @IBAction func searchPressed(_ sender: Any) {
         guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         searchFor(input: userInput)
     }
-
     
     func searchFor(input: String) {
         VehicleInput.shared.reg = input
         if input != "" {
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
-                //Push next screen
                 self.navigationController?.pushViewController(rgVC, animated: true)
             }
         } else {

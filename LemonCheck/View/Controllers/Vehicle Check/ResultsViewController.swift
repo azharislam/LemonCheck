@@ -7,133 +7,88 @@
 
 import UIKit
 
+enum ResultData: Int {
+    case writtenOff
+    case financed
+    case stolen
+    case scrapped
+    case imported
+}
+
 
 class ResultsViewController: UIViewController {
     
-    @IBOutlet weak var goToResultsButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var colourLabel: UILabel!
-    @IBOutlet weak var prevKeeperLabel: UILabel!
-    @IBOutlet weak var writtenOffLabel: UILabel!
-    @IBOutlet weak var writeOffDate: UILabel!
-    @IBOutlet weak var financeRecordCountLabel: UILabel!
-    @IBOutlet weak var financeRecordInfoLabel: UILabel!
-    @IBOutlet weak var stolenLabel: UILabel!
-    @IBOutlet weak var stolenInfoLabel: UILabel!
-    @IBOutlet weak var regLabel: UILabel!
-    @IBOutlet weak var firstRegisteredData: UILabel!
-    @IBOutlet weak var importedData: UILabel!
-    @IBOutlet weak var mileageAnomalyData: UILabel!
+    @IBOutlet weak var resultTable: UITableView!
+    @IBOutlet weak var vehicleDetailsView: CarDetailsView!
     
-    
-    private let service = RCNetworkRequest()
-    private var vehicle: MOTCheck?
+    private let service = LCNetworkRequest()
+    var vehicle: Vehicle?
     private let transition = SlideTransition()
-
+    let dataElements = [
+        "Written Off?",
+        "Financed?",
+        "Scrapped?",
+        "Stolen?",
+        "Imported?"
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let start = Date()
-        setUpView()
-        verifyCheckFor(vrm: VehicleInput.shared.reg!)
-        let end = Date()
-        print("Elapsed Time Results: \(end.timeIntervalSince(start))")
-        print("results view loaded")
-    }
-    
-    
-    func setUpView() {
+        resultTable.delegate = self
+        resultTable.dataSource = self
+        resultTable.register(UINib(nibName: "ResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
         navigationItem.hidesBackButton = true
+        resultTable.layer.cornerRadius = 18
+        resultTable.separatorStyle = .none
+        resultTable.backgroundColor = .clear
+        configureView()
     }
     
+    private func configureView() {
+        vehicleDetailsView.layer.cornerRadius = 12
+        vehicleDetailsView.layer.borderWidth = 2
+        vehicleDetailsView.layer.borderColor = UIColor.gray.cgColor
+        guard let vehicleDetails = vehicle else { return }
+        vehicleDetailsView.configurePanel(vrm: vehicleDetails.vrm, make: vehicleDetails.make, model: vehicleDetails.model, year: vehicleDetails.year, previousOwners: vehicleDetails.previousKeeperCount)
+    }
+}
 
-    func displayVehicleInfo(using viewModel: VdiViewModel) {
-        let txtReg:String = VehicleInput.shared.reg!
-        print("func displayvehicleinfo executed3")
+extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataElements.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = resultTable.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultsTableViewCell else { return UITableViewCell()}
+        cell.label.text = dataElements[indexPath.row]
         
-        if(viewModel.make == nil) {
-            print("Error, no data retrieved")
-            return
-        } else {
-            print("fun displayvehicleinfo reg: \(txtReg) ")
-            regLabel?.text = txtReg
-            makeLabel?.text = String("\(viewModel.year!) \(viewModel.colour!) \(viewModel.make!) \(viewModel.model!)")
-            
-            prevKeeperLabel.text = String("\(viewModel.previousKeeperCount!)")
-            importedData.text = viewModel.imported?.description
-
-            
-            if(viewModel.writtenOff == false) {
-                //writtenOffLabel.textColor = UIColor.green
-                writtenOffLabel.text = "No"
-            } else {
-                writtenOffLabel.text = "Yes"
+        switch indexPath.row.asTableSection {
+        case .writtenOff:
+            if vehicle?.isWrittenOff == true {
+                cell.isOn = true
             }
-            
-            
-            if(viewModel.financeRecordList == []) {
-                //financeRecordInfoLabel.textColor = UIColor.green
-                financeRecordInfoLabel.text = "No"
-            } else {
-                financeRecordInfoLabel.text = "Yes"
+        case .financed:
+            if vehicle?.isFinanced == true {
+                cell.isOn = true
             }
-            
-
-            if(viewModel.stolen == false) {
-                //stolenLabel.textColor = UIColor.green
-                stolenLabel.text = "No"
-            } else {
-                stolenLabel.text = "Yes"
+        case .scrapped:
+            if vehicle?.isScrapped == true {
+                cell.isOn = true
             }
-                
-            
-                if(viewModel.imported == false) {
-                //stolenLabel.textColor = UIColor.green
-                importedData.text = "No"
-            } else {
-                importedData.text = "Yes"
+        case .stolen:
+            if vehicle?.isStolen == true {
+                cell.isOn = true
             }
-            
+        case .imported:
+            if vehicle?.isImported == true {
+                cell.isOn = true
+            }
         }
+        return cell
     }
 }
-
-
-extension ResultsViewController: RegSearchDelegate {
-    
-    func verifyCheckFor(vrm: String?) {
-        guard let userVrm = vrm else {
-            print("UNEXPECTEDLY RETURNED")
-            return
-        }
-        
-        service.getFullVehicleDataFrom(regNumber: userVrm, completion: { [weak self] (response, error) in
-            guard let self = self else {return}
-            if let response = response {
-                let viewModel = VdiViewModel(dataModel: response)
-                self.displayVehicleInfo(using: viewModel)
-            } else {
-                print("Cannot find vehicle")
-            }
-        })
-    }
-}
-
-
-extension ResultsViewController: UIViewControllerTransitioningDelegate {
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        return transition
-    }
-
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        return transition
-    }
-}
-

@@ -12,22 +12,17 @@ import Foundation
 
 class VerifyVehicleViewController: UIViewController {
     
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var colourLabel: UILabel!
-    @IBOutlet weak var goToResultsButton: UIButton!
-    @IBOutlet weak var regSearchField: UITextField!
-    @IBOutlet weak var ApplePayBtn: UIButton!
-    @IBOutlet weak var regLabel: UILabel!
-    @IBOutlet weak var yearAndMake: UILabel!
-    @IBOutlet weak var bgVerifyImage: UIImageView!
-    @IBOutlet weak var verifyTextImage: UIImageView!
+
+    @IBOutlet weak var paymentPanel: PaymentPanelView!
+    @IBOutlet weak var vehiclePanel: VerifyPanelView!
+    @IBOutlet weak var questionStackView: UIStackView!
+    @IBOutlet weak var questionLabel: UILabel!
     
-    private let service = RCNetworkRequest()
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    
+    private let service = LCNetworkRequest()
     private var vehicle: MOTCheck?
-    private let transition = SlideTransition()
     private var carMake = ""
     private var carColour = ""
     private var carYear = 0
@@ -35,8 +30,8 @@ class VerifyVehicleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-        
+        self.view.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
+        self.configureView()
         DispatchQueue.global(qos: .userInteractive).async {
             DispatchQueue.main.async {
                 self.getDVLAdata()
@@ -44,23 +39,50 @@ class VerifyVehicleViewController: UIViewController {
         }
     }
     
-    
-    func setView() {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        //pushing background images to the back
-        self.view.sendSubviewToBack(bgVerifyImage)
-        self.view.sendSubviewToBack(verifyTextImage)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
-    @IBAction func ApplePayBtn(_ sender: Any) {
-        print("Apple pay button pressed")
-        if let rgVC = ResultsViewController.instantiate() {
-            self.navigationController?.pushViewController(rgVC, animated: true)
+    @IBAction func yesButtonTapped(_ sender: Any) {
+        questionStackView.isHidden = true
+        questionLabel.isHidden = true
+        paymentPanel.isHidden = false
+    }
+    
+    @IBAction func noButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func configureView() {
+        paymentPanel.isHidden = true
+        yesButton.layer.cornerRadius = 8
+        noButton.layer.cornerRadius = 8
+        noButton.layer.borderWidth = 1
+        yesButton.layer.borderWidth = 1
+        noButton.layer.borderColor = UIColor.darkGray.cgColor
+        yesButton.layer.borderColor = UIColor.darkGray.cgColor
+        paymentPanel.layer.cornerRadius = 18
+        paymentPanel.paymentCallback = {
+            self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
+                guard let self = self else {return}
+                if let response = response {
+                    if let rgVC = ResultsViewController.instantiate() {
+                        self.navigationController?.pushViewController(rgVC, animated: true)
+                        rgVC.vehicle = response
+                    }
+                } else {
+                    print("Cannot find vehicle")
+                }
+            }
+        }
+        paymentPanel.backCallBack = {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
+    // MARK:- Network call to DVLA API
     
     func getDVLAdata() {
         NetworkManager.downloadPlayerProfile {
@@ -68,44 +90,20 @@ class VerifyVehicleViewController: UIViewController {
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: jData, options: []) as? [String: Any] {
-                    if let registrationNumber = json["registrationNumber"] as? String {
-                        print(registrationNumber)
-                        regLabel.text = VehicleInput.shared.reg!
-                    }
-                    
-                    if let make = json["make"] as? String {
+                    if let registrationNumber = json["registrationNumber"] as? String,
+                       let make = json["make"] as? String,
+                        let colour = json["colour"] as? String,
+                        let year = json["yearOfManufacture"] as? Int
+                    {
                         carMake = make
-                    }
-                    
-                    if let colour = json["colour"] as? String {
                         carColour = colour
-                        colourLabel.text = carColour
-                    }
-                    
-                    if let year = json["yearOfManufacture"] as? Int {
                         carYear = year
-                        yearAndMake.text = String("\(carYear) \(carMake)")
-                        print(year)
+                        vehiclePanel.configureLabels(vrm: registrationNumber, make: make, year: "\(year)", colour: colour)
                     }
                 }
             } catch let err {
                 print(err.localizedDescription)
             }
         }
-    }
-}
-
-
-extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        return transition
-    }
-
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        return transition
     }
 }

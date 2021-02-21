@@ -66,17 +66,6 @@ extension ResultsViewController {
     }
 }
 
-extension MenuViewController {
-
-    static func instantiate() -> MenuViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let menuVC = storyboard.instantiateViewController(identifier: "MenuVC") as? MenuViewController {
-            return menuVC
-        }
-        return nil
-    }
-}
-
 extension ForgotPasswordViewController {
 
     static func instantiate() -> ForgotPasswordViewController? {
