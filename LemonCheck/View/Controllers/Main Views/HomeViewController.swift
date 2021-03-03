@@ -32,6 +32,10 @@ class HomeViewController: UIViewController {
         self.configureView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     private func configureView() {
         searchButton.layer.cornerRadius = 8
         searchButton.layer.cornerRadius = 8
@@ -40,10 +44,6 @@ class HomeViewController: UIViewController {
         searchField.layer.cornerRadius = 5
         searchField.layer.borderColor = UIColor.black.cgColor
         panel.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func searchPressed(_ sender: Any) {

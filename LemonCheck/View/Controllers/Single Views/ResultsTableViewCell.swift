@@ -31,7 +31,6 @@ class ResultsTableViewCell: UITableViewCell {
         } else {
             self.bgView.layer.borderColor = UIColor.systemYellow.cgColor
             self.icon.image = UIImage(named: "rightArrow")
-            //icon is green check
         }
     }
 }

@@ -177,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				63356C1C2465C03A0031F6DB /* NetworkRequester.swift */,
-				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
 				B97729CE258A496600DE1AB9 /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -201,7 +200,7 @@
 		63356C062465AC010031F6DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B9DA4A42259A305500C9F50D /* Cells */,
+				B9DA4A42259A305500C9F50D /* Single Views */,
 				63356C0C2465ACBA0031F6DB /* Main Views */,
 			);
 			path = Controllers;
@@ -211,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */,
+				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		B9DA4A42259A305500C9F50D /* Cells */ = {
+		B9DA4A42259A305500C9F50D /* Single Views */ = {
 			isa = PBXGroup;
 			children = (
 				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
@@ -291,7 +291,7 @@
 				B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */,
 				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
 			);
-			path = Cells;
+			path = "Single Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

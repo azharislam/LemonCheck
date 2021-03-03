@@ -8,9 +8,7 @@
 
 import Foundation
 
-
 public var carProfileJSON = ""
-
 
 //Obtaining vehicle data from DVLA
 public func getCarDetails(regNumber:String) {
