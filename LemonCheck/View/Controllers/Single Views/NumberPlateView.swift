@@ -25,14 +25,14 @@ class NumberPlateView: UIView {
     }
     
     func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "NumberPlateView") else {return}
+        guard let view = self.loadViewFromNib(nibName: NumberPlateView.className) else {return}
         view.frame = self.bounds
         self.addSubview(view)
         numberPlate.layer.cornerRadius = 12
         numberPlate.backgroundColor = .yellow
         numberPlate.layer.borderWidth = 1
         numberPlate.layer.borderColor = UIColor.black.cgColor
-        vrmLabel.font = UIFont(name: "UKNumberPlate", size: 32)
+        vrmLabel.font = UIFont(name: Constants.Fonts.ukNumberPlate, size: 32)
     }
     
     func configureLabel(vrm: String) {

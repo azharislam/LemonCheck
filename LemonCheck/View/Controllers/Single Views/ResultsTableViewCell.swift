@@ -17,23 +17,20 @@ class ResultsTableViewCell: UITableViewCell {
     var isOn: Bool = false
     
     override func layoutSubviews() {
-        //if isOn
-        //show green border
-        //show Checkmark icon
-        //else show yellow arrow
-        //yellow border
         super.layoutSubviews()
+        self.configureView()
+    }
+    
+    private func configureView() {
         self.bgView.layer.cornerRadius = 18
         self.bgView.layer.borderWidth = 2
-
+        
         if !isOn {
             self.bgView.layer.borderColor = UIColor.green.cgColor
-            //icon is yellow arrow
+            self.icon.image = UIImage(named: "checkMark")
         } else {
             self.bgView.layer.borderColor = UIColor.systemYellow.cgColor
             self.icon.image = UIImage(named: "rightArrow")
-            //icon is green check
         }
-        
     }
 }

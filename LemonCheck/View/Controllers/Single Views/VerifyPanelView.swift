@@ -28,7 +28,7 @@ class VerifyPanelView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "VerifyPanelView") else {return}
+        guard let view = self.loadViewFromNib(nibName: VerifyPanelView.className) else {return}
         view.frame = self.bounds
         self.addSubview(view)
         self.layer.borderColor = UIColor.yellow.cgColor

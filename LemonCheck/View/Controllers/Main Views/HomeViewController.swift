@@ -14,20 +14,29 @@ protocol RegSearchDelegate: NSObjectProtocol {
 
 
 public class VehicleInput {
-     public var reg: String? = nil
-     public static let shared = VehicleInput()
+    public var reg: String? = nil
+    public static let shared = VehicleInput()
 }
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var panel: UIView!
+    private let service = LCNetworkRequest()
     
     weak var delegate: RegSearchDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func configureView() {
         searchButton.layer.cornerRadius = 8
         searchButton.layer.cornerRadius = 8
         panel.layer.cornerRadius = 18
@@ -35,23 +44,27 @@ class HomeViewController: UIViewController {
         searchField.layer.cornerRadius = 5
         searchField.layer.borderColor = UIColor.black.cgColor
         panel.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
-
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-
     @IBAction func searchPressed(_ sender: Any) {
         guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         searchFor(input: userInput)
     }
     
-    func searchFor(input: String) {
+    private func searchFor(input: String) {
         VehicleInput.shared.reg = input
         if input != "" {
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    DispatchQueue.main.async { [self] in
+                        self.service.getDVLAdata()
+                        rgVC.carYear = self.service.carYear
+                        rgVC.carColour = self.service.carColour
+                        rgVC.carMake = self.service.carMake
+                        rgVC.vrm = self.service.vrm
+                    }
+                }
                 self.navigationController?.pushViewController(rgVC, animated: true)
             }
         } else {

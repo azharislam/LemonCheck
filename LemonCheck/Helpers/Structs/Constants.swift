@@ -13,6 +13,10 @@ struct Constants {
     struct Storyboard {
         static let homeViewController = "HomeVC"
     }
+    
+    struct Fonts {
+        static let ukNumberPlate = "UKNumberPlate"
+    }
 
     struct Media {
         static let introVideo = "rideCheckVideo"
