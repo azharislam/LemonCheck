@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15024525FD20A300BB25F5 /* LoginViewController.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF02465AB4C0031F6DB /* SceneDelegate.swift */; };
@@ -29,7 +30,7 @@
 		63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */; };
 		6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */; };
 		6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050C2470872E0091C4A7 /* DatabaseErrors.swift */; };
-		6346050F2470B06A0091C4A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* UserData.swift */; };
+		6346050F2470B06A0091C4A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* User.swift */; };
 		634605112470B7E90091C4A7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605102470B7E90091C4A7 /* Name.swift */; };
 		634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* ViewController + Alert.swift */; };
 		B92A1D5A25E1A76D000D2E92 /* CarDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.release.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.release.xcconfig"; sourceTree = "<group>"; };
+		2E15024525FD20A300BB25F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF02465AB4C0031F6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +77,7 @@
 		634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Background.swift"; sourceTree = "<group>"; };
 		63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Spinner.swift"; sourceTree = "<group>"; };
 		6346050C2470872E0091C4A7 /* DatabaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrors.swift; sourceTree = "<group>"; };
-		6346050E2470B06A0091C4A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		6346050E2470B06A0091C4A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		634605102470B7E90091C4A7 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		634605122470C2BC0091C4A7 /* ViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Alert.swift"; sourceTree = "<group>"; };
 		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +141,7 @@
 		63356BED2465AB4C0031F6DB /* LemonCheck */ = {
 			isa = PBXGroup;
 			children = (
+				2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */,
 				63356C022465ABBC0031F6DB /* View */,
 				6346050B247087120091C4A7 /* Database */,
 				63356C042465ABD00031F6DB /* Network */,
@@ -236,6 +240,7 @@
 		63356C0C2465ACBA0031F6DB /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E15024525FD20A300BB25F5 /* LoginViewController.swift */,
 				63356C162465BFE90031F6DB /* HomeViewController.swift */,
 				63356C32246640680031F6DB /* VerifyVehicleViewController.swift */,
 				63356C182465BFF40031F6DB /* ResultsViewController.swift */,
@@ -255,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				6346050C2470872E0091C4A7 /* DatabaseErrors.swift */,
-				6346050E2470B06A0091C4A7 /* UserData.swift */,
+				6346050E2470B06A0091C4A7 /* User.swift */,
 				634605102470B7E90091C4A7 /* Name.swift */,
 			);
 			path = Database;
@@ -419,7 +424,7 @@
 				63356C252465C1FE0031F6DB /* Utilities.swift in Sources */,
 				63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */,
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
-				6346050F2470B06A0091C4A7 /* UserData.swift in Sources */,
+				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
 				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */,
@@ -434,6 +439,7 @@
 				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
+				2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */,
 				634604FE246E01560091C4A7 /* ViewController + Keyboard.swift in Sources */,
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
 				6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */,
@@ -581,14 +587,15 @@
 			baseConfigurationReference = 91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZQXZ63VCV;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
 				INFOPLIST_FILE = LemonCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = varleyParker.LemonCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varleyparker.lemoncheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -600,14 +607,15 @@
 			baseConfigurationReference = 2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZQXZ63VCV;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
 				INFOPLIST_FILE = LemonCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = varleyParker.LemonCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varleyparker.lemoncheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
