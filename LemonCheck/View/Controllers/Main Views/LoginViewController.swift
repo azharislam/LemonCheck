@@ -55,7 +55,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         switch authorization.credential {
         case let credentials as ASAuthorizationAppleIDCredential:
             let user = User(credentials: credentials)
-            performSegue(withIdentifier: "LoginVC", sender: user)
+            UserDefaults.standard.set(true, forKey: "status")
+            Switcher.updateRootVC()
         default: break
         }
     }

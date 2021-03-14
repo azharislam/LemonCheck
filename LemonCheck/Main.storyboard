@@ -21,12 +21,11 @@
                     <tabBarItem key="tabBarItem" title="Car Check" image="car" catalog="system" id="fEe-a7-Bvw">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="qEi-DX-r3b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NZC-XZ-3Kw">
-                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yjt-cK-NBO">
-                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -42,7 +41,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="qEW-Ke-fQo" customClass="HomeViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RxI-9F-Rq5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1W-cI-TUM">
@@ -69,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cq5-ds-HL3">
-                                        <rect key="frame" x="157" y="24" width="100" height="144"/>
+                                        <rect key="frame" x="157" y="68" width="100" height="100"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -114,7 +113,7 @@
             <objects>
                 <viewController id="a1w-9k-osn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpm-wO-5xQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-SP-koq">
@@ -139,7 +138,7 @@
             <objects>
                 <viewController id="3Qd-Nh-r8Y" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lI1-bL-716">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-Xf-zQD">
@@ -164,26 +163,26 @@
             <objects>
                 <viewController storyboardIdentifier="VerifyVC" id="4l9-6n-08K" customClass="VerifyVehicleViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="65z-zI-xXO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-yg-hZv" customClass="PaymentPanelView" customModule="LemonCheck" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="289" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="343" width="414" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="soz-DT-tHQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4pa-M3-hlV" customClass="VerifyPanelView" customModule="LemonCheck" customModuleProvider="target">
-                                <rect key="frame" x="40" y="10" width="334" height="190"/>
+                                <rect key="frame" x="40" y="54" width="334" height="200"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Does this sound like the vehicle you searched?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmY-ff-ktX">
-                                <rect key="frame" x="18.5" y="210" width="377" height="49"/>
+                                <rect key="frame" x="18.5" y="264" width="377" height="49"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-Uo-jne">
-                                <rect key="frame" x="50" y="269" width="314" height="30"/>
+                                <rect key="frame" x="50" y="323" width="314" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-8w-xZf">
                                         <rect key="frame" x="0.0" y="0.0" width="154.5" height="30"/>
@@ -250,15 +249,15 @@
             <objects>
                 <viewController storyboardIdentifier="ResultVC" title="Results" id="3RM-4T-sfp" customClass="ResultsViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jey-Xi-ukj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZJz-wc-2x0">
-                                <rect key="frame" x="0.0" y="200" width="414" height="559"/>
+                                <rect key="frame" x="0.0" y="244" width="414" height="569"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQj-iy-M7L" customClass="CarDetailsView" customModule="LemonCheck" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="394" height="180"/>
+                                <rect key="frame" x="10" y="54" width="394" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -295,9 +294,6 @@
                         <viewLayoutGuide key="safeArea" id="rND-Ua-mic"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <segue destination="11P-aj-0DH" kind="showDetail" identifier="LoginVC" id="cuW-EG-FaT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iak-hj-6QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,7 +302,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xw5-vd-bX2">
             <objects>
-                <tabBarController id="11P-aj-0DH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabVC" id="11P-aj-0DH" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="v3k-l8-IQV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypm-rV-pTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -329,7 +325,6 @@
                 <navigationController navigationBarHidden="YES" id="NwR-9S-BlN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="efh-P9-lNQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kMt-YL-hza">
-                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -346,7 +341,6 @@
                 <navigationController navigationBarHidden="YES" id="V0s-El-O2h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Orders" image="wallet.pass" catalog="system" id="CFj-uq-mM5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYu-KI-UGQ">
-                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

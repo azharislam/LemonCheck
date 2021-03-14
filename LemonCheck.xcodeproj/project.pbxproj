@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15024525FD20A300BB25F5 /* LoginViewController.swift */; };
+		2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B2CC25FE56BF006E0429 /* Switcher.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
-		63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF02465AB4C0031F6DB /* SceneDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
 		63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF92465AB500031F6DB /* LaunchScreen.storyboard */; };
 		63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C0E2465B0660031F6DB /* Date + Time.swift */; };
@@ -53,10 +53,10 @@
 /* Begin PBXFileReference section */
 		2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.release.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.release.xcconfig"; sourceTree = "<group>"; };
 		2E15024525FD20A300BB25F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E42B2CC25FE56BF006E0429 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63356BF02465AB4C0031F6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63356BFA2465AB500031F6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63356BFC2465AB500031F6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 				63356C032465ABCB0031F6DB /* Helpers */,
 				63356C052465ABD50031F6DB /* Extensions */,
 				63356BEE2465AB4C0031F6DB /* AppDelegate.swift */,
-				63356BF02465AB4C0031F6DB /* SceneDelegate.swift */,
 				B97729CB258A490100DE1AB9 /* Main.storyboard */,
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
 				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
@@ -197,6 +196,7 @@
 				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
 				B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */,
 				B92A1DA125E2D041000D2E92 /* ClassName.swift */,
+				2E42B2CC25FE56BF006E0429 /* Switcher.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
 				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
+				2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */,
 				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
@@ -449,7 +450,6 @@
 				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
-				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
 				B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
