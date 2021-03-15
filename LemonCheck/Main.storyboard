@@ -108,26 +108,40 @@
             </objects>
             <point key="canvasLocation" x="-1971.0144927536232" y="-879.24107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Order History View Controller-->
         <scene sceneID="nrn-3f-3I3">
             <objects>
-                <viewController id="a1w-9k-osn" sceneMemberID="viewController">
+                <viewController id="a1w-9k-osn" customClass="OrderHistoryViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpm-wO-5xQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-SP-koq">
-                                <rect key="frame" x="131" y="433" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-SP-koq">
+                                <rect key="frame" x="130.5" y="64" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qEM-uT-Ben">
+                                <rect key="frame" x="20" y="114" width="374" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Mq-3Z-aiI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qEM-uT-Ben" firstAttribute="top" secondItem="d51-SP-koq" secondAttribute="bottom" constant="20" id="5fM-hA-lgd"/>
+                            <constraint firstItem="qEM-uT-Ben" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="20" id="5yf-a6-qw0"/>
+                            <constraint firstItem="6Mq-3Z-aiI" firstAttribute="trailing" secondItem="qEM-uT-Ben" secondAttribute="trailing" constant="20" id="I5c-LY-vlw"/>
+                            <constraint firstItem="6Mq-3Z-aiI" firstAttribute="bottom" secondItem="qEM-uT-Ben" secondAttribute="bottom" constant="20" id="PFD-3c-L96"/>
+                            <constraint firstItem="d51-SP-koq" firstAttribute="top" secondItem="6Mq-3Z-aiI" secondAttribute="top" constant="20" id="e0b-CK-X56"/>
+                            <constraint firstItem="d51-SP-koq" firstAttribute="centerX" secondItem="6Mq-3Z-aiI" secondAttribute="centerX" id="v5m-bK-mgO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vqy-Yf-r9I"/>
+                    <connections>
+                        <outlet property="tableView" destination="qEM-uT-Ben" id="Q0E-0A-plT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-10-fO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
