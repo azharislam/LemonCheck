@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="UserSearch" representedClassName="UserSearch" syncable="YES">
+        <attribute name="colour" optional="YES" attributeType="String"/>
+        <attribute name="financeRecordCount" optional="YES" attributeType="String"/>
+        <attribute name="financeRecordList" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="importDate" optional="YES" attributeType="String"/>
+        <attribute name="isFinanced" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isImported" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isScrapped" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isWrittenOff" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="previousKeeperCount" optional="YES" attributeType="String"/>
+        <attribute name="scrapDate" optional="YES" attributeType="String"/>
+        <attribute name="stolenInfoSource" optional="YES" attributeType="String"/>
+        <attribute name="vrm" optional="YES" attributeType="String"/>
+        <attribute name="writeOffCategory" optional="YES" attributeType="String"/>
+        <attribute name="writeOffDate" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="UserSearch" positionX="-63" positionY="-18" width="128" height="28"/>
+    </elements>
+</model>
