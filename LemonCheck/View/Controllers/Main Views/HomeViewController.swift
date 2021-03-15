@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var panel: UIView!
     private let service = LCNetworkRequest()
+    var user: User?
     
     weak var delegate: RegSearchDelegate?
     
