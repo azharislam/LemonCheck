@@ -8,9 +8,10 @@
 
 import AuthenticationServices
 import UIKit
+import CloudKit
 
 class LoginViewController: UIViewController {
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -52,9 +53,43 @@ class LoginViewController: UIViewController {
 extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
+        let privateDatabase = CKContainer(identifier: "iCloud.LemonCheck").privateCloudDatabase
+
         switch authorization.credential {
         case let credentials as ASAuthorizationAppleIDCredential:
-            let user = User(credentials: credentials)
+            let userId = credentials.user
+            if let name = credentials.fullName?.givenName,
+               let email = credentials.email {
+                
+                // New user (signing up)
+                // Save info to CloudKit
+                
+                let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userId))
+                record["name"] = name
+                record["email"] = email
+                privateDatabase.save(record) { (_,_) in
+                    UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
+                }
+                
+                
+            } else {
+                
+                // Returning user (signing in)
+                // Fetch user name and email
+                // From private CloudKit
+                privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userId)) { (record, error) in
+                    if let fetchedInfo = record {
+                        let name = fetchedInfo["name"] as? String
+                        let userEmail = fetchedInfo["email"] as? String
+                        
+                        // Set this info in Settings view controller
+                        
+                        UserDefaults.standard.set(userId, forKey: "userProfileID")
+                    }
+                }
+                
+            }
+            
             UserDefaults.standard.set(true, forKey: "status")
             Switcher.updateRootVC()
         default: break

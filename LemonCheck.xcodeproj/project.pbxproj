@@ -15,6 +15,8 @@
 		2E42B35025FF924F006E0429 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */; };
 		2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */; };
 		2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */; };
+		2E42B35A25FFC541006E0429 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E42B35925FFC541006E0429 /* CloudKit.framework */; };
+		2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B36425FFD240006E0429 /* ProfileViewController.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
@@ -66,6 +68,9 @@
 		2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheckRelease.entitlements; sourceTree = "<group>"; };
+		2E42B35925FFC541006E0429 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2E42B36425FFD240006E0429 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */,
+				2E42B35A25FFC541006E0429 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +159,7 @@
 		63356BED2465AB4C0031F6DB /* LemonCheck */ = {
 			isa = PBXGroup;
 			children = (
+				2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */,
 				2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */,
 				63356C022465ABBC0031F6DB /* View */,
 				6346050B247087120091C4A7 /* Database */,
@@ -260,6 +267,7 @@
 				63356C32246640680031F6DB /* VerifyVehicleViewController.swift */,
 				63356C182465BFF40031F6DB /* ResultsViewController.swift */,
 				2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */,
+				2E42B36425FFD240006E0429 /* ProfileViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E42B35925FFC541006E0429 /* CloudKit.framework */,
 				7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */,
 			);
 			name = Frameworks;
@@ -446,6 +455,7 @@
 				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
 				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
+				2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */,
 				B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
@@ -631,7 +641,7 @@
 			baseConfigurationReference = 2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheckRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VUTNFK4JH;
 				INFOPLIST_FILE = LemonCheck/Info.plist;

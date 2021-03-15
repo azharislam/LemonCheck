@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="-1097" y="-879"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="aQ0-Wr-QWK">
             <objects>
-                <viewController id="3Qd-Nh-r8Y" sceneMemberID="viewController">
+                <viewController id="3Qd-Nh-r8Y" customClass="ProfileViewController" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lI1-bL-716">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,11 +162,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHQ-54-Q6W">
+                                <rect key="frame" x="158" y="352" width="101" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="3Qd-Nh-r8Y" eventType="touchUpInside" id="Z8z-kp-c5f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nla-yF-7Ea"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="DWb-Mu-BzN"/>
+                    <connections>
+                        <outlet property="logout" destination="bHQ-54-Q6W" id="Mt0-bH-9Qv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnO-20-PfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
