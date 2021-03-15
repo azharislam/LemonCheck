@@ -50,6 +50,7 @@ class ResultsViewController: UIViewController {
         guard let vehicleDetails = vehicle else { return }
         vehicleDetailsView.configurePanel(vrm: vehicleDetails.vrm, make: vehicleDetails.make, model: vehicleDetails.model, year: vehicleDetails.year, previousOwners: vehicleDetails.previousKeeperCount)
     }
+    
 }
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {

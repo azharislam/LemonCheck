@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 
+protocol UpdateOrderHistoryDelegate {
+    func updateTableView(finished: Bool)
+}
 
 class VerifyVehicleViewController: UIViewController {
     
@@ -19,12 +22,16 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     
+    var delegate: UpdateOrderHistoryDelegate?
+    
     private let service = LCNetworkRequest()
     private var vehicle: MOTCheck?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var carMake: String?
     var carColour: String?
     var carYear: String?
     var vrm: String?
+    var orders: [UserSearch]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +67,53 @@ class VerifyVehicleViewController: UIViewController {
         self.vehiclePanel.configureLabels(vrm: self.vrm, make: self.carMake, year: self.carYear, colour: self.carColour)
     }
     
+    private func saveUserSearch(response: Vehicle) {
+        
+        // Create UserSearch object and write results to data model
+        let newUserSearch = UserSearch(context: self.context)
+        newUserSearch.vrm = response.vrm
+        newUserSearch.make = response.make
+        newUserSearch.model = response.model
+        newUserSearch.colour = self.carColour
+        newUserSearch.year = response.year
+        newUserSearch.isWrittenOff = response.isWrittenOff
+        newUserSearch.isFinanced = response.isFinanced
+        newUserSearch.isScrapped = response.isScrapped
+        newUserSearch.isImported = response.isImported
+        newUserSearch.financeRecordCount = response.financeRecordCount
+        newUserSearch.financeRecordList = response.financeRecordList
+        newUserSearch.importDate = response.importDate
+        newUserSearch.writeOffDate = response.writeOffDate
+        newUserSearch.writeOffCategory = response.writeOffCategory
+        newUserSearch.scrapDate = response.scrapDate
+        newUserSearch.previousKeeperCount = response.previousKeeperCount
+        newUserSearch.stolenInfoSource = response.stolenInfoSource
+        
+        // Save the data
+        do {
+            try self.context.save()
+        }
+        catch {
+            print("Error saving results to database")
+        }
+        
+        self.delegate?.updateTableView(finished: true)
+    }
+    
     private func configureCallbacks() {
         paymentPanel.paymentCallback = {
             self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
                 guard let self = self else {return}
                 if let response = response {
+                    
+                    // Write and save data to CoreData
+                    self.saveUserSearch(response: response)
+    
+                    // Push results view onto stack
                     if let rgVC = ResultsViewController.instantiate() {
                         self.navigationController?.pushViewController(rgVC, animated: true)
+                        
+                        // Assign response from call to the Vehicle instance in ResultsVC
                         rgVC.vehicle = response
                     }
                 } else {
