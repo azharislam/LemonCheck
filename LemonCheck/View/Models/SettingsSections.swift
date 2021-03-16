@@ -7,6 +7,10 @@
 //
 import UIKit
 
+protocol SectionType: CustomStringConvertible {
+    var containsSwitch: Bool { get }
+}
+
 enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
     
     case Social
@@ -22,10 +26,12 @@ enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
     }
 }
 
-enum SocialOptions: Int, CaseIterable, CustomStringConvertible {
+enum SocialOptions: Int, CaseIterable, SectionType {
     
     case editProfile
     case logout
+    
+    var containsSwitch: Bool { return false }
     
     var description: String {
         switch self {
@@ -36,11 +42,19 @@ enum SocialOptions: Int, CaseIterable, CustomStringConvertible {
 }
 
 
-enum CommunicationOptions: Int, CaseIterable, CustomStringConvertible {
+enum CommunicationOptions: Int, CaseIterable, SectionType {
     
     case notifications
     case email
     case reportCrashes
+    
+    var containsSwitch: Bool {
+        switch self {
+        case .notifications: return true
+        case .email: return true
+        case .reportCrashes: return true
+        }
+    }
     
     var description: String {
         switch self {
@@ -51,13 +65,15 @@ enum CommunicationOptions: Int, CaseIterable, CustomStringConvertible {
     }
 }
 
-enum HelpOptions: Int, CaseIterable, CustomStringConvertible {
+enum HelpOptions: Int, CaseIterable, SectionType {
     
     case faqs
     case privacyPolicy
     case terms
     case contact
     case appVersion
+    
+    var containsSwitch: Bool { return false }
     
     var description: String {
         switch self {

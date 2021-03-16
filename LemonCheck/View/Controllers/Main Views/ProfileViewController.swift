@@ -54,10 +54,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let section = SettingsSection.init(rawValue: section) else { return 0}
+        
         switch section {
-        case 0: return 2
-        case 1: return 3
-        default: return 0
+        case .Social: return SocialOptions.allCases.count
+        case .Communication: return CommunicationOptions.allCases.count
+        case .Help: return HelpOptions.allCases.count
         }
     }
     
@@ -85,13 +88,53 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? SettingsCell else { return UITableViewCell()}
         
-        switch indexPath.section {
-        case 0: cell.backgroundColor = .red
-        case 1: cell.backgroundColor = .blue
-        default: break
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
+        
+        switch section {
+        case .Social:
+            let social = SocialOptions(rawValue: indexPath.row)
+            cell.sectionType = social
+        case .Communication:
+            let communications = CommunicationOptions(rawValue: indexPath.row)
+            cell.sectionType = communications
+        case .Help:
+            let help = HelpOptions(rawValue: indexPath.row)
+            cell.sectionType = help
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = SettingsSection(rawValue: indexPath.section),
+              let social = SocialOptions(rawValue: indexPath.row),
+              let comms = CommunicationOptions(rawValue: indexPath.row),
+              let help = HelpOptions(rawValue: indexPath.row) else { return }
+        
+        switch section {
+        case .Social:
+            switch social {
+            case .editProfile:
+                print("Edit Profile tapped")
+            case .logout:
+                print("LogOut Tapped")
+            }
+        case .Communication:
+            switch comms {
+            case .notifications: print("Notifications tapped")
+            case .email: print("Email tapped")
+            case .reportCrashes: print("Report crashes tapped")
+            }
+        case .Help:
+            switch help {
+            case .faqs: print("FAQ's tapped")
+            case .terms: print("Terms and Conditions tapped")
+            case .privacyPolicy: print("Privacy policy tapped")
+            case .contact: print("Contact tapped")
+            case .appVersion: print("App version tapped")
+            }
+        }
+
     }
     
     
