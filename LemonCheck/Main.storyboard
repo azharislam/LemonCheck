@@ -161,15 +161,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-lh-Npx">
+                                <rect key="frame" x="0.0" y="114" width="414" height="699"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nla-yF-7Ea"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xwX-lh-Npx" firstAttribute="top" secondItem="kTo-Xf-zQD" secondAttribute="bottom" constant="20" id="2bO-v6-rDy"/>
                             <constraint firstItem="kTo-Xf-zQD" firstAttribute="centerX" secondItem="Nla-yF-7Ea" secondAttribute="centerX" id="6AW-ga-js9"/>
+                            <constraint firstItem="Nla-yF-7Ea" firstAttribute="trailing" secondItem="xwX-lh-Npx" secondAttribute="trailing" id="X6p-dJ-Uyt"/>
                             <constraint firstItem="kTo-Xf-zQD" firstAttribute="top" secondItem="Nla-yF-7Ea" secondAttribute="top" constant="20" id="XfD-T4-NIN"/>
+                            <constraint firstItem="xwX-lh-Npx" firstAttribute="leading" secondItem="Nla-yF-7Ea" secondAttribute="leading" id="cIo-GO-OWM"/>
+                            <constraint firstItem="Nla-yF-7Ea" firstAttribute="bottom" secondItem="xwX-lh-Npx" secondAttribute="bottom" id="fHY-PA-RLy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DWb-Mu-BzN"/>
+                    <connections>
+                        <outlet property="tableView" destination="xwX-lh-Npx" id="bdL-db-Cmq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnO-20-PfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

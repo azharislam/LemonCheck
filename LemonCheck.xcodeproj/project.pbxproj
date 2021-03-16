@@ -17,6 +17,9 @@
 		2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */; };
 		2E42B35A25FFC541006E0429 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E42B35925FFC541006E0429 /* CloudKit.framework */; };
 		2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B36425FFD240006E0429 /* ProfileViewController.swift */; };
+		2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37126010B9A006E0429 /* SettingsCell.swift */; };
+		2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37226010B9B006E0429 /* UserInfoHeader.swift */; };
+		2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B376260110E3006E0429 /* SettingsSections.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheckRelease.entitlements; sourceTree = "<group>"; };
 		2E42B35925FFC541006E0429 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2E42B36425FFD240006E0429 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2E42B37126010B9A006E0429 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		2E42B37226010B9B006E0429 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		2E42B376260110E3006E0429 /* SettingsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSections.swift; sourceTree = "<group>"; };
 		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
 				2E42B34A25FF91D9006E0429 /* UserSearch+CoreDataClass.swift */,
 				2E42B34925FF91D9006E0429 /* UserSearch+CoreDataProperties.swift */,
+				2E42B376260110E3006E0429 /* SettingsSections.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +317,8 @@
 		B9DA4A42259A305500C9F50D /* Single Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E42B37126010B9A006E0429 /* SettingsCell.swift */,
+				2E42B37226010B9B006E0429 /* UserInfoHeader.swift */,
 				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
 				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
 				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
@@ -453,6 +462,7 @@
 				63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */,
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
 				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
+				2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */,
 				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */,
@@ -467,8 +477,10 @@
 				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
+				2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */,
 				2E42B34C25FF91D9006E0429 /* UserSearch+CoreDataClass.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
+				2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
 				2E42B34225FF8EF7006E0429 /* LemonCheck.xcdatamodeld in Sources */,
 				2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */,
