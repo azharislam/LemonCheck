@@ -3,7 +3,7 @@
     <entity name="UserSearch" representedClassName="UserSearch" syncable="YES">
         <attribute name="colour" optional="YES" attributeType="String"/>
         <attribute name="financeRecordCount" optional="YES" attributeType="String"/>
-        <attribute name="financeRecordList" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="financeRecordList" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="importDate" optional="YES" attributeType="String"/>
         <attribute name="isFinanced" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isImported" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -20,6 +20,6 @@
         <attribute name="year" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserSearch" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="UserSearch" positionX="-63" positionY="-18" width="128" height="298"/>
     </elements>
 </model>

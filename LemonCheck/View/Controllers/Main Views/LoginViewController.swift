@@ -58,17 +58,21 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         switch authorization.credential {
         case let credentials as ASAuthorizationAppleIDCredential:
             let userId = credentials.user
+            
+            // Record first name, last name and email
+            
             if let name = credentials.fullName?.givenName,
                let email = credentials.email {
                 
                 // New user (signing up)
                 // Save info to CloudKit
                 
-                let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userId))
+                let record = CKRecord(recordType: "userInfo", recordID: CKRecord.ID(recordName: userId))
                 record["name"] = name
                 record["email"] = email
                 privateDatabase.save(record) { (_,_) in
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
+                    print("User has been SAVED INTO DATABASE")
                 }
                 
                 
@@ -81,7 +85,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     if let fetchedInfo = record {
                         let name = fetchedInfo["name"] as? String
                         let userEmail = fetchedInfo["email"] as? String
-                        
+                        print("User already has account")
                         // Set this info in Settings view controller
                         
                         UserDefaults.standard.set(userId, forKey: "userProfileID")
