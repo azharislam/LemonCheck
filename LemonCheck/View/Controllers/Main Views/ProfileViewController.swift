@@ -40,10 +40,10 @@ class ProfileViewController: UIViewController {
         navigationItem.title = "Settings"
     }
     
-//    @IBAction func logoutTapped(_ sender: Any) {
-//        UserDefaults.standard.set(false, forKey: "status")
-//        Switcher.updateRootVC()
-//    }
+    //    @IBAction func logoutTapped(_ sender: Any) {
+    //        UserDefaults.standard.set(false, forKey: "status")
+    //        Switcher.updateRootVC()
+    //    }
     
 }
 
@@ -117,7 +117,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             case .editProfile:
                 print("Edit Profile tapped")
             case .logout:
-                print("LogOut Tapped")
+                UserDefaults.standard.set(false, forKey: "status")
+                Switcher.updateRootVC()
             }
         case .Communication:
             switch comms {
@@ -134,7 +135,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             case .appVersion: print("App version tapped")
             }
         }
-
+        
     }
     
     
