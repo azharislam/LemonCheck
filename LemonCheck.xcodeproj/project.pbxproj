@@ -20,6 +20,8 @@
 		2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37126010B9A006E0429 /* SettingsCell.swift */; };
 		2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37226010B9B006E0429 /* UserInfoHeader.swift */; };
 		2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B376260110E3006E0429 /* SettingsSections.swift */; };
+		2E6725C82604E0D000BED46E /* ResultSectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6725C72604E0D000BED46E /* ResultSectionsModel.swift */; };
+		2E6725CB2604E10500BED46E /* ResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6725CA2604E10500BED46E /* ResultHeaderView.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		2E42B37226010B9B006E0429 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 		2E42B376260110E3006E0429 /* SettingsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSections.swift; sourceTree = "<group>"; };
 		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
+		2E6725C72604E0D000BED46E /* ResultSectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSectionsModel.swift; sourceTree = "<group>"; };
+		2E6725CA2604E10500BED46E /* ResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHeaderView.swift; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				2E42B34A25FF91D9006E0429 /* UserSearch+CoreDataClass.swift */,
 				2E42B34925FF91D9006E0429 /* UserSearch+CoreDataProperties.swift */,
 				2E42B376260110E3006E0429 /* SettingsSections.swift */,
+				2E6725C72604E0D000BED46E /* ResultSectionsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
 				2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */,
 				2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */,
+				2E6725CA2604E10500BED46E /* ResultHeaderView.swift */,
 			);
 			path = "Single Views";
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */,
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
 				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
+				2E6725C82604E0D000BED46E /* ResultSectionsModel.swift in Sources */,
 				2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */,
 				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
@@ -494,6 +501,7 @@
 				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */,
+				2E6725CB2604E10500BED46E /* ResultHeaderView.swift in Sources */,
 				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
 				2E42B34B25FF91D9006E0429 /* UserSearch+CoreDataProperties.swift in Sources */,
 				B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */,
