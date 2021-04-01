@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="UKNumberPlate.ttf">
-            <string>UKNumberPlate</string>
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -45,63 +48,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1W-cI-TUM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-4c-MDy">
+                                <rect key="frame" x="25" y="69" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="G9p-cS-9iH"/>
+                                    <constraint firstAttribute="height" constant="54" id="XgC-nj-RMq"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-N4-3wg" userLabel="Field Stack">
+                                <rect key="frame" x="30" y="333" width="354" height="143"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-eZ-ALK">
-                                        <rect key="frame" x="92" y="200" width="230" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="230" id="uBC-T1-hco"/>
-                                            <constraint firstAttribute="height" constant="75" id="uwt-Y8-dgf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="UKNumberPlate" family="UKNumberPlate" pointSize="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-zo-Xkz">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnX-yK-cZj">
-                                        <rect key="frame" x="272" y="200" width="50" height="75"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmF-hV-3sN">
+                                        <rect key="frame" x="0.0" y="83" width="354" height="60"/>
+                                        <color key="backgroundColor" name="InactiveGray"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="yqN-wI-IVW"/>
+                                            <constraint firstAttribute="height" constant="60" id="oxc-q4-CPO"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="17"/>
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Search" image="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="searchPressed:" destination="qEW-Ke-fQo" eventType="touchUpInside" id="lhX-cd-VDM"/>
+                                            <action selector="searchPressed:" destination="qEW-Ke-fQo" eventType="touchUpInside" id="elL-hX-iNn"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cq5-ds-HL3">
-                                        <rect key="frame" x="157" y="68" width="100" height="100"/>
-                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="top" secondItem="X1W-cI-TUM" secondAttribute="topMargin" constant="16" id="90m-1f-1wO"/>
-                                    <constraint firstItem="SnX-yK-cZj" firstAttribute="height" secondItem="qVY-eZ-ALK" secondAttribute="height" id="EGe-1q-VxM"/>
-                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="top" secondItem="Cq5-ds-HL3" secondAttribute="bottom" constant="32" id="Gfx-6J-v0F"/>
-                                    <constraint firstItem="qVY-eZ-ALK" firstAttribute="centerY" secondItem="X1W-cI-TUM" secondAttribute="centerY" constant="62.5" id="KRV-ve-QBO"/>
-                                    <constraint firstItem="SnX-yK-cZj" firstAttribute="top" secondItem="qVY-eZ-ALK" secondAttribute="top" id="Lbx-aI-KFg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cq5-ds-HL3" secondAttribute="trailing" constant="157" id="MwU-yJ-nvk"/>
-                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="leading" secondItem="X1W-cI-TUM" secondAttribute="leading" constant="157" id="QdJ-Ph-0WM"/>
-                                    <constraint firstAttribute="bottom" secondItem="qVY-eZ-ALK" secondAttribute="bottom" constant="75" id="TNE-h9-CoT"/>
-                                    <constraint firstItem="Cq5-ds-HL3" firstAttribute="centerX" secondItem="X1W-cI-TUM" secondAttribute="centerX" id="vKM-BU-YOl"/>
-                                    <constraint firstAttribute="height" constant="350" id="vkv-Y2-sfn"/>
+                                    <constraint firstItem="qeM-zo-Xkz" firstAttribute="height" secondItem="PmF-hV-3sN" secondAttribute="height" id="INp-Gu-Kct"/>
                                 </constraints>
-                            </view>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aNG-8u-232" userLabel="Text Stack">
+                                <rect key="frame" x="40" y="194" width="334" height="99"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-LE-ixa">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="38"/>
+                                        <color key="textColor" name="CharcoalGray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the vehicle registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-2C-Udy">
+                                        <rect key="frame" x="0.0" y="49.5" width="280.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P7a-pU-Iiq"/>
                         <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
-                            <constraint firstItem="X1W-cI-TUM" firstAttribute="leading" secondItem="RxI-9F-Rq5" secondAttribute="leading" id="KSR-xn-Ofy"/>
-                            <constraint firstItem="SnX-yK-cZj" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" constant="90" id="LOM-2S-hqo"/>
-                            <constraint firstItem="qVY-eZ-ALK" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" id="Zeo-ep-4sk"/>
-                            <constraint firstAttribute="trailing" secondItem="X1W-cI-TUM" secondAttribute="trailing" id="bE9-kG-PZ1"/>
-                            <constraint firstItem="X1W-cI-TUM" firstAttribute="top" secondItem="RxI-9F-Rq5" secondAttribute="top" id="fBZ-eY-Vo7"/>
+                            <constraint firstItem="M8L-N4-3wg" firstAttribute="centerX" secondItem="RxI-9F-Rq5" secondAttribute="centerX" id="381-14-sY0"/>
+                            <constraint firstItem="M8L-N4-3wg" firstAttribute="leading" secondItem="P7a-pU-Iiq" secondAttribute="leading" constant="30" id="4eT-Cb-pK2"/>
+                            <constraint firstItem="aNG-8u-232" firstAttribute="leading" secondItem="P7a-pU-Iiq" secondAttribute="leading" constant="40" id="8r0-ho-WgK"/>
+                            <constraint firstItem="IcY-4c-MDy" firstAttribute="top" secondItem="P7a-pU-Iiq" secondAttribute="top" constant="25" id="A9I-nN-0Ts"/>
+                            <constraint firstItem="IcY-4c-MDy" firstAttribute="leading" secondItem="P7a-pU-Iiq" secondAttribute="leading" constant="25" id="T6w-MA-KdG"/>
+                            <constraint firstItem="aNG-8u-232" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" id="Uf4-8q-hMm"/>
+                            <constraint firstItem="P7a-pU-Iiq" firstAttribute="trailing" secondItem="M8L-N4-3wg" secondAttribute="trailing" constant="30" id="X57-Si-TU4"/>
+                            <constraint firstItem="M8L-N4-3wg" firstAttribute="top" secondItem="RxI-9F-Rq5" secondAttribute="top" constant="333" id="ZiT-pz-8Mj"/>
+                            <constraint firstItem="aNG-8u-232" firstAttribute="bottom" secondItem="M8L-N4-3wg" secondAttribute="top" constant="-40" id="pvM-fw-XhF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8yG-N0-FLc"/>
                     <connections>
-                        <outlet property="panel" destination="X1W-cI-TUM" id="Ksx-2b-7Wb"/>
-                        <outlet property="searchButton" destination="SnX-yK-cZj" id="ogk-Vx-t4F"/>
-                        <outlet property="searchField" destination="qVY-eZ-ALK" id="Iys-pr-HLj"/>
+                        <outlet property="searchButton" destination="PmF-hV-3sN" id="aEQ-no-lAP"/>
+                        <outlet property="searchField" destination="qeM-zo-Xkz" id="1CB-MN-mrb"/>
                         <segue destination="4l9-6n-08K" kind="show" identifier="mainToVerify" id="aYy-nc-gex"/>
                     </connections>
                 </viewController>
@@ -389,12 +406,18 @@
     <resources>
         <image name="CarCheck" width="62" height="62"/>
         <image name="CarCheckOn" width="62" height="62"/>
-        <image name="LemonCheckImage" width="761" height="725"/>
+        <image name="LemonCheckLogo" width="54" height="54"/>
         <image name="List" width="24" height="24"/>
         <image name="OrderOn" width="24" height="24"/>
         <image name="Profile" width="24" height="24"/>
         <image name="ProfileOn" width="24" height="24"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="Search" width="24" height="24"/>
+        <namedColor name="CharcoalGray">
+            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InactiveGray">
+            <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="LemonYellow">
             <color red="1" green="0.88627450980392153" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

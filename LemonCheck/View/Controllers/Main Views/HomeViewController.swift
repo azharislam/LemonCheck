@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var panel: UIView!
+
     private let service = LCNetworkRequest()
     var user: User?
     
@@ -38,13 +38,11 @@ class HomeViewController: UIViewController {
     }
     
     private func configureView() {
-        searchButton.layer.cornerRadius = 8
-        searchButton.layer.cornerRadius = 8
-        panel.layer.cornerRadius = 18
-        searchField.layer.borderWidth = 1
-        searchField.layer.cornerRadius = 5
-        searchField.layer.borderColor = UIColor.black.cgColor
-        panel.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
+        searchButton.layer.cornerRadius = 16
+        searchField.layer.cornerRadius = 16
+        searchField.layer.borderWidth = 0.2
+        searchField.layer.borderColor = UIColor.gray.cgColor
+        searchField.clipsToBounds = true
     }
     
     @IBAction func searchPressed(_ sender: Any) {
