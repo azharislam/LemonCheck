@@ -252,19 +252,24 @@
                                 <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-SD-JEG">
-                                <rect key="frame" x="87" y="251" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrderCell" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-SD-JEG">
+                                <rect key="frame" x="82" y="242.5" width="250" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="FF5-UW-hEX"/>
+                                    <constraint firstAttribute="width" constant="250" id="U9r-gK-xgI"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iVe-KL-dln"/>
                         <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
                             <constraint firstItem="EcV-f5-gBf" firstAttribute="top" secondItem="eZa-oa-mzU" secondAttribute="bottom" constant="20" id="648-FA-1HQ"/>
+                            <constraint firstItem="SL4-SD-JEG" firstAttribute="centerX" secondItem="iVe-KL-dln" secondAttribute="centerX" id="MIt-ao-szE"/>
                             <constraint firstItem="EcV-f5-gBf" firstAttribute="bottom" secondItem="gex-j8-Ce0" secondAttribute="top" constant="-5" id="MXn-OS-nbm"/>
                             <constraint firstItem="gex-j8-Ce0" firstAttribute="trailing" secondItem="iVe-KL-dln" secondAttribute="trailing" constant="-50" id="Rhr-W2-ksu"/>
                             <constraint firstItem="eZa-oa-mzU" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" constant="25" id="WMp-xm-8ZN"/>
                             <constraint firstItem="gex-j8-Ce0" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" constant="25" id="pSb-fZ-afY"/>
+                            <constraint firstItem="SL4-SD-JEG" firstAttribute="top" secondItem="gex-j8-Ce0" secondAttribute="bottom" constant="25" id="tF1-Zu-r5i"/>
                             <constraint firstItem="eZa-oa-mzU" firstAttribute="top" secondItem="iVe-KL-dln" secondAttribute="top" constant="25" id="vts-sr-bMW"/>
                             <constraint firstItem="EcV-f5-gBf" firstAttribute="leading" secondItem="iVe-KL-dln" secondAttribute="leading" constant="25" id="zBL-R9-QqB"/>
                         </constraints>
@@ -396,6 +401,7 @@
         <image name="CarCheckOn" width="62" height="62"/>
         <image name="LemonCheckLogo" width="54" height="54"/>
         <image name="List" width="24" height="24"/>
+        <image name="OrderCell" width="56.5" height="56"/>
         <image name="OrderOn" width="24" height="24"/>
         <image name="Profile" width="24" height="24"/>
         <image name="ProfileOn" width="24" height="24"/>
