@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +54,7 @@ class HomeViewController: UIViewController {
     private func searchFor(input: String) {
         VehicleInput.shared.reg = input
         if input != "" {
+            searchButton.backgroundColor = UIColor(named: "CharcoalGray") //move this
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
                 DispatchQueue.global(qos: .userInteractive).async {
