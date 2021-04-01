@@ -333,7 +333,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabVC" id="11P-aj-0DH" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="v3k-l8-IQV"/>
-                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypm-rV-pTA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypm-rV-pTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
