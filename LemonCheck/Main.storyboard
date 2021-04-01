@@ -18,7 +18,7 @@
         <scene sceneID="M6q-zV-HC3">
             <objects>
                 <navigationController title="Car Check" navigationBarHidden="YES" id="pow-kl-KUw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Car Check" image="car" catalog="system" id="fEe-a7-Bvw">
+                    <tabBarItem key="tabBarItem" title="Orders" image="List" selectedImage="OrderOn" id="fEe-a7-Bvw">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="qEi-DX-r3b"/>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="qEW-Ke-fQo" kind="relationship" relationship="rootViewController" id="0nh-Tx-qrh"/>
+                        <segue destination="a1w-9k-osn" kind="relationship" relationship="rootViewController" id="yPS-cr-MjY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1G-Fa-qwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6f-nm-J9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971.0144927536232" y="-879.24107142857144"/>
+            <point key="canvasLocation" x="-1097" y="-853"/>
         </scene>
         <!--Order History View Controller-->
         <scene sceneID="nrn-3f-3I3">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-10-fO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="-879"/>
+            <point key="canvasLocation" x="-1971" y="-853"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="aQ0-Wr-QWK">
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnO-20-PfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="-879"/>
+            <point key="canvasLocation" x="-278" y="-853"/>
         </scene>
         <!--Find your vehicle-->
         <scene sceneID="MB6-16-Wzu">
@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2p-wn-F6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971" y="-206"/>
+            <point key="canvasLocation" x="-1097" y="-133"/>
         </scene>
         <!--Results-->
         <scene sceneID="SYo-PX-D7q">
@@ -351,7 +351,7 @@
         <scene sceneID="iZV-DX-Cmj">
             <objects>
                 <navigationController navigationBarHidden="YES" id="NwR-9S-BlN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="efh-P9-lNQ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="ProfileOn" id="efh-P9-lNQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kMt-YL-hza">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -363,16 +363,19 @@
             </objects>
             <point key="canvasLocation" x="-278" y="-1590"/>
         </scene>
-        <!--Orders-->
+        <!--Car Check-->
         <scene sceneID="gZ2-qk-BDu">
             <objects>
                 <navigationController navigationBarHidden="YES" id="V0s-El-O2h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Orders" image="wallet.pass" catalog="system" id="CFj-uq-mM5"/>
+                    <tabBarItem key="tabBarItem" title="Car Check" image="CarCheck" selectedImage="CarCheckOn" id="CFj-uq-mM5">
+                        <inset key="imageInsets" minX="0.0" minY="-21" maxX="0.0" maxY="0.0"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="11"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYu-KI-UGQ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="a1w-9k-osn" kind="relationship" relationship="rootViewController" id="AHC-wa-hhw"/>
+                        <segue destination="qEW-Ke-fQo" kind="relationship" relationship="rootViewController" id="i10-Ih-QVn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlV-b5-qNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -381,11 +384,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CarCheck" width="62" height="62"/>
+        <image name="CarCheckOn" width="62" height="62"/>
         <image name="LemonCheckImage" width="761" height="725"/>
-        <image name="car" catalog="system" width="128" height="93"/>
+        <image name="List" width="24" height="24"/>
+        <image name="OrderOn" width="24" height="24"/>
+        <image name="Profile" width="24" height="24"/>
+        <image name="ProfileOn" width="24" height="24"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
