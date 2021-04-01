@@ -64,7 +64,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,8 +72,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         
         // Get order from array
         let order = self.orders?[indexPath.row]
-        cell.numberPlateView.configureLabel(vrm: order?.vrm ?? "EXPIRED")
-        cell.configureLabel(make: order?.make ?? "N/A", model: order?.model ?? "N/A")
+        cell.configureLabel(make: order?.make ?? "N/A", model: order?.model ?? "N/A", vim: order?.vrm ?? "N/A")
         return cell
     }
     

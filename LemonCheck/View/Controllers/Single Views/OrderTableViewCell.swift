@@ -10,22 +10,17 @@ import UIKit
 
 class OrderTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var numberPlateView: NumberPlateView!
     @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var carImage: UIImageView!
+    @IBOutlet weak var orderDate: UILabel!
+    @IBOutlet weak var numberPlate: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.configureViews()
     }
     
-    private func configureViews() {
-        numberPlateView.layer.cornerRadius = 8
-        numberPlateView.backgroundColor = .yellow
-    }
-    
-    func configureLabel(make: String, model: String) {
-        self.makeLabel.text = make
-        self.modelLabel.text = model
+    func configureLabel(make: String, model: String, vim: String) {
+        self.makeLabel.text = "\(make) \(model)"
+        self.numberPlate.text = vim
     }
 }

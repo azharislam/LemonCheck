@@ -58,9 +58,9 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-N4-3wg" userLabel="Field Stack">
                                 <rect key="frame" x="30" y="333" width="354" height="143"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-zo-Xkz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registration number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-zo-Xkz">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmF-hV-3sN">
@@ -84,16 +84,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aNG-8u-232" userLabel="Text Stack">
-                                <rect key="frame" x="40" y="194" width="334" height="99"/>
+                                <rect key="frame" x="40" y="204" width="334" height="89"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-LE-ixa">
-                                        <rect key="frame" x="0.0" y="0.0" width="273" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="38"/>
                                         <color key="textColor" name="CharcoalGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the vehicle registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-2C-Udy">
-                                        <rect key="frame" x="0.0" y="49.5" width="280.5" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="270.5" height="44.5"/>
                                         <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -134,26 +134,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-SP-koq">
-                                <rect key="frame" x="130.5" y="64" width="153" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qEM-uT-Ben">
+                                <rect key="frame" x="20" y="236" width="374" height="557"/>
+                                <color key="backgroundColor" name="OffWhite"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckLogo" translatesAutoresizingMaskIntoConstraints="NO" id="91y-qD-oYl">
+                                <rect key="frame" x="25" y="69" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="71w-z8-crU"/>
+                                    <constraint firstAttribute="width" constant="54" id="GSc-rb-uuH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-gf-Osf">
+                                <rect key="frame" x="25" y="144" width="215.5" height="42"/>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="36"/>
+                                <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qEM-uT-Ben">
-                                <rect key="frame" x="20" y="114" width="374" height="679"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of your paid vehicle history checks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAU-ag-fi2">
+                                <rect key="frame" x="25" y="196" width="295" height="20"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
+                                <color key="textColor" name="CharcoalGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Mq-3Z-aiI"/>
                         <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
-                            <constraint firstItem="qEM-uT-Ben" firstAttribute="top" secondItem="d51-SP-koq" secondAttribute="bottom" constant="20" id="5fM-hA-lgd"/>
                             <constraint firstItem="qEM-uT-Ben" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="20" id="5yf-a6-qw0"/>
                             <constraint firstItem="6Mq-3Z-aiI" firstAttribute="trailing" secondItem="qEM-uT-Ben" secondAttribute="trailing" constant="20" id="I5c-LY-vlw"/>
+                            <constraint firstItem="7Od-gf-Osf" firstAttribute="top" secondItem="6Mq-3Z-aiI" secondAttribute="top" constant="100" id="N4y-iw-RUG"/>
                             <constraint firstItem="6Mq-3Z-aiI" firstAttribute="bottom" secondItem="qEM-uT-Ben" secondAttribute="bottom" constant="20" id="PFD-3c-L96"/>
-                            <constraint firstItem="d51-SP-koq" firstAttribute="top" secondItem="6Mq-3Z-aiI" secondAttribute="top" constant="20" id="e0b-CK-X56"/>
-                            <constraint firstItem="d51-SP-koq" firstAttribute="centerX" secondItem="6Mq-3Z-aiI" secondAttribute="centerX" id="v5m-bK-mgO"/>
+                            <constraint firstItem="7Od-gf-Osf" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="25" id="PgR-hM-o7y"/>
+                            <constraint firstItem="WAU-ag-fi2" firstAttribute="top" secondItem="7Od-gf-Osf" secondAttribute="bottom" constant="10" id="TGd-Xp-709"/>
+                            <constraint firstItem="91y-qD-oYl" firstAttribute="top" secondItem="6Mq-3Z-aiI" secondAttribute="top" constant="25" id="epT-Qx-CHo"/>
+                            <constraint firstItem="WAU-ag-fi2" firstAttribute="bottom" secondItem="qEM-uT-Ben" secondAttribute="top" constant="-20" id="q7R-0q-J0A"/>
+                            <constraint firstItem="WAU-ag-fi2" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="25" id="qXl-lp-TU4"/>
+                            <constraint firstItem="91y-qD-oYl" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="25" id="tOP-Z2-5Jq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vqy-Yf-r9I"/>
@@ -163,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-10-fO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971" y="-853"/>
+            <point key="canvasLocation" x="-1971.0144927536232" y="-853.125"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="aQ0-Wr-QWK">
@@ -328,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7j-SW-XNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971.0144927536232" y="476.78571428571428"/>
+            <point key="canvasLocation" x="-1097" y="635"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="LaK-Up-S5M">
