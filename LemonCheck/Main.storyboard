@@ -88,7 +88,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P7a-pU-Iiq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
                             <constraint firstItem="X1W-cI-TUM" firstAttribute="leading" secondItem="RxI-9F-Rq5" secondAttribute="leading" id="KSR-xn-Ofy"/>
                             <constraint firstItem="SnX-yK-cZj" firstAttribute="centerX" secondItem="P7a-pU-Iiq" secondAttribute="centerX" constant="90" id="LOM-2S-hqo"/>
@@ -129,7 +129,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Mq-3Z-aiI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
                             <constraint firstItem="qEM-uT-Ben" firstAttribute="top" secondItem="d51-SP-koq" secondAttribute="bottom" constant="20" id="5fM-hA-lgd"/>
                             <constraint firstItem="qEM-uT-Ben" firstAttribute="leading" secondItem="6Mq-3Z-aiI" secondAttribute="leading" constant="20" id="5yf-a6-qw0"/>
@@ -168,7 +168,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nla-yF-7Ea"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
                             <constraint firstItem="xwX-lh-Npx" firstAttribute="top" secondItem="kTo-Xf-zQD" secondAttribute="bottom" constant="20" id="2bO-v6-rDy"/>
                             <constraint firstItem="kTo-Xf-zQD" firstAttribute="centerX" secondItem="Nla-yF-7Ea" secondAttribute="centerX" id="6AW-ga-js9"/>
@@ -333,10 +333,11 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabVC" id="11P-aj-0DH" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="v3k-l8-IQV"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypm-rV-pTA">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypm-rV-pTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" name="LemonYellow"/>
                     </tabBar>
                     <connections>
@@ -396,6 +397,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="LemonYellow">
             <color red="1" green="0.88627450980392153" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OffWhite">
+            <color red="0.98039215686274506" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
