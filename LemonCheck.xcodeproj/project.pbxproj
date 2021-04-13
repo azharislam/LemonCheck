@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E0CBBBE2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */; };
 		2E0CBBBF2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */; };
+		2E0CBBC2262611FF00B0D09F /* PaymentPanelPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */; };
 		2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15024525FD20A300BB25F5 /* LoginViewController.swift */; };
 		2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B2CC25FE56BF006E0429 /* Switcher.swift */; };
 		2E42B34225FF8EF7006E0429 /* LemonCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */; };
@@ -73,6 +74,7 @@
 		2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.release.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.release.xcconfig"; sourceTree = "<group>"; };
 		2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleTableViewCell.swift; sourceTree = "<group>"; };
 		2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyVehicleTableViewCell.xib; sourceTree = "<group>"; };
+		2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelPresentationView.swift; sourceTree = "<group>"; };
 		2E15024525FD20A300BB25F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E42B2CC25FE56BF006E0429 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		2E42B34125FF8EF7006E0429 /* LemonCheck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LemonCheck.xcdatamodel; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */,
 				B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */,
 				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
+				2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */,
 			);
 			path = "Single Views";
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
 				2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */,
 				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
+				2E0CBBC2262611FF00B0D09F /* PaymentPanelPresentationView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
 				2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */,

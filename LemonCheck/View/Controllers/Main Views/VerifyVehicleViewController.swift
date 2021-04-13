@@ -60,10 +60,15 @@ class VerifyVehicleViewController: UIViewController {
 
     }
     
+    @objc func showPanel() {
+        let slideVC = PaymentPanelView()
+        slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
+    }
+    
     @IBAction func yesButtonTapped(_ sender: Any) {
-        // Make background view dark so panel stands out
-        // Animate panel to come up
-//        paymentPanel.isHidden = false
+        showPanel()
     }
     
     @IBAction func noButtonTapped(_ sender: Any) {
@@ -71,19 +76,11 @@ class VerifyVehicleViewController: UIViewController {
     }
     
     private func configureView() {
-//        paymentPanel.isHidden = true
         yesButton.layer.cornerRadius = 16
         noButton.layer.cornerRadius = 16
         self.numberPlateView.vrmLabel.text = self.vrm ?? ""
         self.numberPlateView.backgroundColor = UIColor(named: "DarkYellow")
-//        self.configureEntities(make: self.carMake ?? "", year: self.carYear ?? "", color: self.carColour ?? "")
     }
-    
-//    private func configureEntities(make: String, year: String, color: String) {
-//        self.makeLabel.text = make
-//        self.colorLabel.text = color
-//        self.yearLabel.text = year
-//    }
     
     private func saveUserSearch(response: Vehicle) {
         
@@ -171,6 +168,14 @@ extension VerifyVehicleViewController: UITableViewDelegate, UITableViewDataSourc
         }
 
         return cell ?? UITableViewCell()
+    }
+    
+}
+
+extension VerifyVehicleViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PaymentPanelPresentationView(presentedViewController: presented, presenting: presenting)
     }
     
 }
