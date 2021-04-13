@@ -21,7 +21,7 @@ enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
         switch self {
         case .Social: return "Social"
         case .Communication: return "Communications"
-        case .Help: return "Help"
+        case .Help: return "More"
         }
     }
 }

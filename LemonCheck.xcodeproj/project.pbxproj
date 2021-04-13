@@ -26,6 +26,7 @@
 		2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */; };
 		2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */; };
 		2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */; };
+		2EAD64F326173C7500095480 /* VerifyVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD64F226173C7500095480 /* VerifyVehicleTableViewCell.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		2EAD64F226173C7500095480 /* VerifyVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleTableViewCell.swift; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EAD64EE26173C5B00095480 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */,
+				2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */,
+				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
+				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
+				2E42B37126010B9A006E0429 /* SettingsCell.swift */,
+				2EAD64F226173C7500095480 /* VerifyVehicleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		381395BDDDFB7447CCA7D690 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,10 +350,8 @@
 		B9DA4A42259A305500C9F50D /* Single Views */ = {
 			isa = PBXGroup;
 			children = (
-				2E42B37126010B9A006E0429 /* SettingsCell.swift */,
+				2EAD64EE26173C5B00095480 /* Cells */,
 				2E42B37226010B9B006E0429 /* UserInfoHeader.swift */,
-				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
-				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
 				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
 				B94FAC8F25D04083006549AF /* PaymentPanelView.xib */,
 				B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */,
@@ -347,8 +360,6 @@
 				B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */,
 				B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */,
 				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
-				2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */,
-				2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */,
 			);
 			path = "Single Views";
 			sourceTree = "<group>";
@@ -488,6 +499,7 @@
 				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
 				2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */,
 				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
+				2EAD64F326173C7500095480 /* VerifyVehicleTableViewCell.swift in Sources */,
 				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
 				2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */,
 				B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */,

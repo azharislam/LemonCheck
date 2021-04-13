@@ -9,24 +9,26 @@
 import UIKit
 import Foundation
 
+enum FirstResult: Int {
+    case make
+    case colour
+    case year
+    case ulez
+}
+
+
 protocol UpdateOrderHistoryDelegate {
     func updateTableView(finished: Bool)
 }
 
 class VerifyVehicleViewController: UIViewController {
     
-    @IBOutlet weak var paymentPanel: PaymentPanelView!
-    @IBOutlet weak var vehiclePanel: VerifyPanelView!
-    @IBOutlet weak var questionStackView: UIStackView!
-    @IBOutlet weak var questionLabel: UILabel!
+//    @IBOutlet weak var paymentPanel: PaymentPanelView!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var numberPlateView: NumberPlateView!
     @IBOutlet weak var carImage: UIImageView!
-    @IBOutlet weak var makeLabel: UILabel!
-    @IBOutlet weak var colorLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var ulezLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var delegate: UpdateOrderHistoryDelegate?
     
@@ -41,9 +43,9 @@ class VerifyVehicleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(red: 255/255, green: 214/255, blue: 10/255, alpha: 1)
         self.configureView()
-        self.configureCallbacks()
+        self.configureTableView()
+//        self.configureCallbacks()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,10 +53,17 @@ class VerifyVehicleViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.register(VerifyVehicleTableViewCell.self, forCellReuseIdentifier: "VVCell")
+
+    }
+    
     @IBAction func yesButtonTapped(_ sender: Any) {
         // Make background view dark so panel stands out
         // Animate panel to come up
-        paymentPanel.isHidden = false
+//        paymentPanel.isHidden = false
     }
     
     @IBAction func noButtonTapped(_ sender: Any) {
@@ -62,18 +71,19 @@ class VerifyVehicleViewController: UIViewController {
     }
     
     private func configureView() {
-        paymentPanel.isHidden = true
+//        paymentPanel.isHidden = true
         yesButton.layer.cornerRadius = 16
         noButton.layer.cornerRadius = 16
         self.numberPlateView.vrmLabel.text = self.vrm ?? ""
-        self.configureEntities(make: self.carMake ?? "", year: self.carYear ?? "", color: self.carColour ?? "")
+        self.numberPlateView.backgroundColor = UIColor(named: "DarkYellow")
+//        self.configureEntities(make: self.carMake ?? "", year: self.carYear ?? "", color: self.carColour ?? "")
     }
     
-    private func configureEntities(make: String, year: String, color: String) {
-        self.makeLabel.text = make
-        self.colorLabel.text = color
-        self.yearLabel.text = year
-    }
+//    private func configureEntities(make: String, year: String, color: String) {
+//        self.makeLabel.text = make
+//        self.colorLabel.text = color
+//        self.yearLabel.text = year
+//    }
     
     private func saveUserSearch(response: Vehicle) {
         
@@ -108,29 +118,55 @@ class VerifyVehicleViewController: UIViewController {
         self.delegate?.updateTableView(finished: true)
     }
     
-    private func configureCallbacks() {
-        paymentPanel.paymentCallback = {
-            self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
-                guard let self = self else {return}
-                if let response = response {
-                    
-                    // Write and save data to CoreData
-                    self.saveUserSearch(response: response)
-    
-                    // Push results view onto stack
-                    if let rgVC = ResultsViewController.instantiate() {
-                        self.navigationController?.pushViewController(rgVC, animated: true)
-                        
-                        // Assign response from call to the Vehicle instance in ResultsVC
-                        rgVC.vehicle = response
-                    }
-                } else {
-                    print("Cannot find vehicle")
-                }
-            }
-        }
-        paymentPanel.backCallBack = {
-            self.navigationController?.popViewController(animated: true)
-        }
+//    private func configureCallbacks() {
+//        paymentPanel.paymentCallback = {
+//            self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
+//                guard let self = self else {return}
+//                if let response = response {
+//
+//                    // Write and save data to CoreData
+//                    self.saveUserSearch(response: response)
+//
+//                    // Push results view onto stack
+//                    if let rgVC = ResultsViewController.instantiate() {
+//                        self.navigationController?.pushViewController(rgVC, animated: true)
+//
+//                        // Assign response from call to the Vehicle instance in ResultsVC
+//                        rgVC.vehicle = response
+//                    }
+//                } else {
+//                    print("Cannot find vehicle")
+//                }
+//            }
+//        }
+//        paymentPanel.backCallBack = {
+//            self.navigationController?.popViewController(animated: true)
+//        }
+//    }
+}
+
+extension VerifyVehicleViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VVCell") as? VerifyVehicleTableViewCell
+        let resultSection = FirstResult(rawValue: indexPath.row)
+        switch resultSection {
+        case .make:
+            cell?.configure(labelOne: "Make", labelTwo: carMake ?? "")
+        case .colour:
+            cell?.configure(labelOne: "Colour", labelTwo: carColour ?? "")
+        case .year:
+            cell?.configure(labelOne: "Year", labelTwo: carYear ?? "")
+        case .ulez:
+            cell?.configure(labelOne: "ULEZ Compliant", labelTwo: "Yes")
+        case .none:
+            break
+        }
+
+        return cell ?? UITableViewCell()
+    }
+    
 }

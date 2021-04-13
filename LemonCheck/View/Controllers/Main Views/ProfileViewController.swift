@@ -11,7 +11,6 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var userInfoHeader: UserInfoHeader!
     private let reuseIdentifier = "SettingsCell"
     
     override func viewDidLoad() {
@@ -25,9 +24,6 @@ class ProfileViewController: UIViewController {
         tableView.rowHeight = 60
         tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.frame = view.frame
-        let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 100)
-        userInfoHeader = UserInfoHeader(frame: frame)
-        tableView.tableHeaderView = userInfoHeader
         tableView.tableFooterView = UIView()
     }
     
@@ -66,11 +62,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = UIColor(named: "OffWhite")
         
         let title = UILabel()
-        title.font = UIFont.boldSystemFont(ofSize: 16)
-        title.textColor = .black
+        title.font = UIFont(name: "DMSans-Regular", size: 16)
+        title.textColor = UIColor(named: "CharcoalGray")
         
         title.text = SettingsSection.init(rawValue: section)?.description
         view.addSubview(title)
@@ -89,7 +85,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? SettingsCell else { return UITableViewCell()}
         
         guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
-        
+        cell.backgroundColor = UIColor(named: "OffWhite")
         switch section {
         case .Social:
             let social = SocialOptions(rawValue: indexPath.row)
