@@ -13,8 +13,7 @@ import UIKit
 class PaymentPanelView: UIView {
     
     @IBOutlet weak var applePayButton: UIButton!
-    @IBOutlet weak var panelTitleLabel: UILabel!
-    @IBOutlet weak var searchAgainButton: UIButton!
+    @IBOutlet weak var topLine: UIView!
     
     var paymentCallback: (() -> Void)?
     var backCallBack: (() -> Void)?
@@ -31,6 +30,8 @@ class PaymentPanelView: UIView {
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: PaymentPanelView.className) else {return}
         view.frame = self.bounds
+        applePayButton.layer.cornerRadius = 16
+        topLine.layer.cornerRadius = 8
         self.addSubview(view)
     }
     
@@ -39,10 +40,5 @@ class PaymentPanelView: UIView {
             callback()
         }
     }
-    
-    @IBAction func searchAgainTapped(_ sender: Any) {
-        if let callback = backCallBack {
-            callback()
-        }
-    }
+
 }

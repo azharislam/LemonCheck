@@ -4,17 +4,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentPanelView" customModule="LemonCheck" customModuleProvider="target">
             <connections>
-                <outlet property="applePayButton" destination="VDa-eg-s2o" id="2pS-ko-GaA"/>
-                <outlet property="panelTitleLabel" destination="hpP-B8-aTa" id="wA5-NE-WcU"/>
-                <outlet property="searchAgainButton" destination="gId-Ue-Udh" id="MDg-Ax-srT"/>
+                <outlet property="applePayButton" destination="q4I-tJ-dJZ" id="U64-s8-aaV"/>
+                <outlet property="topLine" destination="lvu-TC-fY8" id="2nA-iV-geO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,121 +29,230 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-eg-s2o" userLabel="ApplePayButton">
-                    <rect key="frame" x="20" y="280.5" width="374" height="184.5"/>
-                    <state key="normal" image="applepay"/>
-                    <connections>
-                        <action selector="applePayTapped:" destination="-1" eventType="touchUpInside" id="2vA-hc-QdE"/>
-                    </connections>
-                </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-DK-76T">
-                    <rect key="frame" x="30" y="50" width="354" height="240.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjm-ek-Qh4">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-bf-J1f">
-                            <rect key="frame" x="0.0" y="0.0" width="354" height="29"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Vehicle Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqr-hb-YO1">
+                            <rect key="frame" x="30" y="29" width="194.5" height="29"/>
+                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-DY-iEB" userLabel="ListStack">
+                            <rect key="frame" x="30" y="68" width="354" height="283"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a full check for £4.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpP-B8-aTa">
-                                    <rect key="frame" x="0.0" y="0.0" width="354" height="29"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-5Y-Vsb" userLabel="Check1">
+                                    <rect key="frame" x="0.0" y="0.0" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-3A-iLX">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="eMu-fw-bo9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accident History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-sv-uOf">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="bse-vj-uoc" userLabel="Check2">
+                                    <rect key="frame" x="0.0" y="40.5" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="79R-Jh-rf9">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="RmA-WY-hcQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outstanding Finance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUs-gN-HMi">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="hT2-bj-Lem" userLabel="Check3">
+                                    <rect key="frame" x="0.0" y="81" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="676-7E-J44">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="adh-aM-AZt"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost / Stolen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-3I-2Kh">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-VD-z0z" userLabel="Check4">
+                                    <rect key="frame" x="0.0" y="121.5" width="354" height="40"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="3RO-n5-P92">
+                                            <rect key="frame" x="0.0" y="16" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="X0l-od-NVh"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage Discrepancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXs-5I-UQn">
+                                            <rect key="frame" x="40" y="16" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="n0d-vd-ndi" userLabel="Check5">
+                                    <rect key="frame" x="0.0" y="162.5" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="0zQ-Mb-euF">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="z5h-oH-Cn4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. Previous Keepers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-av-2n3">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="OSJ-I1-w7n" userLabel="Check6">
+                                    <rect key="frame" x="0.0" y="203" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="OB2-Zk-7wF">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="pVG-ia-R0h"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scrap History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-eV-LT2">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="Wyi-xS-UTo" userLabel="Check7">
+                                    <rect key="frame" x="0.0" y="243.5" width="354" height="39.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-KK-T7r">
+                                            <rect key="frame" x="0.0" y="15.5" width="40" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="M8e-yA-gWZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Plate Changes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytg-Dn-i0u">
+                                            <rect key="frame" x="40" y="15.5" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-tJ-dJZ">
+                            <rect key="frame" x="40" y="432" width="334" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="p8K-Rg-3nd"/>
+                            </constraints>
+                            <state key="normal" image="ApplePay-1"/>
+                            <connections>
+                                <action selector="applePayTapped:" destination="-1" eventType="touchUpInside" id="dey-hs-7aj"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9d-vR-FNy" userLabel="Divider">
+                            <rect key="frame" x="40" y="381" width="334" height="1"/>
+                            <color key="backgroundColor" name="InactiveGray"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="A4n-pL-rmv"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgT-hH-B6B" userLabel="PriceStack">
+                            <rect key="frame" x="40" y="382" width="334" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXZ-8K-GbS">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="45"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
                                     <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="£5.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-LU-fLD">
+                                    <rect key="frame" x="33" y="0.0" width="301" height="45"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
+                                    <color key="textColor" name="DarkYellow"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzw-JA-BRx">
-                            <rect key="frame" x="0.0" y="79" width="354" height="20.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="See accident history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-Zz-YIi">
-                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gza-jI-aZ0">
-                                    <rect key="frame" x="334" y="0.5" width="20" height="19.5"/>
-                                    <color key="tintColor" systemColor="systemGreenColor"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-Gf-reX">
-                            <rect key="frame" x="0.0" y="149.5" width="354" height="20.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Number of previous owners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-8B-bSi">
-                                    <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TCI-l3-JL1">
-                                    <rect key="frame" x="334" y="0.5" width="20" height="19.5"/>
-                                    <color key="tintColor" systemColor="systemGreenColor"/>
-                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-wx-Mdk">
-                            <rect key="frame" x="0.0" y="220" width="354" height="20.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Financed, stolen, imported?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdb-z0-nic">
-                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7W1-On-0zP">
-                                    <rect key="frame" x="334" y="0.5" width="20" height="19.5"/>
-                                    <color key="tintColor" systemColor="systemGreenColor"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvu-TC-fY8" userLabel="TopLine">
+                            <rect key="frame" x="150" y="5" width="114" height="4"/>
+                            <color key="backgroundColor" name="InactiveGray"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="TCr-Fa-hGU"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gId-Ue-Udh">
-                    <rect key="frame" x="100" y="415" width="214" height="32"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Search again">
-                                <attributes>
-                                    <color key="NSColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="17" name="Geneva"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </state>
-                    <connections>
-                        <action selector="searchAgainTapped:" destination="-1" eventType="touchUpInside" id="T8v-kD-01K"/>
-                    </connections>
-                </button>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="q4I-tJ-dJZ" firstAttribute="centerX" secondItem="aoi-DY-iEB" secondAttribute="centerX" id="05d-Ug-V81"/>
+                        <constraint firstAttribute="trailing" secondItem="aoi-DY-iEB" secondAttribute="trailing" constant="30" id="0Rf-iZ-7XH"/>
+                        <constraint firstItem="lvu-TC-fY8" firstAttribute="top" secondItem="vjm-ek-Qh4" secondAttribute="top" constant="5" id="1G6-N2-w68"/>
+                        <constraint firstAttribute="bottom" secondItem="q4I-tJ-dJZ" secondAttribute="bottom" constant="20" id="3C5-7a-hBM"/>
+                        <constraint firstItem="s9d-vR-FNy" firstAttribute="bottom" secondItem="q4I-tJ-dJZ" secondAttribute="top" constant="-50" id="5yI-Mr-1tT"/>
+                        <constraint firstItem="kqr-hb-YO1" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="30" id="EzF-32-BmT"/>
+                        <constraint firstItem="lvu-TC-fY8" firstAttribute="bottom" secondItem="kqr-hb-YO1" secondAttribute="top" constant="-20" id="RMq-Bi-gAo"/>
+                        <constraint firstItem="s9d-vR-FNy" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="40" id="Wx6-kX-16T"/>
+                        <constraint firstItem="AgT-hH-B6B" firstAttribute="top" secondItem="s9d-vR-FNy" secondAttribute="bottom" id="X8h-rD-CU6"/>
+                        <constraint firstItem="lvu-TC-fY8" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="150" id="ZgV-oX-UDr"/>
+                        <constraint firstItem="AgT-hH-B6B" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="40" id="bx5-6p-dIm"/>
+                        <constraint firstAttribute="trailing" secondItem="q4I-tJ-dJZ" secondAttribute="trailing" constant="40" id="dol-47-ubj"/>
+                        <constraint firstItem="aoi-DY-iEB" firstAttribute="top" secondItem="kqr-hb-YO1" secondAttribute="bottom" constant="10" id="gMj-hg-NdE"/>
+                        <constraint firstItem="q4I-tJ-dJZ" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="40" id="iTr-bv-egt"/>
+                        <constraint firstItem="AgT-hH-B6B" firstAttribute="bottom" secondItem="q4I-tJ-dJZ" secondAttribute="top" constant="-5" id="kVG-DN-R8r"/>
+                        <constraint firstAttribute="trailing" secondItem="lvu-TC-fY8" secondAttribute="trailing" constant="150" id="lqw-6L-v7z"/>
+                        <constraint firstItem="s9d-vR-FNy" firstAttribute="top" secondItem="aoi-DY-iEB" secondAttribute="bottom" constant="30" id="psz-PO-Okx"/>
+                        <constraint firstAttribute="trailing" secondItem="s9d-vR-FNy" secondAttribute="trailing" constant="40" id="wCm-So-pGw"/>
+                        <constraint firstItem="aoi-DY-iEB" firstAttribute="leading" secondItem="vjm-ek-Qh4" secondAttribute="leading" constant="30" id="wri-QM-Cic"/>
+                        <constraint firstAttribute="trailing" secondItem="AgT-hH-B6B" secondAttribute="trailing" constant="40" id="zzO-jv-VTl"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="gId-Ue-Udh" firstAttribute="top" secondItem="VDa-eg-s2o" secondAttribute="bottom" constant="-50" id="1U1-k2-16J"/>
-                <constraint firstItem="gE3-DK-76T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Iwr-gD-ONA"/>
-                <constraint firstItem="gE3-DK-76T" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="XLg-rA-iQT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VDa-eg-s2o" secondAttribute="trailing" constant="20" id="Xsf-S1-bNa"/>
-                <constraint firstAttribute="bottom" secondItem="VDa-eg-s2o" secondAttribute="bottom" constant="35" id="awC-TY-nPL"/>
-                <constraint firstItem="gId-Ue-Udh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="dTq-rY-jx1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gE3-DK-76T" secondAttribute="trailing" constant="30" id="dWR-Pg-cXZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gId-Ue-Udh" secondAttribute="trailing" constant="100" id="g4I-CA-JVf"/>
-                <constraint firstItem="gId-Ue-Udh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gWc-aC-REY"/>
-                <constraint firstItem="VDa-eg-s2o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hKP-C9-y0y"/>
-                <constraint firstItem="gE3-DK-76T" firstAttribute="bottom" secondItem="VDa-eg-s2o" secondAttribute="top" constant="10" id="lb0-xY-1sK"/>
-                <constraint firstItem="VDa-eg-s2o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="r3a-q1-Tcn"/>
-                <constraint firstItem="gE3-DK-76T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rCp-1Y-spF"/>
+                <constraint firstItem="vjm-ek-Qh4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mZb-Jo-lyn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vjm-ek-Qh4" secondAttribute="trailing" id="oNs-dF-S4U"/>
+                <constraint firstItem="vjm-ek-Qh4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ufI-je-Op2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vjm-ek-Qh4" secondAttribute="bottom" id="usN-E3-gtz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="33" y="63"/>
         </view>
     </objects>
     <resources>
-        <image name="applepay" width="300" height="44"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="ApplePay-1" width="44" height="18"/>
+        <image name="YellowCheck" width="24" height="24"/>
+        <namedColor name="DarkYellow">
+            <color red="0.9137254901960784" green="0.74509803921568629" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InactiveGray">
+            <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

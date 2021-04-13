@@ -29,9 +29,7 @@ class NumberPlateView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         numberPlate.layer.cornerRadius = 12
-        numberPlate.backgroundColor = .yellow
-        numberPlate.layer.borderWidth = 1
-        numberPlate.layer.borderColor = UIColor.black.cgColor
+        numberPlate.backgroundColor = UIColor(named: "LemonYellow")
         vrmLabel.font = UIFont(name: Constants.Fonts.ukNumberPlate, size: 32)
     }
     

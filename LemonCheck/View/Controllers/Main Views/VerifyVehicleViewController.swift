@@ -56,7 +56,7 @@ class VerifyVehicleViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.register(VerifyVehicleTableViewCell.self, forCellReuseIdentifier: "VVCell")
+        tableView.register(UINib(nibName: "VerifyVehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "VVCell")
 
     }
     
@@ -150,18 +150,22 @@ extension VerifyVehicleViewController: UITableViewDelegate, UITableViewDataSourc
         return 4
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VVCell") as? VerifyVehicleTableViewCell
         let resultSection = FirstResult(rawValue: indexPath.row)
         switch resultSection {
         case .make:
-            cell?.configure(labelOne: "Make", labelTwo: carMake ?? "")
+            cell?.configure(firstLabel: "Make", secondLabel: carMake ?? "")
         case .colour:
-            cell?.configure(labelOne: "Colour", labelTwo: carColour ?? "")
+            cell?.configure(firstLabel: "Colour", secondLabel: carColour ?? "")
         case .year:
-            cell?.configure(labelOne: "Year", labelTwo: carYear ?? "")
+            cell?.configure(firstLabel: "Year", secondLabel: carYear ?? "")
         case .ulez:
-            cell?.configure(labelOne: "ULEZ Compliant", labelTwo: "Yes")
+            cell?.configure(firstLabel: "ULEZ Compliant", secondLabel: "Yes")
         case .none:
             break
         }
