@@ -28,8 +28,15 @@ class PaymentPanelView: UIViewController {
         configureView()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.height * 0.6
+        self.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height * 0.4, width: width, height: height)
+    }
+    
     override func viewDidLayoutSubviews() {
-        self.view.frame = self.
         if !hasSetPointOrigin {
             hasSetPointOrigin = true
             pointOrigin = self.view.frame.origin
