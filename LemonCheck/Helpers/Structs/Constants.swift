@@ -14,6 +14,14 @@ struct Constants {
         static let homeViewController = "HomeVC"
     }
     
+    struct Colors {
+        static let lemonYellow = "LemonYellow"
+        static let charcoalGray = "CharcoalGray"
+        static let blackTing = "BlackTing"
+        static let inactiveGray = "InactiveGray"
+        static let darkYellow = "DarkYellow"
+    }
+    
     struct Fonts {
         static let ukNumberPlate = "UKNumberPlate"
     }

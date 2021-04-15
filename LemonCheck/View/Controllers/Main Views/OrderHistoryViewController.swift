@@ -12,7 +12,7 @@ import UIKit
 class OrderHistoryViewController: UIViewController, UpdateOrderHistoryDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let cellIdentifier = "OrderCell"
     // Reference to managed object context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -24,7 +24,7 @@ class OrderHistoryViewController: UIViewController, UpdateOrderHistoryDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "OrderTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderCell")
+        tableView.register(UINib(nibName: OrderTableViewCell.className, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         fetchOrders()
         verifyVehicle.delegate = self
     }
@@ -68,7 +68,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell") as? OrderTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? OrderTableViewCell else { return UITableViewCell()}
         
         // Get order from array
         let order = self.orders?[indexPath.row]

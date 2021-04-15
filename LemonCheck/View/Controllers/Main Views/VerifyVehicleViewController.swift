@@ -23,7 +23,6 @@ protocol UpdateOrderHistoryDelegate {
 
 class VerifyVehicleViewController: UIViewController {
     
-//    @IBOutlet weak var paymentPanel: PaymentPanelView!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var numberPlateView: NumberPlateView!
@@ -31,10 +30,9 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var delegate: UpdateOrderHistoryDelegate?
-    
+    private var paymentPanel = PaymentPanelView()
     private let service = LCNetworkRequest()
-    private var vehicle: MOTCheck?
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var carMake: String?
     var carColour: String?
     var carYear: String?
@@ -45,7 +43,7 @@ class VerifyVehicleViewController: UIViewController {
         super.viewDidLoad()
         self.configureView()
         self.configureTableView()
-//        self.configureCallbacks()
+        self.configureCallbacks()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,15 +54,14 @@ class VerifyVehicleViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "VerifyVehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "VVCell")
+        tableView.register(UINib(nibName: VerifyVehicleTableViewCell.className, bundle: nil), forCellReuseIdentifier: "VVCell")
 
     }
     
     @objc func showPanel() {
-        let slideVC = PaymentPanelView()
-        slideVC.modalPresentationStyle = .custom
-        slideVC.transitioningDelegate = self
-        self.present(slideVC, animated: true, completion: nil)
+        paymentPanel.modalPresentationStyle = .custom
+        paymentPanel.transitioningDelegate = self
+        self.present(paymentPanel, animated: true, completion: nil)
     }
     
     @IBAction func yesButtonTapped(_ sender: Any) {
@@ -79,7 +76,7 @@ class VerifyVehicleViewController: UIViewController {
         yesButton.layer.cornerRadius = 16
         noButton.layer.cornerRadius = 16
         self.numberPlateView.vrmLabel.text = self.vrm ?? ""
-        self.numberPlateView.backgroundColor = UIColor(named: "DarkYellow")
+        self.numberPlateView.backgroundColor = UIColor(named: Constants.Colors.lemonYellow)
     }
     
     private func saveUserSearch(response: Vehicle) {
@@ -115,31 +112,28 @@ class VerifyVehicleViewController: UIViewController {
         self.delegate?.updateTableView(finished: true)
     }
     
-//    private func configureCallbacks() {
-//        paymentPanel.paymentCallback = {
-//            self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
-//                guard let self = self else {return}
-//                if let response = response {
-//
-//                    // Write and save data to CoreData
-//                    self.saveUserSearch(response: response)
-//
-//                    // Push results view onto stack
-//                    if let rgVC = ResultsViewController.instantiate() {
-//                        self.navigationController?.pushViewController(rgVC, animated: true)
-//
-//                        // Assign response from call to the Vehicle instance in ResultsVC
-//                        rgVC.vehicle = response
-//                    }
-//                } else {
-//                    print("Cannot find vehicle")
-//                }
-//            }
-//        }
-//        paymentPanel.backCallBack = {
-//            self.navigationController?.popViewController(animated: true)
-//        }
-//    }
+    private func configureCallbacks() {
+        paymentPanel.paymentCallback = {
+            self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
+                guard let self = self else {return}
+                if let response = response {
+
+                    // Write and save data to CoreData
+                    self.saveUserSearch(response: response)
+
+                    // Push results view onto stack
+                    if let rgVC = ResultsViewController.instantiate() {
+                        self.paymentPanel.dismiss(animated: true) {
+                            rgVC.vehicle = response
+                            self.navigationController?.pushViewController(rgVC, animated: true)
+                        }
+                    }
+                } else {
+                    print("Cannot load vehicle details")
+                }
+            }
+        }
+    }
 }
 
 extension VerifyVehicleViewController: UITableViewDelegate, UITableViewDataSource {

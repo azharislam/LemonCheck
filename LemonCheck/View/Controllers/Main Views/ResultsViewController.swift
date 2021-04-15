@@ -19,6 +19,7 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var vehicleDetailsView: CarDetailsView!
+    let cellIdentifier = "ResultCell"
     
     private let service = LCNetworkRequest()
     var vehicle: Vehicle?
@@ -35,7 +36,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         resultTable.delegate = self
         resultTable.dataSource = self
-        resultTable.register(UINib(nibName: "ResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
+        resultTable.register(UINib(nibName: ResultsTableViewCell.className, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         navigationItem.hidesBackButton = true
         resultTable.layer.cornerRadius = 18
         resultTable.separatorStyle = .none
@@ -64,7 +65,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = resultTable.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultsTableViewCell else { return UITableViewCell()}
+        guard let cell = resultTable.dequeueReusableCell(withIdentifier: cellIdentifier) as? ResultsTableViewCell else { return UITableViewCell()}
         cell.label.text = dataElements[indexPath.row]
         
         switch indexPath.row.asTableSection {
