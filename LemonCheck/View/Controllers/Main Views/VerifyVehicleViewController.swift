@@ -16,7 +16,6 @@ enum FirstResult: Int {
     case ulez
 }
 
-
 protocol UpdateOrderHistoryDelegate {
     func updateTableView(finished: Bool)
 }
@@ -125,6 +124,7 @@ class VerifyVehicleViewController: UIViewController {
                     if let rgVC = ResultsViewController.instantiate() {
                         self.paymentPanel.dismiss(animated: true) {
                             rgVC.vehicle = response
+                            rgVC.colour = self.carColour
                             self.navigationController?.pushViewController(rgVC, animated: true)
                         }
                     }

@@ -10,27 +10,15 @@ import UIKit
 
 class ResultsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var bgView: UIView!
-    
-    var isOn: Bool = false
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
+    var isGreen = false
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.configureView()
     }
     
-    private func configureView() {
-        self.bgView.layer.cornerRadius = 18
-        self.bgView.layer.borderWidth = 2
-        
-        if !isOn {
-            self.bgView.layer.borderColor = UIColor.green.cgColor
-            self.icon.image = UIImage(named: "checkMark")
-        } else {
-            self.bgView.layer.borderColor = UIColor.systemYellow.cgColor
-            self.icon.image = UIImage(named: "rightArrow")
-        }
+    func configure(label: String) {
+        self.resultLabel.text = label
     }
 }
