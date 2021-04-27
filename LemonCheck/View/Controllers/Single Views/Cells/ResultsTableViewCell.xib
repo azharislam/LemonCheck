@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -34,16 +34,25 @@
                                     <constraint firstAttribute="height" constant="24" id="HlC-i3-tOr"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ptj-Z0-IWa" userLabel="divider">
+                                <rect key="frame" x="0.0" y="42" width="314" height="2"/>
+                                <color key="backgroundColor" name="InactiveGray"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="OffWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ptj-Z0-IWa" secondAttribute="trailing" id="4jb-uw-GPs"/>
                             <constraint firstItem="ISS-1e-qsq" firstAttribute="leading" secondItem="8LX-Bf-zem" secondAttribute="leading" constant="7" id="HFR-uO-Cze"/>
                             <constraint firstAttribute="trailing" secondItem="RFg-82-Ao1" secondAttribute="trailing" constant="7" id="Nth-TF-OkE"/>
                             <constraint firstItem="ISS-1e-qsq" firstAttribute="top" secondItem="8LX-Bf-zem" secondAttribute="top" constant="7" id="QS5-aU-ZQT"/>
+                            <constraint firstItem="Ptj-Z0-IWa" firstAttribute="leading" secondItem="8LX-Bf-zem" secondAttribute="leading" id="aTI-j3-8CR"/>
+                            <constraint firstAttribute="bottom" secondItem="Ptj-Z0-IWa" secondAttribute="bottom" id="als-JZ-gnr"/>
                             <constraint firstItem="RFg-82-Ao1" firstAttribute="top" secondItem="8LX-Bf-zem" secondAttribute="top" constant="7" id="j1x-pE-g8z"/>
+                            <constraint firstItem="Ptj-Z0-IWa" firstAttribute="top" secondItem="ISS-1e-qsq" secondAttribute="bottom" constant="14" id="k1q-BK-DQV"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="OffWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="8LX-Bf-zem" secondAttribute="trailing" id="1Su-8x-iod"/>
                     <constraint firstItem="8LX-Bf-zem" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="502-Ca-D6j"/>
@@ -61,8 +70,11 @@
     </objects>
     <resources>
         <image name="Check" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="InactiveGray">
+            <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OffWhite">
+            <color red="0.98039215686274506" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
