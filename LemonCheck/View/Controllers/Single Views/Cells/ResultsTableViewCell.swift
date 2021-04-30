@@ -16,6 +16,15 @@ class ResultsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.configureView()
+    }
+    
+    private func configureView() {
+        if isGreen {
+            self.iconImage.image = UIImage(named: "Check")
+        } else {
+            self.iconImage.image = UIImage(named: "Close")
+        }
     }
     
     func configure(label: String) {
