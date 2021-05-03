@@ -12,7 +12,7 @@ class ResultsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
-    var isGreen = false
+    var isGreen = true
     
     override func layoutSubviews() {
         super.layoutSubviews()

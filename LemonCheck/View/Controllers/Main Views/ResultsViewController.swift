@@ -37,37 +37,20 @@ class ResultsViewController: UIViewController {
     private let service = LCNetworkRequest()
     var vehicle: Vehicle?
     var colour: String?
-    private let transition = SlideTransition()
-    let dataElements = [
-        "Written Off?",
-        "Financed?",
-        "Scrapped?",
-        "Stolen?",
-        "Imported?"
-        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        carImage.isHidden = true
+        configureView()
+    }
+    
+    private func configureView() {
+        guard let vehicleDetails = vehicle else { return }
         carDetailsTableView.delegate = self
         carDetailsTableView.dataSource = self
         carDetailsTableView.register(UINib(nibName: VerifyVehicleTableViewCell.className, bundle: nil), forCellReuseIdentifier: detailsIdentifier)
         resultTable.delegate = self
         resultTable.dataSource = self
         resultTable.register(UINib(nibName: ResultsTableViewCell.className, bundle: nil), forCellReuseIdentifier: resultIdentifier)
-//        navigationItem.hidesBackButton = true
-//        resultTable.layer.cornerRadius = 18
-//        resultTable.separatorStyle = .none
-//        resultTable.backgroundColor = .clear
-        configureView()
-    }
-    
-    private func configureView() {
-//        vehicleDetailsView.layer.cornerRadius = 12
-//        vehicleDetailsView.layer.borderWidth = 2
-//        vehicleDetailsView.layer.borderColor = UIColor.gray.cgColor
-        guard let vehicleDetails = vehicle else { return }
-//        vehicleDetailsView.configurePanel(vrm: vehicleDetails.vrm, make: vehicleDetails.make, model: vehicleDetails.model, year: vehicleDetails.year, previousOwners: vehicleDetails.previousKeeperCount)
         numberPlateView.configureLabel(vrm: vehicleDetails.vrm)
     }
     
@@ -79,7 +62,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == carDetailsTableView {
             return 6
         }
-        return dataElements.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -140,14 +123,19 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             let resultSection = ResultData(rawValue: indexPath.row)
             switch resultSection {
             case .writtenOff:
+                if vehicle?.isWrittenOff == true { cell.isGreen = false }
                 cell.configure(label: "Written Off")
             case .financed:
+                if vehicle?.isFinanced == true { cell.isGreen = false }
                 cell.configure(label: "Financed")
             case .imported:
+                if vehicle?.isImported == true { cell.isGreen = false }
                 cell.configure(label: "Imported")
             case .scrapped:
+                if vehicle?.isScrapped == true { cell.isGreen = false }
                 cell.configure(label: "Scrapped")
             case .stolen:
+                if vehicle?.isScrapped == true { cell.isGreen = false }
                 cell.configure(label: "Stolen")
             case .none:
                 break
