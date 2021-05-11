@@ -13,8 +13,6 @@
 		2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15024525FD20A300BB25F5 /* LoginViewController.swift */; };
 		2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B2CC25FE56BF006E0429 /* Switcher.swift */; };
 		2E42B34225FF8EF7006E0429 /* LemonCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */; };
-		2E42B34B25FF91D9006E0429 /* UserSearch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34925FF91D9006E0429 /* UserSearch+CoreDataProperties.swift */; };
-		2E42B34C25FF91D9006E0429 /* UserSearch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34A25FF91D9006E0429 /* UserSearch+CoreDataClass.swift */; };
 		2E42B35025FF924F006E0429 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */; };
 		2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */; };
 		2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */; };
@@ -29,6 +27,8 @@
 		2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */; };
 		2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */; };
 		2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */; };
+		4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */; };
+		4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
@@ -78,8 +78,6 @@
 		2E15024525FD20A300BB25F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E42B2CC25FE56BF006E0429 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		2E42B34125FF8EF7006E0429 /* LemonCheck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LemonCheck.xcdatamodel; sourceTree = "<group>"; };
-		2E42B34925FF91D9006E0429 /* UserSearch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserSearch+CoreDataProperties.swift"; path = "/Users/azhar/Documents/LemonCheck/LemonCheck/View/Models/UserSearch+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		2E42B34A25FF91D9006E0429 /* UserSearch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserSearch+CoreDataClass.swift"; path = "/Users/azhar/Documents/LemonCheck/LemonCheck/View/Models/UserSearch+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -96,6 +94,8 @@
 		2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -271,10 +271,10 @@
 		63356C082465AC110031F6DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */,
+				4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */,
 				63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */,
 				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
-				2E42B34A25FF91D9006E0429 /* UserSearch+CoreDataClass.swift */,
-				2E42B34925FF91D9006E0429 /* UserSearch+CoreDataProperties.swift */,
 				2E42B376260110E3006E0429 /* SettingsSections.swift */,
 			);
 			path = Models;
@@ -516,13 +516,14 @@
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
 				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
+				4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */,
 				2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */,
+				4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */,
 				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
 				2E0CBBC2262611FF00B0D09F /* PaymentPanelPresentationView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
 				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
 				2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */,
-				2E42B34C25FF91D9006E0429 /* UserSearch+CoreDataClass.swift in Sources */,
 				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
 				2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
@@ -539,7 +540,6 @@
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
 				2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */,
 				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
-				2E42B34B25FF91D9006E0429 /* UserSearch+CoreDataProperties.swift in Sources */,
 				B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +615,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -669,6 +670,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -680,6 +682,7 @@
 				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VUTNFK4JH;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = LemonCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
