@@ -27,6 +27,10 @@
 		2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */; };
 		2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */; };
 		2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */; };
+		4E313518264C6DBF0076E4A6 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */; };
+		4E31351A264C6EB90076E4A6 /* OnBoardingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */; };
+		4E31351C264C6FD10076E4A6 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */; };
+		4E31351E264C77710076E4A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E31351D264C77710076E4A6 /* Colors.xcassets */; };
 		4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */; };
 		4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */; };
 		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
@@ -94,6 +98,10 @@
 		2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVCell.swift; sourceTree = "<group>"; };
+		4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		4E31351D264C77710076E4A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +171,7 @@
 				2E42B37126010B9A006E0429 /* SettingsCell.swift */,
 				2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */,
 				2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */,
+				4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -174,6 +183,16 @@
 				2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4E313516264C6D960076E4A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B97729CB258A490100DE1AB9 /* Main.storyboard */,
+				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
+				4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		63356BE22465AB4C0031F6DB = {
@@ -197,6 +216,7 @@
 		63356BED2465AB4C0031F6DB /* LemonCheck */ = {
 			isa = PBXGroup;
 			children = (
+				4E313516264C6D960076E4A6 /* Storyboards */,
 				2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */,
 				2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */,
 				63356C022465ABBC0031F6DB /* View */,
@@ -205,12 +225,11 @@
 				63356C032465ABCB0031F6DB /* Helpers */,
 				63356C052465ABD50031F6DB /* Extensions */,
 				63356BEE2465AB4C0031F6DB /* AppDelegate.swift */,
-				B97729CB258A490100DE1AB9 /* Main.storyboard */,
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
-				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
 				63356BFC2465AB500031F6DB /* Info.plist */,
 				63356C302465FF620031F6DB /* GoogleService-Info.plist */,
 				2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */,
+				4E31351D264C77710076E4A6 /* Colors.xcassets */,
 			);
 			path = LemonCheck;
 			sourceTree = "<group>";
@@ -307,6 +326,7 @@
 				63356C182465BFF40031F6DB /* ResultsViewController.swift */,
 				2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */,
 				2E42B36425FFD240006E0429 /* ProfileViewController.swift */,
+				4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -435,9 +455,11 @@
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
 				2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */,
 				2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */,
+				4E31351E264C77710076E4A6 /* Colors.xcassets in Resources */,
 				B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */,
 				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
 				2EAD64E326162AAE00095480 /* DMSans-Italic.ttf in Resources */,
+				4E313518264C6DBF0076E4A6 /* OnBoarding.storyboard in Resources */,
 				2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */,
 				2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
@@ -516,6 +538,7 @@
 				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
 				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
 				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
+				4E31351C264C6FD10076E4A6 /* OnboardingVC.swift in Sources */,
 				4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */,
 				2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */,
 				4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */,
@@ -535,6 +558,7 @@
 				6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
+				4E31351A264C6EB90076E4A6 /* OnBoardingCVCell.swift in Sources */,
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
 				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
