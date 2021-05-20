@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 protocol RegSearchDelegate: NSObjectProtocol {
     func verifyCheckFor(vrm: String?)
@@ -71,5 +72,24 @@ class HomeViewController: UIViewController {
         } else {
             print("Please enter a valid vehicle registration number")
         }
+    }
+}
+
+
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text!.count == 8 {
+            showInvalidVehicleRegNumToast()
+        }
+        
+        return string == "" || textField.text!.count < 8
+    }
+    
+    private func showInvalidVehicleRegNumToast() {
+        var toastStyle = ToastStyle()
+        toastStyle.messageColor = .white
+        view.makeToast("Vehicle registration number can't have more then 8 character.", position: .center, style: toastStyle)
     }
 }

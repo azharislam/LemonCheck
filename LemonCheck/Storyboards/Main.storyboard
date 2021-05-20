@@ -67,7 +67,10 @@
                                             <constraint firstAttribute="height" constant="80" id="VYb-kE-2tF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="UKNumberPlate" family="UKNumberPlate" pointSize="23"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qEW-Ke-fQo" id="EU1-Ol-24Q"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmF-hV-3sN">
                                         <rect key="frame" x="0.0" y="103" width="354" height="60"/>
