@@ -507,6 +507,11 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" name="LemonYellow"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="pow-kl-KUw" kind="relationship" relationship="viewControllers" id="9e8-u2-16c"/>
                         <segue destination="V0s-El-O2h" kind="relationship" relationship="viewControllers" id="2lu-Bw-L8m"/>
