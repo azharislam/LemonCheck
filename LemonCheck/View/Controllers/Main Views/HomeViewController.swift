@@ -21,9 +21,14 @@ public class VehicleInput {
 
 class HomeViewController: UIViewController {
     
+    private let VALID_REG_NUM_MSG = "A valid UK registration only contains letters A-Z and numbers 0-9, no special characters should not exceed 8 characters (including whitespace)"
+    private let EXCEED_CHAR_LIMIT_ERR_MSG = "A valid UK registration should not exceed 8 characters (including whitespace)"
+    private let INVALID_CHAR_ERR_MESSAGE = "A valid UK registration only contains letters A-Z and numbers 0-9, no special characters"
+    private let MULTIPLE_SPACE_ERR_MESSAGE = "A valid UK registration should only contain one whitespace"
+    
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-
+    
     private let service = LCNetworkRequest()
     var user: User?
     
@@ -53,8 +58,9 @@ class HomeViewController: UIViewController {
     }
     
     private func searchFor(input: String) {
+        
         VehicleInput.shared.reg = input
-        if input != "" {
+        if input != "" && (input.count == 8 || (input.count == 7 && !input.contains(" "))){
             searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray) //move this
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
@@ -70,7 +76,7 @@ class HomeViewController: UIViewController {
                 self.navigationController?.pushViewController(rgVC, animated: true)
             }
         } else {
-            print("Please enter a valid vehicle registration number")
+            showToastMessage(message: VALID_REG_NUM_MSG, position: .top)
         }
     }
 }
@@ -80,16 +86,33 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.text!.count == 8 {
-            showInvalidVehicleRegNumToast()
+        if string == "" {
+            return true
+        } else if textField.text!.count == 8 {
+            showToastMessage(message: EXCEED_CHAR_LIMIT_ERR_MSG)
+            return false
+        } else if textField.text!.count == 7 && !textField.text!.contains(" ") {
+            showToastMessage(message: EXCEED_CHAR_LIMIT_ERR_MSG)
+            return false
+        }else if string == " " && textField.text!.contains(" ") {
+            showToastMessage(message: MULTIPLE_SPACE_ERR_MESSAGE)
+            return false
+        } else if !isValidCharacter(character: string) {
+            showToastMessage(message: INVALID_CHAR_ERR_MESSAGE)
+            return false
         }
         
-        return string == "" || textField.text!.count < 8
+        return true
     }
     
-    private func showInvalidVehicleRegNumToast() {
+    private func isValidCharacter(character: String) -> Bool {
+        !character.isEmpty && character.range(of: "[^a-zA-Z0-9 ]", options: .regularExpression) == nil
+        
+    }
+    
+    private func showToastMessage(message: String, position: ToastPosition = .center) {
         var toastStyle = ToastStyle()
         toastStyle.messageColor = .white
-        view.makeToast("Vehicle registration number can't have more then 8 character.", position: .center, style: toastStyle)
+        self.view.makeToast(message, position: position, style: toastStyle)
     }
 }
