@@ -137,4 +137,14 @@ extension Vehicle {
     var writeOffCategory: String {
         return "\(response?.dataItems?.writeOffCategory ?? "")"
     }
+    
+    var totalCells: Int {
+        var cells = 5
+        if isWrittenOff {cells += 2}
+        if isFinanced {cells += 1}
+        if isImported {cells += 1}
+        if isStolen {cells += 1}
+        if isScrapped {cells += 1}
+        return cells
+    }
 }

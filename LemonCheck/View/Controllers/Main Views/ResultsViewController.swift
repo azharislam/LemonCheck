@@ -61,8 +61,10 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == carDetailsTableView {
             return 6
+        } else if tableView == resultTable {
+            return vehicle?.totalCells ?? 0
         }
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -123,21 +125,48 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             let resultSection = ResultData(rawValue: indexPath.row)
             switch resultSection {
             case .writtenOff:
-                if vehicle?.isWrittenOff == true { cell.isGreen = false }
-                cell.configure(label: "Written Off")
+                if vehicle?.isWrittenOff ?? false {
+                    cell.isGreen = false
+                    cell.configure(label: "Written Off")
+                } else {
+                    cell.isGreen = true
+                    cell.configure(label: "No Written Off")
+                }
             case .financed:
-                if vehicle?.isFinanced == true { cell.isGreen = false }
-                cell.configure(label: "Financed")
+                if vehicle?.isFinanced ?? false {
+                    cell.isGreen = false
+                    cell.configure(label: "Financed")
+                } else {
+                    cell.isGreen = true
+                    cell.configure(label: "No Financed")
+                }
             case .imported:
-                if vehicle?.isImported == true { cell.isGreen = false }
-                cell.configure(label: "Imported")
+                if vehicle?.isImported ?? false {
+                    cell.isGreen = false
+                    cell.configure(label: "Imported")
+                } else {
+                    cell.isGreen = true
+                    cell.configure(label: "No Imported")
+                }
             case .scrapped:
-                if vehicle?.isScrapped == true { cell.isGreen = false }
-                cell.configure(label: "Scrapped")
+                if vehicle?.isScrapped ?? false {
+                    cell.isGreen = false
+                    cell.configure(label: "Scrapped")
+                } else {
+                    cell.isGreen = true
+                    cell.configure(label: "No Scrapped")
+                }
             case .stolen:
-                if vehicle?.isScrapped == true { cell.isGreen = false }
-                cell.configure(label: "Stolen")
+                if vehicle?.isScrapped ?? false {
+                    cell.isGreen = false
+                    cell.configure(label: "Stolen")
+                } else {
+                    cell.isGreen = true
+                    cell.configure(label: "No Stolen")
+                }
             case .none:
+                cell.isGreen = false
+                cell.configure(label: "Test")
                 break
             }
             return cell
