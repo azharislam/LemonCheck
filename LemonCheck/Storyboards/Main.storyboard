@@ -444,7 +444,7 @@
                                                                 <rect key="frame" x="193" y="0.0" width="181" height="44"/>
                                                                 <color key="backgroundColor" name="BlackTing"/>
                                                                 <inset key="imageEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Save" image="SaveBtnIcon">
+                                                                <state key="normal" title="Share" image="SaveBtnIcon">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -452,6 +452,9 @@
                                                                         <integer key="value" value="12"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="saveAction:" destination="3RM-4T-sfp" eventType="touchUpInside" id="Egi-5q-9W8"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>

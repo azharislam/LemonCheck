@@ -113,7 +113,6 @@ class ResultsTableViewCell: UITableViewCell {
     
     func configure(label: String, subDatas: [SubData] = [SubData](), subFinanceDatas: [String] = [String]()) {
         self.resultLabel.text = label
-        print("SubData for \(label) is \(subDatas.count)")
         
         if subFinanceDatas.count > 0 {
             subFinanceDatas.forEach { subFinanceData in

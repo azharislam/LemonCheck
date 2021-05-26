@@ -57,6 +57,32 @@ class ResultsViewController: UIViewController {
         numberPlateView.configureLabel(vrm: vehicleDetails.vrm)
     }
     
+    @IBAction private func saveAction(_ sender: UIButton) {
+        createPdfFromView(aView: self.view.subviews[0].subviews[0], saveToDocumentsWithFileName: "LemonCheck_\(2)")
+    }
+    
+    func createPdfFromView(aView: UIView, saveToDocumentsWithFileName fileName: String)
+    {
+        let pdfData = NSMutableData()
+        let pdfFrame = CGRect(x: 0, y: 0, width: aView.frame.width, height: aView.frame.height - 120)
+        UIGraphicsBeginPDFContextToData(pdfData, pdfFrame, nil)
+        UIGraphicsBeginPDFPage()
+        
+        guard let pdfContext = UIGraphicsGetCurrentContext() else { return }
+        
+        aView.layer.render(in: pdfContext)
+        UIGraphicsEndPDFContext()
+        
+        if let documentDirectories = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+            let documentsFileName = documentDirectories + "/" + fileName
+            debugPrint(documentsFileName)
+            pdfData.write(toFile: documentsFileName, atomically: true)
+            if FileManager().fileExists(atPath: documentsFileName) {
+                let vc = UIActivityViewController(activityItems: [URL(fileURLWithPath: documentsFileName)], applicationActivities: nil)
+                present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
