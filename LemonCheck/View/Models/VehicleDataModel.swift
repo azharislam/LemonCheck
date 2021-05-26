@@ -138,13 +138,18 @@ extension Vehicle {
         return "\(response?.dataItems?.writeOffCategory ?? "")"
     }
     
-    var totalCells: Int {
-        var cells = 5
-        if isWrittenOff {cells += 2}
-        if isFinanced {cells += 1}
-        if isImported {cells += 1}
-        if isStolen {cells += 1}
-        if isScrapped {cells += 1}
-        return cells
+    public func resultTblViewHeight() -> Int {
+        var height = 45*5
+        
+        if !writeOffDate.isEmpty { height += 45 }
+        if !writeOffCategory.isEmpty { height += 45 }
+        if let financeRecordList = financeRecordList {
+            height += 43 * financeRecordList.count
+        }
+        if !importDate.isEmpty { height += 45 }
+        if !scrapDate.isEmpty { height += 45 }
+        if !stolenInfoSource.isEmpty { height += 45 }
+        height += 50
+        return height
     }
 }

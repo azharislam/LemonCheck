@@ -90,16 +90,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aNG-8u-232" userLabel="Text Stack">
-                                <rect key="frame" x="40" y="194" width="334" height="99"/>
+                                <rect key="frame" x="40" y="204" width="334" height="89"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-LE-ixa">
-                                        <rect key="frame" x="0.0" y="0.0" width="273" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="38"/>
                                         <color key="textColor" name="CharcoalGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the vehicle registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-2C-Udy">
-                                        <rect key="frame" x="0.0" y="49.5" width="280.5" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="270.5" height="44.5"/>
                                         <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qEM-uT-Ben">
-                                <rect key="frame" x="20" y="243.5" width="374" height="549.5"/>
+                                <rect key="frame" x="20" y="236" width="374" height="557"/>
                                 <color key="backgroundColor" name="OffWhite"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LemonCheckLogo" translatesAutoresizingMaskIntoConstraints="NO" id="91y-qD-oYl">
@@ -152,13 +152,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-gf-Osf">
-                                <rect key="frame" x="25" y="144" width="236" height="47"/>
+                                <rect key="frame" x="25" y="144" width="215.5" height="42"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="36"/>
                                 <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of your paid vehicle history checks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAU-ag-fi2">
-                                <rect key="frame" x="25" y="201" width="304" height="22.5"/>
+                                <rect key="frame" x="25" y="196" width="295" height="20"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
                                 <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
@@ -197,17 +197,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-Xf-zQD">
-                                <rect key="frame" x="25" y="69" width="364" height="47"/>
+                                <rect key="frame" x="25" y="69" width="364" height="42"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-lh-Npx">
-                                <rect key="frame" x="10" y="214" width="394" height="599"/>
+                                <rect key="frame" x="10" y="209" width="394" height="604"/>
                                 <color key="backgroundColor" name="OffWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update your profile, set alerts and view help information." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV8-Yg-NUc" userLabel="Subheading">
-                                <rect key="frame" x="25" y="121" width="349" height="53"/>
+                                <rect key="frame" x="25" y="116" width="349" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="YEP-TL-r7m"/>
                                 </constraints>
@@ -256,13 +256,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="HONDA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcV-f5-gBf" userLabel="Title">
-                                <rect key="frame" x="25" y="143" width="364" height="47"/>
+                                <rect key="frame" x="25" y="143" width="364" height="42"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="36"/>
                                 <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this the vehicle you are searching for?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gex-j8-Ce0" userLabel="Subheading">
-                                <rect key="frame" x="25" y="195" width="339" height="22.5"/>
+                                <rect key="frame" x="25" y="190" width="339" height="20"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
                                 <color key="textColor" name="CharcoalGray"/>
                                 <nil key="highlightedColor"/>
@@ -382,13 +382,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="HONDA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC5-Ih-9Ew" userLabel="Title">
-                                                        <rect key="frame" x="25" y="99" width="129.5" height="47"/>
+                                                        <rect key="frame" x="25" y="99" width="128.5" height="42"/>
                                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="36"/>
                                                         <color key="textColor" name="CharcoalGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20th January 2022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-9p-6XJ" userLabel="Subheading">
-                                                        <rect key="frame" x="25" y="156" width="149.5" height="214.5"/>
+                                                        <rect key="frame" x="25" y="151" width="141.5" height="219.5"/>
                                                         <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
                                                         <color key="textColor" name="CharcoalGray"/>
                                                         <nil key="highlightedColor"/>
@@ -414,7 +414,7 @@
                                                             <constraint firstAttribute="height" constant="280" id="cYP-dx-tYH"/>
                                                         </constraints>
                                                     </tableView>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMv-AA-JeC" userLabel="Result Table">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMv-AA-JeC" userLabel="Result Table">
                                                         <rect key="frame" x="20" y="928" width="374" height="300"/>
                                                         <color key="backgroundColor" name="OffWhite"/>
                                                         <constraints>
@@ -514,6 +514,7 @@
                         <outlet property="carImage" destination="uyz-gk-kG1" id="L1c-qq-cVe"/>
                         <outlet property="numberPlateView" destination="7SE-Kx-ZTD" id="diS-r7-UGU"/>
                         <outlet property="resultTable" destination="UMv-AA-JeC" id="0D0-ac-zGJ"/>
+                        <outlet property="resultTableHeightConstraint" destination="pxx-LQ-KiF" id="Nk3-su-wm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7j-SW-XNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -31,6 +31,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var carDetailsTableView: UITableView!
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var resultTable: UITableView!
+    @IBOutlet weak var resultTableHeightConstraint: NSLayoutConstraint!
+    
     let resultIdentifier = "ResultCell"
     let detailsIdentifier = "VVCell"
     
@@ -45,6 +47,7 @@ class ResultsViewController: UIViewController {
     
     private func configureView() {
         guard let vehicleDetails = vehicle else { return }
+        resultTableHeightConstraint.constant = CGFloat(vehicleDetails.resultTblViewHeight())
         carDetailsTableView.delegate = self
         carDetailsTableView.dataSource = self
         carDetailsTableView.register(UINib(nibName: VerifyVehicleTableViewCell.className, bundle: nil), forCellReuseIdentifier: detailsIdentifier)
@@ -62,13 +65,9 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == carDetailsTableView {
             return 6
         } else if tableView == resultTable {
-            return vehicle?.totalCells ?? 0
+            return 5
         }
         return 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 44
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -127,7 +126,17 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             case .writtenOff:
                 if vehicle?.isWrittenOff ?? false {
                     cell.isGreen = false
-                    cell.configure(label: "Written Off")
+                    var subDatas = [(String, String)]()
+                    
+                    if let writeOffDate = vehicle?.writeOffDate, !writeOffDate.isEmpty {
+                        subDatas.append(("Write Off Date", writeOffDate))
+                    }
+                    
+                    if let writeOffCategory = vehicle?.writeOffCategory, !writeOffCategory.isEmpty {
+                        subDatas.append(("Write Off Category", writeOffCategory))
+                    }
+                    
+                    cell.configure(label: "Written Off", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
                     cell.configure(label: "No Written Off")
@@ -135,7 +144,12 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             case .financed:
                 if vehicle?.isFinanced ?? false {
                     cell.isGreen = false
-                    cell.configure(label: "Financed")
+                    var subDatas = [String]()
+                    
+                    if let financedRecordList = vehicle?.financeRecordList {
+                        subDatas = financedRecordList
+                    }
+                    cell.configure(label: "Financed", subFinanceDatas: subDatas)
                 } else {
                     cell.isGreen = true
                     cell.configure(label: "No Financed")
@@ -143,7 +157,12 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             case .imported:
                 if vehicle?.isImported ?? false {
                     cell.isGreen = false
-                    cell.configure(label: "Imported")
+                    var subDatas = [(String, String)]()
+                    
+                    if let importDate = vehicle?.importDate, !importDate.isEmpty {
+                        subDatas.append(("Import Date", importDate))
+                    }
+                    cell.configure(label: "Imported", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
                     cell.configure(label: "No Imported")
@@ -151,22 +170,30 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             case .scrapped:
                 if vehicle?.isScrapped ?? false {
                     cell.isGreen = false
-                    cell.configure(label: "Scrapped")
+                    var subDatas = [(String, String)]()
+                    
+                    if let scrapDate = vehicle?.scrapDate, !scrapDate.isEmpty {
+                        subDatas.append(("Scrap Date", scrapDate))
+                    }
+                    cell.configure(label: "Scrapped", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
                     cell.configure(label: "No Scrapped")
                 }
             case .stolen:
-                if vehicle?.isScrapped ?? false {
+                if vehicle?.isStolen ?? false {
                     cell.isGreen = false
+                    var subDatas = [(String, String)]()
+                    
+                    if let stolenInfoSource = vehicle?.stolenInfoSource, !stolenInfoSource.isEmpty {
+                        subDatas.append(("Stolen Info Source", stolenInfoSource))
+                    }
                     cell.configure(label: "Stolen")
                 } else {
                     cell.isGreen = true
                     cell.configure(label: "No Stolen")
                 }
             case .none:
-                cell.isGreen = false
-                cell.configure(label: "Test")
                 break
             }
             return cell
