@@ -58,7 +58,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction private func saveAction(_ sender: UIButton) {
-        createPdfFromView(aView: self.view.subviews[0].subviews[0], saveToDocumentsWithFileName: "LemonCheck_\(2)")
+        createPdfFromView(aView: self.view.subviews[0].subviews[0], saveToDocumentsWithFileName: "LemonCheck_\(UUID().uuidString)")
     }
     
     func createPdfFromView(aView: UIView, saveToDocumentsWithFileName fileName: String)
@@ -165,7 +165,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.configure(label: "Written Off", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
-                    cell.configure(label: "No Written Off")
+                    cell.configure(label: "Not Written Off")
                 }
             case .financed:
                 if vehicle?.isFinanced ?? false {
@@ -178,7 +178,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.configure(label: "Financed", subFinanceDatas: subDatas)
                 } else {
                     cell.isGreen = true
-                    cell.configure(label: "No Financed")
+                    cell.configure(label: "Not Financed")
                 }
             case .imported:
                 if vehicle?.isImported ?? false {
@@ -191,7 +191,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.configure(label: "Imported", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
-                    cell.configure(label: "No Imported")
+                    cell.configure(label: "Not Imported")
                 }
             case .scrapped:
                 if vehicle?.isScrapped ?? false {
@@ -204,7 +204,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.configure(label: "Scrapped", subDatas: subDatas)
                 } else {
                     cell.isGreen = true
-                    cell.configure(label: "No Scrapped")
+                    cell.configure(label: "Not Scrapped")
                 }
             case .stolen:
                 if vehicle?.isStolen ?? false {
@@ -217,7 +217,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.configure(label: "Stolen")
                 } else {
                     cell.isGreen = true
-                    cell.configure(label: "No Stolen")
+                    cell.configure(label: "Not Stolen")
                 }
             case .none:
                 break
