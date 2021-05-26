@@ -58,7 +58,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction private func saveAction(_ sender: UIButton) {
-        createPdfFromView(aView: self.view.subviews[0].subviews[0], saveToDocumentsWithFileName: "LemonCheck_\(UUID().uuidString)")
+        createPdfFromView(aView: self.view.subviews[0].subviews[0], saveToDocumentsWithFileName: "LemonCheck_\(UUID().uuidString).pdf")
     }
     
     func createPdfFromView(aView: UIView, saveToDocumentsWithFileName fileName: String)
