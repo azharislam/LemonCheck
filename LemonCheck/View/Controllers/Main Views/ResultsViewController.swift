@@ -35,6 +35,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var searchAgainAndShareContainer: UIStackView!
     @IBOutlet weak var resultTableSecondBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var resultTableFirstBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchedDate: UILabel!
     
     let resultIdentifier = "ResultCell"
     let detailsIdentifier = "VVCell"
@@ -73,6 +74,7 @@ class ResultsViewController: UIViewController {
         resultTable.dataSource = self
         resultTable.register(UINib(nibName: ResultsTableViewCell.className, bundle: nil), forCellReuseIdentifier: resultIdentifier)
         numberPlateView.configureLabel(vrm: vehicleDetails.vrm)
+        searchedDate.text = vehicleDetails.searchedDate
     }
     
     @IBAction private func saveAction(_ sender: UIButton) {

@@ -41,6 +41,7 @@ struct DataItems : Codable {
     let scrapDate : String?
     let imported : Bool?
     let importDate : String?
+    let searchedDate: Date?
 
     enum CodingKeys: String, CodingKey {
         case vrm = "Vrm"
@@ -60,10 +61,18 @@ struct DataItems : Codable {
         case scrapDate = "ScrapDate"
         case imported = "Imported"
         case importDate = "ImportDate"
+        case searchedDate
     }
 }
 
 extension Vehicle {
+    
+    var searchedDate: String {
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = "dd MMM yyyy"
+        let date = response?.dataItems?.searchedDate ?? Date()
+        return dateFormate.string(from: date)
+    }
     
     var make: String {
         return "\(response?.dataItems?.make ?? "")"

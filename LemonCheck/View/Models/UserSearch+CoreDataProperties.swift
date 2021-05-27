@@ -19,6 +19,7 @@ extension UserSearch {
     }
 
     @NSManaged public var colour: String?
+    @NSManaged public var searchedDate: Date?
     @NSManaged public var financeRecordCount: String?
     @NSManaged public var financeRecordList: [String]?
     @NSManaged public var importDate: String?
@@ -42,7 +43,7 @@ extension UserSearch : Identifiable {
 
     func getVehicleModel() -> Vehicle {
         
-        let dataItems = DataItems(vrm: vrm, make: make, model: model, year: year, colour: colour, previousKeeperCount: Int(previousKeeperCount ?? ""), writtenOff: isWrittenOff, writeOffCategory: writeOffCategory, writeOffDate: writeOffDate, financeRecordCount: Int(financeRecordCount ?? ""), financeRecordList: financeRecordList, stolen: (stolenInfoSource != nil && !stolenInfoSource!.isEmpty) ? true : false, stolenInfoSource: stolenInfoSource, scrapped: isScrapped, scrapDate: scrapDate, imported: isImported, importDate: importDate)
+        let dataItems = DataItems(vrm: vrm, make: make, model: model, year: year, colour: colour, previousKeeperCount: Int(previousKeeperCount ?? ""), writtenOff: isWrittenOff, writeOffCategory: writeOffCategory, writeOffDate: writeOffDate, financeRecordCount: Int(financeRecordCount ?? ""), financeRecordList: financeRecordList, stolen: (stolenInfoSource != nil && !stolenInfoSource!.isEmpty) ? true : false, stolenInfoSource: stolenInfoSource, scrapped: isScrapped, scrapDate: scrapDate, imported: isImported, importDate: importDate, searchedDate: searchedDate)
         let response = Response(dataItems: dataItems)
         return Vehicle(response: response)
     }

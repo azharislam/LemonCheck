@@ -82,6 +82,7 @@ class VerifyVehicleViewController: UIViewController {
         
         // Create UserSearch object and write results to data model
         let newUserSearch = UserSearch(context: self.context)
+        newUserSearch.searchedDate = Date()
         newUserSearch.vrm = response.vrm
         newUserSearch.make = response.make
         newUserSearch.model = response.model
