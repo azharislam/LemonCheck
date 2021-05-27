@@ -85,6 +85,10 @@ final class LCNetworkRequest {
                     }
                 }
             } catch let err {
+                self.vrm = nil
+                self.carMake = nil
+                self.carColour = nil
+                self.carYear = nil
                 print(err.localizedDescription)
             }
         }

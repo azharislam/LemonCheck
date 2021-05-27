@@ -60,6 +60,7 @@ class HomeViewController: UIViewController {
     private func searchFor(input: String) {
         
         VehicleInput.shared.reg = input
+        self.service.vrm = nil
         if input != "" && (input.count == 8 || (input.count == 7 && !input.contains(" "))){
             searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray) //move this
             delegate?.verifyCheckFor(vrm: input)
@@ -67,13 +68,18 @@ class HomeViewController: UIViewController {
                 DispatchQueue.global(qos: .userInteractive).async {
                     DispatchQueue.main.async { [self] in
                         self.service.getDVLAdata()
+                        guard let lVrm = self.service.vrm, !lVrm.isEmpty else {
+                            self.showToastMessage(message: "Please enter a valid UK registration number")
+                            return
+                        }
                         rgVC.carYear = self.service.carYear
                         rgVC.carColour = self.service.carColour
                         rgVC.carMake = self.service.carMake
                         rgVC.vrm = self.service.vrm
+                        self.navigationController?.pushViewController(rgVC, animated: true)
                     }
                 }
-                self.navigationController?.pushViewController(rgVC, animated: true)
+                
             }
         } else {
             showToastMessage(message: VALID_REG_NUM_MSG, position: .top)
