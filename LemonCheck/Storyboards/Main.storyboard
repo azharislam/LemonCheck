@@ -479,6 +479,7 @@
                                                     <constraint firstItem="jeK-nn-wR5" firstAttribute="leading" secondItem="UMv-AA-JeC" secondAttribute="leading" id="Tpx-Ug-vIh"/>
                                                     <constraint firstAttribute="trailing" secondItem="eGM-oL-JoO" secondAttribute="trailing" constant="20" id="VZQ-SW-lHG"/>
                                                     <constraint firstItem="7SE-Kx-ZTD" firstAttribute="centerX" secondItem="xI6-nq-FL9" secondAttribute="centerX" id="bZ6-Oe-1Tl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UMv-AA-JeC" secondAttribute="bottom" priority="999" constant="100" id="hKi-oH-aRg"/>
                                                     <constraint firstItem="UMv-AA-JeC" firstAttribute="centerX" secondItem="xI6-nq-FL9" secondAttribute="centerX" id="hwC-gN-nBQ"/>
                                                     <constraint firstItem="Gwf-9p-6XJ" firstAttribute="top" secondItem="lC5-Ih-9Ew" secondAttribute="bottom" constant="10" id="jJ2-KT-T5X"/>
                                                     <constraint firstItem="9La-TJ-pE7" firstAttribute="top" secondItem="xI6-nq-FL9" secondAttribute="top" constant="25" id="lpi-l6-7dv"/>
@@ -517,7 +518,10 @@
                         <outlet property="carImage" destination="uyz-gk-kG1" id="L1c-qq-cVe"/>
                         <outlet property="numberPlateView" destination="7SE-Kx-ZTD" id="diS-r7-UGU"/>
                         <outlet property="resultTable" destination="UMv-AA-JeC" id="0D0-ac-zGJ"/>
+                        <outlet property="resultTableFirstBottomConstraint" destination="0Dd-sx-PLf" id="jwT-Dj-zHW"/>
                         <outlet property="resultTableHeightConstraint" destination="pxx-LQ-KiF" id="Nk3-su-wm3"/>
+                        <outlet property="resultTableSecondBottomConstraint" destination="hKi-oH-aRg" id="g54-md-fjm"/>
+                        <outlet property="searchAgainAndShareContainer" destination="jeK-nn-wR5" id="R3k-Do-5t3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7j-SW-XNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

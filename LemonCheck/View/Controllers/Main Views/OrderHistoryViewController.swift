@@ -99,4 +99,13 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         return UISwipeActionsConfiguration(actions: [action])
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let orders = orders else { return }
+        
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ResultVC") as? ResultsViewController else {return}
+        vc.vehicle = orders[indexPath.row].getVehicleModel()
+        vc.isFromOrderHistory = true
+        self.present(vc, animated: true, completion: nil)
+    }
 }

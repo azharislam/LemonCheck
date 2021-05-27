@@ -32,6 +32,9 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var resultTableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchAgainAndShareContainer: UIStackView!
+    @IBOutlet weak var resultTableSecondBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var resultTableFirstBottomConstraint: NSLayoutConstraint!
     
     let resultIdentifier = "ResultCell"
     let detailsIdentifier = "VVCell"
@@ -39,10 +42,25 @@ class ResultsViewController: UIViewController {
     private let service = LCNetworkRequest()
     var vehicle: Vehicle?
     var colour: String?
+    var isFromOrderHistory = false
+    var initialFrame: CGRect!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isFromOrderHistory {
+            if let scrollView = self.view.subviews[0] as? UIScrollView {
+                scrollView.delegate = self
+            }
+            searchAgainAndShareContainer.isHidden = true
+            resultTableFirstBottomConstraint.priority = UILayoutPriority(999)
+            resultTableSecondBottomConstraint.priority = UILayoutPriority(1000)
+            resultTableFirstBottomConstraint.isActive = false
+            resultTableSecondBottomConstraint.isActive = true
+        }
+        
         configureView()
+        initialFrame = self.view.frame
     }
     
     private func configureView() {
@@ -223,6 +241,41 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
                 break
             }
             return cell
+        }
+    }
+}
+
+extension ResultsViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y == 0 {
+            //scrollView.isScrollEnabled = false
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let panGesture = scrollView.panGestureRecognizer
+        switch panGesture.state {
+        case .began:
+            print("Gesture started")
+            if panGesture.velocity(in: scrollView.superview).y > 200 {
+                dismiss(animated: true, completion: nil)
+            }
+        case .changed:
+            if scrollView.contentOffset.y < 0 {
+                view.frame.origin.y = -1 * scrollView.contentOffset.y
+                if scrollView.contentOffset.y < -200 {
+                    dismiss(animated: true, completion: nil)
+                }
+            }
+        case .ended, .cancelled, .failed, .possible, .recognized:
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame = self.initialFrame
+            })
+            break
+        @unknown default:
+            break
         }
     }
 }

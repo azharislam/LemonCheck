@@ -40,4 +40,10 @@ extension UserSearch {
 
 extension UserSearch : Identifiable {
 
+    func getVehicleModel() -> Vehicle {
+        
+        let dataItems = DataItems(vrm: vrm, make: make, model: model, year: year, colour: colour, previousKeeperCount: Int(previousKeeperCount ?? ""), writtenOff: isWrittenOff, writeOffCategory: writeOffCategory, writeOffDate: writeOffDate, financeRecordCount: Int(financeRecordCount ?? ""), financeRecordList: financeRecordList, stolen: (stolenInfoSource != nil && !stolenInfoSource!.isEmpty) ? true : false, stolenInfoSource: stolenInfoSource, scrapped: isScrapped, scrapDate: scrapDate, imported: isImported, importDate: importDate)
+        let response = Response(dataItems: dataItems)
+        return Vehicle(response: response)
+    }
 }
