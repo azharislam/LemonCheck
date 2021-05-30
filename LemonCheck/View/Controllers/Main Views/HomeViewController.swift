@@ -10,7 +10,6 @@ import UIKit
 import Toast_Swift
 import KRProgressHUD
 import KRActivityIndicatorView
-import ProgressHUD
 
 protocol RegSearchDelegate: NSObjectProtocol {
     func verifyCheckFor(vrm: String?)
