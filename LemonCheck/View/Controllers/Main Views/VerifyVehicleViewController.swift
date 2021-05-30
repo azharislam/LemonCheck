@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import KRProgressHUD
+import Toast_Swift
 
 enum FirstResult: Int {
     case make
@@ -123,7 +124,7 @@ class VerifyVehicleViewController: UIViewController {
                 DispatchQueue.main.async {
                     KRProgressHUD.dismiss()
                 }
-                if let response = response {
+                if let response = response, !response.vrm.isEmpty {
 
                     // Write and save data to CoreData
                     self.saveUserSearch(response: response)
@@ -137,6 +138,11 @@ class VerifyVehicleViewController: UIViewController {
                         }
                     }
                 } else {
+                    DispatchQueue.main.async { [unowned self] in
+                        var toastStyle = ToastStyle()
+                        toastStyle.messageColor = .white
+                        self.paymentPanel.view.makeToast("Something went wrong, Please try again later.", position: .center, style: toastStyle)
+                    }
                     print("Cannot load vehicle details")
                 }
             }

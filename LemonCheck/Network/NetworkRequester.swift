@@ -55,7 +55,7 @@ final class LCNetworkRequest {
                    headers: nil,
                    interceptor: nil).response { (responseData) in
                     guard let data = responseData.data else {return}
-                    print(String(data: data, encoding: .utf8))
+                    print(String(data: data, encoding: .utf8)!)
                     do {
                         let vehicleInfo = try JSONDecoder().decode(Vehicle.self, from: data)
                         print("Vehicle information succesfully decoded")
