@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import KRProgressHUD
 
 enum FirstResult: Int {
     case make
@@ -114,8 +115,14 @@ class VerifyVehicleViewController: UIViewController {
     
     private func configureCallbacks() {
         paymentPanel.paymentCallback = {
+            DispatchQueue.main.async {
+                KRProgressHUD.show(withMessage: "Loading", completion: nil)
+            }
             self.service.getFullVehicleDataFrom(regNumber: VehicleInput.shared.reg!) { [weak self] (response, error) in
                 guard let self = self else {return}
+                DispatchQueue.main.async {
+                    KRProgressHUD.dismiss()
+                }
                 if let response = response {
 
                     // Write and save data to CoreData

@@ -44,3 +44,14 @@ struct VehicleDetails: Codable {
         case year = "DateFirstRegistered"
     }
 }
+
+struct VehicleBasicDetails: Codable {
+    let registrationNumber: String?
+    let co2Emissions, engineCapacity: Int?
+    let markedForExport: Bool?
+    let fuelType, motStatus, colour, make: String?
+    let typeApproval: String?
+    let yearOfManufacture: Int?
+    let taxDueDate, taxStatus, dateOfLastV5CIssued, motExpiryDate: String?
+    let wheelplan, monthOfFirstRegistration: String?
+}

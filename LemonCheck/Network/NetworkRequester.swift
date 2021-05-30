@@ -67,28 +67,15 @@ final class LCNetworkRequest {
                    }
     }
     
-    func getDVLAdata() {
+    func getDVLAdata(completion: (VehicleBasicDetails?, Error?) -> Void) {
         NetworkManager.downloadPlayerProfile {
             jsonData in guard let jData = jsonData else { return }
             
             do {
-                if let json = try JSONSerialization.jsonObject(with: jData, options: []) as? [String: Any] {
-                    if let registrationNumber = json["registrationNumber"] as? String,
-                       let make = json["make"] as? String,
-                       let colour = json["colour"] as? String,
-                       let year = json["yearOfManufacture"] as? Int
-                    {
-                        self.vrm = registrationNumber
-                        self.carMake = make
-                        self.carColour = colour
-                        self.carYear = "\(year)"
-                    }
-                }
+                let vehicleBasicDetails = try JSONDecoder().decode(VehicleBasicDetails.self, from: jData)
+                completion(vehicleBasicDetails, nil)
             } catch let err {
-                self.vrm = nil
-                self.carMake = nil
-                self.carColour = nil
-                self.carYear = nil
+                completion(nil, err)
                 print(err.localizedDescription)
             }
         }

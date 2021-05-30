@@ -8,6 +8,9 @@
 
 import UIKit
 import Toast_Swift
+import KRProgressHUD
+import KRActivityIndicatorView
+import ProgressHUD
 
 protocol RegSearchDelegate: NSObjectProtocol {
     func verifyCheckFor(vrm: String?)
@@ -54,6 +57,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func searchPressed(_ sender: Any) {
         guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        KRProgressHUD.show(withMessage: "Loading...")
         searchFor(input: userInput)
     }
     
@@ -62,24 +66,26 @@ class HomeViewController: UIViewController {
         VehicleInput.shared.reg = input
         self.service.vrm = nil
         if input != "" && (input.count == 8 || (input.count == 7 && !input.contains(" "))){
-            searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray) //move this
+            searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray)
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
-                DispatchQueue.global(qos: .userInteractive).async {
-                    DispatchQueue.main.async { [self] in
-                        self.service.getDVLAdata()
-                        guard let lVrm = self.service.vrm, !lVrm.isEmpty else {
-                            self.showToastMessage(message: "Please enter a valid UK registration number")
-                            return
+                DispatchQueue.global().async {
+                    self.service.getDVLAdata { vehicleBasicDetails, error in
+                        DispatchQueue.main.async {
+                            KRProgressHUD.dismiss()
+                            guard let vehicleDetails = vehicleBasicDetails, let regNum = vehicleDetails.registrationNumber else {
+                                self.showToastMessage(message: "Please enter a valid UK registration number")
+                                return
+                            }
+                            
+                            rgVC.carYear = String(vehicleDetails.yearOfManufacture ?? 0)
+                            rgVC.carColour = vehicleDetails.colour ?? ""
+                            rgVC.carMake = vehicleDetails.make ?? ""
+                            rgVC.vrm = regNum
+                            self.navigationController?.pushViewController(rgVC, animated: true)
                         }
-                        rgVC.carYear = self.service.carYear
-                        rgVC.carColour = self.service.carColour
-                        rgVC.carMake = self.service.carMake
-                        rgVC.vrm = self.service.vrm
-                        self.navigationController?.pushViewController(rgVC, animated: true)
                     }
                 }
-                
             }
         } else {
             showToastMessage(message: VALID_REG_NUM_MSG, position: .top)

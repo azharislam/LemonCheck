@@ -14,7 +14,7 @@ target 'LemonCheck' do
   pod 'FirebaseDatabase' ,:modular_headers => true
   pod 'Alamofire', '~> 5.1'
   pod 'Toast-Swift', '~> 5.0.1'
-
+  pod "KRProgressHUD"
 end
 
 post_install do |installer|
