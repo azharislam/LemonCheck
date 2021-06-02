@@ -25,10 +25,13 @@ class OrderHistoryViewController: UIViewController, UpdateOrderHistoryDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: OrderTableViewCell.className, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        fetchOrders()
         verifyVehicle.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        fetchOrders()
+    }
     /// - Fetch orders from Core Data to display in TableView
     
     func fetchOrders() {
@@ -37,6 +40,7 @@ class OrderHistoryViewController: UIViewController, UpdateOrderHistoryDelegate {
             self.orders = try context.fetch(UserSearch.fetchRequest())
             
             DispatchQueue.main.async {
+                self.orders?.reverse()
                 self.tableView.reloadData()
             }
         }
@@ -71,6 +75,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? OrderTableViewCell else { return UITableViewCell()}
         
         // Get order from array
+        //let order = self.orders?[(self.orders!.count - 1) - indexPath.row]
         let order = self.orders?[indexPath.row]
         cell.configureLabel(make: order?.make ?? "N/A", model: order?.model ?? "N/A", vim: order?.vrm ?? "N/A")
         return cell
