@@ -15,6 +15,11 @@ target 'LemonCheck' do
   pod 'Alamofire', '~> 5.1'
   pod 'Toast-Swift', '~> 5.0.1'
   pod "KRProgressHUD"
+
+ target 'LemonCheckTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 end
 
 post_install do |installer|

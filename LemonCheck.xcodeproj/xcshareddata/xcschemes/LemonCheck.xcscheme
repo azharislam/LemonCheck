@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E0D9AB82665357800BAC78B"
+               BlueprintIdentifier = "4E1DF91D26690A8700A53809"
                BuildableName = "LemonCheckTests.xctest"
                BlueprintName = "LemonCheckTests"
                ReferencedContainer = "container:LemonCheck.xcodeproj">
