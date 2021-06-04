@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UKNumberPlate.ttf">
+            <string>UKNumberPlate</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumberPlateView" customModule="LemonCheck" customModuleProvider="target">
+            <connections>
+                <outlet property="numberPlate" destination="7cO-Dx-Fds" id="NxL-Aw-z2d"/>
+                <outlet property="vrmLabel" destination="XzL-tf-Ql0" id="ZQM-zp-Oon"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-Dx-Fds">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LC06NAO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzL-tf-Ql0">
+                            <rect key="frame" x="62" y="8.5" width="226" height="58.5"/>
+                            <fontDescription key="fontDescription" name="UKNumberPlate" family="UKNumberPlate" pointSize="50"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="DarkYellow"/>
+                    <constraints>
+                        <constraint firstItem="XzL-tf-Ql0" firstAttribute="centerX" secondItem="7cO-Dx-Fds" secondAttribute="centerX" id="Cz6-3u-nIs"/>
+                        <constraint firstItem="XzL-tf-Ql0" firstAttribute="centerY" secondItem="7cO-Dx-Fds" secondAttribute="centerY" id="aL4-dh-GR0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7cO-Dx-Fds" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6ax-dp-gwg"/>
+                <constraint firstItem="7cO-Dx-Fds" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mgs-fk-mhz"/>
+                <constraint firstAttribute="bottom" secondItem="7cO-Dx-Fds" secondAttribute="bottom" id="dG9-IW-rGf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7cO-Dx-Fds" secondAttribute="trailing" id="krU-nG-wKs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="59" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DarkYellow">
+            <color red="0.9137254901960784" green="0.74509803921568629" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

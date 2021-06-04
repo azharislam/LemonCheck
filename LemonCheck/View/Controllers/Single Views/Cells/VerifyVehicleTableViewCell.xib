@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VVCell" rowHeight="44" id="KGk-i7-Jjw" customClass="VerifyVehicleTableViewCell" customModule="LemonCheck" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqE-Bs-oGb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adb-1n-4uR">
+                                <rect key="frame" x="7" y="7" width="42" height="20"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="17"/>
+                                <color key="textColor" name="BlackTing"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-UP-FnN">
+                                <rect key="frame" x="265" y="7" width="48" height="19"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                <color key="textColor" name="InactiveGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIx-Ch-gMB" userLabel="divider">
+                                <rect key="frame" x="0.0" y="41" width="320" height="3"/>
+                                <color key="backgroundColor" name="InactiveGray"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="OffWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZIx-Ch-gMB" secondAttribute="bottom" id="4Ac-JQ-6it"/>
+                            <constraint firstItem="ZIx-Ch-gMB" firstAttribute="top" secondItem="Adb-1n-4uR" secondAttribute="bottom" constant="14" id="7sC-kj-YDv"/>
+                            <constraint firstItem="Adb-1n-4uR" firstAttribute="top" secondItem="pqE-Bs-oGb" secondAttribute="top" constant="7" id="8am-0J-E0G"/>
+                            <constraint firstAttribute="trailing" secondItem="iaz-UP-FnN" secondAttribute="trailing" constant="7" id="B7W-gW-TW6"/>
+                            <constraint firstItem="ZIx-Ch-gMB" firstAttribute="leading" secondItem="pqE-Bs-oGb" secondAttribute="leading" id="gib-oS-Dv2"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIx-Ch-gMB" secondAttribute="trailing" id="ktZ-cB-oLd"/>
+                            <constraint firstItem="Adb-1n-4uR" firstAttribute="leading" secondItem="pqE-Bs-oGb" secondAttribute="leading" constant="7" id="s0g-oZ-4Z9"/>
+                            <constraint firstItem="iaz-UP-FnN" firstAttribute="top" secondItem="Adb-1n-4uR" secondAttribute="top" id="wPJ-Ku-xzr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="pqE-Bs-oGb" secondAttribute="bottom" id="0Vj-Wh-jzX"/>
+                    <constraint firstAttribute="trailing" secondItem="pqE-Bs-oGb" secondAttribute="trailing" id="2xq-9G-x5e"/>
+                    <constraint firstItem="pqE-Bs-oGb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="m20-aY-31j"/>
+                    <constraint firstItem="pqE-Bs-oGb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wsc-wr-yUb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstLabel" destination="Adb-1n-4uR" id="WDh-c3-Ubh"/>
+                <outlet property="secondLabel" destination="iaz-UP-FnN" id="z4M-rO-Hb9"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="119.86607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="BlackTing">
+            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InactiveGray">
+            <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OffWhite">
+            <color red="0.98039215686274506" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

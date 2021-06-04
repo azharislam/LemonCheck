@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OnboardingVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OnboardingVC" customModule="LemonCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y60-hb-rvo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="OnboardingBGYellow"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sSF-Bd-yNF">
+                                    <size key="itemSize" width="414" height="896"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnBoardingCVCell" id="072-rV-5Sg" customClass="OnBoardingCVCell" customModule="LemonCheck" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3pC-5f-ueR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1BG" translatesAutoresizingMaskIntoConstraints="NO" id="Pji-y6-xwy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Pji-y6-xwy" secondAttribute="trailing" id="Ktd-Ao-QRk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pji-y6-xwy" secondAttribute="bottom" id="dty-mR-rUw"/>
+                                                <constraint firstItem="Pji-y6-xwy" firstAttribute="leading" secondItem="3pC-5f-ueR" secondAttribute="leading" id="hpK-ms-8IO"/>
+                                                <constraint firstItem="Pji-y6-xwy" firstAttribute="top" secondItem="3pC-5f-ueR" secondAttribute="top" id="qbA-dF-OuS"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="896"/>
+                                        <connections>
+                                            <outlet property="bgImage" destination="Pji-y6-xwy" id="zGZ-PY-z9r"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="bfp-Ro-407"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="UaT-cw-fbd"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-Mu-qvy">
+                                <rect key="frame" x="147" y="747.66666666666663" width="120.33333333333331" height="26.333333333333371"/>
+                                <color key="pageIndicatorTintColor" name="OnboardingPageControllBlackColor"/>
+                                <color key="currentPageIndicatorTintColor" name="OnboardingNextBtnBlackColor"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-h0-LbF">
+                                <rect key="frame" x="62" y="790" width="290" height="56"/>
+                                <color key="backgroundColor" name="OnboardingNextBtnBlackColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Wbk-bJ-vTJ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fkw-kb-7i6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lEp-h0-LbF" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.7" id="ASr-DX-ZVw"/>
+                            <constraint firstItem="Zpj-Mu-qvy" firstAttribute="centerX" secondItem="lEp-h0-LbF" secondAttribute="centerX" id="CDO-J0-4Nh"/>
+                            <constraint firstItem="Y60-hb-rvo" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="EP5-Um-KoA"/>
+                            <constraint firstItem="Y60-hb-rvo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Uef-Gm-I8h"/>
+                            <constraint firstItem="Y60-hb-rvo" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WGv-0R-GCi"/>
+                            <constraint firstItem="lEp-h0-LbF" firstAttribute="top" secondItem="Zpj-Mu-qvy" secondAttribute="bottom" constant="16" id="eei-15-mjQ"/>
+                            <constraint firstItem="Y60-hb-rvo" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="n22-LF-QAi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lEp-h0-LbF" secondAttribute="bottom" constant="16" id="nXv-KW-LgH"/>
+                            <constraint firstItem="lEp-h0-LbF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qqn-8A-jhZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cv" destination="Y60-hb-rvo" id="bd6-2Y-IWO"/>
+                        <outlet property="pageControll" destination="Zpj-Mu-qvy" id="piS-gf-L25"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="page1BG" width="375" height="812"/>
+        <namedColor name="OnboardingBGYellow">
+            <color red="0.98431372549019602" green="0.80784313725490198" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OnboardingNextBtnBlackColor">
+            <color red="0.015686274509803921" green="0.015686274509803921" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OnboardingPageControllBlackColor">
+            <color red="0.015686274509803921" green="0.015686274509803921" blue="0.082352941176470587" alpha="0.29741825331125826" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

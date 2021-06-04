@@ -7,20 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0CBBBE2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */; };
+		2E0CBBBF2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */; };
+		2E0CBBC2262611FF00B0D09F /* PaymentPanelPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */; };
+		2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15024525FD20A300BB25F5 /* LoginViewController.swift */; };
+		2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B2CC25FE56BF006E0429 /* Switcher.swift */; };
+		2E42B34225FF8EF7006E0429 /* LemonCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */; };
+		2E42B35025FF924F006E0429 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */; };
+		2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */; };
+		2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */; };
+		2E42B35A25FFC541006E0429 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E42B35925FFC541006E0429 /* CloudKit.framework */; };
+		2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B36425FFD240006E0429 /* ProfileViewController.swift */; };
+		2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37126010B9A006E0429 /* SettingsCell.swift */; };
+		2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B37226010B9B006E0429 /* UserInfoHeader.swift */; };
+		2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42B376260110E3006E0429 /* SettingsSections.swift */; };
+		2EAD64E226162AAE00095480 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DC26162AAE00095480 /* DMSans-BoldItalic.ttf */; };
+		2EAD64E326162AAE00095480 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DD26162AAE00095480 /* DMSans-Italic.ttf */; };
+		2EAD64E426162AAE00095480 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DE26162AAE00095480 /* DMSans-Medium.ttf */; };
+		2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */; };
+		2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */; };
+		2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */; };
+		4B9C6B19EFFE13488E07DC90 /* libPods-LemonCheckTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6378D32D291573B3F193696B /* libPods-LemonCheckTests.a */; };
+		4E1DF92126690A8700A53809 /* LemonCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1DF92026690A8700A53809 /* LemonCheckTests.swift */; };
+		4E313518264C6DBF0076E4A6 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */; };
+		4E31351A264C6EB90076E4A6 /* OnBoardingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */; };
+		4E31351C264C6FD10076E4A6 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */; };
+		4E31351E264C77710076E4A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E31351D264C77710076E4A6 /* Colors.xcassets */; };
+		4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */; };
+		4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */; };
+		5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */; };
 		63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BEE2465AB4C0031F6DB /* AppDelegate.swift */; };
-		63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356BF02465AB4C0031F6DB /* SceneDelegate.swift */; };
-		63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF42465AB4C0031F6DB /* Main.storyboard */; };
 		63356BF82465AB500031F6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF72465AB500031F6DB /* Assets.xcassets */; };
 		63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63356BF92465AB500031F6DB /* LaunchScreen.storyboard */; };
 		63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C0E2465B0660031F6DB /* Date + Time.swift */; };
-		63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C102465B4200031F6DB /* StartUpViewController.swift */; };
-		63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C122465B4380031F6DB /* RegistrationViewController.swift */; };
-		63356C152465B4440031F6DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C142465B4440031F6DB /* LoginViewController.swift */; };
 		63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C162465BFE90031F6DB /* HomeViewController.swift */; };
 		63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C182465BFF40031F6DB /* ResultsViewController.swift */; };
-		63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1A2465C0010031F6DB /* MenuViewController.swift */; };
 		63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1C2465C03A0031F6DB /* NetworkRequester.swift */; };
-		63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */; };
 		63356C252465C1FE0031F6DB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C242465C1FE0031F6DB /* Utilities.swift */; };
 		63356C272465C21F0031F6DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C262465C21F0031F6DB /* Constants.swift */; };
 		63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */; };
@@ -30,30 +52,84 @@
 		63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C32246640680031F6DB /* VerifyVehicleViewController.swift */; };
 		63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C3624676F1D0031F6DB /* MOTDataModel.swift */; };
 		63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */; };
-		63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */; };
-		EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */; };
+		634604FE246E01560091C4A7 /* ViewController + Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */; };
+		63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */; };
+		6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */; };
+		6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050C2470872E0091C4A7 /* DatabaseErrors.swift */; };
+		6346050F2470B06A0091C4A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346050E2470B06A0091C4A7 /* User.swift */; };
+		634605112470B7E90091C4A7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605102470B7E90091C4A7 /* Name.swift */; };
+		634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634605122470C2BC0091C4A7 /* ViewController + Alert.swift */; };
+		B92A1D5A25E1A76D000D2E92 /* CarDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */; };
+		B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */; };
+		B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */; };
+		B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */; };
+		B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A1DA125E2D041000D2E92 /* ClassName.swift */; };
+		B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */; };
+		B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FAC8F25D04083006549AF /* PaymentPanelView.xib */; };
+		B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9325D16985006549AF /* PaymentPanelView.swift */; };
+		B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */; };
+		B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94FACA025D1AD94006549AF /* VerifyPanelView.xib */; };
+		B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97729CB258A490100DE1AB9 /* Main.storyboard */; };
+		B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97729CE258A496600DE1AB9 /* NetworkManager.swift */; };
+		B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */; };
+		B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */; };
+		B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E1DF92326690A8700A53809 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63356BE32465AB4C0031F6DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63356BEA2465AB4C0031F6DB;
+			remoteInfo = LemonCheck;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.release.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.release.xcconfig"; sourceTree = "<group>"; };
-		4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleTableViewCell.swift; sourceTree = "<group>"; };
+		2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyVehicleTableViewCell.xib; sourceTree = "<group>"; };
+		2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelPresentationView.swift; sourceTree = "<group>"; };
+		2E15024525FD20A300BB25F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E42B2CC25FE56BF006E0429 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		2E42B34125FF8EF7006E0429 /* LemonCheck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LemonCheck.xcdatamodel; sourceTree = "<group>"; };
+		2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheckRelease.entitlements; sourceTree = "<group>"; };
+		2E42B35925FFC541006E0429 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2E42B36425FFD240006E0429 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2E42B37126010B9A006E0429 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		2E42B37226010B9B006E0429 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		2E42B376260110E3006E0429 /* SettingsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSections.swift; sourceTree = "<group>"; };
+		2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LemonCheck.entitlements; sourceTree = "<group>"; };
+		2EAD64DC26162AAE00095480 /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2EAD64DD26162AAE00095480 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
+		2EAD64DE26162AAE00095480 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		4E1DF91E26690A8700A53809 /* LemonCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1DF92026690A8700A53809 /* LemonCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonCheckTests.swift; sourceTree = "<group>"; };
+		4E1DF92226690A8700A53809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCVCell.swift; sourceTree = "<group>"; };
+		4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		4E31351D264C77710076E4A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSearch+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		570ABC47CE2FDA8743AF3E29 /* Pods-LemonCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheckTests/Pods-LemonCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		63356BEB2465AB4C0031F6DB /* LemonCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63356BEE2465AB4C0031F6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63356BF02465AB4C0031F6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63356BF52465AB4C0031F6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63356BF72465AB500031F6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63356BFA2465AB500031F6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63356BFC2465AB500031F6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63356C0E2465B0660031F6DB /* Date + Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Time.swift"; sourceTree = "<group>"; };
-		63356C102465B4200031F6DB /* StartUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
-		63356C122465B4380031F6DB /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		63356C142465B4440031F6DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63356C162465BFE90031F6DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63356C182465BFF40031F6DB /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		63356C1A2465C0010031F6DB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		63356C1C2465C03A0031F6DB /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataModel.swift; sourceTree = "<group>"; };
-		63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataViewModel.swift; sourceTree = "<group>"; };
 		63356C242465C1FE0031F6DB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		63356C262465C21F0031F6DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Instantiate.swift"; sourceTree = "<group>"; };
@@ -62,35 +138,105 @@
 		63356C302465FF620031F6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63356C32246640680031F6DB /* VerifyVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVehicleViewController.swift; sourceTree = "<group>"; };
 		63356C3624676F1D0031F6DB /* MOTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTDataModel.swift; sourceTree = "<group>"; };
-		63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Keyboard.swift"; sourceTree = "<group>"; };
+		634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Background.swift"; sourceTree = "<group>"; };
+		63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Spinner.swift"; sourceTree = "<group>"; };
+		6346050C2470872E0091C4A7 /* DatabaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrors.swift; sourceTree = "<group>"; };
+		6346050E2470B06A0091C4A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		634605102470B7E90091C4A7 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		634605122470C2BC0091C4A7 /* ViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Alert.swift"; sourceTree = "<group>"; };
+		6378D32D291573B3F193696B /* libPods-LemonCheckTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheckTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LemonCheck.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheck.debug.xcconfig"; path = "Target Support Files/Pods-LemonCheck/Pods-LemonCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		AE9F0360300C218A67A458D2 /* Pods-LemonCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonCheckTests.release.xcconfig"; path = "Target Support Files/Pods-LemonCheckTests/Pods-LemonCheckTests.release.xcconfig"; sourceTree = "<group>"; };
+		B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailsView.xib; sourceTree = "<group>"; };
+		B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
+		B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberPlateView.xib; sourceTree = "<group>"; };
+		B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlateView.swift; sourceTree = "<group>"; };
+		B92A1DA125E2D041000D2E92 /* ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
+		B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
+		B94FAC8F25D04083006549AF /* PaymentPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPanelView.xib; sourceTree = "<group>"; };
+		B94FAC9325D16985006549AF /* PaymentPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPanelView.swift; sourceTree = "<group>"; };
+		B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPanelView.swift; sourceTree = "<group>"; };
+		B94FACA025D1AD94006549AF /* VerifyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPanelView.xib; sourceTree = "<group>"; };
+		B97729CB258A490100DE1AB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B97729CE258A496600DE1AB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Enum.swift"; sourceTree = "<group>"; };
+		B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E1DF91B26690A8700A53809 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9C6B19EFFE13488E07DC90 /* libPods-LemonCheckTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63356BE82465AB4C0031F6DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2FE00DF361C890DB72EEB3 /* libPods-LemonCheck.a in Frameworks */,
+				5C0A7A3F7B1102BAED69D431 /* libPods-LemonCheck.a in Frameworks */,
+				2E42B35A25FFC541006E0429 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EAD64EE26173C5B00095480 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2E42B35225FF9336006E0429 /* OrderTableViewCell.swift */,
+				2E42B35325FF9336006E0429 /* OrderTableViewCell.xib */,
+				B9F5CF2725CB617000F9754A /* ResultsTableViewCell.swift */,
+				B9F5CF2825CB617000F9754A /* ResultsTableViewCell.xib */,
+				2E42B37126010B9A006E0429 /* SettingsCell.swift */,
+				2E0CBBBC2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift */,
+				2E0CBBBD2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib */,
+				4E313519264C6EB90076E4A6 /* OnBoardingCVCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		381395BDDDFB7447CCA7D690 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */,
 				2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */,
+				570ABC47CE2FDA8743AF3E29 /* Pods-LemonCheckTests.debug.xcconfig */,
+				AE9F0360300C218A67A458D2 /* Pods-LemonCheckTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4E1DF91F26690A8700A53809 /* LemonCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E1DF92026690A8700A53809 /* LemonCheckTests.swift */,
+				4E1DF92226690A8700A53809 /* Info.plist */,
+			);
+			path = LemonCheckTests;
+			sourceTree = "<group>";
+		};
+		4E313516264C6D960076E4A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B97729CB258A490100DE1AB9 /* Main.storyboard */,
+				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
+				4E313517264C6DBF0076E4A6 /* OnBoarding.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		63356BE22465AB4C0031F6DB = {
 			isa = PBXGroup;
 			children = (
 				63356BED2465AB4C0031F6DB /* LemonCheck */,
+				4E1DF91F26690A8700A53809 /* LemonCheckTests */,
 				63356BEC2465AB4C0031F6DB /* Products */,
 				381395BDDDFB7447CCA7D690 /* Pods */,
 				B6E2F62B32AD4DBD5F0FF172 /* Frameworks */,
@@ -101,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				63356BEB2465AB4C0031F6DB /* LemonCheck.app */,
+				4E1DF91E26690A8700A53809 /* LemonCheckTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,17 +255,20 @@
 		63356BED2465AB4C0031F6DB /* LemonCheck */ = {
 			isa = PBXGroup;
 			children = (
+				4E313516264C6D960076E4A6 /* Storyboards */,
+				2E42B35725FFC53B006E0429 /* LemonCheckRelease.entitlements */,
+				2E63C9D125FD2A1500004B31 /* LemonCheck.entitlements */,
 				63356C022465ABBC0031F6DB /* View */,
+				6346050B247087120091C4A7 /* Database */,
 				63356C042465ABD00031F6DB /* Network */,
 				63356C032465ABCB0031F6DB /* Helpers */,
 				63356C052465ABD50031F6DB /* Extensions */,
 				63356BEE2465AB4C0031F6DB /* AppDelegate.swift */,
-				63356BF02465AB4C0031F6DB /* SceneDelegate.swift */,
-				63356BF42465AB4C0031F6DB /* Main.storyboard */,
 				63356BF72465AB500031F6DB /* Assets.xcassets */,
-				63356BF92465AB500031F6DB /* LaunchScreen.storyboard */,
 				63356BFC2465AB500031F6DB /* Info.plist */,
 				63356C302465FF620031F6DB /* GoogleService-Info.plist */,
+				2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */,
+				4E31351D264C77710076E4A6 /* Colors.xcassets */,
 			);
 			path = LemonCheck;
 			sourceTree = "<group>";
@@ -138,7 +288,6 @@
 				63356C2F2465D2D20031F6DB /* Structs */,
 				63356C0B2465AC8A0031F6DB /* Form */,
 				63356C0A2465AC440031F6DB /* Design */,
-				63356C092465AC380031F6DB /* Media */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -147,8 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				63356C1C2465C03A0031F6DB /* NetworkRequester.swift */,
-				63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */,
-				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
+				B97729CE258A496600DE1AB9 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -158,6 +306,13 @@
 			children = (
 				63356C0E2465B0660031F6DB /* Date + Time.swift */,
 				63356C282465C24A0031F6DB /* ViewController + Instantiate.swift */,
+				634604FD246E01560091C4A7 /* ViewController + Keyboard.swift */,
+				634605122470C2BC0091C4A7 /* ViewController + Alert.swift */,
+				634604FF246E1D7D0091C4A7 /* UIVIew + Background.swift */,
+				63460509246F6E7D0091C4A7 /* UIButton + Spinner.swift */,
+				B97EF2E725DDC32100C0CB4F /* Int + Enum.swift */,
+				B92A1DA125E2D041000D2E92 /* ClassName.swift */,
+				2E42B2CC25FE56BF006E0429 /* Switcher.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,42 +320,28 @@
 		63356C062465AC010031F6DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63356C072465AC080031F6DB /* Sign In */,
-				63356C0C2465ACBA0031F6DB /* Vehicle Check */,
-				63356C0D2465ACD50031F6DB /* Settings */,
+				B9DA4A42259A305500C9F50D /* Single Views */,
+				63356C0C2465ACBA0031F6DB /* Main Views */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		63356C072465AC080031F6DB /* Sign In */ = {
-			isa = PBXGroup;
-			children = (
-				63356C102465B4200031F6DB /* StartUpViewController.swift */,
-				63356C122465B4380031F6DB /* RegistrationViewController.swift */,
-				63356C142465B4440031F6DB /* LoginViewController.swift */,
-				63EB0897246B4F8B00B22CDF /* ForgotPasswordViewController.swift */,
-			);
-			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		63356C082465AC110031F6DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				63356C222465C14E0031F6DB /* VehicleDataViewModel.swift */,
+				4E6E43FF264B458900B7D776 /* UserSearch+CoreDataClass.swift */,
+				4E8AA891264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift */,
+				63356C1E2465C05E0031F6DB /* VehicleDataModel.swift */,
+				63356C3624676F1D0031F6DB /* MOTDataModel.swift */,
+				2E42B376260110E3006E0429 /* SettingsSections.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		63356C092465AC380031F6DB /* Media */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Media;
 			sourceTree = "<group>";
 		};
 		63356C0A2465AC440031F6DB /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				B94FAC8B25D03A2B006549AF /* Fonts */,
 				63356C242465C1FE0031F6DB /* Utilities.swift */,
 				63356C2A2465D15A0031F6DB /* SlideTransition.swift */,
 			);
@@ -215,22 +356,18 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		63356C0C2465ACBA0031F6DB /* Vehicle Check */ = {
+		63356C0C2465ACBA0031F6DB /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E15024525FD20A300BB25F5 /* LoginViewController.swift */,
 				63356C162465BFE90031F6DB /* HomeViewController.swift */,
 				63356C32246640680031F6DB /* VerifyVehicleViewController.swift */,
 				63356C182465BFF40031F6DB /* ResultsViewController.swift */,
+				2E42B34F25FF924F006E0429 /* OrderHistoryViewController.swift */,
+				2E42B36425FFD240006E0429 /* ProfileViewController.swift */,
+				4E31351B264C6FD10076E4A6 /* OnboardingVC.swift */,
 			);
-			path = "Vehicle Check";
-			sourceTree = "<group>";
-		};
-		63356C0D2465ACD50031F6DB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				63356C1A2465C0010031F6DB /* MenuViewController.swift */,
-			);
-			path = Settings;
+			path = "Main Views";
 			sourceTree = "<group>";
 		};
 		63356C2F2465D2D20031F6DB /* Structs */ = {
@@ -241,17 +378,80 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		6346050B247087120091C4A7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6346050C2470872E0091C4A7 /* DatabaseErrors.swift */,
+				6346050E2470B06A0091C4A7 /* User.swift */,
+				634605102470B7E90091C4A7 /* Name.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		B6E2F62B32AD4DBD5F0FF172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D7B54C85C6596F8B4D57A94 /* libPods-LemonCheck.a */,
+				2E42B35925FFC541006E0429 /* CloudKit.framework */,
+				7F6D585119D6A0E011975E87 /* libPods-LemonCheck.a */,
+				6378D32D291573B3F193696B /* libPods-LemonCheckTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B94FAC8B25D03A2B006549AF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B94FAC8C25D03A3C006549AF /* UKNumberPlate.ttf */,
+				2EAD64E126162AAE00095480 /* DMSans-Bold.ttf */,
+				2EAD64DC26162AAE00095480 /* DMSans-BoldItalic.ttf */,
+				2EAD64DD26162AAE00095480 /* DMSans-Italic.ttf */,
+				2EAD64DE26162AAE00095480 /* DMSans-Medium.ttf */,
+				2EAD64DF26162AAE00095480 /* DMSans-MediumItalic.ttf */,
+				2EAD64E026162AAE00095480 /* DMSans-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B9DA4A42259A305500C9F50D /* Single Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EAD64EE26173C5B00095480 /* Cells */,
+				2E42B37226010B9B006E0429 /* UserInfoHeader.swift */,
+				B94FAC9325D16985006549AF /* PaymentPanelView.swift */,
+				B94FAC8F25D04083006549AF /* PaymentPanelView.xib */,
+				B94FAC9A25D1AD6D006549AF /* VerifyPanelView.swift */,
+				B94FACA025D1AD94006549AF /* VerifyPanelView.xib */,
+				B92A1D5C25E1A77C000D2E92 /* CarDetailsView.swift */,
+				B92A1D5925E1A76D000D2E92 /* CarDetailsView.xib */,
+				B92A1D6225E1B413000D2E92 /* NumberPlateView.swift */,
+				B92A1D5F25E1AF9E000D2E92 /* NumberPlateView.xib */,
+				2E0CBBC1262611FF00B0D09F /* PaymentPanelPresentationView.swift */,
+			);
+			path = "Single Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E1DF91D26690A8700A53809 /* LemonCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E1DF92726690A8700A53809 /* Build configuration list for PBXNativeTarget "LemonCheckTests" */;
+			buildPhases = (
+				A5E5228C57F01C8088978B9F /* [CP] Check Pods Manifest.lock */,
+				4E1DF91A26690A8700A53809 /* Sources */,
+				4E1DF91B26690A8700A53809 /* Frameworks */,
+				4E1DF91C26690A8700A53809 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E1DF92426690A8700A53809 /* PBXTargetDependency */,
+			);
+			name = LemonCheckTests;
+			productName = LemonCheckTests;
+			productReference = 4E1DF91E26690A8700A53809 /* LemonCheckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		63356BEA2465AB4C0031F6DB /* LemonCheck */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63356BFF2465AB500031F6DB /* Build configuration list for PBXNativeTarget "LemonCheck" */;
@@ -260,7 +460,7 @@
 				63356BE72465AB4C0031F6DB /* Sources */,
 				63356BE82465AB4C0031F6DB /* Frameworks */,
 				63356BE92465AB4C0031F6DB /* Resources */,
-				01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */,
+				392E7B034A8D27E060069F1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,10 +477,14 @@
 		63356BE32465AB4C0031F6DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Varley Parker";
 				TargetAttributes = {
+					4E1DF91D26690A8700A53809 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 63356BEA2465AB4C0031F6DB;
+					};
 					63356BEA2465AB4C0031F6DB = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -300,26 +504,50 @@
 			projectRoot = "";
 			targets = (
 				63356BEA2465AB4C0031F6DB /* LemonCheck */,
+				4E1DF91D26690A8700A53809 /* LemonCheckTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E1DF91C26690A8700A53809 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63356BE92465AB4C0031F6DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94FAC9025D04083006549AF /* PaymentPanelView.xib in Resources */,
+				2EAD64E426162AAE00095480 /* DMSans-Medium.ttf in Resources */,
 				63356BFB2465AB500031F6DB /* LaunchScreen.storyboard in Resources */,
+				2EAD64E626162AAE00095480 /* DMSans-Regular.ttf in Resources */,
+				2EAD64E526162AAE00095480 /* DMSans-MediumItalic.ttf in Resources */,
+				4E31351E264C77710076E4A6 /* Colors.xcassets in Resources */,
+				B92A1D6025E1AF9E000D2E92 /* NumberPlateView.xib in Resources */,
+				B9F5CF2A25CB617000F9754A /* ResultsTableViewCell.xib in Resources */,
+				2EAD64E326162AAE00095480 /* DMSans-Italic.ttf in Resources */,
+				4E313518264C6DBF0076E4A6 /* OnBoarding.storyboard in Resources */,
+				2E42B35525FF9336006E0429 /* OrderTableViewCell.xib in Resources */,
+				2EAD64E726162AAE00095480 /* DMSans-Bold.ttf in Resources */,
 				63356C312465FF630031F6DB /* GoogleService-Info.plist in Resources */,
+				2E0CBBBF2625E7B600B0D09F /* VerifyVehicleTableViewCell.xib in Resources */,
+				B94FACA125D1AD94006549AF /* VerifyPanelView.xib in Resources */,
+				B92A1D5A25E1A76D000D2E92 /* CarDetailsView.xib in Resources */,
 				63356BF82465AB500031F6DB /* Assets.xcassets in Resources */,
-				63356BF62465AB4C0031F6DB /* Main.storyboard in Resources */,
+				B94FAC8D25D03A3C006549AF /* UKNumberPlate.ttf in Resources */,
+				B97729CC258A490100DE1AB9 /* Main.storyboard in Resources */,
+				2EAD64E226162AAE00095480 /* DMSans-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01DFE95D4108CDA9751A8896 /* [CP] Copy Pods Resources */ = {
+		392E7B034A8D27E060069F1A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,6 +562,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LemonCheck/Pods-LemonCheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5E5228C57F01C8088978B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LemonCheckTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E7DC45CD5EC779BFE8C8A5B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -361,6 +611,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E1DF91A26690A8700A53809 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1DF92126690A8700A53809 /* LemonCheckTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63356BE72465AB4C0031F6DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,37 +626,60 @@
 				63356C252465C1FE0031F6DB /* Utilities.swift in Sources */,
 				63356C3724676F1E0031F6DB /* MOTDataModel.swift in Sources */,
 				63356C1D2465C03A0031F6DB /* NetworkRequester.swift in Sources */,
-				63356C152465B4440031F6DB /* LoginViewController.swift in Sources */,
-				63356C1B2465C0010031F6DB /* MenuViewController.swift in Sources */,
-				63356C132465B4380031F6DB /* RegistrationViewController.swift in Sources */,
-				63356C112465B4200031F6DB /* StartUpViewController.swift in Sources */,
+				6346050F2470B06A0091C4A7 /* User.swift in Sources */,
+				2E42B37326010B9B006E0429 /* SettingsCell.swift in Sources */,
+				B92A1D6325E1B413000D2E92 /* NumberPlateView.swift in Sources */,
+				2E0CBBBE2625E7B600B0D09F /* VerifyVehicleTableViewCell.swift in Sources */,
+				634605132470C2BC0091C4A7 /* ViewController + Alert.swift in Sources */,
+				2E42B36525FFD240006E0429 /* ProfileViewController.swift in Sources */,
+				B92A1D5D25E1A77C000D2E92 /* CarDetailsView.swift in Sources */,
 				63356C172465BFE90031F6DB /* HomeViewController.swift in Sources */,
 				63356C272465C21F0031F6DB /* Constants.swift in Sources */,
 				63356C0F2465B0660031F6DB /* Date + Time.swift in Sources */,
+				63460500246E1D7D0091C4A7 /* UIVIew + Background.swift in Sources */,
+				B9F5CF2925CB617000F9754A /* ResultsTableViewCell.swift in Sources */,
+				B97729CF258A496600DE1AB9 /* NetworkManager.swift in Sources */,
+				4E31351C264C6FD10076E4A6 /* OnboardingVC.swift in Sources */,
+				4E8AA893264B2A6A00E37A07 /* UserSearch+CoreDataProperties.swift in Sources */,
+				2E42B2CD25FE56BF006E0429 /* Switcher.swift in Sources */,
+				4E6E4400264B458900B7D776 /* UserSearch+CoreDataClass.swift in Sources */,
+				B94FAC9B25D1AD6D006549AF /* VerifyPanelView.swift in Sources */,
+				2E0CBBC2262611FF00B0D09F /* PaymentPanelPresentationView.swift in Sources */,
 				63356C38246772BE0031F6DB /* VehicleDataModel.swift in Sources */,
-				63356C232465C14E0031F6DB /* VehicleDataViewModel.swift in Sources */,
+				B97EF2E825DDC32100C0CB4F /* Int + Enum.swift in Sources */,
+				2E42B377260110E3006E0429 /* SettingsSections.swift in Sources */,
+				6346050A246F6E7D0091C4A7 /* UIButton + Spinner.swift in Sources */,
+				2E42B37426010B9B006E0429 /* UserInfoHeader.swift in Sources */,
 				63356C2B2465D15A0031F6DB /* SlideTransition.swift in Sources */,
+				2E42B34225FF8EF7006E0429 /* LemonCheck.xcdatamodeld in Sources */,
+				2E15024625FD20A300BB25F5 /* LoginViewController.swift in Sources */,
+				634604FE246E01560091C4A7 /* ViewController + Keyboard.swift in Sources */,
 				63356C192465BFF40031F6DB /* ResultsViewController.swift in Sources */,
+				2E42B35025FF924F006E0429 /* OrderHistoryViewController.swift in Sources */,
+				6346050D2470872E0091C4A7 /* DatabaseErrors.swift in Sources */,
 				63356C2D2465D1AA0031F6DB /* Validation.swift in Sources */,
 				63356BEF2465AB4C0031F6DB /* AppDelegate.swift in Sources */,
-				63EB0898246B4F8B00B22CDF /* ForgotPasswordViewController.swift in Sources */,
+				4E31351A264C6EB90076E4A6 /* OnBoardingCVCell.swift in Sources */,
 				63356C292465C24A0031F6DB /* ViewController + Instantiate.swift in Sources */,
+				634605112470B7E90091C4A7 /* Name.swift in Sources */,
 				63356C33246640680031F6DB /* VerifyVehicleViewController.swift in Sources */,
-				63356BF12465AB4C0031F6DB /* SceneDelegate.swift in Sources */,
+				2E42B35425FF9336006E0429 /* OrderTableViewCell.swift in Sources */,
+				B94FAC9425D16985006549AF /* PaymentPanelView.swift in Sources */,
+				B92A1DA225E2D041000D2E92 /* ClassName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		63356BF42465AB4C0031F6DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63356BF52465AB4C0031F6DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		4E1DF92426690A8700A53809 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63356BEA2465AB4C0031F6DB /* LemonCheck */;
+			targetProxy = 4E1DF92326690A8700A53809 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		63356BF92465AB500031F6DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -410,6 +691,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4E1DF92526690A8700A53809 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 570ABC47CE2FDA8743AF3E29 /* Pods-LemonCheckTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LemonCheck.app/LemonCheck";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = LemonCheckTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kazi.test.LemonCheckTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		4E1DF92626690A8700A53809 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE9F0360300C218A67A458D2 /* Pods-LemonCheckTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LemonCheck.app/LemonCheck";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				INFOPLIST_FILE = LemonCheckTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kazi.test.LemonCheckTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
 		63356BFD2465AB500031F6DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,10 +800,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -521,6 +859,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -529,15 +868,21 @@
 			baseConfigurationReference = 91F4E64314314AC56906BB60 /* Pods-LemonCheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheck.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZQXZ63VCV;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = LemonCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = varleyParker.LemonCheck;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varleyparker.lemoncheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -548,14 +893,16 @@
 			baseConfigurationReference = 2B21DE5F9EDA16554D6A163E /* Pods-LemonCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LemonCheck/LemonCheckRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZQXZ63VCV;
+				DEVELOPMENT_TEAM = 2VUTNFK4JH;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = LemonCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = varleyParker.LemonCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.varleyparker.lemoncheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -565,6 +912,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E1DF92726690A8700A53809 /* Build configuration list for PBXNativeTarget "LemonCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1DF92526690A8700A53809 /* Debug */,
+				4E1DF92626690A8700A53809 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63356BE62465AB4C0031F6DB /* Build configuration list for PBXProject "LemonCheck" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -584,6 +940,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E42B34025FF8EF7006E0429 /* LemonCheck.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E42B34125FF8EF7006E0429 /* LemonCheck.xcdatamodel */,
+			);
+			currentVersion = 2E42B34125FF8EF7006E0429 /* LemonCheck.xcdatamodel */;
+			path = LemonCheck.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 63356BE32465AB4C0031F6DB /* Project object */;
 }

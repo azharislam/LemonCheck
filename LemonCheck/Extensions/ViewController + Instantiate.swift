@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 extension HomeViewController {
 
     static func instantiate() -> HomeViewController? {
@@ -37,28 +38,6 @@ extension ResultsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let resultVC = storyboard.instantiateViewController(identifier: "ResultVC") as? ResultsViewController {
             return resultVC
-        }
-        return nil
-    }
-}
-
-extension MenuViewController {
-
-    static func instantiate() -> MenuViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let menuVC = storyboard.instantiateViewController(identifier: "MenuVC") as? MenuViewController {
-            return menuVC
-        }
-        return nil
-    }
-}
-
-extension ForgotPasswordViewController {
-
-    static func instantiate() -> ForgotPasswordViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let forgotVC = storyboard.instantiateViewController(identifier: "ForgotVC") as? ForgotPasswordViewController {
-            return forgotVC
         }
         return nil
     }
