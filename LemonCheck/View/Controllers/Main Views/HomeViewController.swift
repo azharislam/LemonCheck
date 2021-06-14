@@ -24,6 +24,7 @@ public class VehicleInput {
 class HomeViewController: UIViewController {
     
     private let VALID_REG_NUM_MSG = "A valid UK registration only contains letters A-Z and numbers 0-9, no special characters should not exceed 8 characters (including whitespace)"
+    private let EMPTY_CHARACTERS = "Please enter a valid vehicle registration number"
     private let EXCEED_CHAR_LIMIT_ERR_MSG = "A valid UK registration should not exceed 8 characters (including whitespace)"
     private let INVALID_CHAR_ERR_MESSAGE = "A valid UK registration only contains letters A-Z and numbers 0-9, no special characters"
     private let MULTIPLE_SPACE_ERR_MESSAGE = "A valid UK registration should only contain one whitespace"
@@ -56,7 +57,6 @@ class HomeViewController: UIViewController {
     
     @IBAction func searchPressed(_ sender: Any) {
         guard let userInput = searchField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        KRProgressHUD.show(withMessage: "Loading...")
         searchFor(input: userInput)
     }
     
@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
         VehicleInput.shared.reg = input
         self.service.vrm = nil
         if input != "" && (input.count == 8 || (input.count == 7 && !input.contains(" "))){
-            searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray)
+            KRProgressHUD.show(withMessage: "Searching...")
             delegate?.verifyCheckFor(vrm: input)
             if let rgVC = VerifyVehicleViewController.instantiate() {
                 DispatchQueue.global().async {
@@ -86,6 +86,8 @@ class HomeViewController: UIViewController {
                     }
                 }
             }
+        } else if input == "" {
+            showToastMessage(message: EMPTY_CHARACTERS, position: .top)
         } else {
             showToastMessage(message: VALID_REG_NUM_MSG, position: .top)
         }
@@ -102,6 +104,7 @@ extension HomeViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if string == "" {
+            searchButton.backgroundColor = UIColor(named: Constants.Colors.inactiveGray)
             return true
         } else if textField.text!.count == 8 {
             showToastMessage(message: EXCEED_CHAR_LIMIT_ERR_MSG)
@@ -115,6 +118,8 @@ extension HomeViewController: UITextFieldDelegate {
         } else if !isValidCharacter(character: string) {
             showToastMessage(message: INVALID_CHAR_ERR_MESSAGE)
             return false
+        } else if string != "" {
+            searchButton.backgroundColor = UIColor(named: Constants.Colors.charcoalGray)
         }
         
         return true
