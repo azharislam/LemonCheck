@@ -77,7 +77,9 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         // Get order from array
         //let order = self.orders?[(self.orders!.count - 1) - indexPath.row]
         let order = self.orders?[indexPath.row]
-        cell.configureLabel(make: order?.make ?? "N/A", model: order?.model ?? "N/A", vim: order?.vrm ?? "N/A")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        cell.configureLabel(make: order?.make ?? "N/A", model: order?.model ?? "N/A", vim: order?.vrm ?? "N/A", date: formatter.string(from: order?.searchedDate ?? Date()))
         return cell
     }
     
