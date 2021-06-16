@@ -29,6 +29,7 @@ class VerifyVehicleViewController: UIViewController {
     @IBOutlet weak var numberPlateView: NumberPlateView!
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var carTitle: UILabel!
     
     var delegate: UpdateOrderHistoryDelegate?
     private var paymentPanel = PaymentPanelView()
@@ -76,6 +77,7 @@ class VerifyVehicleViewController: UIViewController {
     private func configureView() {
         yesButton.layer.cornerRadius = 16
         noButton.layer.cornerRadius = 16
+        carTitle.text = "\(carColour ?? "")h \(carMake ?? "") FROM \(carYear ?? "")"
         self.numberPlateView.vrmLabel.text = self.vrm ?? ""
         self.numberPlateView.backgroundColor = UIColor(named: Constants.Colors.lemonYellow)
     }
